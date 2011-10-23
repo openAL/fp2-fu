@@ -1,0 +1,12 @@
+#Ignore this stuff
+*~
+*.tmp
+*.o
+*.a
+*.out
+*.aux
+*.log
+*#
+*.tcp
+*.toc
+.DS_Store
