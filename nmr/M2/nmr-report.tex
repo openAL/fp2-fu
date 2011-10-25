@@ -1,37 +1,168 @@
-\documentclass{a4paper,twoside,11pt}[scrartcl]
-%encodings
-\usepackage[utf8]{inputenc}
-\usepackage[USenglish]{babel}
+\documentclass[a4paper,10pt]{article}
+
+%\usepackage[margin=1.5in]{geometry}% adjust margins
+\usepackage[latin1]{inputenc}
+\usepackage[english]{babel}
 \usepackage[T1]{fontenc}
-%colors, hyperrefs
-\usepackage{color}
-\usepackage{url}
-\usepackage{hyperref}
-%figures and subfigures
-\usepackage[pdftex]{graphicx}
-\usepackage{subfig}
-%better tables
-\usepackage{tabluarx}
-\usepackage{booktabs}
-%math stuff
+\usepackage{textcomp}
 \usepackage{amsmath}
-\usepackage{amsthm}
-\usepackage{amsfonts}
-\usepackage{IEEEtrantools}
-%shiny stuff
-\usepackage[babel]{microtype}
-\DisableLigatures{encoding=T1,family=tt*}
+%\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{tabularx} 
+%\usepackage{graphicx}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage{cite}%fuer eckige Klammern bei Textzitaten/Literaturhinweise
+%\usepackage{overcite} - fuer hochgestellte ziffern 
+
+% paket fuer caption linksbuendig:
+% \usepackage[justification=raggedright,singlelinecheck=false]{caption}
+
+
+% enumeration type
+\renewcommand{\labelenumi}{\alph{enumi})} 
+\renewcommand{\labelitemii}{\textbullet}
+\renewcommand{\labelenumiii}{\arabic{enumiii}}
+\renewcommand{\labelenumiv}{\arabic{enumiv}.}
+
+%keine einrueckungen bei absatz
+\parindent 0pt 
+
+\title{Pulsed Nuclear Magnetic Resonance}
+\author{J\"org Behrmann, Anika Haller\\ Tutor: C. Meier\\ Advanced Lab Course WS 2011/12 \\Freie Universit\"at Berlin}
+\date{October 24, 2011}
 
 \begin{document}
 
-\title{Pulsed Nuclear Magnetic Resonance}
-\author{J\"org Behrmann, Anika Haller}
-\date{24.11.2011}
 \maketitle
-\tableofcontents
-\thispagestyle{empty}
-\cleardoublepage
 
-%--Text goes here---
+\section{Introduction}
+In 1946 the first successful nuclear magnetic resonance (NMR) experiments have been published independently by Felix Bloch and Edward Mills Purcell.
+Nuclear magnetic resonance tomography is a common medical diagnosis method in these days of fast computers. The NMR spectroscopy offers many applications for the analysis of molecules. 
+The main intention of this experiment is to become more familiar with the dynamics of spins and to introduce some specific measurement techniques.
+
+\subsection{Nuclear Spin}
+Just like electrons, nucleons (protons and neutrons) compounding the nucleus are also fermions possessing a spin. These spins sum up to a total nuclear spin $\mathbf{I}$, so that in general, the nucleus has a non-vanishing magnetic moment
+\begin{eqnarray}
+ \mathbf{\mu}_I = g_K\mu_K \mathbf{I} = \gamma_I \hbar \mathbf{I}, 
+\end{eqnarray}
+with the nuclear gyromagnetic factor $g_K$, the nuclear magneton $\mu_K$ and the gyromagnetic relationship $\gamma_I$. There exist a relation between the nuclear magneton and the Bohr magneton $\mu_B$, which is
+\begin{eqnarray}
+ \mu_K = \frac{m_e}{m_p}\mu_B,
+\end{eqnarray}
+with $m_e$ being the electron mass and $m_p$ the mass of a proton.
+Applying an external static magnetic field $B_0$ leads to discrete energy levels through the orientation quantization of the nuclear spin:
+\begin{eqnarray}
+ E=E_0 - g_K\mu_KB_0m_I,
+\end{eqnarray}
+where the magnetic quantum number $m_I$ has values from $-I,-I+1,...,+I$.
+
+Let us here regard the most simple case of a nucleus consisting of a single proton, which would be the case for a hydrogen atom. Herefor, the nuclear spin quantum number is $I=\frac{1}{2}$ which leads to two orientations of the angular momentum $m_I = \pm\frac{1}{2}$.
+
+Consequently, the energy difference for the two cases is
+\begin{eqnarray}
+ \Delta E = \hbar\gamma_I B_0 = \hbar \omega_0,
+\end{eqnarray}
+which leads us to the resonance condition 
+\begin{eqnarray}
+ \omega_0 = \gamma_I B_0,
+\end{eqnarray}
+with the resonance frequency $\omega_0$, that is needed to switch between the two energy levels.
+ 
+\subsection{Magnetization}
+In a macroscopic sample of $N_0$ particles being in ground state, the occupation of the energy levels in thermal equilibrium follows the Boltzmann distribution 
+\begin{eqnarray}
+ N_i = N_0 \text{exp}\left(-\frac{E_i}{k_B T} \right).
+\end{eqnarray}
+In the external magnetic field $\mathbf{B}_0$ the occupation of the energy levels leads to a macroscopic equilibrium magnetization $\mathbf{M}_0$ 
+\begin{eqnarray}
+ \mathbf{M}_0 = \frac{N g_K^2 \mu_K^2 I(I+1)}{3k_BT}\mathbf{B}_0,
+\end{eqnarray}
+where $N$ is here the number of nuclear spins per unit volume.
+
+\subsection{Nuclear Magnetic Resonance}
+The equation of motion of the macroscopic magnetization $\mathbf{M}$ is given through
+\begin{eqnarray}
+ \frac{d}{dt}\mathbf{M} = \gamma_I\mathbf{M}\times\mathbf{B}_0. \label{dMdt}
+\end{eqnarray}
+For $\mathbf{M}$ and $\mathbf{B}_0$ not being collinear, the magnetization precesses around $\mathbf{B}_0$ with the Larmor frequency
+\begin{eqnarray}
+ \mathbf{\omega}_0 = -\gamma_I \mathbf{B}_0.
+\end{eqnarray} 
+When an additional oscillating magnetic field $\mathbf{B}_1(t)$ is applied, then $\mathbf{B}_0$ has to be replaced by the vector sum of $\mathbf{B}_0$ 
+and $\mathbf{B}_1(t)$. This gives for Eq. \eqref{dMdt}
+\begin{eqnarray}
+ \frac{d}{dt}\mathbf{M} = \gamma_I\mathbf{M}\times \left(\mathbf{B}_0+\mathbf{B}_1(t) \right). \label{dMdt2}
+\end{eqnarray}
+If we choose an oscillating field $\mathbf{B}_1(t)$, polarized perpendicularly to $\mathbf{B}_0$ with an angular velocity $\mathbf{\omega}$ equal to the Larmor frequency $\mathbf{\omega}_0$, we can simplify Eq. \eqref{dMdt2} by describing it with the aid of a rotating coordinate system:  
+\begin{eqnarray}
+ \frac{d}{dt}\mathbf{M} &=& \gamma_I \mathbf{M} \times \mathbf{B}_0 + \gamma_I \mathbf{M} \times \mathbf{B}_1,\\
+ \frac{d}{dt}\mathbf{M} - \gamma_I \mathbf{M} \times \mathbf{B}_0 &=& \gamma_I \mathbf{M} \times \mathbf{B}_1,\\
+ \frac{d}{dt}\mathbf{M} - \mathbf{\omega}_0\times \mathbf{M} &=& \gamma_I \mathbf{M} \times \mathbf{B}_1. \label{rotation}
+\end{eqnarray}
+Here we have to recognize that the left hand side of Eq. \eqref{rotation} is the definition for the time derivative in a coordinate system rotating around $\mathbf{B}_0$, which we will write as 
+\begin{eqnarray}
+ \left( \frac{d}{dt} \mathbf{M} \right)_{rot} = \gamma_I \mathbf{M} \times \mathbf{B}_1.
+\end{eqnarray}
+In the rotating coordinate system the direction of the magnetic field $\mathbf{B}_1$ now is stationary, so the magnetization $\mathbf{M}$ precesses around $\mathbf{B}_1$ with the angular velocity
+\begin{eqnarray}
+ \mathbf{\omega}_1 = \frac{d\mathbf{\alpha}}{dt} = \gamma_I \mathbf{B}_1.
+\end{eqnarray}
+$\mathbf{\alpha}$ here describes the angle around which the magnetization $\mathbf{M}$ has rotated from its original orientation after switching on $\mathbf{B}_1(t)$. The angle is determined by the product of the pulse duration with the field strength $B_1$, at which the pulses are named after $\alpha$, e.q. $180^\circ$- or $90^\circ$-pulses.
+After switching off the alternating field $\mathbf{B}_1$ the system again behaves according to Eq. \eqref{dMdt}, so that $\mathbf{M}$ precesses around $\mathbf{B}_0$. Therefor the system relaxes into its ground state and thereby produces the nuclear spin resonance signal, which is to be measured.
+
+
+
+
+\subsection{Relaxation Processes}
+
+In principle there are two different relaxation mechanisms: the spin-spin- and the spin-lattice-relaxation. These will be described here, as well as measurement techniques.
+
+\subsubsection{Spin-Spin-Relaxation}
+In the spin-spin relaxation mechanism the oriented bulk of spins interact directly with each other.  These field inhomogeneities cause a dephasing of the transversal magnetization components, that are perpendicular to $B_0$. This process can be described by the Bloch equation in the rotating coordinate system
+\begin{eqnarray}
+ \frac{dM_{x,y}}{dt} = -\frac{M_{x,y}}{T_2},
+\end{eqnarray}
+with the transversal relaxation time $T_2$. Integration gives
+\begin{eqnarray}
+ M_{x,y} = M_0 e^{-t/T_2}.
+\end{eqnarray}
+This shows an exponential decrease of the transversal magnetization components.
+
+\subsubsection*{Spin-Echo Experiment}
+The magnetic nuclei cause local perturbations that influence the decay. This influence is characterized by $T_2$ and can be measured by a certain pulse sequence: At first, the equilibrium magnetization  $M_0$ is rotated to the $y$-axis by a $90^\circ$-pulse. During the time $\tau$ the magnetization decreases due to dephasing of the magnetic momenta. After inverting the $x$-$y$-plane with a $180^\circ$-pulse the magnetization rephases. After a time $2\tau$ a negative free induction echo can be observed. 
+
+
+\subsubsection*{Carr-Purcell- and Meiboom-Gill Method}
+These two methods are improvements of the Spin-Echo method. In the Carr-Purcell method the flipping of the x-y-plane is continued to get a whole sequence of echo signals, which saves time and gives more statistics for the measurement, but, the accuracy of the pulse length is limited. 
+
+Meiboom and Gill improved this by alternating the rotation direction clockwise and counterclockwise. Therefor, every second echo is perfectly aligned on the $x$-$y$-plane.
+
+\subsubsection{Spin-Lattice-Relaxation}
+In contrast to the spin-spin-relaxation,  the spin-lattice-relaxation is induced by the lattice atoms around the measured nuclei.
+It causes the reconstruction of the equilibrium magnetization parallel to the $B_0$ (z-direction) with the longitudinal relaxation time $T_1$ under energy exchange between the spin system and the surrounding medium. 
+That process can be described by another Bloch equation
+\begin{eqnarray}
+ \frac{dM_z}{dt} = \frac{M_z-M_0}{T_1}.
+\end{eqnarray}
+Integration yields
+\begin{eqnarray}
+ M_z=M_0 \left(1-2 e^{-t/T_1} \right).
+\end{eqnarray}
+
+\subsubsection*{Inversion Recovery}
+The measuring method for the spin-lattice-relaxation is called inversion recovery. A $180^\circ$-pulse is used to flip the magnetization and in the time $\tau$ longitudinal relaxation causes the magnetization to decrease. A $90^\circ$-pulse rotates $\mathbf{M}$ to the $x-y$-plane, since we could only there detect measurement signals. From the initial amplitude of the free induction decay over the time $\tau$ we can determine the relaxation time $T_1$.
+
+\subsubsection{Free Induction Decay}
+The free induction decay is mainly determined by the inhomogeneity $\Delta B$ of the static magnetic field $B_0$.  The decay rate after a $90^\circ$ pulse is characterized by $T_2^*$
+\begin{eqnarray}
+ M_{x,y} = M_0 e^{-t/T_2^*}.
+\end{eqnarray}
+If the inhomogeneity is assumed to be Gauss distributed, $\Delta B$ is calculated by
+\begin{eqnarray}
+ \Delta B = \frac{ln2}{\gamma_I T_2^*}.
+\end{eqnarray}
+ It is required that $T_2^* \ll T_2$, since otherwise the free induction decay would be dominated by the local inhomogeneities.
 
 \end{document}
