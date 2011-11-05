@@ -71,10 +71,25 @@ and the relativistic correction given by the Lorentz factor $\gamma$ according t
 \eq{E=(\gamma -1)mc^2= \left(\frac{1}{0.99}-1\right)mc^2=\SI{5160}{eV}\;. }{}
 
 \subsection{Constructive Interference for a surface scattering event}
-Just as the Bragg Condition for constructive interference and the more advanced Laue theory, that can also determine the intensities of the scattered waves in solid state physics, these concepts can be applied for surface scattering as well. Analogue to the Bragg condition, the condition for constructive interference can be derived from a simple geometrical consideration shown in figure \ref{bragg}. The length $a$ is given by
-\eq{a = |n \ve a_1 + m \ve a_2|\;, \qquad n,m \in \mathbb N \; , }{}
+Just as the Bragg Condition for constructive interference and the more advanced Laue theory, that can also determine the intensities of the scattered waves in solid state physics, these concepts can be applied for surface scattering as well. Analogue to the Bragg condition, the condition for constructive interference 
+\eq{n \lambda = a_{h,k} (\sin \varphi - \sin \varphi_0 ) \; \qquad n \in \mathbb N }{bragg}
+can be derived from a simple geometrical consideration shown in figure \ref{bragg}. The length $a$ is given by
+\eq{a_{h,k} = |h \ve a_1 + k \ve a_2|\;, \qquad h,k \in \mathbb N \; , }{}
 where $\ve a_1$ and $\ve a_2$ are the lattice vectors of the surface layer.
-\bibliographystyle{unsrt}
+
+The scattering process can also be described by the usage of the reciprocal lattice vectors $\ve a_{1,2}^* \perp \ve a_{2,1}$, constructed via
+$a_{1,2}^*=\frac{1}{a_{1,2} \sin \gamma} $, $\gamma = \measuredangle \ve a_1, \ve a_2 $. The wave function of a plane wave with wave vector $\ve k_0$, that is scattered at all atom positions $\ve R_i$ back to the direction of $\ve k$ is given by
+\eq{\Psi \propto \sum_{i} f_i(\ve k_0, \ve k) e^{i(\ve k - \ve k_0) \cdot \ve R_i} \ ,}{}
+where $f_i$ are the atomic structure factors. As $\ve R_i=h \ve a_1 + k \ve a_2$, the intensity of the wave $|\Psi|^2$ scattered by a lattice of $H \cdot K$ lattice points can be written as
+\eq{I=|\Psi|^2 \propto |F|^2 \frac{\sin^2 \left( \tfrac 1 2 H \ve a_1 \cdot (\ve k - \ve k_0) \right)}{\sin^2 \left( \tfrac 1 2 \ve a_1 \cdot ( \ve k - \ve k_0 ) \right)} \cdot \frac{\sin^2 \left( \tfrac 1 2 K \ve a_2 \cdot (\ve k - \ve k_0) \right)} {\sin^2 \left( \tfrac 1 2 \ve a_2 \cdot ( \ve k - \ve k_0 ) \right)} \; , } {}
+where F is the structure factor of a unit cell. Expression \Formel{au} becomes  maximal for the condition
+\eq{\ve a_1 \cdot (\ve k - \ve k_0) = h 2 \pi \qquad \vee \ve a_2 \cdot (\ve k - \ve k_0) = k 2 \pi \;.}{}
+Inserting the definition of the wave vector $\ve k=\frac{2\pi}{\lambda} \ve s$, where $s$ is pointing in the direction of the wave, the scalar products reduce to the condition
+\eq{(\sin \varphi - \sin \varphi_0) |h \ve a_1 + k \ve a_2| = (h + k)^2 \lambda \; .} {}
+This corresponds to the Bragg condition \Formel{bragg} and can be simplifies for perpendicular lattice vectors of the same length $a$ and a normal incoming wave ($\sin \varphi_0  =0$)to
+\eq{\sin \varphi =\frac{\lambda}{a} \sqrt{h^2+k^2} \; .}{}
+
+ \bibliographystyle{unsrt}
 \bibliography{FPbib}
 
 \end{document}
