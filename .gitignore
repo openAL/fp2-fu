@@ -10,3 +10,4 @@
 *.tcp
 *.toc
 *.bak
+.DS_Store
