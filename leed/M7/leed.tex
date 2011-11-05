@@ -1,0 +1,80 @@
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lmodern} 
+\usepackage[T1]{fontenc}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{caption}
+
+
+
+% PAKETE
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{bbm}
+
+
+
+% EINSTELLUNGEN
+\sisetup{seperr,repeatunits=false}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+% EIGENE FUNKTIONEN
+\newcommand{\re}{\operatorname{Re}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\gquote}[1]{\glqq #1 \grqq}
+
+\newcommand{\eq}[2]{\begin{equation}#1\label{#2}\end{equation}}
+\newcommand{\eqand}[0]{\hspace{.25cm} \bigwedge \hspace{.25cm}}
+\newcommand{\grafik}[2]{\begin{figure}[h]\centering \includegraphics[width=10cm]{#1.eps}  \caption{#2} \label{#1} \end{figure} }
+\newcommand{\grafikq}[3]{\begin{figure}[h]\centering \includegraphics[width=10cm]{#1.eps}  \caption[#2]{#3} \label{#1} \end{figure} }
+\newcommand{\tbl}[3]{\begin{table}[h]\caption{#1}\label{#2}\begin{center}#3\end{center}\end{table}}
+\newcommand{\Abbildung}[1]{\textsl{Abbildung \ref{#1}}}
+\newcommand{\AbbildungI}[1]{\textsl{(Abbildung \ref{#1})}}
+\newcommand{\Tabelle}[1]{\textsl{Tabelle \ref{#1}}}
+\newcommand{\TabelleI}[1]{\textsl{(Tabelle \ref{#1})}}
+\newcommand{\Formel}[1]{(\ref{#1})}
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\ve}[1]{\mathbf{ #1} }
+
+\title{Ma 2: Low Energy Electron Diffraction (LEED) on Surfaces}
+\subtitle{Tutor: Y. Kahn}
+\author{Benjamin Huber, Carolin Wille}
+\date{November 7, 2011}
+
+\begin{document}
+\thispagestyle{empty}
+\maketitle
+\tableofcontents
+\clearpage
+
+
+\section{Introduction}
+\subsection{Matterwaves}
+Following the principle of the wave-matter dualism, de Broglie proposed in 1924, that any particle of momentum $p$ or mass $m$ and energy $E$ can be also described as a wave of wavelength 
+\eq{\lambda = \frac{h}{p} =\frac{h}{2mE} \;,}{lambda}
+where $h=4.135667516(91)\times 10^{-15} \text{eVs}$ is the Planck constant. Therefore, electron scattering on surfaces can lead to intereference phenomena, if the electron wave length is of the order of the lattice constant. The de Broglie wave length of an electron, that is accelerated with a voltage $V_0$ is given by 
+\eq{\lambda= \frac{\SI{12.26}{\AA}}{\sqrt{V_0}} \; }{lV}
+and a typical eletron energy range from 50 to 500 eV corresponds to wavelengths between 0.5 and 2 $\AA$. Relativistic corrections have not to be taken into account in this energy range, as the ratio between velocity and speed of light for an electron accelerated with $V = \SI{500}{V}$ is given by
+\eq{\frac{v}{c}=\sqrt{1-\frac{1}{(\frac{eV}{mc^2}+1)^2}} =0.04 \; .}{} 
+and the relativistic correction given by the Lorentz factor $\gamma$ according to $\lambda_\text{rel.} = \frac{\lambda}{\gamma}$ is $\frac{1}{\gamma} = \sqrt{1-\frac{v^2}{c^2}}= 0.9992$. The acceleration for which relativistic effects would cause a deviation of $1\percent$ is given by
+\eq{E=(\gamma -1)mc^2= \left(\frac{1}{0.99}-1\right)mc^2=\SI{5160}{eV}\;. }{}
+
+\subsection{Constructive Interference for a surface scattering event}
+Just as the Bragg Condition for constructive interference and the more advanced Laue theory, that can also determine the intensities of the scattered waves in solid state physics, these concepts can be applied for surface scattering as well. Analogue to the Bragg condition, the condition for constructive interference can be derived from a simple geometrical consideration shown in figure \ref{bragg}. The length $a$ is given by
+\eq{a = |n \ve a_1 + m \ve a_2|\;, \qquad n,m \in \mathbb N \; , }{}
+where $\ve a_1$ and $\ve a_2$ are the lattice vectors of the surface layer.
+\bibliographystyle{unsrt}
+\bibliography{FPbib}
+
+\end{document}
