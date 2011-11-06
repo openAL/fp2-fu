@@ -3,6 +3,9 @@
 *.tmp
 *.o
 *.a
+*.bbl
+*.blg
+*.dvi
 *.out
 *.aux
 *.log
