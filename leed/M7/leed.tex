@@ -155,9 +155,9 @@ If the sample is unclean, it is likely, that the impurities will form a regular 
 \begin{figure}[!bthp]
         \begin{center}
         \begin{tabular}{l r}
-        		\includegraphics[width=0.2\linewidth]{img/superstructure.pdf}
+        		\includegraphics[width=0.2\linewidth]{pic/superstructure.pdf}
        	&
-       		\includegraphics[width=0.2\linewidth]{img/superstructure2.pdf}
+       		\includegraphics[width=0.2\linewidth]{pic/superstructure2.pdf}
 		  \end{tabular}
         \end{center}
         \caption{
@@ -171,8 +171,26 @@ If the sample is unclean, it is likely, that the impurities will form a regular 
 \subsection{Kinematic Approximation}
 
 \section{Experimental Set-Up and Measurement Procedures}
-As the electrons used for spectroscopy are likely to interact with all kind of materials, it is very useful to operate in high vacuum. This is also necessary in order to reduce the rate of adsorption of molecules, which lead to disturbance of the spectra to be measured. High or ultrahigh vacuum (UHV) can only be achieved by a series of pumps acting within different pressure ranges. The four types used in the experiment are listed in table \ref{tab:pump}.
+
+
 \subsection{Ultra High Vacuum (UHV)}
+As the electrons used for spectroscopy are likely to interact with all kind of materials, it is very useful to operate in high vacuum. This is also necessary in order to reduce the rate of adsorption of molecules, which lead to disturbance of the spectra to be measured. High or ultrahigh vacuum (UHV) can only be achieved by a series of pumps acting within different pressure ranges. The four types used in the experiment are listed in table \ref{tab:pump}.
+\begin{table}
+\centering
+\begin{tabular}{lr}
+\toprule
+pump & pressure range \\
+\midrule
+rotary vane pump & atm to $10^{-1}$ Pa \\
+turbo molecular pump &  $1$ Pa to $10^{-9}$ Pa \\
+ion getter pump  & $ 10^{-3}$ Pa to $10^{-9}$ Pa \\
+titan sublimation pump & $10$ Pa to $10^{-9}$ Pa \\
+\bottomrule
+\end{tabular}
+\caption{Different pumps and their pressure operating range.}
+\label{tab:pump}
+\end{table}
+
 \subsubsection{Rotary vane pump}
 The rotary vane pump is a simple mechanical pump, which consists of a cylinder connecting the vacuum cell and the outer space. In the cylinder a vane rotates and thereby shovels the gas to the outside. Springs ensure optimal contact between the vane and the cylinder walls. 
 
@@ -203,6 +221,23 @@ In a ion getter pump high voltage is used to emit electrons an accelerate them. 
 
 \subsubsection{Titan sublimation pump}
 In a titan sublimation pump, titan is sputtered to create a fresh layer of atoms, which can absorb gases via chemical binding (chemisorption). In principle it is also possible to pump noble gas, which are inert, through simply catching them by covering them with a layer of titan. 
+
+\subsection{Pressure Measurement}
+For very low pressures usual manometers can't be used, because their are by are not sensitive enough. A manometer used for very low pressure is the ionization manometer, which can measure pressures as low as $10^{-8}$ Pa. It operates by emitting electrons from a thermal kathode and accelerating them towards the annode. Thereby the electron ionize the rest gas molecules, which are absorbed by the kathode leading to an ionization current, that is proportional to the pressure, but depends on the type of gas, as not all gases respond to ionizing electrons in the same way. An ionization manometer always has to be gauged.
+
+\subsection{Preparation of the Probe}
+To detect a LEED pattern of a clean surface, it is necessary to remove adsorbed molecules. This can be done by ion sputtering, i.e. the surface is bombarded by ions typically argon ions and about one atom per argon ion is removed from the surface. After sputtering the surface is very rough, which would lead to disturbances in the diffraction pattern. It can be smoothened by tempering, i.e. by heating the probe. The additional thermal energy of the atoms leads to an increased probability of the atoms to leave their positions and move to the energetic optimal positions, which is a smooth surface.
+
+\subsection{Typical Set-Up}
+A typical experimental set-up for LEED is shown in figure \ref{fig:leed}. Usually the electrons are shot at the probe under normal angle and the back scattered electrons are detected on a spherical fluorescence screen. In front of the screen is a system of spherical grids deflecting the electrons. The first grid is grounded to prevent deflection of the scattered electrons, which could use to biased measurement data. To the second and third grid a voltage slightly smaller then the accelerating voltage is applied in order to potential barrier with finite width, that can't be passed by inelastically scattered electrons. The third grid is again grounded and the fluorescence screen is at a voltage accelerating the electrons which passed the 2nd and 3rd grid to the screen. On the screen the diffraction pattern can be viewed and via using a CCD camera, the intensities of the reflexes can also be analysed.
+
+\begin{figure}
+  \centering
+   	\includegraphics[width=0.3\linewidth]{pic/leed.pdf}
+
+ \caption{\small Schematic Description of an LEED experiment. The retarding grits are used to select only elastically scattered electrons}
+        \label{fig:leed}
+\end{figure}
 
 
 
