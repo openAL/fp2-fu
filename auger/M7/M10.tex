@@ -7,7 +7,7 @@
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{wrapfig}
-\usepackage{caption}
+%\usepackage{caption}
 
 
 
@@ -24,7 +24,7 @@
 \usepackage{amsfonts} % mathmatical fonts
 
 % caption indenting
-%\usepackage[format=plain,indention=0em,labelfont=bf,margin=1em]{caption} 
+\usepackage[format=plain,indention=0em,labelfont=bf,margin=1em]{caption} 
 \usepackage[protrusion=true,expansion=true]{microtype} % denser font, "-" behind line
 \usepackage{esint} % nicer double and triple integrals
 \usepackage{fancyhdr} % fancy headers
@@ -131,8 +131,6 @@ $ KL_{1}L_{1}$&$(^1S)$ & $1304.0$ \\
  \bottomrule
 
 \end{tabular}
-
-
 \caption{\small Theoretical energies \cite{paper} of KLL Auger-Transitions for Aluminum. $^\alpha$: Forbidden due to parity conservation. }
 \label{kll}
 \end{table}
@@ -246,7 +244,7 @@ The integrated version of this spectrum shows peaks corresponding to KLL auger e
 \FloatBarrier
 \begin{table}[!h]
 \centering
-\begin{tabular}{ccc}
+\begin{tabular}{cccc}
 \toprule
 O calibration & Al calibration & literature \\
 \midrule
@@ -298,31 +296,36 @@ As the energies of the bulk and surface plasmons are now determined, a proper an
 % TODO change to row-table?
 \begin{table}[!h]
 \centering
-\begin{tabular}{lcc}
+\begin{tabular}{lccc}
 \toprule
-transition & literature & measurement \\
+transition & literature & theory & measurement \\
 \midrule
-$^1P + B_1$ & 1326.1 & $(1327.3\pm 1.1)$  \\
+$^1P + B_1$ & 1326.1 & 1327.4 & $(1327.3\pm 1.1)$  \\
 \midrule
-$^1P$ 		& 1341.4 & $(1340.6\pm 1.1)$ \\
+$^1P$ 		& 1341.4 & 1342.3 & $(1340.6\pm 1.1)$ \\
 \midrule
-$^3P$ 		& 1357.2 & \multirow{2}{*}{$(1360.4\pm 1.2)$}  \\
-$^1D + B_2$ & 1362.6 & \\
+$^3P$ 		& 1357.2 & 1358.5 & \multirow{2}{*}{$(1360.4\pm 1.2)$}  \\
+$^1D + B_2$ & 1362.6 & 1361.9 & \\
 \midrule
-$^1D + B_1$ & 1377.9 & $(1376.3\pm 1.2)$ \\
+$^1D + B_1$ & 1377.9 & 1377.7 & $(1376.3\pm 1.2)$ \\
 \midrule
-$^1D$ 		& 1393.2 & \multirow{2}{*}{$(1390.4\pm 1.2)$}  \\
-$^1S$ 	   & 1387.2 & \\
+$^1D$ 		& 1393.2 & 1393.5 & \multirow{2}{*}{$(1390.4\pm 1.2)$}  \\
+$^1S$ 	   & 1387.2 & 1386.6 & \\
  \bottomrule
 \end{tabular}
+%\begin{tabular}{c|ccccccc}
+%transition & $^1P + B_1$ & $^1P$ & $^3P$ & $^1D + B_2$ & $^1D + B_1$ & $^1D$ & $^1S$ \\
+%literature & 1326.1 & 1341.4 & 1357.2 & 1362.6 & 1377.9 & 1393.2 & 1387.2 \\
+%theory	  & 1327.4 & 1342.3 & 1358.5 & 1361.9 & 1377.7 & 1393.5 & 1386.6 \\
+%measurement& $(1327.3\pm 1.1)$ & $(1340.6\pm 1.1)$ & \multicolumn{2}{c}{$(1360.4\pm 1.2)$} & $(1376.3\pm 1.2)$ & \multicolumn{2}{c}{$(1390.4\pm 1.2)$}
+%\end{tabular}
 
-\caption{\small Characteristic (corrected) energies of the KLL auger spectrum of aluminium, their according transition and the literature value from \cite{paper}. $+B_{1/2}$ denotes the change in energy due to the interaction with bulk plasmons. }
+\caption{\small Characteristic (corrected) energies of the KLL auger spectrum of aluminium, their according transition and the literature and theory values from \cite{paper}. $+B_{1/2}$ denotes the change in energy due to the interaction with bulk plasmons. }
 
 \label{A}
 \end{table}
 
 
-%TODO letters (a) (b)...
 \FloatBarrier
 \section{Summary and Discussion}
 An aluminium sample was analyzed in a high vacuum chamber with both AES and EELS. The differential Auger electron spectrum was in good agreement with the literature. As the positional offset of the sample was unknown though, it was necessary to recalibrate the spectroscope using one of the measured peaks itself.
