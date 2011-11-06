@@ -13,13 +13,22 @@
 
 % PAKETE
 \usepackage{siunitx}
-\usepackage{amsmath}
-\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{placeins}
 \usepackage{longtable}
 \usepackage{enumitem}
 \usepackage{bbm}
+
+\usepackage{amssymb} % math symbols
+\usepackage{amsmath} % ams
+\usepackage{amsfonts} % mathmatical fonts
+
+% caption indenting
+%\usepackage[format=plain,indention=0em,labelfont=bf,margin=1em]{caption} 
+\usepackage[protrusion=true,expansion=true]{microtype} % denser font, "-" behind line
+\usepackage{esint} % nicer double and triple integrals
+\usepackage{fancyhdr} % fancy headers
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black, filecolor=black, urlcolor=black]{hyperref}
 
 
 
@@ -58,10 +67,6 @@
 \clearpage
 
 
-
-%TODO protrution
-%TODO hyperref
-%TODO TODO
 
 \section{Introduction}
 Auger electron spectroscopy (AES) and electron energy loss (EEL) spectroscopy are techniques, which are surface sensitive due to the small penetration depth of the electrons. Therefore, these methods can be used to analyze the cleanliness of a surface or the emergence of surface layers through adsorption. Furthermore, the spectra of AES and EEL allow to acquire information about fundamental processes within atoms and solid states, such as Auger transitions and plasmon excitations.  
@@ -210,9 +215,9 @@ With the cleaned sample, the differential spectrum of aluminium has its most not
 
 This shift is expected, considering the poor alignment of the sample. A deviation from the perfect position $\Delta x$ will cause a streching of the form
 \eq{E' = \lambda (\Delta x) \cdot E,}{}
-where $E'$ is the measured and $E$ the actual energy of the electrons (cf. \cite{zangwill}). Assuming the deviation does not change significantly over the time of measurement, we can try to recalibrate our measurements with the known minima in the oxygen spectrum.
-%genauer ausführen womit verglichen und soweiter und wie genau jetzt hier
-The resulting values are consistent with the literature, but have a rather large margin of error. Using the last minimum of the Al spectrum to calibrate the spectroscope instead gives better values. While this does not allow to compare the absolut values, the relative spacing between the minima can still be compared and confirmed. Due to the significant improvement in accuracy this last calibration will be used throughout the rest of this work.
+where $E'$ is the measured and $E$ the actual energy of the electrons (cf. \cite{zangwill}). Assuming the deviation does not change significantly over the time of measurement, we can try to recalibrate our measurements with all three known minima in the oxygen spectrum. By comparison of the measured and the expected (cf. \cite{handbook}) minima a stretching factor of $\lambda=0.9918\pm 0.0027$ can be calculated. 
+
+The values that have been corrected with this factor are consistent with the literature, but have a large margin of error due to the rather large relative error margin of the literature values. Using the last minimum of the Al spectrum to calibrate the spectroscope in a similar way to $\lambda=0.99527\pm 0.00082$, results in better values. While this does not allow to compare the absolut values, the relative spacing between the minima can still be compared and confirmed. Due to the significant improvement in accuracy this last calibration will be used throughout the rest of this work.
 
 
 
@@ -229,9 +234,8 @@ The integrated version of this spectrum shows peaks corresponding to KLL auger e
 				\includegraphics[width=0.48\linewidth]{pic/augerSum.pdf}
         \end{tabular}
         \end{center}
-        \caption[(differential) detection rate at the Al specific energies]{
-        %TOTO fitted around minima/ fitted around maxima
-			\small All values obtained by fitting quadractic functions near the minima.
+        \caption{
+			\small All values obtained by fitting quadractic functions near the minima (a) or maxima (b).
 			\textbf{(a)} Measured differential detection rate of Al. Minima at $(1336.07\pm 0.30)\text{eV}$, $(1352.52\pm 0.20)\text{eV}$, $(1370.73\pm 0.32)\text{eV}$, $(1388.32\pm 0.16)\text{eV}$, $(1402.64\pm 0.14)\text{eV}$.
 			\textbf{(b)} Integrated version of (a) after substracting an estimated noise level of $~300$. The peaks are at $(1333.64\pm 0.64)\text{eV}$, $(1346.98\pm 0.03)\text{eV}$, $(1366.90\pm 0.05)\text{eV}$, $(1382.81\pm 0.04)\text{eV}$, $(1396.96\pm 0.08)\text{eV}$.
         }
@@ -264,13 +268,11 @@ $(1391.1\pm 3.6)$ & $(1396.0\pm 1.2)$ & 1396 \\
 \label{sec:plas}
 The most significant peaks in section \ref{sec:kll} already contained electrons that suffered plasmon loss. These characteristic losses can be measured with electron energy loss spectroscopy. A measurement with higher energy electrons (1keV) shows mainly the bulk plasmons, while a second measurement with weaker electrons (170eV) promises to show surface plasmons more clearly, due to the lower penetration depth.
 
-%TODO noch ein satz zu EEL? backscatter electrons ->
+In the measurements (see Fig \ref{fig:plas}), the most prominent peak is the on of the backscattered electrons. All preceding ones have suffered an increasing amount of plasmon loss and are thus expected at the energies $E=E_\text{backscatter}-B_n$, where $B_n$ is the energy of the $n$-th harmonic of the bulk plasmon. In the approximation of an harmonic oscillator we can write $B_n = n B_1$ and can thus use all measured peaks to increase the accuracy of our first harmonics energy.
 
-The first measurement (see Fig \ref{fig:plas}b) resulted in a (weighted) mean energy for the bulk plasmons of $B_1 = (15.31\pm 0.54)\text{eV}$. This result is consistent with the two bulk plasmons found in the 170eV measurement (see Fig \ref{fig:plas}a). The single peak in the second measurement corresponding to a surface plasmon results in $S_1 = (11.04\pm 0.20)\text{eV}$. 
-%TODO How bulk energy is seen in picutre b), i.e. cascade blabla.
-%TODO interpretation of fig a)
-%TODo evtl einfach tabelle mit peaks und wo sie herkommen
-%TODO paper \cite{paperplasmon} ziitieren/verlgeichn.
+The first measurement (see Fig \ref{fig:plas} right) resulted in a (weighted) mean energy for the bulk plasmons of $B_1 = (15.31\pm 0.54)\text{eV}$. This result is consistent with the two bulk plasmons found in the 170eV measurement (see Fig \ref{fig:plas} left). The single peak in the second measurement corresponding to a surface plasmon results in $S_1 = (11.04\pm 0.20)\text{eV}$. 
+
+Both energies are identical to the result of Massignon et al \cite{paperplasmon}  as well as the previously calculated value for the bulk plasmon (cf. \ref{sec:plasmonIntro}).
 
 \begin{figure}[!h]
         \begin{center}
