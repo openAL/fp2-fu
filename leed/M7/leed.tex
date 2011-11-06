@@ -20,6 +20,7 @@
 \usepackage{longtable}
 \usepackage{enumitem}
 \usepackage{bbm}
+\usepackage{sidecap}
 
 
 
@@ -60,10 +61,22 @@
 
 
 \section{Introduction}
+Low energy electron diffraction (LEED) is a spectroscopic technique used to analyze the surface structure of a substrate. Its surface sensitivity results from the relatively small mean-free path length of the electrons, which depends on their energy and is determined by the so called universal curve shown in figure \ref{fig:uni}. For electrons of an energy below 200 eV the mean free path is less then 10 $\AA$, which is in the same order of magnitude as typical lattice constants of metals. The principles of LEED can only be understood within the framework of the wave-matter dualism, as the electron diffraction results in wave-like interference phenomena.
+
+
+\begin{figure}
+  \centering
+   	\includegraphics[width=0.5\linewidth]{pic/meanfree.pdf}
+
+ \caption{\small Universal curve of solids \cite{zangwill}.  }
+        \label{fig:uni}
+\end{figure}
+\FloatBarrier
+
 \subsection{Matterwaves}
-Following the principle of the wave-matter dualism, de Broglie proposed in 1924, that any particle of momentum $p$ or mass $m$ and energy $E$ can be also described as a wave of wavelength 
+In 1924 de Broglie proposed, that any particle of momentum $p$ or mass $m$ and energy $E$ can be also described as a wave of wavelength 
 \eq{\lambda = \frac{h}{p} =\frac{h}{2mE} \;,}{lambda}
-where $h=4.135667516(91)\times 10^{-15} \text{eVs}$ is the Planck constant. Therefore, electron scattering on surfaces can lead to intereference phenomena, if the electron wave length is of the order of the lattice constant. The de Broglie wave length of an electron, that is accelerated with a voltage $V_0$ is given by 
+where $h=4.136\times 10^{-15} \text{eVs}$ is the Planck constant. Therefore, electron scattering on surfaces can lead to intereference phenomena, if the electron wave length is of the order of the lattice constant. The de Broglie wave length of an electron, that is accelerated with a voltage $V_0$ is given by 
 \eq{\lambda= \frac{\SI{12.26}{\AA}}{\sqrt{V_0}} \; }{lV}
 and a typical eletron energy range from 50 to 500 eV corresponds to wavelengths between 0.5 and 2 $\AA$. Relativistic corrections have not to be taken into account in this energy range, as the ratio between velocity and speed of light for an electron accelerated with $V = \SI{500}{V}$ is given by
 \eq{\frac{v}{c}=\sqrt{1-\frac{1}{(\frac{eV}{mc^2}+1)^2}} =0.04 \; .}{} 
@@ -71,23 +84,70 @@ and the relativistic correction given by the Lorentz factor $\gamma$ according t
 \eq{E=(\gamma -1)mc^2= \left(\frac{1}{0.99}-1\right)mc^2=\SI{5160}{eV}\;. }{}
 
 \subsection{Constructive Interference for a surface scattering event}
+
 Just as the Bragg Condition for constructive interference and the more advanced Laue theory, that can also determine the intensities of the scattered waves in solid state physics, these concepts can be applied for surface scattering as well. Analogue to the Bragg condition, the condition for constructive interference 
-\eq{n \lambda = a_{h,k} (\sin \varphi - \sin \varphi_0 ) \; \qquad n \in \mathbb N }{bragg}
-can be derived from a simple geometrical consideration shown in figure \ref{bragg}. The length $a$ is given by
+\eq{n \lambda = a_{h,k} (\sin \varphi - \sin \varphi_0 ) \;, \qquad n \in \mathbb N }{bragg}
+can be derived from a simple geometrical consideration shown in figure \ref{fig:bragg}. The length $a$ is given by
 \eq{a_{h,k} = |h \ve a_1 + k \ve a_2|\;, \qquad h,k \in \mathbb N \; , }{}
 where $\ve a_1$ and $\ve a_2$ are the lattice vectors of the surface layer.
+\begin{SCfigure}
+  \centering
+   	\includegraphics[width=0.5\linewidth]{pic/bragg.jpg}
+
+ \caption{ Bragg-Reflexion on a Surface -- $\varphi_0$: angle of incoming wave, $\varphi$: angle of scattered wave. The optical path difference of the two wave fronts is given by $\Delta s_2 - \Delta s_1$.}
+        \label{fig:bragg}
+\end{SCfigure}
+\FloatBarrier
 
 The scattering process can also be described by the usage of the reciprocal lattice vectors $\ve a_{1,2}^* \perp \ve a_{2,1}$, constructed via
-$a_{1,2}^*=\frac{1}{a_{1,2} \sin \gamma} $, $\gamma = \measuredangle \ve a_1, \ve a_2 $. The wave function of a plane wave with wave vector $\ve k_0$, that is scattered at all atom positions $\ve R_i$ back to the direction of $\ve k$ is given by
+$a_{1,2}^*=\frac{1}{a_{1,2} \sin \gamma} $, $\gamma = \measuredangle \ve a_1, \ve a_2 $. Therefore, consider a wave function of a plane wave with wave vector $\ve k_0$, that is scattered at all atom positions $\ve R_i$ back to the direction of $\ve k$ 
 \eq{\Psi \propto \sum_{i} f_i(\ve k_0, \ve k) e^{i(\ve k - \ve k_0) \cdot \ve R_i} \ ,}{}
 where $f_i$ are the atomic structure factors. As $\ve R_i=h \ve a_1 + k \ve a_2$, the intensity of the wave $|\Psi|^2$ scattered by a lattice of $H \cdot K$ lattice points can be written as
-\eq{I=|\Psi|^2 \propto |F|^2 \frac{\sin^2 \left( \tfrac 1 2 H \ve a_1 \cdot (\ve k - \ve k_0) \right)}{\sin^2 \left( \tfrac 1 2 \ve a_1 \cdot ( \ve k - \ve k_0 ) \right)} \cdot \frac{\sin^2 \left( \tfrac 1 2 K \ve a_2 \cdot (\ve k - \ve k_0) \right)} {\sin^2 \left( \tfrac 1 2 \ve a_2 \cdot ( \ve k - \ve k_0 ) \right)} \; , } {}
+\eq{I=|\Psi|^2 \propto |F|^2 \frac{\sin^2 \left( \tfrac 1 2 H \ve a_1 \cdot (\ve k - \ve k_0) \right)}{\sin^2 \left( \tfrac 1 2 \ve a_1 \cdot ( \ve k - \ve k_0 ) \right)} \cdot \frac{\sin^2 \left( \tfrac 1 2 K \ve a_2 \cdot (\ve k - \ve k_0) \right)} {\sin^2 \left( \tfrac 1 2 \ve a_2 \cdot ( \ve k - \ve k_0 ) \right)} \; , } {au}
 where F is the structure factor of a unit cell. Expression \Formel{au} becomes  maximal for the condition
-\eq{\ve a_1 \cdot (\ve k - \ve k_0) = h 2 \pi \qquad \vee \ve a_2 \cdot (\ve k - \ve k_0) = k 2 \pi \;.}{}
-Inserting the definition of the wave vector $\ve k=\frac{2\pi}{\lambda} \ve s$, where $s$ is pointing in the direction of the wave, the scalar products reduce to the condition
+\eq{\ve a_1 \cdot (\ve k - \ve k_0) = h 2 \pi \qquad \vee \qquad \ve a_2 \cdot (\ve k - \ve k_0) = k 2 \pi \;.}{}
+These two equations are fulfilled, whenever the vector $\ve k - \ve k_0$ is a reciprocal lattice vector
+\eq{\ve g = 2 \pi (h \ve a_1^{*} + k \ve a_2^*) \; .}{}
+The Laue conditions \Formel{au} can therefore be replaced by the condition
+\eq{\ve k - \ve k_0 =\ve g_{h,k} \;.}{muh}
+For an elastic scattering event, the amount of the wave-vector is conserved, i.e. $|\ve k|=|\ve k_0|$ and condition \Formel{muh} reduces to
+\eq{2\ve k \cdot \ve g_{h,k} = g_{h,k}^2 \; .}{}
+In three dimension, it is easy to show, that inserting the definition of the wave vector $\ve k=\frac{2\pi}{\lambda} \ve s$ and using the fact that $|\ve g_{h,k,l}| = 1/a_{h,k,l}$, we can rederive the Bragg condition. 
+
+For two dimension another simple condition can be derived by multiplying the two Laue conditions \Formel{au} by $h$ and $k$, respectively and add them. Inserting the definition of the wave vector $\ve k=\frac{2\pi}{\lambda} \ve s$ yields
 \eq{(\sin \varphi - \sin \varphi_0) |h \ve a_1 + k \ve a_2| = (h + k)^2 \lambda \; .} {}
-This corresponds to the Bragg condition \Formel{bragg} and can be simplifies for perpendicular lattice vectors of the same length $a$ and a normal incoming wave ($\sin \varphi_0  =0$)to
-\eq{\sin \varphi =\frac{\lambda}{a} \sqrt{h^2+k^2} \; .}{}
+This corresponds to a modified Bragg condition and can be simplified for perpendicular lattice vectors of the same length $a$ and a normal incoming wave, i. e. $\sin \varphi_0  =0$ to
+\eq{\sin \varphi =\frac{\lambda}{a} \sqrt{h^2+k^2} \; .}{nm}
+
+\subsection{Example for scattering laws in LEED}
+Assuming a certain reflex characterized by $(h,k)$ of a copper surface, that has a quadratic lattice structure determined by $|\ve a_1|=|\ve a_2|=a=2.55 \AA$, shall be detected at an opening angle of $\varphi = 52 \degree$, what is the energy or the acceleration voltage of the scattering electron, that will create such a reflex?
+
+Using formula \Formel{nm} and the relation between the de Broglie wave length and the energy of an electron \Formel{lV}, we obtain
+\eq{ V =\frac{(12.26 \AA)^2}{a^2 \sin^2 \varphi} (h^2+k^2) = 37.23 (h^2 +k^2) \; .}{}
+\FloatBarrier
+\begin{table}[!h]
+\centering
+\begin{tabular}{rr}
+\toprule
+Reflex $h$,$k$ & Energy (eV) \\
+\midrule
+1,0 & 37.23 \\
+1,1 & 74.45 \\
+2,2 & 297.80 \\
+ \bottomrule
+\end{tabular}
+\caption{\small Values of electron energies for 3 specific reflexes at position $\varphi =52\degree$ calculated for a copper surface. }
+\label{kll}
+\end{table}
+
+\begin{figure}
+  \centering
+   	\includegraphics[width=0.7\linewidth]{pic/52.jpeg}
+
+ \caption{\small Expected diffraction patterns for electron energies listed in table \ref{kll}.}
+        \label{fig:bragg}
+\end{figure}
+\FloatBarrier
 
 
 \subsection{Superstructures}
@@ -109,6 +169,41 @@ If the sample is unclean, it is likely, that the impurities will form a regular 
 
 
 \subsection{Kinematic Approximation}
+
+\section{Experimental Set-Up and Measurement Procedures}
+As the electrons used for spectroscopy are likely to interact with all kind of materials, it is very useful to operate in high vacuum. This is also necessary in order to reduce the rate of adsorption of molecules, which lead to disturbance of the spectra to be measured. High or ultrahigh vacuum (UHV) can only be achieved by a series of pumps acting within different pressure ranges. The four types used in the experiment are listed in table \ref{tab:pump}.
+\subsection{Ultra High Vacuum (UHV)}
+\subsubsection{Rotary vane pump}
+The rotary vane pump is a simple mechanical pump, which consists of a cylinder connecting the vacuum cell and the outer space. In the cylinder a vane rotates and thereby shovels the gas to the outside. Springs ensure optimal contact between the vane and the cylinder walls. 
+
+\begin{figure}
+  \centering
+   	\includegraphics[width=0.3\linewidth]{pic/rot.png}
+
+ \caption{\small Rotary vane pump. 1:pump housing, 2: rotor, 3: vanes, 4: spring}
+        \label{fig:rot}
+\end{figure}
+
+
+
+\subsubsection{Turbomolecular pump}
+The main feature of a turbomolecular are rotating blades (rotors), which hit the molecules very often per unit time, thereby enforcing a velocity distribution within the gas that is not isotropic, but a certain direction is preferred. Within the pump there are other static blades (stators), which act as a kind of filter to the velocity of the molecules in such a way, that molecules with the velocity, that is predominantly created by the rotors, can pass through with a higher probability. These filters act only in one-way, so that the molecules stay on the other side as long as the asymmetric velocity distribution is maintained. 
+\begin{figure}
+  \centering
+  
+   	\includegraphics[width=0.3\linewidth]{pic/tu.jpg}
+
+ \caption{\small Schematic description of a turbomolecular pump}
+        \label{fig:turbo}
+\end{figure}
+
+
+\subsubsection{Ion getter pump}
+In a ion getter pump high voltage is used to emit electrons an accelerate them. The electrons ionize molecules of the rest gas, which are then accelerated towards the surface, where they bind chemically. To lengthen the path of the electrons within the gas, a magnetic field is used to deflect the electrons thus creating a spiral like path. If a ion hits the electrode, several atoms are expelled and can build up a fresh layer on the other electrode. The material used for the electrodes is usually titan and it is often combined with a titan sublimation pump.
+
+\subsubsection{Titan sublimation pump}
+In a titan sublimation pump, titan is sputtered to create a fresh layer of atoms, which can absorb gases via chemical binding (chemisorption). In principle it is also possible to pump noble gas, which are inert, through simply catching them by covering them with a layer of titan. 
+
 
 
  \bibliographystyle{unsrt}
