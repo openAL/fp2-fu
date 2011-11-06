@@ -1,0 +1,377 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     10570,        367]
+NotebookOptionsPosition[      8530,        290]
+NotebookOutlinePosition[      8868,        305]
+CellTagsIndexPosition[      8825,        302]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"<<", "PhysicalConstants`"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PlanckConstant", "/", 
+  RowBox[{"Sqrt", "[", 
+   RowBox[{"2", "*", "ElectronMass", "*", "ElectronCharge", "*", "V"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.5294084048433437`*^9, 3.5294084368936768`*^9}, {
+  3.529408508613907*^9, 3.529408511190731*^9}, {3.529408586035577*^9, 
+  3.5294086284371223`*^9}, {3.529408706471113*^9, 3.529408716719262*^9}, {
+  3.529408751866309*^9, 3.5294087523445673`*^9}, {3.529409056538829*^9, 
+  3.529409056896937*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"1.2264259066039997`*^-9", " ", "Joule", " ", "Second"}], 
+  SqrtBox[
+   RowBox[{"Coulomb", " ", "Kilogram", " ", "V"}]]]], "Output",
+ CellChangeTimes->{{3.529408410234902*^9, 3.529408437955216*^9}, 
+   3.529408511656232*^9, 3.529408595224184*^9, 3.5294086288303328`*^9, 
+   3.529408717113195*^9, 3.529408753079748*^9, {3.529409048144594*^9, 
+   3.5294090574813004`*^9}}]
+}, Open  ]],
+
+Cell[BoxData["ElectronVolt"], "Input",
+ CellChangeTimes->{{3.529408492000177*^9, 3.529408494806101*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Convert", "[", 
+  RowBox[{
+   RowBox[{"1.2264259066039997`*^-9", " ", "Joule"}], " ", ",", 
+   "ElectronVolt"}], "]"}]], "Input",
+ CellChangeTimes->{{3.529408669923511*^9, 3.529408693703421*^9}, {
+  3.5294088674290743`*^9, 3.529408868476214*^9}}],
+
+Cell[BoxData[
+ RowBox[{"7.654749127547268`*^9", " ", "ElectronVolt"}]], "Output",
+ CellChangeTimes->{{3.5294086787991543`*^9, 3.529408694189529*^9}, 
+   3.5294088691752853`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+  "1.2264259066039997`*^-9", " ", "6.241509647120417`*^18", " ", 
+   "ElectronVolt", " ", "Second"}], 
+  SqrtBox[
+   RowBox[{"Coulomb", " ", "Kilogram", " ", "V"}]]]], "Input",
+ CellChangeTimes->{3.529408725957184*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"7.654749127547268`*^9", " ", "ElectronVolt", " ", "Second"}], 
+  SqrtBox[
+   RowBox[{"Coulomb", " ", "Kilogram", " ", "V", " ", "ElectronVolt"}]]]], \
+"Input",
+ CellChangeTimes->{{3.529408778980068*^9, 3.5294087790360413`*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"7.654749127547268`*^9", " ", "ElectronVolt", " ", "Second"}], 
+  SqrtBox[
+   RowBox[{
+   "Coulomb", " ", "ElectronVolt", " ", "Kilogram", " ", "V"}]]]], "Output",
+ CellChangeTimes->{3.529408780082798*^9}]
+}, Open  ]],
+
+Cell[BoxData["PlanckConstant"], "Input",
+ CellChangeTimes->{{3.529408809672449*^9, 3.5294088138235483`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PlanckConstant", "/", 
+  RowBox[{"Sqrt", "[", 
+   RowBox[{"2", "*", "ElectronMass", "*", "ElectronCharge"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.529408821974481*^9, 3.5294088221247187`*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"1.2264259066039997`*^-9", " ", "Joule", " ", "Second"}], 
+  SqrtBox[
+   RowBox[{"Coulomb", " ", "Kilogram"}]]]], "Output",
+ CellChangeTimes->{3.529408822469458*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Convert", "[", 
+  RowBox[{
+   RowBox[{"Sqrt", "[", 
+    RowBox[{"2", "*", "500", "*", 
+     RowBox[{"ElectronVolt", "/", "ElectronMass"}]}], "]"}], ",", 
+   RowBox[{"Meter", "/", "Second"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.529409861682259*^9, 3.5294098865895033`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"v", "=", 
+  FractionBox[
+   RowBox[{"1.3262051685016075`*^7", " ", "Meter"}], "Second"]}]], "Input",
+ CellChangeTimes->{{3.529410267776758*^9, 3.5294102681554117`*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"1.3262051685016075`*^7", " ", "Meter"}], "Second"]], "Output",
+ CellChangeTimes->{3.5294102690307493`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "-", 
+  RowBox[{
+   RowBox[{"v", "^", "2"}], "/", 
+   RowBox[{"SpeedOfLight", "^", "2"}]}]}]], "Input",
+ CellChangeTimes->{{3.529410217422476*^9, 3.529410219560904*^9}, {
+  3.529410256239102*^9, 3.52941026443307*^9}}],
+
+Cell[BoxData["0.998043048662671`"], "Output",
+ CellChangeTimes->{3.529410271959312*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"12.26", "/", 
+  RowBox[{"Sqrt", "[", "500", "]"}]}]], "Input",
+ CellChangeTimes->{{3.5294108209227133`*^9, 3.529410838787562*^9}}],
+
+Cell[BoxData["0.5482838680829484`"], "Output",
+ CellChangeTimes->{{3.529410830593308*^9, 3.529410839289723*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"a", "=", 
+  RowBox[{"500", "*", 
+   RowBox[{
+    RowBox[{"Convert", "[", 
+     RowBox[{"ElectronVolt", ",", "Joule"}], "]"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"ElectronMass", "*", 
+      RowBox[{"SpeedOfLight", "^", "2"}]}], ")"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.529411899096662*^9, 3.529412037397689*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"0.000978475668664499`", " ", "Joule", " ", 
+   SuperscriptBox["Second", "2"]}], 
+  RowBox[{"Kilogram", " ", 
+   SuperscriptBox["Meter", "2"]}]]], "Output",
+ CellChangeTimes->{{3.529411919005426*^9, 3.529411938550345*^9}, 
+   3.529411984727087*^9, {3.529412015948732*^9, 3.52941203777741*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"a", "=", "0.000978475668664499`"}]], "Input",
+ CellChangeTimes->{{3.529412060216357*^9, 3.5294120607989473`*^9}}],
+
+Cell[BoxData["0.000978475668664499`"], "Output",
+ CellChangeTimes->{3.5294120613743773`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sqrt", "[", 
+  RowBox[{"1", "-", 
+   RowBox[{"1", "/", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"a", "+", "1"}], ")"}], "^", "2"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.529411925975554*^9, 3.5294119438515873`*^9}, {
+  3.529412109986195*^9, 3.529412110553244*^9}, {3.5294137956835938`*^9, 
+  3.529413808626566*^9}}],
+
+Cell[BoxData["0.04420500917403678`"], "Output",
+ CellChangeTimes->{3.529411944307192*^9, 3.529412064070208*^9, 
+  3.52941211177577*^9, 3.529413809564151*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Convert", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"1", "/", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{"1", "-", 
+         RowBox[{"0.01", "^", "2"}]}], "]"}]}], "-", "1"}], ")"}], "*", 
+    "ElectronMass", "*", 
+    RowBox[{"SpeedOfLight", "^", "2"}]}], ",", "ElectronVolt"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.529413387892056*^9, 3.529413409851953*^9}, {
+   3.529413442126029*^9, 3.529413460222245*^9}, 3.529413640023411*^9}],
+
+Cell[BoxData[
+ RowBox[{"25.551861898037583`", " ", "ElectronVolt"}]], "Output",
+ CellChangeTimes->{
+  3.5294134105607224`*^9, {3.529413443303925*^9, 3.529413460758934*^9}, 
+   3.529413643032948*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sqrt", "[", 
+  RowBox[{"1", "-", 
+   RowBox[{"0.04", "^", "2"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.529413854481195*^9, 3.5294138637807093`*^9}}],
+
+Cell[BoxData["0.9991996797437437`"], "Output",
+ CellChangeTimes->{3.529413864473246*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Convert", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"1", "/", "0.99"}], "-", "1"}], ")"}], "*", "ElectronMass", "*", 
+    RowBox[{"SpeedOfLight", "^", "2"}]}], ",", "ElectronVolt"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.5294139207721252`*^9, 3.529413943472343*^9}}],
+
+Cell[BoxData[
+ RowBox[{"5161.605149976201`", " ", "ElectronVolt"}]], "Output",
+ CellChangeTimes->{{3.529413934318392*^9, 3.529413943866805*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"12.26", "/", 
+  RowBox[{"Sqrt", "[", "50", "]"}]}]], "Input",
+ CellChangeTimes->{{3.5294144181938667`*^9, 3.529414434374804*^9}}],
+
+Cell[BoxData["1.7338258274694143`"], "Output",
+ CellChangeTimes->{3.529414434873166*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"12.26", "/", 
+  RowBox[{"Sqrt", "[", "500", "]"}]}]], "Input",
+ CellChangeTimes->{{3.529414435901745*^9, 3.529414445186838*^9}}],
+
+Cell[BoxData["0.5482838680829484`"], "Output",
+ CellChangeTimes->{3.529414445572332*^9}]
+}, Open  ]]
+},
+WindowSize->{740, 829},
+WindowMargins->{{Automatic, -152}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Linux x86 (64-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 62, 1, 30, "Input"],
+Cell[CellGroupData[{
+Cell[644, 25, 481, 9, 30, "Input"],
+Cell[1128, 36, 409, 8, 55, "Output"]
+}, Open  ]],
+Cell[1552, 47, 104, 1, 30, "Input"],
+Cell[CellGroupData[{
+Cell[1681, 52, 270, 6, 30, "Input"],
+Cell[1954, 60, 177, 3, 30, "Output"]
+}, Open  ]],
+Cell[2146, 66, 257, 7, 54, "Input"],
+Cell[CellGroupData[{
+Cell[2428, 77, 266, 6, 54, InheritFromParent],
+Cell[2697, 85, 243, 6, 55, "Output"]
+}, Open  ]],
+Cell[2955, 94, 108, 1, 30, "Input"],
+Cell[CellGroupData[{
+Cell[3088, 99, 223, 5, 30, "Input"],
+Cell[3314, 106, 203, 5, 55, "Output"]
+}, Open  ]],
+Cell[3532, 114, 301, 7, 30, "Input"],
+Cell[CellGroupData[{
+Cell[3858, 125, 192, 4, 47, InheritFromParent],
+Cell[4053, 131, 145, 3, 50, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4235, 139, 245, 6, 30, "Input"],
+Cell[4483, 147, 87, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4607, 153, 154, 3, 30, "Input"],
+Cell[4764, 158, 112, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4913, 164, 341, 9, 30, "Input"],
+Cell[5257, 175, 331, 7, 52, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5625, 187, 137, 2, 30, "Input"],
+Cell[5765, 191, 92, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5894, 197, 350, 9, 30, "Input"],
+Cell[6247, 208, 157, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6441, 215, 497, 14, 50, "Input"],
+Cell[6941, 231, 198, 4, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7176, 240, 175, 4, 30, "Input"],
+Cell[7354, 246, 88, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7479, 252, 327, 9, 30, "Input"],
+Cell[7809, 263, 144, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7990, 270, 153, 3, 30, "Input"],
+Cell[8146, 275, 88, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8271, 281, 152, 3, 30, "Input"],
+Cell[8426, 286, 88, 1, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
