@@ -28,7 +28,7 @@
 \usepackage[protrusion=true,expansion=true]{microtype} % denser font, "-" behind line
 \usepackage{esint} % nicer double and triple integrals
 \usepackage{fancyhdr} % fancy headers
-\usepackage[colorlinks=true,linkcolor=black,citecolor=black, filecolor=black, urlcolor=black]{hyperref}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,filecolor=black,urlcolor=black]{hyperref}
 
 
 
@@ -54,6 +54,9 @@
 \newcommand{\TabelleI}[1]{\textsl{(Tabelle \ref{#1})}}
 \newcommand{\Formel}[1]{(\ref{#1})}
 \renewcommand{\d}{\mathrm{d}}
+\newcommand{\ve}[1]{\mathbf{ #1} }
+
+
 
 \title{Ma 10: Auger- and Electron Energy Loss Spectroscopy}
 \subtitle{Tutor: L. Bogner}
@@ -71,7 +74,7 @@
 \section{Introduction}
 Auger electron spectroscopy (AES) and electron energy loss (EEL) spectroscopy are techniques, which are surface sensitive due to the small penetration depth of the electrons. Therefore, these methods can be used to analyze the cleanliness of a surface or the emergence of surface layers through adsorption. Furthermore, the spectra of AES and EEL allow to acquire information about fundamental processes within atoms and solid states, such as Auger transitions and plasmon excitations.  
 
-In this experiment an aluminum substrate will be analyzed by AES to detect impurities mainly due to oxygen adsorption. The probe will be cleaned by filing and the Auger spectrum of pure aluminum will be measured. The electron energy loss (eel) method will be used to detect the excitation of surface and bulk plasmons.
+In this experiment an aluminum substrate will be analyzed by AES to detect impurities mainly due to oxygen adsorption. The probe will be cleaned by filing and the Auger spectrum of pure aluminum will be measured. The electron energy loss (EEL) method will be used to detect the excitation of surface and bulk plasmons.
 
 
 \subsection{Electron Mean Free Path}
@@ -85,7 +88,9 @@ As the mean free path of electrons depends characteristically on the energy of t
 
 \subsection{The Auger Process}
 If by any excitation an electron is emitted from the K level of an atom, an electron from a higher level transits to the level. Thereby an x-ray photon can emitted or the energy of the transition can be passed on to a third electron, which is thereby ionized. The latter process is called Auger process.
-\subsubsection*{Nomenclature}
+
+
+\subsubsection*{Nomenclature of Auger Transitions}
 The most commonly used nomenclature for the Auger electron spectroscopy is based on the quantum number $n$ (K for $n=1$, L for $n=2$...), followed by an index to denote the different possible states for this $n$ (in the order of increasing energy). To fully describe the Auger electron, all three participating states have to be mentioned in this way. 
 
 Alternatively it is possible to simply note the electron configuration at the end of the auger process. In this way $2s^02p^6$ corresponds to $KL_1L_1$ and so on.
@@ -102,9 +107,19 @@ where $C(LL',T)$ stems from the coupling of the two holes in $LL'$, $T$ represen
 
 These formulas hold for free atoms. For an electron, that is emitted from the valence band of a solid the work-function, which gives the minimum energy needed to remove an electron from a solid to the solid surface, has to be taken into account.
 
+\subsection{Spin-Orbit Coupling}
+The possible Auger transitions and their energies depend on the type of spin-orbit coupling of the atom. The energy resulting from the spin-orbit coupling is determined by two additional terms in the Hamilton operator $\hat H_{ss}$ describing the spin-spin-interaction and $\hat H_{sl}$ describing the spin-orbit interaction. Depending on the magnitude of the eigenvalues of these operators, perturbation theory is applied for the operator yielding smaller energies. This leads to two different phenomena referred to as $jj$ and $LS$ or Russel-Sounders coupling.
+\subsubsection{$jj$ Coupling}
+For weak spin-spin coupling, the angular momentum $\ve l$ and spin $\ve s$ couple for every single atom yielding a total angular momentum per electron denoted by $\ve j = \ve l + \ve s$. The single electron $\ve j$ then couple to a total angular momentum of all the electrons $\ve J=\sum \ve j_i$. This coupling usually occurs for atoms with proton numbers larger then .
+\subsection{$LS$ Coupling}
+For atoms with a proton number smaller than 30, the spin-spin coupling is stronger then the spin-orbit coupling and the electronic angular momenta $\ve l$ couple to a total angular momentum $\ve L =\sum l_i$, while the spins couple together forming a total spin $\ve S = \sum s\ve s_i$. The state of the atom can then be described by the quantum numbers $L$ and $S$.
 
-\subsubsection*{Expected Transitions}
-For aluminum the ionization energy of the K-level is about \SI{1,6}{keV}. Therefore, the typical energy of exciting electrons up to \SI{3}{keV} is sufficient to excite the Auger KLL-transitions, which are the transitions of highest energy. These have an energy range from approximately \SI{1,3}{keV} to \SI{1,4}{keV} and are listed in table \ref{kll}. The LMM transition is also possible and its energy is around \SI{70}{eV} with again a multiplet splitting.
+
+\subsection{Expected Transitions}
+For $LS$ and for $jj$ coupling the $KLL$ transitions split into 5 different transitions, but in the cases, where neither $jj$ nor $LS$ coupling is a valid approximation up to 9 different transitions can be observed. For aluminum, which has a low proton number $Z=13$ the $LS$ coupling is a very well approximation.
+
+
+Its ionization energy of the K-level is about \SI{1,6}{keV}. Therefore, the typical energy of exciting electrons up to \SI{3}{keV} is sufficient to excite the Auger KLL-transitions, which are the transitions of highest energy. These have an energy range from approximately \SI{1,3}{keV} to \SI{1,4}{keV} and are listed in table \ref{kll}. The LMM transition is also possible and its energy is around \SI{70}{eV} with again a multiplet splitting.
 
 %\begin{figure}[htbp]
 %\centering
@@ -194,7 +209,7 @@ Therefore, the signal-to-noise relation can be significantly improved, as the co
 
 \section{Analysis}
 \subsection{Oxidization}
-Due to the imperfect vacuum in the experimentation chamber, the Al is exposed to oxygen all the time. At the beginning of the measurements this shows as a significant buildup of oxygen atoms at the surface of the sample (see Figure \ref{fig:putz}a). Even though it can be removed very easily mechanically (Fig \ref{fig:putz}b), the constant presence of oxygen causes new oxidation. In the time of about 2 hours at $4.4 \cdot 10^{-8} \text{torr} \approx 317 \text{L}$ the contamination had already reached more than $50\%$ of the equilibrium level (Fig\ref{fig:putz}c).
+Due to the imperfect vacuum in the experimentation chamber, the Al is exposed to oxygen all the time. At the beginning of the measurements this shows as a significant buildup of oxygen atoms at the surface of the sample (see Figure \ref{fig:putz}a). Even though it can be removed very easily mechanically (Fig \ref{fig:putz}b), the constant presence of oxygen causes new oxidation. In the time of about 2 hours at $4.4 \cdot 10^{-8} \text{torr} \approx 317 \text{L}$(Langmuir) the contamination had already reached more than $50\%$ of the equilibrium level (Fig\ref{fig:putz}c).
 \begin{figure}[!h]
         \begin{center}
         \begin{tabular}{l c r}
