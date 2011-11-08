@@ -1,3 +1,5 @@
+%TODO ewalds sphere, kohärenz->resolution
+
 \documentclass[a4paper]{scrartcl}
 
 \usepackage[utf8]{inputenc}
@@ -92,7 +94,7 @@ and the relativistic correction given by the Lorentz factor $\gamma$ according t
 
 \subsection{Constructive Interference for a surface scattering event}
 
-Just as the Bragg Condition for constructive interference and the more advanced Laue theory, that can also determine the intensities of the scattered waves in solid state physics, these concepts can be applied for surface scattering as well. Analogue to the Bragg condition, the condition for constructive interference 
+Just as the Bragg Condition for constructive interference and the more advanced Laue theory are true for solid state physics these concepts can be applied to surface scattering as well. Analogue to the Bragg condition, the condition for constructive interference 
 \eq{n \lambda = a_{h,k} (\sin \varphi - \sin \varphi_0 ) \;, \qquad n \in \mathbb N }{bragg}
 can be derived from a simple geometrical consideration shown in figure \ref{fig:bragg}. The length $a$ is given by
 \eq{a_{h,k} = |h \ve a_1 + k \ve a_2|\;, \qquad h,k \in \mathbb N \; , }{}
@@ -117,7 +119,14 @@ These two equations are fulfilled, whenever the vector $\ve k - \ve k_0$ is a re
 \eq{\ve g = 2 \pi (h \ve a_1^{*} + k \ve a_2^*) \; .}{}
 The Laue conditions \Formel{au} can therefore be replaced by the condition
 \eq{\ve k - \ve k_0 =\ve g_{h,k} \;.}{muh}
-For an elastic scattering event, the amount of the wave-vector is conserved, i.e. $|\ve k|=|\ve k_0|$ and condition \Formel{muh} reduces to
+Grafically this condition can be represented by an ewalds sphere as seen in figure \ref{fig:ewald}.
+\begin{figure}
+  \centering
+   	\includegraphics[width=0.5\linewidth]{pic/ewald.pdf}
+ 		\caption{ \small The ewalds sphere for a two dimensional quadratic lattice.  } %TODO beschreiben was k,k_0 und G sind.
+      \label{fig:ewald}
+\end{figure}
+For an elastic scattering event, the absolute value of the wave-vector is conserved, i.e. $|\ve k|=|\ve k_0|$ and condition \Formel{muh} reduces to
 \eq{2\ve k \cdot \ve g_{h,k} = g_{h,k}^2 \; .}{}
 In three dimension, it is easy to show, that inserting the definition of the wave vector $\ve k=\frac{2\pi}{\lambda} \ve s$ and using the fact that $|\ve g_{h,k,l}| = 1/a_{h,k,l}$, we can rederive the Bragg condition. 
 
@@ -175,14 +184,6 @@ If the sample is unclean, it is likely, that the impurities will form a regular 
 \end{figure}
 
 
-\subsection{Sample Preparation}
-To reduce the amount of impurities on the surface of the sample, several methods of cleaning are used. Apart from the purely mechanical removal by filing of the sample, sputtering is among the most commonly used. 
-
-In sputtering, atoms of inert gases are accelerated towards the sample. Due to the kinetic energy surface atoms are blasted away leaving behind only the bulk of pure sample atoms.
-
-As this is a rather random process, the surface is most likely very uneven after this process. To correct this, the sample is heated up to allow the atoms to reposition and form a smoother surface (tempering).
-
-
 \subsection{Kinematic Approximation}
 Disregarding the possible multiple scatterings of the electrons (the so called kinematic approximation) the reflection condition is the simple Bragg condition. Constructive interference occurs for length differences of $\Delta s = n\lambda$. Regarding only one a single beam (e.g. the (0,0) beam), the length difference is given by the lattice constants while the wavelength $\lambda$ is still variable (depending on the energy $V$). Measuring the intensity of this beam in dependence of the energy yields peaks whenever the difraction condition is met.
 
@@ -195,16 +196,15 @@ where $d$ is the lattice constant.
 
 \section{Experimental Set-Up and Measurement Procedures}
 
-
 \subsection{Ultra High Vacuum (UHV)}
-As the electrons used for spectroscopy are likely to interact with all kind of materials, it is very useful to operate in high vacuum. This is also necessary in order to reduce the rate of adsorption of molecules, which lead to disturbance of the spectra to be measured. High or ultrahigh vacuum (UHV) can only be achieved by a series of pumps acting within different pressure ranges. The four types used in the experiment are listed in table \ref{tab:pump}.
+As the electrons used for spectroscopy easily interact with all kind of materials, it is very useful to operate in high vacuum. This is also necessary in order to reduce the rate of adsorption of molecules, which lead to disturbance of the measured spectra. (Ultra) high  vacuum (UHV) can only be achieved by a series of pumps acting within different pressure ranges. The four types used in the experiment are listed in table \ref{tab:pump}.
 \begin{table}
 \centering
 \begin{tabular}{lr}
 \toprule
 pump & pressure range \\
 \midrule
-rotary vane pump & atm to $10^{-1}$ Pa \\
+rotary vane pump & atm to $10^{-1}$ Pa \\ % todo atm -> Pa?
 turbo molecular pump &  $1$ Pa to $10^{-9}$ Pa \\
 ion getter pump  & $ 10^{-3}$ Pa to $10^{-9}$ Pa \\
 titan sublimation pump & $10$ Pa to $10^{-9}$ Pa \\
@@ -228,7 +228,7 @@ The rotary vane pump is a simple mechanical pump, which consists of a cylinder c
 
 
 \subsubsection{Turbomolecular pump}
-The main feature of a turbomolecular are rotating blades (rotors), which hit the molecules very often per unit time, thereby enforcing a velocity distribution within the gas that is not isotropic, but a certain direction is preferred. Within the pump there are other static blades (stators), which act as a kind of filter to the velocity of the molecules in such a way, that molecules with the velocity, that is predominantly created by the rotors, can pass through with a higher probability. These filters act only in one-way, so that the molecules stay on the other side as long as the asymmetric velocity distribution is maintained. 
+The main features of a turbomolecular pump are the rotating blades (rotors), hitting the molecules very often per unit time, thereby enforcing a velocity distribution within the gas that is not isotropic, but a certain direction is preferred. Within the pump there are other static blades (stators), which act as a kind of filter to the velocity of the molecules in such a way, that molecules with the velocity, that is predominantly created by the rotors, can pass through with a higher probability. These filters act only in one-way, so that the molecules stay on the other side as long as the asymmetric velocity distribution is maintained. 
 \begin{figure}
   \centering
   
@@ -248,8 +248,12 @@ In a titan sublimation pump, titan is sputtered to create a fresh layer of atoms
 \subsection{Pressure Measurement}
 For very low pressures usual manometers can't be used, because their are by are not sensitive enough. A manometer used for very low pressure is the ionization manometer, which can measure pressures as low as $10^{-8}$ Pa. It operates by emitting electrons from a thermal kathode and accelerating them towards the annode. Thereby the electron ionize the rest gas molecules, which are absorbed by the kathode leading to an ionization current, that is proportional to the pressure, but depends on the type of gas, as not all gases respond to ionizing electrons in the same way. An ionization manometer always has to be gauged.
 
-\subsection{Preparation of the Probe}
-To detect a LEED pattern of a clean surface, it is necessary to remove adsorbed molecules. This can be done by ion sputtering, i.e. the surface is bombarded by ions typically argon ions and about one atom per argon ion is removed from the surface. After sputtering the surface is very rough, which would lead to disturbances in the diffraction pattern. It can be smoothened by tempering, i.e. by heating the probe. The additional thermal energy of the atoms leads to an increased probability of the atoms to leave their positions and move to the energetic optimal positions, which is a smooth surface.
+\subsection{Sample Preparation}
+To reduce the amount of impurities on the surface of the sample, several methods of cleaning are used. Apart from the purely mechanical removal by filing of the sample, sputtering is among the most commonly used. 
+
+In sputtering, atoms of inert gases are accelerated towards the sample. Due to the kinetic energy surface atoms are blasted away leaving behind only the bulk of pure sample atoms.
+
+As this is a rather random process, the surface is most likely very uneven after this process. To correct this, the sample is heated up to allow the atoms to reposition and form a smoother surface (tempering).
 
 \subsection{Typical Set-Up}
 A typical experimental set-up for LEED is shown in figure \ref{fig:leed}. Usually the electrons are shot at the probe under normal angle and the back scattered electrons are detected on a spherical fluorescence screen. In front of the screen is a system of spherical grids deflecting the electrons. The first grid is grounded to prevent deflection of the scattered electrons, which could use to biased measurement data. To the second and third grid a voltage slightly smaller then the accelerating voltage is applied in order to potential barrier with finite width, that can't be passed by inelastically scattered electrons. The third grid is again grounded and the fluorescence screen is at a voltage accelerating the electrons which passed the 2nd and 3rd grid to the screen. On the screen the diffraction pattern can be viewed and via using a CCD camera, the intensities of the reflexes can also be analysed.
