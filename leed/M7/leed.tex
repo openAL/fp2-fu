@@ -1,4 +1,4 @@
-%TODO ewalds sphere, kohärenz->resolution
+%TODO ewalds sphere, kohrenz->resolution
 
 \documentclass[a4paper]{scrartcl}
 
@@ -140,7 +140,7 @@ Assuming a certain reflex characterized by $(h,k)$ of a copper surface, that has
 
 Using formula \Formel{nm} and the relation between the de Broglie wave length and the energy of an electron \Formel{lV}, we obtain
 
-\eq{ V =\frac{(12.26 \AA)^2}{a^2 \sin^2 \varphi} (h^2+k^2) = 37.23 (h^2 +k^2) \; .}{}
+\eq{ V =\frac{(12.26 \AA)^2}{a^2 \sin^2 \varphi} (h^2+k^2) = 37.23 (h^2 +k^2) \; .}{V}
 \FloatBarrier
 \begin{table}[!h]
 \centering
@@ -268,8 +268,35 @@ A typical experimental set-up for LEED is shown in figure \ref{fig:leed}. Usuall
 \end{figure}
 
 
+\subsection{Determination of Lattice Constant}
+In order to determine the lattice constant of copper by analyzing the refraction pattern of the $(h,k)$ reflexes using equation \Formel{V}, first the opening angle of the spectrograph has to be determined. This is done by using the reflection of the $(0,0)$ beam, which vanishes from the screen at the angles $\Theta_L = 248.5 \degree$ and $\Theta_R=205.5 \degree$. The opening angle is therefore determined to be $\varphi=43 \degree$. 
+
+The electron energy at which the reflex appears at the opening angle is measured and plotted against $(h^2+k^2)$. By linear regression the slope   of the line, that is proportional to $ 1/a^2 $  is determined. The voltage, were the reflex is at the opening angle is determined by the mean value of the voltage, where it is barely visible and the value, where it appears to be entirely visible. As this interval is closely correlated with the diameter of the reflexion peaks, half of this interval seems to be a reasonable error for the voltage or energy  values. For the $(1,0)$ peak, the energy could not be lowered sufficiently to apply this measuring methods, therefore it can only be set, that the energy needed to project this reflex onto the opening angle has to be below $\SI{47.7}{eV}$. All measurement values listed in table \ref{tab:reflexes} and are plotted in figure \ref{fig:reflexes}. Linear regression yields a slope $s=\SI{26.57(36)}{}$ which corresponds to a lattice constant 
+\eq{a=\SI{3.65(3)}{\AA}\;.}{a1}
+\begin{table}
+\centering
+\begin{tabular}{rr}
+\toprule
+Energy (eV) & Reflex $h$, $k$ \\
+\midrule
+$< 47.7$ & $1, 0$ \\ 
+$59.5 \pm 1.5$ &  $1, 1$\\
+$114.4 \pm 3.2$  & $2, 0$\\
+$134.2 \pm 4.1 $ & $2, 1$ \\
+$219.4 \pm 2.3$ & $2, 2$ \\
+$246.3 \pm 2.9 $& $3, 0$ \\
+$(260.6 \pm 3.4$ & $3,1) $ \\
+\bottomrule
+\end{tabular}
+\caption{\small Electron energies at which reflexes $(h,k)$ are projected to opening angle $\varphi=43 \degree$. The value in parentheses does not enter the evaluation as it seems to be too far off.}
+\label{tab:reflexes}
+\end{table}
+
+
 
  \bibliographystyle{unsrt}
 \bibliography{FPbib}
 
 \end{document}
+
+
