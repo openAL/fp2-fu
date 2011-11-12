@@ -20,12 +20,14 @@
 \usepackage{bbm}
 %\usepackage{sidecap}
 
+
 \usepackage{amssymb} % math symbols
 \usepackage{amsmath} % ams
 \usepackage{amsfonts} % mathmatical fonts
 
 % caption indenting
-\usepackage[format=plain,indention=0em,labelfont=bf,margin=1em]{caption} 
+ \usepackage[format=plain,indention=0em,labelfont=bf,margin=1em]{caption} 
+ \usepackage{subfig} %subfigures ^^
 \usepackage[protrusion=true,expansion=true]{microtype} % denser font, "-" behind line
 \usepackage{esint} % nicer double and triple integrals
 \usepackage{fancyhdr} % fancy headers
@@ -189,7 +191,7 @@ If the sample is unclean, it is likely, that the impurities will form a regular 
 Disregarding the possible multiple scatterings of the electrons (the so called kinematic approximation) the reflection condition is the simple Bragg condition. Constructive interference occurs for length differences of $\Delta s = n\lambda$. Regarding only one a single beam (e.g. the (0,0) beam), the length difference is given by the lattice constants while the wavelength $\lambda$ is still variable (depending on the energy $V$). Measuring the intensity of this beam in dependence of the energy yields peaks whenever the difraction condition is met.
 
 Taking into account the energy loss at the interface betweeen vacuum and matter $U$, the wavelength of the electrons is given by
-\eq{\lambda = \frac{h}{2m\sqrt{V-U}}.}{}
+\eq{\lambda = \frac{h}{2m\sqrt{V-U}}.}{lshift}
 Thus, the peaks in the $I(V)$ plot can be found at
 \eq{V=\frac{h^2}{8md^2}n^2-U,}{}
 where $d$ is the lattice constant.
@@ -271,13 +273,16 @@ A typical experimental set-up for LEED is shown in figure \ref{fig:leed}. Usuall
 \subsection{Determination of Lattice Constant}
 In order to determine the lattice constant of copper by analyzing the refraction pattern of the $(h,k)$ reflexes using equation \Formel{V}, first the opening angle of the spectrograph has to be determined. This is done by using the reflection of the $(0,0)$ beam, which vanishes from the screen at the angles $\Theta_L = 248.5 \degree$ and $\Theta_R=205.5 \degree$. The opening angle is therefore determined to be $\varphi=43 \degree$. 
 
-The electron energy at which the reflex appears at the opening angle is measured and plotted against $(h^2+k^2)$. By linear regression the slope   of the line, that is proportional to $ 1/a^2 $  is determined. The voltage, were the reflex is at the opening angle is determined by the mean value of the voltage, where it is barely visible and the value, where it appears to be entirely visible. As this interval is closely correlated with the diameter of the reflexion peaks, half of this interval seems to be a reasonable error for the voltage or energy  values. For the $(1,0)$ peak, the energy could not be lowered sufficiently to apply this measuring methods, therefore it can only be set, that the energy needed to project this reflex onto the opening angle has to be below $\SI{47.7}{eV}$. All measurement values listed in table \ref{tab:reflexes} and are plotted in figure \ref{fig:reflexes}. Linear regression yields a slope $s=\SI{26.57(36)}{}$ which corresponds to a lattice constant 
+The electron energy at which the reflex appears at the opening angle is measured and plotted against $(h^2+k^2)$. By linear regression the slope   of the line, that is proportional to $ 1/a^2 $  is determined. The voltage, were the reflex is at the opening angle is determined by the mean value of the voltage, where it is barely visible and the value, where it appears to be entirely visible. As this interval is closely correlated with the diameter of the reflexion peaks, half of this interval seems to be a reasonable error margin for the voltage or energy  values. For the $(1,0)$ peak, the energy could not be lowered sufficiently to apply this measuring methods, therefore it can only be said, that the energy needed to project this reflex onto the opening angle has to be below $\SI{47.7}{eV}$. Linear regression yields a slope $s=\SI{26.57(36)}{}$ which corresponds to a lattice constant 
 \eq{a=\SI{3.65(3)}{\AA}\;.}{a1}
-\begin{table}
-\centering
-\begin{tabular}{rr}
+As can be seen from figure \ref{rr}, the function $E(h^2+k^2)$ does not cross the origin. This is can be explained in terms of the kinematic approximation, stating, that the de Broglie wave-length of the electron changes when the electron enters the crystal according to equation \Formel{lshift}. Therefore the aces intercept corresponds to the energy offset $U=\SI{1.97(36)}{eV}$.
+
+ \begin{figure} 
+ \centering
+\subfloat[][Measurement Data]
+{\begin{tabular}[b]{rr}
 \toprule
-Energy (eV) & Reflex $h$, $k$ \\
+Energy $E$ (eV) & Reflex $h$, $k$ \\
 \midrule
 $< 47.7$ & $1, 0$ \\ 
 $59.5 \pm 1.5$ &  $1, 1$\\
@@ -288,9 +293,14 @@ $246.3 \pm 2.9 $& $3, 0$ \\
 $(260.6 \pm 3.4$ & $3,1) $ \\
 \bottomrule
 \end{tabular}
+}
+\hfill
+\subfloat[][$E$ as function of $h^2+k^2$]
+	{\includegraphics[width=0.6\linewidth]{pic/reflexes.pdf}}
+
 \caption{\small Electron energies at which reflexes $(h,k)$ are projected to opening angle $\varphi=43 \degree$. The value in parentheses does not enter the evaluation as it seems to be too far off.}
-\label{tab:reflexes}
-\end{table}
+	\label{rr}
+\end{figure}
 
 
 
