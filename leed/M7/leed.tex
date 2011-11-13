@@ -1,4 +1,9 @@
 %TODO ewalds sphere, kohrenz->resolution
+%TODO grafiken sinnvoll platzieren am ende, superstruktur, fazit
+%TODO Referenzen (Literatur) und eventuelle [?] refs korrigieren
+%TODO kleinere TODOs z.B. atm -> Pa
+%TODO beliebig formulierungen und grafik platzierung verschönern
+
 
 \documentclass[a4paper]{scrartcl}
 
@@ -75,13 +80,13 @@
 Low energy electron diffraction (LEED) is a spectroscopic technique used to analyze the surface structure of a substrate. Its surface sensitivity results from the relatively small mean-free path length of the electrons, which depends on their energy and is determined by the so called universal curve shown in figure \ref{fig:uni}. For electrons of an energy below 200 eV the mean free path is less then 10 $\AA$, which is in the same order of magnitude as typical lattice constants of metals. The principles of LEED can only be understood within the framework of the wave-matter dualism, as the electron diffraction results in wave-like interference phenomena.
 
 
-\begin{figure}
+\begin{wrapfigure}{r}{0.45 \textwidth}
   \centering
-   	\includegraphics[width=0.5\linewidth]{pic/meanfree.pdf}
+   	\includegraphics[width=\linewidth]{pic/meanfree.pdf}
 
  \caption{\small Universal curve of solids \cite{zangwill}.  }
         \label{fig:uni}
-\end{figure}
+\end{wrapfigure}
 \FloatBarrier
 
 \subsection{Matterwaves}
@@ -143,7 +148,7 @@ Assuming a certain reflex characterized by $(h,k)$ of a copper surface, that has
 Using formula \Formel{nm} and the relation between the de Broglie wave length and the energy of an electron \Formel{lV}, we obtain
 
 \eq{ V =\frac{(12.26 \AA)^2}{a^2 \sin^2 \varphi} (h^2+k^2) = 37.23 (h^2 +k^2) \; .}{V}
-\FloatBarrier
+
 \begin{table}[!h]
 \centering
 \begin{tabular}{rr}
@@ -166,7 +171,7 @@ Reflex $h$,$k$ & Energy (eV) \\
  \caption{\small Expected diffraction patterns for electron energies listed in table \ref{kll}.}
         \label{fig:bragg}
 \end{figure}
-\FloatBarrier
+--
 
 
 \subsection{Superstructures}
@@ -196,54 +201,53 @@ Thus, the peaks in the $I(V)$ plot can be found at
 \eq{V=\frac{h^2}{8md^2 \sin^2 \Theta }n^2-U,}{eq:iv}
 where $d$ is the lattice constant and $\Theta$ = $90\degree - \varphi$, where $\varphi$ corresponds to the opening angel. 
 
-
+\clearpage
 \section{Experimental Set-Up and Measurement Procedures}
-
+\FloatBarrier
 \subsection{Ultra High Vacuum (UHV)}
 As the electrons used for spectroscopy easily interact with all kind of materials, it is very useful to operate in high vacuum. This is also necessary in order to reduce the rate of adsorption of molecules, which lead to disturbance of the measured spectra. (Ultra) high  vacuum (UHV) can only be achieved by a series of pumps acting within different pressure ranges. The four types used in the experiment are listed in table \ref{tab:pump}.
-\begin{table}
-\centering
+\begin{wraptable}{r}{0.55\textwidth}
 \begin{tabular}{lr}
 \toprule
-pump & pressure range \\
+pump & pressure range (Pa)\\
 \midrule
-rotary vane pump & atm to $10^{-1}$ Pa \\ % todo atm -> Pa?
-turbo molecular pump &  $1$ Pa to $10^{-9}$ Pa \\
-ion getter pump  & $ 10^{-3}$ Pa to $10^{-9}$ Pa \\
-titan sublimation pump & $10$ Pa to $10^{-9}$ Pa \\
+\small rotary vane pump & atm - $10^{-1}$  \\ % todo atm -> Pa?
+\small turbo molecular pump &  $1$  - $10^{-9}$  \\
+\small ion getter pump  & $ 10^{-3}$  - $10^{-9}$  \\
+\small titan sublimation pump & $10$  - $10^{-9}$  \\
 \bottomrule
 \end{tabular}
 \caption{Different pumps and their pressure operating range.}
 \label{tab:pump}
-\end{table}
+\end{wraptable}
 
 \subsubsection{Rotary vane pump}
 The rotary vane pump is a simple mechanical pump, which consists of a cylinder connecting the vacuum cell and the outer space. In the cylinder a vane rotates and thereby shovels the gas to the outside. Springs ensure optimal contact between the vane and the cylinder walls. 
-
-\begin{figure}
+\FloatBarrier
+\begin{wrapfigure}{r}{0.3\textwidth}
   \centering
-   	\includegraphics[width=0.3\linewidth]{pic/rot.png}
-
+   	\includegraphics[width=0.7\linewidth]{pic/rot.png}
  \caption{\small Rotary vane pump. 1:pump housing, 2: rotor, 3: vanes, 4: spring}
         \label{fig:rot}
-\end{figure}
+\end{wrapfigure}
 
-
+\FloatBarrier
 
 \subsubsection{Turbomolecular pump}
 The main features of a turbomolecular pump are the rotating blades (rotors), hitting the molecules very often per unit time, thereby enforcing a velocity distribution within the gas that is not isotropic, but a certain direction is preferred. Within the pump there are other static blades (stators), which act as a kind of filter to the velocity of the molecules in such a way, that molecules with the velocity, that is predominantly created by the rotors, can pass through with a higher probability. These filters act only in one-way, so that the molecules stay on the other side as long as the asymmetric velocity distribution is maintained. 
-\begin{figure}
+
+
+\clearpage
+\subsubsection{Ion getter pump}
+In a ion getter pump high voltage is used to emit electrons an accelerate them. The electrons ionize molecules of the rest gas, which are then accelerated towards the surface, where they bind chemically. To lengthen the path of the electrons within the gas, a magnetic field is used to deflect the electrons thus creating a spiral like path. If a ion hits the electrode, several atoms are expelled and can build up a fresh layer on the other electrode. The material used for the electrodes is usually titan and it is often combined with a titan sublimation pump.
+\begin{wrapfigure}{l}{0.4\linewidth}
   \centering
   
-   	\includegraphics[width=0.3\linewidth]{pic/tu.jpg}
+   	\includegraphics[width=0.9\linewidth]{pic/tu.jpg}
 
  \caption{\small Schematic description of a turbomolecular pump}
         \label{fig:turbo}
-\end{figure}
-
-
-\subsubsection{Ion getter pump}
-In a ion getter pump high voltage is used to emit electrons an accelerate them. The electrons ionize molecules of the rest gas, which are then accelerated towards the surface, where they bind chemically. To lengthen the path of the electrons within the gas, a magnetic field is used to deflect the electrons thus creating a spiral like path. If a ion hits the electrode, several atoms are expelled and can build up a fresh layer on the other electrode. The material used for the electrodes is usually titan and it is often combined with a titan sublimation pump.
+\end{wrapfigure}
 
 \subsubsection{Titan sublimation pump}
 In a titan sublimation pump, titan is sputtered to create a fresh layer of atoms, which can absorb gases via chemical binding (chemisorption). In principle it is also possible to pump noble gas, which are inert, through simply catching them by covering them with a layer of titan. 
@@ -259,20 +263,20 @@ In sputtering, atoms of inert gases are accelerated towards the sample. Due to t
 As this is a rather random process, the surface is most likely very uneven after this process. To correct this, the sample is heated up to allow the atoms to reposition and form a smoother surface (tempering).
 
 \subsection{Typical Set-Up}
-A typical experimental set-up for LEED is shown in figure \ref{fig:leed}. Usually the electrons are shot at the probe under normal angle and the back scattered electrons are detected on a spherical fluorescence screen. In front of the screen is a system of spherical grids deflecting the electrons. The first grid is grounded to prevent deflection of the scattered electrons, which could use to biased measurement data. To the second and third grid a voltage slightly smaller then the accelerating voltage is applied in order to potential barrier with finite width, that can't be passed by inelastically scattered electrons. The third grid is again grounded and the fluorescence screen is at a voltage accelerating the electrons which passed the 2nd and 3rd grid to the screen. On the screen the diffraction pattern can be viewed and via using a CCD camera, the intensities of the reflexes can also be analysed.
+A typical experimental set-up for LEED is shown in figure \ref{fig:leed}. Usually the electrons are shot at the probe under normal angle and the back scattered electrons are detected on a spherical fluorescence screen. In front of the screen is a system of spherical grids deflecting the electrons. The first grid is grounded to prevent deflection of the scattered electrons, which could use to biased measurement data. To the second and third grid a voltage slightly smaller then the accelerating voltage is applied in order to potential barrier with finite width, that can't be passed by inelastically scattered electrons. The third grid is again grounded and the fluorescence screen is at a voltage accelerating the electrons which passed the 2nd and 3rd grid to the screen. On the screen the diffraction pattern can be viewed and via using a CCD camera, the intensities of the reflexes can also be analyzed.
 
-\begin{figure}
+\begin{wrapfigure}{r}{0.45\textwidth}
   \centering
-   	\includegraphics[width=0.3\linewidth]{pic/leed.pdf}
+   	\includegraphics[width=\linewidth]{pic/leed.pdf}
 
  \caption{\small Schematic Description of an LEED experiment. The retarding grits are used to select only elastically scattered electrons}
         \label{fig:leed}
-\end{figure}
+\end{wrapfigure}
 
 \subsection{Conductance of Experiment}
-The sample is sputtered with Argon ions and heated for around 30 minutes at about 800 K to create a clean and smooth surface. The leed spectroscopy is performed at a pressure of about $0.6 \times 10^{-9}$ torr. As the electron beam is not properly focused, magnetic fields are applied to the apparatus by two copper coils (loose copper wires wound around the vacuum pump). The current of the upper coil shifts the position of the electron beam up or downwards and is operated at $0.8$ V/ $2.69$ A. The other coil is used to tune the left-right position of the beam and is operated at $1.5$ V/ $3.39$ A. Using these parameters optimal focusing is gained, but due to alignment problems of the set-up, the right half of the fluorescence screen appears to be much darker then the other half on the CCD camera. Therefore not all reflexes can be seen symmetrically and most reflection patterns can be only analyzed at half, however it is still entirely possible to determine the corresponding $h,k$ values.
+The sample is sputtered with Argon ions and heated for around 30 minutes at about 800 K to create a clean and smooth surface. The leed spectroscopy is performed at a pressure of about $0.6 \times 10^{-9}$ torr. As the electron beam is not properly focused, magnetic fields are applied to the apparatus by two copper coils (loose copper wires wound around the vacuum pump). The current of the upper coil shifts the position of the electron beam up or downwards and is operated at $0.8$ V/ $2.69$ A. The other coil is used to tune the left-right position of the beam and is operated at $1.5$ V/ $3.39$ A. Using these parameters optimal focusing is gained, but due to alignment problems of the set-up, the right half of the fluorescence screen appears to be much darker then the other half on the CCD camera. Therefore not all reflexes can be seen symmetrically and most reflection patterns can be only analyzed at half, however it is still entirely possible to determine the corresponding $h,k$ values. The leed patterns for all reflexes $(h,k)$ from (1,0) to (3,1) are recorded. Subsequently the $I(V)$ curve is measured. At last the probe is exposed to oxygen for 30 minutes. During this time the pressure is raised to approximately $P=5 \times 10^{-5}$ mbar. For the recording of the oxygen superstructure the pressure is gain reduced to the previous value.
 
-
+\clearpage
 \section{Analysis}
 \subsection{Determination of Lattice Constant using the leed pattern}
 In order to determine the lattice constant of copper by analyzing the refraction pattern of the $(h,k)$ reflexes using equation \Formel{V}, first the opening angle of the spectrograph has to be determined. This is done by using the reflection of the $(0,0)$ beam, which vanishes from the screen at the angles $\Theta_L = 248.5 \degree$ and $\Theta_R=205.5 \degree$. The opening angle is therefore determined to be $\varphi=43 \degree$. 
@@ -377,13 +381,13 @@ $n^2$ & Electron energy (eV)  \\
 \subsection{Oxygen Superstructure}
 \begin{figure} 
  \centering
-\subfloat[][$I(V)$: full range]
-{\includegraphics[width=0.5\linewidth]{pic/10.jpeg}}
+\subfloat[][Pure Copper]
+{\includegraphics[width=0.45\linewidth]{pic/10.jpeg}}
 \hfill
-\subfloat[][$I(V)$: small range, high resolution]
-	{\includegraphics[width=0.5\linewidth]{pic/osuper11.47.5v.jpeg}}
-	\caption{\small Intensity $I$ of the (0,0) beam as a function of the electron energy $V$ for different energy ranges.}
-	\label{fig:IV1}
+\subfloat[][Copper plus Oxygen Superstructure]
+	{\includegraphics[width=0.45\linewidth]{pic/osuper11475v.jpeg}}
+	\caption{\small Reflection of the copper $(1,0)$ reflex at $V=47.5$eV. a) Pure Copper Structure. b) Oxygen Superstructure: A "cross" consisting of 5 dots arranged like a 5 on a dice is visible in the top left corner.}
+	\label{fig:super}
 \end{figure}
 
  \bibliographystyle{unsrt}
