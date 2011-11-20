@@ -1,0 +1,84 @@
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lmodern} 
+\usepackage[T1]{fontenc}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{wrapfig}
+
+
+% PAKETE
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{bbm}
+%\usepackage{sidecap}
+
+
+\usepackage{amssymb} % math symbols
+\usepackage{amsmath} % ams
+\usepackage{amsfonts} % mathmatical fonts
+
+% caption indenting
+ \usepackage[format=plain,indention=0em,labelfont=bf,margin=1em]{caption} 
+ \usepackage{subfig} %subfigures ^^
+\usepackage[protrusion=true,expansion=true]{microtype} % denser font, "-" behind line
+\usepackage{esint} % nicer double and triple integrals
+\usepackage{fancyhdr} % fancy headers
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,filecolor=black,urlcolor=black]{hyperref}
+
+
+
+% EINSTELLUNGEN
+\sisetup{seperr,repeatunits=false}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+% EIGENE FUNKTIONEN
+\newcommand{\re}{\operatorname{Re}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\gquote}[1]{\glqq #1 \grqq}
+
+\newcommand{\eq}[2]{\begin{equation}#1\label{#2}\end{equation}}
+\newcommand{\eqand}[0]{\hspace{.25cm} \bigwedge \hspace{.25cm}}
+\newcommand{\grafik}[2]{\begin{figure}[h]\centering \includegraphics[width=10cm]{#1.eps}  \caption{#2} \label{#1} \end{figure} }
+\newcommand{\grafikq}[3]{\begin{figure}[h]\centering \includegraphics[width=10cm]{#1.eps}  \caption[#2]{#3} \label{#1} \end{figure} }
+\newcommand{\tbl}[3]{\begin{table}[h]\caption{#1}\label{#2}\begin{center}#3\end{center}\end{table}}
+\newcommand{\Abbildung}[1]{\textsl{Abbildung \ref{#1}}}
+\newcommand{\AbbildungI}[1]{\textsl{(Abbildung \ref{#1})}}
+\newcommand{\Tabelle}[1]{\textsl{Tabelle \ref{#1}}}
+\newcommand{\TabelleI}[1]{\textsl{(Tabelle \ref{#1})}}
+\newcommand{\Formel}[1]{(\ref{#1})}
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\ve}[1]{\mathbf{ #1} }
+
+\title{Ma 12: Magneto Optical Kerr-Effect and Magnetic Anisotropy}
+\subtitle{Tutor: B. Lewitz}
+\author{Benjamin Huber, Carolin Wille}
+\date{November 21, 2011}
+
+\begin{document}
+\thispagestyle{empty}
+\maketitle
+\tableofcontents
+\clearpage
+
+
+\section{Introduction}
+
+
+
+
+
+
+ \bibliographystyle{unsrt}
+\bibliography{FPbib}
+
+\end{document}
+
+
