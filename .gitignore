@@ -13,5 +13,4 @@
 *.tcp
 *.toc
 *.bak
-*.pdf
 .DS_Store
