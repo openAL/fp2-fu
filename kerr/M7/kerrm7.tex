@@ -73,15 +73,25 @@
 The magneto-optic Kerr effect (MOKE) describes the changes in the polarization of light, which is reflected from the surface of a magnetic material. Therefore it can be used to analyze magnetic properties, such as the structure of magnetic domains or the phenomenon of hysteresis effects. It has a great application in magneto-optic data storage like in magneto-optic discs, which are written magnetically and read out optically making use of the Kerr effect. The Kerr effect is also used in Kerr microscopes, which directly show the structure of magnetic domains.
 
 \subsection{Magneto-optic Kerr effect}
-The magneto-optic Kerr effect is a quantum mechanical scattering effect. However, it can be qualitatively understood in the picture of classical electrodynamics. Therefore, we consider a light-wave, that is reflected from a surface. During the reflection process it penetrates into the material, before it is emitted again. During the time, the wave spends in the solid, the dielectric displacement $\ve D$ has to be considered instead of the electric field $\ve E$. The quantities are related via
-\eq{\ve D_i = \epsilon_{ij} E_j \;, }{DE}
-where $\epsilon_{ij}$ is the permittivity tensor, that reduces to a scalar for isotropic materials. In magnetized materials, the tensor $\epsilon_{ij}$ decomposes into a real isotropic and an imaginary totally antisymmetric contribution
-\eq{\epsilon_{ij} = \epsilon_0 \delta{ij} + i \beta_{ij} \; . }{eps}
+The magneto-optic Kerr effect is a quantum mechanical scattering effect. However, it can be qualitatively understood in the picture of classical electrodynamics. Therefore, we consider a light-wave, that is reflected from a surface. During the reflection process it
+ penetrates into the material, before it is emitted again. During the time, the wave spends in the solid, the dielectric displacement $\ve D $ has to be considered instead of the electric field $\ve E$. The quantities are related via
+\eq{\ve D_i = \epsilon_{ij} E_j \;, } {DE}
+where $ \epsilon_{ij}$ is the permittivity tensor, that reduces to a scalar for isotropic materials. In magnetized materials, the tensor $\epsilon_{ij}$ decomposes into a real isotropic ($\alpha_{ij}$) and an imaginary totally antisymmetric ($\beta_{ij}$) contribution
+\eq{\epsilon_{ij} = \epsilon_0 \alpha_{ij} + i \beta_{ij} \; . }{eps}
 As the antisymmetric tensor $\beta_{ij}$ has vanishing diagonal entries, it can be expressed in terms of a cross-product with the so called gyration vector, that can be identified in a classical picture with the direction of the magnetic field $\ve j$. Equation \Formel{DE} can then be written as
 \eq{\ve D = \epsilon_0 \ve E - i \epsilon_0 Q \ve j \times \ve E \; , }{DEJ}
-where $\epsilon_0$ is the vacuum permittivity and $Q$ is a complex material constant, that is approximately proportional to the magnetization. The cross-product in equation \Formel{DEJ} describes a rotation around the magnetization axes by $\pi/2$. Therefore the dielectric displacement is given by a linear composition of the initial field $E$ and an orthogonal contribution
- , although there is a significant deviance when comparing absolute values
+where $\epsilon_0$ is the vacuum permittivity and $Q$ is a complex material constant, that is approximately proportional to the magnetization. The cross-product in equation \Formel{DEJ} describes a rotation around the magnetization axes by $\pi/2$, that can be described as a Lorentz force, which is acting on the electrons, that are oscillating in the material due to the periodic excitation of the incoming wave. However, the magnetic field, which would cause a Lorentz force needed to describe the rotation deviates significantly in orders of magnitutde when compared to the real magnetic field. Therefore this classical picture has to be used with caution. 
 
+A further analysis of the Maxwell equation for this problem \cite{book} leads to the conclusion of different refraction indices and amplitudes for left and right circular polarized light. As linear polarized light is nothing but a superposition of these two, it becomes clear, that its direction is rotated as a result of the phase shift between the two components and is furthermore polarized elliptically due to the different intensities. 
+
+%TODO: Bildchen ohne Ende...
+
+\subsection{Magnetic Anisotropies}
+
+
+
+\subsection{Determination of Kerr Angle}
+The rotation angle of the Kerr rotation is $\Phi_K$ and can be analyzed using a polarization filter, that is also called analyzer.
 
 
 
