@@ -1,10 +1,10 @@
-%TODO kohärenz->resolution
+%TODO kohärenz->resolution? wird nicht verwendet in auswertung
 %TODO grafiken sinnvoll platzieren am ende
-%TODO superstruktur
-%TODO fazit
+%TODO quelle für literaturwert in fazit
 %TODO Referenzen (Literatur) und eventuelle [?] refs korrigieren
-%TODO kleinere TODOs z.B. Einheiten der Steigungen
+%TODO kleinere TODOs?
 %TODO beliebig formulierungen und grafik platzierung verschÃ¶nern
+
 %TODO letzten (nicht gefitteten Punkt) ind fig:rr mit plotten, x-achsen mit "ohne Einheit" Erwähnung, Einheiten sonst in der Form "E / eV"
 
 
@@ -178,6 +178,7 @@ Reflex $h$,$k$ & Energy (eV) \\
 
 
 \subsection{Superstructures}
+\label{sec:super}
 If the sample is unclean, it is likely, that the impurities will form a regular superstructure on the surface. As such they will contribute to the observed peaks. Figure \ref{fig:superstructure} is a sketch of a $(\sqrt{2} \times 2\sqrt{2})R45^\circ$ superstructure with the corresponding reciprocal lattice which would be observed in the case of such an impurity.
 \begin{figure}[!bthp]
         \begin{center}
@@ -277,6 +278,7 @@ A typical experimental set-up for LEED is shown in figure \ref{fig:leed}. Usuall
 \end{wrapfigure}
 
 \subsection{Conductance of Experiment}
+\label{sec:experiment}
 The sample is sputtered with Argon ions and heated for around 30 minutes at about 800 K to create a clean and smooth surface. The leed spectroscopy is performed at a pressure of about $0.6 \times 10^{-9}$ torr. As the electron beam is not properly focused, magnetic fields are applied to the apparatus by two copper coils (loose copper wires wound around the vacuum pump). The current of the upper coil shifts the position of the electron beam up or downwards and is operated at $0.8$ V/ $2.69$ A. The other coil is used to tune the left-right position of the beam and is operated at $1.5$ V/ $3.39$ A. Using these parameters optimal focusing is reached, but due to alignment problems of the set-up, the right half of the fluorescence screen appears to be much darker then the other half on the CCD camera. Therefore not all reflexes can be seen symmetrically and most reflection patterns can be only analyzed at half, however it is still entirely possible to determine the corresponding $h,k$ values. The leed patterns for all reflexes $(h,k)$ from (1,0) to (3,1) are recorded. Subsequently the $I(V)$ curve is measured. At last the probe is exposed to oxygen for 30 minutes. During this time the pressure is raised to approximately $P=5 \times 10^{-5}$ mbar. For the recording of the oxygen superstructure the pressure is reduced again to the previous value.
 
 \clearpage
@@ -286,7 +288,7 @@ In order to determine the lattice constant of copper by analyzing the refraction
 
 The electron energy at which the reflex appears at the opening angle is measured and plotted against $(h^2+k^2)$. By linear regression the slope of this line is determined, which is proportional to $ 1/a^2 $. The voltage, were the reflex is at the opening angle is determined by the mean value of the voltage, where it is barely visible and the value, where it appears to be entirely visible. As this interval is closely correlated with the diameter of the reflexion peaks, half of this interval seems to be a reasonable error margin for the voltage or energy  values. For the $(1,0)$ peak, the energy could not be lowered sufficiently to apply this measuring methods, therefore it can only be said, that the energy needed to project this reflex onto the opening angle has to be below $\SI{47.7}{eV}$. 
 
-Linear regression of the remaining measurements (see Figure \ref{fig:rr}) yields a slope $s=\SI{26.6(4)}{}$ which corresponds to a lattice constant 
+Linear regression of the remaining measurements (see Figure \ref{fig:rr}) yields a slope $s=\SI{26.6(4)}{eV}$ which corresponds to a lattice constant 
 \eq{a=\SI{3.65(3)}{\AA}\;.}{a1}
 As can be seen from the figure as well, the function $E(h^2+k^2)$ does not cross the origin. This is can be explained by a finite interface voltage between the vacuum and the sample, causing the de Broglie wave-length of the electron to change when the electron enters the crystal according to equation \Formel{lshift}. Therefore the axis intercept corresponds to the energy offset $U=\SI{2.0(4)}{eV}$.
 
@@ -311,12 +313,12 @@ $(260.6 \pm 3.4$ & $3,1) $ \\
 \subfloat[][$E$ as function of $h^2+k^2$]
 	{\includegraphics[width=0.6\linewidth]{pic/reflexes.pdf}}
 
-\caption{\small Electron energies at which reflexes $(h,k)$ are projected to opening angle $\varphi=43 \degree$. The value in parentheses does not enter the evaluation as it seems to be too far off. The linear regression (b) results in a slope of $\SI{26.57(36)}{}$ and an axis intercept of $\SI{1.97(36)}{eV}$.}
+\caption{\small Electron energies at which reflexes $(h,k)$ are projected to opening angle $\varphi=43 \degree$. The value in parentheses does not enter the evaluation as it seems to be too far off. The linear regression (b) results in a slope of $\SI{26.57(36)}{eV}$ and an axis intercept of $\SI{1.97(36)}{eV}$.}
 	\label{fig:rr}
 \end{figure}
 
 \subsection{Determination of the lattice constant using the I(V)-Curve}
-The I(V) curve was measured first in the energy interval of 50 eV to 600 eV with an fluorescence screen voltage of $V_F=6$keV, which gave optimal resolution within the full energy range. A second measurement was performed between 300eV and 600eV with increased screen-voltage $V_F=8$keV leading to a higher resolution and the visibility of a further peak (see Fig \ref{fig:IV}). For the measurement the $(0,0)$ beam was displaced out of the screen center by tilting the sample of about $\Theta_{IV}=2 \degree$. The peak positions were determined by fitting quadratic functions around the maxima and were matched to the corresponding values of $n^2$ by fitting a linear curve onto each of the different matching possibilities. The matching listed in table \ref{tab:IV} leads by far to the best result. The variance of this fit is lower by orders of magnitude compared to all other matching possibilities, that were tried. The slope of the curve is $\SI{11.405(59)}{eV}$ corresponding to a value of 
+The I(V) curve was measured first in the energy interval of 50 eV to 600 eV with an fluorescence screen voltage of $V_F=6$keV, which gave optimal resolution within the full energy range. A second measurement was performed between 300eV and 600eV with increased screen-voltage $V_F=8$keV leading to a higher resolution and the visibility of a further peak (see Fig \ref{fig:IV}). For the measurement the $(0,0)$ beam was displaced out of the screen center by tilting the sample of about $\Theta_{IV}=2 \degree$. The peak positions were determined by fitting quadratic functions around the maxima and were matched to the corresponding values of $n^2$ by fitting a linear curve onto each of the different matching possibilities. The matching listed in table \ref{tab:IV} leads by far to the best result. The variance of this fit is lower by orders of magnitude compared to all other matching possibilities, that were tried. The slope of the curve is $\SI{11.41(6)}{eV}$ corresponding to a value of 
 \eq{a = \SI{3.63(2)}{\AA}  \;,}{ivresult}
 determined by the use of equation \Formel{eq:iv}, where $d=a/2$ due to the fcc structure of copper. Instead of $\Theta=90 \degree$, the value $\Theta=\SI{94(1)}{\degree}$ is used as the sample had to be tilted.
 
@@ -351,7 +353,7 @@ $n^2$ & Electron energy (eV)  \\
 \subfloat[][Linear Fit]{
 \includegraphics[width=0.5\linewidth]{pic/ivfit.pdf}
 }
-\caption{\small Optimal matching of $n^2$ to the peak positions. Variance: $\chi_{opt}= 14.2$. Other matchings: $\chi_{other} > 125$. }
+\caption{\small Optimal matching of $n^2$ to the peak positions. Variance: $\chi_{opt}= 14.2$. Other matchings: $\chi_{other} > 125$. Linear regression (b) resulted in a slope of $\SI{11.405(59)}{eV}$. }
 	\label{fig:IV2}
 \end{figure}
 
@@ -367,7 +369,7 @@ $n^2$ & Electron energy (eV)  \\
 $n^2$ & Electron energy (eV)  \\
 \midrule
  $9$ & $93.78 \pm 0.43$ \\
- $16$ & $171.31 \pm  0.15$ \\
+ $16$ & $171.31 \pm 0.15$ \\
  $25$ & $274.55 \pm 0.31$ \\
  $36$ & $398.04 \pm 0.39$ \\
  $49$ & $550.16 \pm 0.97$\\
@@ -384,6 +386,11 @@ $n^2$ & Electron energy (eV)  \\
 
 
 \subsection{Oxygen Superstructure}
+The exposure with Oxygen formed a superstructure on the surface of the sample. This superstructure changed the picture visible on the screen by adding 5 reflections inbetween those of the pure copper (see Figure \ref{fig:super}).
+
+As described in section \ref{sec:super} a $(\sqrt{2} \times 2\sqrt{2})R45^\circ$ superstructure causes only three additional reflections on a straight line. Considering that the superstructure has no preferred orientation on the copper surface though, we have to regard both $(\sqrt{2} \times 2\sqrt{2})R45^\circ$ and $(2\sqrt{2} \times \sqrt{2})R45^\circ$ superstructures which form a superposed picture as observed in the experiment. 
+
+The expectation, that Oxygen forms a $(\sqrt{2} \times 2\sqrt{2})R45^\circ$ superstructure on copper can thus be confirmed.
 \begin{figure} 
  \centering
 \subfloat[][Pure Copper]
@@ -391,9 +398,17 @@ $n^2$ & Electron energy (eV)  \\
 \hfill
 \subfloat[][Copper plus Oxygen Superstructure]
 	{\includegraphics[width=0.45\linewidth]{pic/osuper11475v.jpeg}}
-	\caption{\small Reflection of the copper $(1,0)$ reflex at $V=47.5$eV. a) Pure Copper Structure. b) Oxygen Superstructure: A "cross" consisting of 5 dots arranged like a 5 on a dice is visible in the top left corner.}
+	\caption{\small Reflection of the copper $(1,0)$ reflex at $V=47.5$eV. a) Pure Copper Structure. b) Oxygen Superstructure: A "cross" consisting of 5 dots arranged like a 5 on a die is visible in the top left corner.}
 	\label{fig:super}
 \end{figure}
+
+
+\subsection{Summary and Discussion}
+With a regular low energy electron diffraction setup the surface of both clean copper and copper with an oxygen superstructure was observed. The sputtered and tempered surface allowed measurements on a very clean surface so that the lattice constant obtained from either the leed pattern ($a=(3.65\pm0.03)\AA$) or the $I(V)$ curve ($a=(3.63\pm0.02)\AA$) agree very well with the literature values (SOURCE). %TODO
+
+The observed oxygen superstructure matched the expected leed pattern very well and confirmed a $(\sqrt{2} \times 2\sqrt{2})R45^\circ$ pattern.
+
+These rather good results are almost surprising considering the poor quality of the apparatus used for the measurements (cf. section \ref{sec:experiment}). While the time investment for every measurement can certainly be reduced by better equipment, the results are not expected to increase in quality as quickly.
 
  \bibliographystyle{unsrt}
 \bibliography{FPbib}
