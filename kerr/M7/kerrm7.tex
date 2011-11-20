@@ -100,6 +100,34 @@ where $K$ is the anisotropy constant in this lowest order approximation.
 The rotation angle of the Kerr rotation is $\Phi_K$ and can be analyzed using a polarization filter, that is also called analyzer.
 
 
+\subsection{Magnetism}
+Magnetic dipoles exert a force on eachother, causing the configuration of dipol orientation with minimal energy to be the one with all dipoles pointing in the same direction. This causes two important magnetic effects.
+
+\subsubsection*{Magnetic Domains}
+On a small scale all dipols tend to point in the same direction. Globally though, a large extended magnetic field is energetically sub optimal. Instead, different regions, so called domains emerge with parallel dipols within the domain, but different orientations between regions.
+
+This construct can globally be neutral, resulting in no significant macroscopic field, but will generally prefer the direction of an external magnetic field. With increasing external field strength more and more domains change orientation until all magnetic dipols are parallel (cf. figure \ref{fig:doms}).
+\begin{figure}
+        \begin{center}
+        		\includegraphics[width=0.9\linewidth]{img/Dominios.pdf}
+        \end{center}
+        \caption{
+			\small Rotation of orientation and increase in size of magnetic domains due to an externally applied field. Picture taken from \url{http://en.wikipedia.org/wiki/Magnetic_domain}.
+        }
+        \label{fig:doms}
+\end{figure}
+
+\subsubsection*{Magnetic Hysteresis}
+Decreasing the external field after all domains were parallely oriented reverses the above effect and creates / enlarges omains with different orientation little by little. As the orientation flipping requires energy though, it will only happen, if the difference in total energy between the current and the flipped state is larger than this required energy. Thus there will be more domains with the original orientation, even after the external field has vanished. This remaining macroscopic magnetic moment is called the remanence magnetisation. An opposing field with the so called coercivity strength is required to completely demagnetize the material. The different magnetizations while increasing and decreasing the external field create the so called hysteresis curve (see figure \ref{fig:hys}).
+\begin{figure}
+        \begin{center}
+        		\includegraphics[width=0.31\linewidth]{img/hys.pdf}
+        \end{center}
+        \caption{
+			\small A plot of magnetization m against magnetic field h calculated using a theoretical model. Starting at the origin, the upward curve is the initial magnetization curve. The downward curve after saturation, along with the lower return curve, form the main loop. The intercepts $h_c$ and $m_{rs}$ are the coercivity and saturation remanence. Picture taken from \url{http://en.wikipedia.org/wiki/Hysteresis}.
+        }
+        \label{fig:doms}
+\end{figure}
 
  \bibliographystyle{unsrt}
 \bibliography{FPbib}
