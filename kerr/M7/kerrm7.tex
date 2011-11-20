@@ -109,7 +109,7 @@ Source: \url{http://en.wikipedia.org/wiki/Magneto-optic_Kerr_effect}. }
 Magnetic dipoles exert a force on eachother, causing the configuration of dipol orientation with minimal energy to be the one with all dipoles pointing in the same direction. This causes two important magnetic effects.
 
 \subsubsection*{Magnetic Domains}
-On a small scale all dipols tend to point in the same direction. Globally though, a large extended magnetic field is energetically sub optimal. Instead, different regions, so called domains emerge with parallel dipols within the domain, but different orientations between regions. The domain walls consist of small regions where the dipols change gradually from one to the other orientation by rotating either around an axis parallel (Néel wall) or perpendicular (Bloch wall) to the wall.
+On a small scale all dipols tend to point in the same direction. Globally though, a large extended magnetic field is energetically sub optimal. Instead, different regions, so called domains emerge with parallel dipols within the domain, but different orientations between regions. The domain walls consist of small regions where the dipols change gradually from one to the other orientation by rotating either around an axis parallel (N\'{e}el wall) or perpendicular (Bloch wall) to the wall.
 
 This construct can globally be neutral, resulting in no significant macroscopic field, but will generally prefer the direction of an external magnetic field. With increasing external field strength more and more domains change orientation until all magnetic dipols are parallel (cf. figure \ref{fig:doms}).
 \begin{figure}
@@ -147,8 +147,19 @@ where $K$ is the anisotropy constant in this lowest order approximation.
 
 \section{Experimental Set-Up}
 \subsection{Determination of Kerr Angle}
-The rotation angle of the Kerr rotation is $\Phi_K$ and can be analyzed using a polarization filter, that is also called analyzer.
+The rotation angle of the Kerr rotation is $\Phi_K$ and can be analyzed using a polarization filter, that is also called analyzer. While it is not possible to measure the rotation directly, the evolution of the intensity depending on the angle $\alpha$ is known to be
+\eq{I(\alpha)=I_0 \cos^2(\alpha-\alpha_0) ,}{eq:malus}
+where $\alpha_0$ is the angle of polarization. This equation as stated only holds for linearly polarized light, but in general circular or elliptically polarized light can be described as a superposition of two perpendicularly polarized light beams. The law thus becomes
+\eq{I(\alpha) = I_0 \cos^2(\alpha-\alpha_0) + I_1 \sin^2(\alpha-\alpha_0) .}{}
 
+It can be convinient to look at another value, that is useful to have at any rate: the contrast $c$. It is defined as the difference between minimum and maximum value devided by the offset (their average). In our case these minima and maxima are simply the intensities at the opposing saturation magnetisations.
+\eq{c(\alpha)=\frac{\Delta I(\alpha)}{<I(\alpha)>} = 2\frac{I_+(\alpha)-I_-(\alpha)}{I_+(\alpha)+I_-(\alpha)} }{eq:contrast}
+Where the two saturation intensities can be calculated by the above equation \Formel{eq:malus}
+\eq{I_{+/-}(\alpha) = I_0 \cos^2(\alpha-\alpha_0\pm\Phi_K) + I_1 \sin^2(\alpha-\alpha_0\pm\Phi_K) }{}
+where $\alpha_0$ now is the angle of the incident light. Combining this with \Formel{eq:contrast} results in
+\eq{c(\alpha) = \frac{2(I_1-I_0) \sin(2(\alpha-\alpha_0)) \sin(2\Phi_K) } { I_0+I_1+ (I_0-I_1)\cos(2(\alpha-\alpha_0)) \cos(2\Phi_K)} .}{}
+
+ 
 
 
  \bibliographystyle{unsrt}
