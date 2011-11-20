@@ -1,11 +1,4 @@
 %TODO kohrenz->resolution? wird nicht verwendet in auswertung
-%TODO grafiken sinnvoll platzieren am ende
-%TODO quelle fr literaturwert in fazit
-%TODO Referenzen (Literatur) und eventuelle [?] refs korrigieren
-%TODO kleinere TODOs?
-%TODO beliebig formulierungen und grafik platzierung verschönern
-
-%TODO letzten (nicht gefitteten Punkt) ind fig:rr mit plotten, x-achsen mit "ohne Einheit" Erwhnung, Einheiten sonst in der Form "E / eV"
 
 
 \documentclass[a4paper]{scrartcl}
@@ -133,7 +126,7 @@ Grafically this condition can be represented by an ewalds sphere as seen in figu
 \begin{figure}
   \centering
    	\includegraphics[width=0.5\linewidth]{pic/ewald.pdf}
- 		\caption{ \small The ewalds sphere for a two dimensional quadratic lattice.  } %TODO beschreiben was k,k_0 und G sind.
+ 		\caption{ \small The ewalds sphere for a two dimensional quadratic lattice. $\ve k$, $\ve k_0$ and $\ve G$ correspond to the individual terms in \Formel{muh}. The crosses represent the reciprocal lattice.  }
       \label{fig:ewald}
 \end{figure}
 For an elastic scattering event, the absolute value of the wave-vector is conserved, i.e. $|\ve k|=|\ve k_0|$ and condition \Formel{muh} reduces to
@@ -172,7 +165,7 @@ Reflex $h$,$k$ & Energy (eV) \\
    	\includegraphics[width=0.7\linewidth]{pic/52.jpeg}
 
  \caption{\small Expected diffraction patterns for electron energies listed in table \ref{kll}.}
-        \label{fig:bragg}
+        \label{fig:bragg2}
 \end{figure}
 --
 
@@ -292,10 +285,11 @@ Linear regression of the remaining measurements (see Figure \ref{fig:rr}) yields
 \eq{a=\SI{3.65(3)}{\AA}\;.}{a1}
 As can be seen from the figure as well, the function $E(h^2+k^2)$ does not cross the origin. This is can be explained by a finite interface voltage between the vacuum and the sample, causing the de Broglie wave-length of the electron to change when the electron enters the crystal according to equation \Formel{lshift}. Therefore the axis intercept corresponds to the energy offset $U=\SI{2.0(4)}{eV}$.
 
- \begin{figure} 
+ \begin{figure}[p] 
  \centering
+
 \subfloat[][Measurement Data]
-{\begin{tabular}[b]{rr}
+{\begin{tabular}[b]{c c}
 \toprule
 Energy $E$ (eV) & Reflex $h$, $k$ \\
 \midrule
@@ -311,60 +305,26 @@ $(260.6 \pm 3.4$ & $3,1) $ \\
 }
 \hfill
 \subfloat[][$E$ as function of $h^2+k^2$]
-	{\includegraphics[width=0.6\linewidth]{pic/reflexes.pdf}}
+	{\includegraphics[width=0.42\linewidth]{pic/reflexes.pdf}}
 
 \caption{\small Electron energies at which reflexes $(h,k)$ are projected to opening angle $\varphi=43 \degree$. The value in parentheses does not enter the evaluation as it seems to be too far off. The linear regression (b) results in a slope of $\SI{26.57(36)}{eV}$ and an axis intercept of $\SI{1.97(36)}{eV}$.}
 	\label{fig:rr}
 \end{figure}
 
 \subsection{Determination of the lattice constant using the I(V)-Curve}
-The I(V) curve was measured first in the energy interval of 50 eV to 600 eV with an fluorescence screen voltage of $V_F=6$keV, which gave optimal resolution within the full energy range. A second measurement was performed between 300eV and 600eV with increased screen-voltage $V_F=8$keV leading to a higher resolution and the visibility of a further peak (see Fig \ref{fig:IV}). For the measurement the $(0,0)$ beam was displaced out of the screen center by tilting the sample of about $\Theta_{IV}=2 \degree$. The peak positions were determined by fitting quadratic functions around the maxima and were matched to the corresponding values of $n^2$ by fitting a linear curve onto each of the different matching possibilities. The matching listed in table \ref{tab:IV} leads by far to the best result. The variance of this fit is lower by orders of magnitude compared to all other matching possibilities, that were tried. The slope of the curve is $\SI{11.41(6)}{eV}$ corresponding to a value of 
+The I(V) curve was measured first in the energy interval of 50 eV to 600 eV with an fluorescence screen voltage of $V_F=6$keV, which gave optimal resolution within the full energy range. A second measurement was performed between 300eV and 600eV with increased screen-voltage $V_F=8$keV leading to a higher resolution and the visibility of a further peak (see Fig \ref{fig:uu}a,b). For the measurement the $(0,0)$ beam was displaced out of the screen center by tilting the sample of about $\Theta_{IV}=2 \degree$. The peak positions were determined by fitting quadratic functions around the maxima and were matched to the corresponding values of $n^2$ by fitting a linear curve onto each of the different matching possibilities. The matching listed in figure \ref{fig:uu} leads by far to the best result. The variance of this fit is lower by orders of magnitude compared to all other matching possibilities, that were tried. The slope of the curve is $\SI{11.41(6)}{eV}$ corresponding to a value of 
 \eq{a = \SI{3.63(2)}{\AA}  \;,}{ivresult}
 determined by the use of equation \Formel{eq:iv}, where $d=a/2$ due to the fcc structure of copper. Instead of $\Theta=90 \degree$, the value $\Theta=\SI{94(1)}{\degree}$ is used as the sample had to be tilted.
 
-\begin{figure} 
- \centering
-\subfloat[][$I(V)$: full range]
-{\includegraphics[width=0.5\linewidth]{pic/iv1.pdf}}
-\hfill
-\subfloat[][$I(V)$: small range, high resolution]
-	{\includegraphics[width=0.5\linewidth]{pic/iv2.pdf}}
-	\caption{\small Intensity $I$ of the (0,0) beam as a function of the electron energy $V$ for different energy ranges.}
-	\label{fig:IV1}
-\end{figure}
 
-
-\begin{figure} 
- \centering
+\begin{figure}[p]
+        \begin{center}
+        \begin{tabular}{c c}
+        		\subfloat[][$I(V)$: full range]{\includegraphics[width=0.42\linewidth]{pic/iv1.pdf}}
+       	&
+       		\subfloat[][$I(V)$: small range, high resolution]{\includegraphics[width=0.42\linewidth]{pic/iv2.pdf}} \\
 \subfloat[][Matching of peaks]{
 \begin{tabular}[b]{rr}
-\toprule
-$n^2$ & Electron energy (eV)  \\
-\midrule
- $9$ & $93.78 \pm 0.43$ \\
- $16$ & $171.31 \pm  0.15$ \\
- $25$ & $274.55 \pm 0.31$ \\
- $36$ & $398.04 \pm 0.39$ \\
- $49$ & $550.16 \pm 0.97$\\
- \bottomrule
-\end{tabular}
-}
-\hfill
-\subfloat[][Linear Fit]{
-\includegraphics[width=0.5\linewidth]{pic/ivfit.pdf}
-}
-\caption{\small Optimal matching of $n^2$ to the peak positions. Variance: $\chi_{opt}= 14.2$. Other matchings: $\chi_{other} > 125$. Linear regression (b) resulted in a slope of $\SI{11.405(59)}{eV}$. }
-	\label{fig:IV2}
-\end{figure}
-
-
-\begin{figure}[!h]
-        \begin{center}
-        \begin{tabular}{l r}
-        		\includegraphics[width=0.5\linewidth]{pic/iv1.pdf}
-       	&
-       		\includegraphics[width=0.5\linewidth]{pic/iv2.pdf} \\
-       			\begin{tabular}[b]{rr}
 				\toprule
 $n^2$ & Electron energy (eV)  \\
 \midrule
@@ -373,13 +333,14 @@ $n^2$ & Electron energy (eV)  \\
  $25$ & $274.55 \pm 0.31$ \\
  $36$ & $398.04 \pm 0.39$ \\
  $49$ & $550.16 \pm 0.97$\\
- \bottomrule
-\end{tabular} & \includegraphics[width=0.5\linewidth]{pic/ivfit.pdf} \\  
+ \bottomrule \\
+\end{tabular}
+} & \subfloat[][Linear Fit]{\includegraphics[width=0.42\linewidth]{pic/ivfit.pdf} }\\  
 
 		  \end{tabular}
         \end{center}
         \caption{
-			\small 
+			\small (a)\&(b) Intensity $I$ of the (0,0) beam as a function of the electron energy $V$ for different energy ranges. (c)  Optimal matching of $n^2$ to the peak positions. Variance: $\chi_{opt}= 14.2$. Other matchings: $\chi_{other} > 125$. Linear regression (d) resulted in a slope of $\SI{11.405(59)}{eV}$.
         }
         \label{fig:uu}
 \end{figure}
@@ -404,7 +365,7 @@ The expectation, that Oxygen forms a $(\sqrt{2} \times 2\sqrt{2})R45^\circ$ supe
 
 
 \subsection{Summary and Discussion}
-With a regular low energy electron diffraction setup the surface of both clean copper and copper with an oxygen superstructure was observed. The sputtered and tempered surface allowed measurements on a very clean surface so that the lattice constant obtained from either the leed pattern ($a=(3.65\pm0.03)\AA$) or the $I(V)$ curve ($a=(3.63\pm0.02)\AA$) agree very well with the literature values (SOURCE). %TODO
+With a regular low energy electron diffraction setup the surface of both clean copper and copper with an oxygen superstructure was observed. The sputtered and tempered surface allowed measurements on a very clean surface so that the lattice constant obtained from either the leed pattern ($a=(3.65\pm0.03)\AA$) or the $I(V)$ curve ($a=(3.63\pm0.02)\AA$) agree very well with the literature values ($a=3.615$ in \cite{straumanis}). %TODO
 
 The observed oxygen superstructure matched the expected leed pattern very well and confirmed a $(\sqrt{2} \times 2\sqrt{2})R45^\circ$ pattern.
 
