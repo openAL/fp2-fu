@@ -57,7 +57,7 @@
 \renewcommand{\d}{\mathrm{d}}
 \newcommand{\ve}[1]{\mathbf{ #1} }
 
-\title{Ma 12: Magneto Optical Kerr-Effect and Magnetic Anisotropy}
+\title{Ma 12: Magneto-optic Kerr effect and Magnetic Anisotropy}
 \subtitle{Tutor: B. Lewitz}
 \author{Benjamin Huber, Carolin Wille}
 \date{November 21, 2011}
@@ -70,8 +70,17 @@
 
 
 \section{Introduction}
+The magneto-optic Kerr effect (MOKE) describes the changes in the polarization of light, which is reflected from the surface of a magnetic material. Therefore it can be used to analyze magnetic properties, such as the structure of magnetic domains or the phenomenon of hysteresis effects. It has a great application in magneto-optic data storage like in magneto-optic discs, which are written magnetically and read out optically making use of the Kerr effect. The Kerr effect is also used in Kerr microscopes, which directly show the structure of magnetic domains.
 
-
+\subsection{Magneto-optic Kerr effect}
+The magneto-optic Kerr effect is a quantum mechanical scattering effect. However, it can be qualitatively understood in the picture of classical electrodynamics. Therefore, we consider a light-wave, that is reflected from a surface. During the reflection process it penetrates into the material, before it is emitted again. During the time, the wave spends in the solid, the dielectric displacement $\ve D$ has to be considered instead of the electric field $\ve E$. The quantities are related via
+\eq{\ve D_i = \epsilon_{ij} E_j \;, }{DE}
+where $\epsilon_{ij}$ is the permittivity tensor, that reduces to a scalar for isotropic materials. In magnetized materials, the tensor $\epsilon_{ij}$ decomposes into a real isotropic and an imaginary totally antisymmetric contribution
+\eq{\epsilon_{ij} = \epsilon_0 \delta{ij} + i \beta_{ij} \; . }{eps}
+As the antisymmetric tensor $\beta_{ij}$ has vanishing diagonal entries, it can be expressed in terms of a cross-product with the so called gyration vector, that can be identified in a classical picture with the direction of the magnetic field $\ve j$. Equation \Formel{DE} can then be written as
+\eq{\ve D = \epsilon_0 \ve E - i \epsilon_0 Q \ve j \times \ve E \; , }{DEJ}
+where $\epsilon_0$ is the vacuum permittivity and $Q$ is a complex material constant, that is approximately proportional to the magnetization. The cross-product in equation \Formel{DEJ} describes a rotation around the magnetization axes by $\pi/2$. Therefore the dielectric displacement is given by a linear composition of the initial field $E$ and an orthogonal contribution
+ , although there is a significant deviance when comparing absolute values
 
 
 
