@@ -1,8 +1,11 @@
-%TODO ewalds sphere, kohrenz->resolution
-%TODO grafiken sinnvoll platzieren am ende, superstruktur, fazit
+%TODO kohärenz->resolution
+%TODO grafiken sinnvoll platzieren am ende
+%TODO superstruktur
+%TODO fazit
 %TODO Referenzen (Literatur) und eventuelle [?] refs korrigieren
-%TODO kleinere TODOs z.B. atm -> Pa
+%TODO kleinere TODOs z.B. Einheiten der Steigungen
 %TODO beliebig formulierungen und grafik platzierung verschÃ¶nern
+%TODO letzten (nicht gefitteten Punkt) ind fig:rr mit plotten, x-achsen mit "ohne Einheit" Erwähnung, Einheiten sonst in der Form "E / eV"
 
 
 \documentclass[a4paper]{scrartcl}
@@ -211,10 +214,10 @@ As the electrons used for spectroscopy easily interact with all kind of material
 \toprule
 pump & pressure range (Pa)\\
 \midrule
-\small rotary vane pump & atm - $10^{-1}$  \\ % todo atm -> Pa?
-\small turbo molecular pump &  $1$  - $10^{-9}$  \\
+\small rotary vane pump & $10^5$ - $10^{-1}$  \\ % todo atm -> Pa?
+\small turbo molecular pump &  $10^0$  - $10^{-9}$  \\
 \small ion getter pump  & $ 10^{-3}$  - $10^{-9}$  \\
-\small titan sublimation pump & $10$  - $10^{-9}$  \\
+\small titan sublimation pump & $10^1$  - $10^{-9}$  \\
 \bottomrule
 \end{tabular}
 \caption{Different pumps and their pressure operating range.}
@@ -274,16 +277,18 @@ A typical experimental set-up for LEED is shown in figure \ref{fig:leed}. Usuall
 \end{wrapfigure}
 
 \subsection{Conductance of Experiment}
-The sample is sputtered with Argon ions and heated for around 30 minutes at about 800 K to create a clean and smooth surface. The leed spectroscopy is performed at a pressure of about $0.6 \times 10^{-9}$ torr. As the electron beam is not properly focused, magnetic fields are applied to the apparatus by two copper coils (loose copper wires wound around the vacuum pump). The current of the upper coil shifts the position of the electron beam up or downwards and is operated at $0.8$ V/ $2.69$ A. The other coil is used to tune the left-right position of the beam and is operated at $1.5$ V/ $3.39$ A. Using these parameters optimal focusing is gained, but due to alignment problems of the set-up, the right half of the fluorescence screen appears to be much darker then the other half on the CCD camera. Therefore not all reflexes can be seen symmetrically and most reflection patterns can be only analyzed at half, however it is still entirely possible to determine the corresponding $h,k$ values. The leed patterns for all reflexes $(h,k)$ from (1,0) to (3,1) are recorded. Subsequently the $I(V)$ curve is measured. At last the probe is exposed to oxygen for 30 minutes. During this time the pressure is raised to approximately $P=5 \times 10^{-5}$ mbar. For the recording of the oxygen superstructure the pressure is gain reduced to the previous value.
+The sample is sputtered with Argon ions and heated for around 30 minutes at about 800 K to create a clean and smooth surface. The leed spectroscopy is performed at a pressure of about $0.6 \times 10^{-9}$ torr. As the electron beam is not properly focused, magnetic fields are applied to the apparatus by two copper coils (loose copper wires wound around the vacuum pump). The current of the upper coil shifts the position of the electron beam up or downwards and is operated at $0.8$ V/ $2.69$ A. The other coil is used to tune the left-right position of the beam and is operated at $1.5$ V/ $3.39$ A. Using these parameters optimal focusing is reached, but due to alignment problems of the set-up, the right half of the fluorescence screen appears to be much darker then the other half on the CCD camera. Therefore not all reflexes can be seen symmetrically and most reflection patterns can be only analyzed at half, however it is still entirely possible to determine the corresponding $h,k$ values. The leed patterns for all reflexes $(h,k)$ from (1,0) to (3,1) are recorded. Subsequently the $I(V)$ curve is measured. At last the probe is exposed to oxygen for 30 minutes. During this time the pressure is raised to approximately $P=5 \times 10^{-5}$ mbar. For the recording of the oxygen superstructure the pressure is reduced again to the previous value.
 
 \clearpage
 \section{Analysis}
 \subsection{Determination of Lattice Constant using the leed pattern}
 In order to determine the lattice constant of copper by analyzing the refraction pattern of the $(h,k)$ reflexes using equation \Formel{V}, first the opening angle of the spectrograph has to be determined. This is done by using the reflection of the $(0,0)$ beam, which vanishes from the screen at the angles $\Theta_L = 248.5 \degree$ and $\Theta_R=205.5 \degree$. The opening angle is therefore determined to be $\varphi=43 \degree$. 
 
-The electron energy at which the reflex appears at the opening angle is measured and plotted against $(h^2+k^2)$. By linear regression the slope   of the line, that is proportional to $ 1/a^2 $  is determined. The voltage, were the reflex is at the opening angle is determined by the mean value of the voltage, where it is barely visible and the value, where it appears to be entirely visible. As this interval is closely correlated with the diameter of the reflexion peaks, half of this interval seems to be a reasonable error margin for the voltage or energy  values. For the $(1,0)$ peak, the energy could not be lowered sufficiently to apply this measuring methods, therefore it can only be said, that the energy needed to project this reflex onto the opening angle has to be below $\SI{47.7}{eV}$. Linear regression yields a slope $s=\SI{26.57(36)}{}$ which corresponds to a lattice constant 
+The electron energy at which the reflex appears at the opening angle is measured and plotted against $(h^2+k^2)$. By linear regression the slope of this line is determined, which is proportional to $ 1/a^2 $. The voltage, were the reflex is at the opening angle is determined by the mean value of the voltage, where it is barely visible and the value, where it appears to be entirely visible. As this interval is closely correlated with the diameter of the reflexion peaks, half of this interval seems to be a reasonable error margin for the voltage or energy  values. For the $(1,0)$ peak, the energy could not be lowered sufficiently to apply this measuring methods, therefore it can only be said, that the energy needed to project this reflex onto the opening angle has to be below $\SI{47.7}{eV}$. 
+
+Linear regression of the remaining measurements (see Figure \ref{fig:rr}) yields a slope $s=\SI{26.6(4)}{}$ which corresponds to a lattice constant 
 \eq{a=\SI{3.65(3)}{\AA}\;.}{a1}
-As can be seen from figure \ref{rr}, the function $E(h^2+k^2)$ does not cross the origin. This is can be explained in terms of the kinematic approximation, stating, that the de Broglie wave-length of the electron changes when the electron enters the crystal according to equation \Formel{lshift}. Therefore the axes intercept corresponds to the energy offset $U=\SI{1.97(36)}{eV}$.
+As can be seen from the figure as well, the function $E(h^2+k^2)$ does not cross the origin. This is can be explained by a finite interface voltage between the vacuum and the sample, causing the de Broglie wave-length of the electron to change when the electron enters the crystal according to equation \Formel{lshift}. Therefore the axis intercept corresponds to the energy offset $U=\SI{2.0(4)}{eV}$.
 
  \begin{figure} 
  \centering
@@ -306,12 +311,12 @@ $(260.6 \pm 3.4$ & $3,1) $ \\
 \subfloat[][$E$ as function of $h^2+k^2$]
 	{\includegraphics[width=0.6\linewidth]{pic/reflexes.pdf}}
 
-\caption{\small Electron energies at which reflexes $(h,k)$ are projected to opening angle $\varphi=43 \degree$. The value in parentheses does not enter the evaluation as it seems to be too far off.}
-	\label{rr}
+\caption{\small Electron energies at which reflexes $(h,k)$ are projected to opening angle $\varphi=43 \degree$. The value in parentheses does not enter the evaluation as it seems to be too far off. The linear regression (b) results in a slope of $\SI{26.57(36)}{}$ and an axis intercept of $\SI{1.97(36)}{eV}$.}
+	\label{fig:rr}
 \end{figure}
 
 \subsection{Determination of the lattice constant using the I(V)-Curve}
-The I(V) curve was measured first in the energy interval of 50 eV to 600 eV with an acceleration voltage of the fluorescence screen $V_F=6$keV, which gave optimal resolution within the full energy range. A second measurement was performed between 300eV and 600eV with increased screen-voltage $V_F=8$keV leading to a higher resolution and the visibility of a further peak (see Fig \ref{fig:IV}). For the measurement the $(0,0)$ beam was displaced out of the screen center by tilting the sample of about $\Theta_{IV}=2 \degree$. The peak positions were determined by fitting quadratic functions around the maxima and were matched to the corresponding values of $n^2$ by fitting a linear curve onto each of the different matching possibilities. The matching listed in table \ref{tab:IV} lead to the by far best result. The variance of this fit is lower by orders of magnitude compared to all other matching possibilities, that were tried. The slope of the curve is $\SI{11.405(59)}{eV}$ corresponding to a value of 
+The I(V) curve was measured first in the energy interval of 50 eV to 600 eV with an fluorescence screen voltage of $V_F=6$keV, which gave optimal resolution within the full energy range. A second measurement was performed between 300eV and 600eV with increased screen-voltage $V_F=8$keV leading to a higher resolution and the visibility of a further peak (see Fig \ref{fig:IV}). For the measurement the $(0,0)$ beam was displaced out of the screen center by tilting the sample of about $\Theta_{IV}=2 \degree$. The peak positions were determined by fitting quadratic functions around the maxima and were matched to the corresponding values of $n^2$ by fitting a linear curve onto each of the different matching possibilities. The matching listed in table \ref{tab:IV} leads by far to the best result. The variance of this fit is lower by orders of magnitude compared to all other matching possibilities, that were tried. The slope of the curve is $\SI{11.405(59)}{eV}$ corresponding to a value of 
 \eq{a = \SI{3.63(2)}{\AA}  \;,}{ivresult}
 determined by the use of equation \Formel{eq:iv}, where $d=a/2$ due to the fcc structure of copper. Instead of $\Theta=90 \degree$, the value $\Theta=\SI{94(1)}{\degree}$ is used as the sample had to be tilted.
 
