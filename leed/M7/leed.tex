@@ -73,7 +73,9 @@
 
 
 \section{Introduction}
-Low energy electron diffraction (LEED) is a spectroscopic technique used to analyze the surface structure of a substrate. Its surface sensitivity results from the relatively small mean-free path length of the electrons, which depends on their energy and is determined by the so called universal curve shown in figure \ref{fig:uni}. For electrons of an energy below 200 eV the mean free path is less then 10 $\AA$, which is in the same order of magnitude as typical lattice constants of metals. The principles of LEED can only be understood within the framework of the wave-matter dualism, as the electron diffraction results in wave-like interference phenomena.
+Low energy electron diffraction (LEED) is a spectroscopic technique used to analyze the surface structure of a substrate. Its surface sensitivity results from the relatively small mean-free path length of the electrons, which depends on their energy and is determined by the so called universal curve shown in figure \ref{fig:uni}. For electrons of an energy below 200 eV the mean free path is less then 10 $\AA$, which is in the same order of magnitude as typical lattice constants of metals. 
+
+The principles of LEED can only be understood within the framework of the wave-matter dualism, as the electron diffraction results in wave-like interference phenomena.
 
 
 \begin{wrapfigure}{r}{0.45 \textwidth}
@@ -91,7 +93,7 @@ In 1924 de Broglie proposed, that any particle of momentum $p$ or mass $m$ and e
 where $h=4.136\times 10^{-15} \text{eVs}$ is the Planck constant. Therefore, electron scattering on surfaces can lead to intereference phenomena, if the electron wave length is of the order of the lattice constant. The de Broglie wave length of an electron, that is accelerated with a voltage $V_0$ is given by 
 \eq{\lambda= \frac{\SI{12.26}{\AA}}{\sqrt{V_0}} \; }{lV}
 and a typical eletron energy range from 50 to 500 eV corresponds to wavelengths between 0.5 and 2 $\AA$. Relativistic corrections have not to be taken into account in this energy range, as the ratio between velocity and speed of light for an electron accelerated with $V = \SI{500}{V}$ is given by
-\eq{\frac{v}{c}=\sqrt{1-\frac{1}{(\frac{eV}{mc^2}+1)^2}} =0.04 \; .}{} 
+\eq{\frac{v}{c}=\sqrt{1-\frac{1}{(\frac{eV}{mc^2}+1)^2}} =0.04 \; }{} 
 and the relativistic correction given by the Lorentz factor $\gamma$ according to $\lambda_\text{rel.} = \frac{\lambda}{\gamma}$ is $\frac{1}{\gamma} = \sqrt{1-\frac{v^2}{c^2}}= 0.9992$. The acceleration for which relativistic effects would cause a deviation of $1\percent$ is given by
 \eq{E=(\gamma -1)mc^2= \left(\frac{1}{0.99}-1\right)mc^2=\SI{5160}{eV}\;. }{}
 
@@ -114,19 +116,19 @@ where $\ve a_1$ and $\ve a_2$ are the lattice vectors of the surface layer.
 The scattering process can also be described by the usage of the reciprocal lattice vectors $\ve a_{1,2}^* \perp \ve a_{2,1}$, constructed via
 $a_{1,2}^*=\frac{1}{a_{1,2} \sin \gamma} $, $\gamma = \measuredangle \ve a_1, \ve a_2 $. Therefore, consider a wave function of a plane wave with wave vector $\ve k_0$, that is scattered at all atom positions $\ve R_i$ back to the direction of $\ve k$ 
 \eq{\Psi \propto \sum_{i} f_i(\ve k_0, \ve k) e^{i(\ve k - \ve k_0) \cdot \ve R_i} \ ,}{}
-where $f_i$ are the atomic structure factors. As $\ve R_i=h \ve a_1 + k \ve a_2$, the intensity of the wave $|\Psi|^2$ scattered by a lattice of $H \cdot K$ lattice points can be written as
+where $f_i$ are the atomic structure factors. As $\ve R_i=h \ve a_1 + k \ve a_2$, the intensity of the wave $|\Psi|^2$ scattered by a lattice of $H \cdot K$ lattice points can be written as \cite{kupp}
 \eq{I=|\Psi|^2 \propto |F|^2 \frac{\sin^2 \left( \tfrac 1 2 H \ve a_1 \cdot (\ve k - \ve k_0) \right)}{\sin^2 \left( \tfrac 1 2 \ve a_1 \cdot ( \ve k - \ve k_0 ) \right)} \cdot \frac{\sin^2 \left( \tfrac 1 2 K \ve a_2 \cdot (\ve k - \ve k_0) \right)} {\sin^2 \left( \tfrac 1 2 \ve a_2 \cdot ( \ve k - \ve k_0 ) \right)} \; , } {au}
-where F is the structure factor of a unit cell. Expression \Formel{au} becomes  maximal for the condition
+where F is the structure factor of a unit cell. Expression \Formel{au} becomes  maximal for the condition 
 \eq{\ve a_1 \cdot (\ve k - \ve k_0) = h 2 \pi \qquad \vee \qquad \ve a_2 \cdot (\ve k - \ve k_0) = k 2 \pi \;.}{}
 These two equations are fulfilled, whenever the vector $\ve k - \ve k_0$ is a reciprocal lattice vector
 \eq{\ve g = 2 \pi (h \ve a_1^{*} + k \ve a_2^*) \; .}{}
 The Laue conditions \Formel{au} can therefore be replaced by the condition
 \eq{\ve k - \ve k_0 =\ve g_{h,k} \;.}{muh}
-Grafically this condition can be represented by an ewalds sphere as seen in figure \ref{fig:ewald}.
+Grafically this condition can be represented by an Ewald sphere as seen in figure \ref{fig:ewald}.
 \begin{figure}
   \centering
    	\includegraphics[width=0.5\linewidth]{pic/ewald.pdf}
- 		\caption{ \small The ewalds sphere for a two dimensional quadratic lattice. $\ve k$, $\ve k_0$ and $\ve G$ correspond to the individual terms in \Formel{muh}. The crosses represent the reciprocal lattice.  }
+ 		\caption{ \small The Ewald sphere for a two dimensional quadratic lattice. $\ve k$, $\ve k_0$ and $\ve G$ correspond to the individual terms in \Formel{muh}. The crosses represent the reciprocal lattice.  }
       \label{fig:ewald}
 \end{figure}
 For an elastic scattering event, the absolute value of the wave-vector is conserved, i.e. $|\ve k|=|\ve k_0|$ and condition \Formel{muh} reduces to
@@ -139,7 +141,7 @@ This corresponds to a modified Bragg condition and can be simplified for perpend
 \eq{\sin \varphi =\frac{\lambda}{a} \sqrt{h^2+k^2} \; .}{nm}
 
 \subsection{Example for scattering laws in LEED}
-Assuming a certain reflex characterized by $(h,k)$ of a copper surface, that has a quadratic lattice structure determined by $|\ve a_1|=|\ve a_2|=a=2.55 \AA$, shall be detected at an opening angle of $\varphi = 52 \degree$, what is the energy or the acceleration voltage of the scattering electron, that will create such a reflex?
+Assuming a certain reflex characterized by $(h,k)$ of a copper surface, that has a quadratic lattice structure determined by $|\ve a_1|=|\ve a_2|=a=2.55 \AA$, shall be detected at an opening angle of $\varphi = 52 \degree$. What is the energy or the acceleration voltage of the scattering electron, that will create such a reflex?
 
 Using formula \Formel{nm} and the relation between the de Broglie wave length and the energy of an electron \Formel{lV}, we obtain
 
@@ -190,7 +192,7 @@ If the sample is unclean, it is likely, that the impurities will form a regular 
 
 
 \subsection{Kinematic Approximation}
-Disregarding the possible multiple scatterings of the electrons (the so called kinematic approximation) the reflection condition is the simple Bragg condition. Constructive interference occurs for length differences of $\Delta s = n\lambda$. Regarding only one a single beam (e.g. the (0,0) beam), the length difference is given by the lattice constants while the wavelength $\lambda$ is still variable (depending on the energy $V$). Measuring the intensity of this beam in dependence of the energy yields peaks whenever the difraction condition is met.
+Disregarding the possible multiple scatterings of the electrons (the so called kinematic approximation) the reflection condition is the simple Bragg condition. Constructive interference occurs for length differences of $\Delta s = n\lambda$. Regarding only one single beam (e.g. the (0,0) beam), the length difference is given by the lattice constants while the wavelength $\lambda$ is still variable (depending on the energy $V$). Measuring the intensity of this beam in dependence of the energy yields peaks whenever the difraction condition is met.
 
 Taking into account the energy loss at the interface betweeen vacuum and matter $U$, the wavelength of the electrons is given by
 \eq{\lambda = \frac{h}{\sqrt{2m(V-U)}}.}{lshift}
@@ -202,19 +204,19 @@ where $d$ is the lattice constant and $\Theta$ = $90\degree - \varphi$, where $\
 \section{Experimental Set-Up and Measurement Procedures}
 \FloatBarrier
 \subsection{Ultra High Vacuum (UHV)}
-As the electrons used for spectroscopy easily interact with all kind of materials, it is very useful to operate in high vacuum. This is also necessary in order to reduce the rate of adsorption of molecules, which lead to disturbance of the measured spectra. (Ultra) high  vacuum (UHV) can only be achieved by a series of pumps acting within different pressure ranges. The four types used in the experiment are listed in table \ref{tab:pump}.
+As the electrons used for spectroscopy easily interact with all kind of materials, it is very useful to operate in high vacuum. This is also necessary in order to reduce the rate of adsorption of molecules, which leads to disturbance of the measured spectra. (Ultra) high  vacuum (UHV) can only be achieved by a series of pumps acting within different pressure ranges. The four types used in the experiment are listed in table \ref{tab:pump}.
 \begin{wraptable}{r}{0.55\textwidth}
 \begin{tabular}{lr}
 \toprule
 pump & pressure range (Pa)\\
 \midrule
-\small rotary vane pump & $10^5$ - $10^{-1}$  \\ % todo atm -> Pa?
+\small rotary vane pump & $10^5$ - $10^{-1}$  \\ 
 \small turbo molecular pump &  $10^0$  - $10^{-9}$  \\
 \small ion getter pump  & $ 10^{-3}$  - $10^{-9}$  \\
 \small titan sublimation pump & $10^1$  - $10^{-9}$  \\
 \bottomrule
 \end{tabular}
-\caption{Different pumps and their pressure operating range.}
+\caption{Different pumps and their pressure operating range. \cite{gop} }
 \label{tab:pump}
 \end{wraptable}
 
@@ -250,7 +252,7 @@ In a ion getter pump high voltage is used to emit electrons an accelerate them. 
 In a titan sublimation pump, titan is sputtered to create a fresh layer of atoms, which can absorb gases via chemical binding (chemisorption). In principle it is also possible to pump noble gas, which are inert, through simply catching them by covering them with a layer of titan. 
 
 \subsection{Pressure Measurement}
-For very low pressures usual manometers can't be used, because their are by are not sensitive enough. A manometer used for very low pressure is the ionization manometer, which can measure pressures as low as $10^{-8}$ Pa. It operates by emitting electrons from a thermal kathode and accelerating them towards the annode. Thereby the electron ionize the rest gas molecules, which are absorbed by the kathode leading to an ionization current, that is proportional to the pressure, but depends on the type of gas, as not all gases respond to ionizing electrons in the same way. An ionization manometer always has to be gauged.
+For very low pressures usual manometers can't be used, because they are not sensitive enough. A manometer used for very low pressure is the ionization manometer, which can measure pressures as low as $10^{-8}$ Pa. It operates by emitting electrons from a thermal kathode and accelerating them towards the annode. Thereby the electron ionize the rest gas molecules, which are absorbed by the kathode leading to an ionization current, that is proportional to the pressure, but depends on the type of gas, as not all gases respond to ionizing electrons in the same way. An ionization manometer always has to be gauged.
 
 \subsection{Sample Preparation}
 To reduce the amount of impurities on the surface of the sample, several methods of cleaning are used. Apart from the purely mechanical removal by filing of the sample, sputtering is among the most commonly used. 
@@ -260,13 +262,13 @@ In sputtering, atoms of inert gases are accelerated towards the sample. Due to t
 As this is a rather random process, the surface is most likely very uneven after this process. To correct this, the sample is heated up to allow the atoms to reposition and form a smoother surface (tempering).
 
 \subsection{Typical Set-Up}
-A typical experimental set-up for LEED is shown in figure \ref{fig:leed}. Usually the electrons are shot at the probe under normal angle and the back scattered electrons are detected on a spherical fluorescence screen. In front of the screen is a system of spherical grids deflecting the electrons. The first grid is grounded to prevent deflection of the scattered electrons, which could use to biased measurement data. To the second and third grid a voltage slightly smaller then the accelerating voltage is applied in order to potential barrier with finite width, that can't be passed by inelastically scattered electrons. The third grid is again grounded and the fluorescence screen is at a voltage accelerating the electrons which passed the 2nd and 3rd grid to the screen. On the screen the diffraction pattern can be viewed and via using a CCD camera, the intensities of the reflexes can also be analyzed.
+A typical experimental set-up for LEED is shown in figure \ref{fig:leed}. Usually the electrons are shot at the probe under normal angle and the back scattered electrons are detected on a spherical fluorescence screen. In front of the screen is a system of spherical grids deflecting the electrons. The first grid is grounded to prevent deflection of the scattered electrons, which could bias the measurement data. To the second and third grid a voltage slightly smaller then the accelerating voltage is applied in order to generate a potential barrier with finite width, that can't be passed by inelastically scattered electrons. The third grid is again grounded and the fluorescence screen is at a voltage accelerating the electrons which passed the 2nd and 3rd grid to the screen. On the screen the diffraction pattern can be viewed and using a CCD camera, the intensities of the reflexes can also be analyzed.
 
 \begin{wrapfigure}{r}{0.45\textwidth}
   \centering
    	\includegraphics[width=\linewidth]{pic/leed.pdf}
 
- \caption{\small Schematic Description of an LEED experiment. The retarding grits are used to select only elastically scattered electrons}
+ \caption{\small Schematic Description of an LEED experiment. The retarding grits are used to select only elastically scattered electrons \cite{skript}.}
         \label{fig:leed}
 \end{wrapfigure}
 
@@ -276,7 +278,7 @@ The sample is sputtered with Argon ions and heated for around 30 minutes at abou
 
 \clearpage
 \section{Analysis}
-\subsection{Determination of Lattice Constant using the leed pattern}
+\subsection{Determination of Lattice Constant via LEED pattern}
 In order to determine the lattice constant of copper by analyzing the refraction pattern of the $(h,k)$ reflexes using equation \Formel{V}, first the opening angle of the spectrograph has to be determined. This is done by using the reflection of the $(0,0)$ beam, which vanishes from the screen at the angles $\Theta_L = 248.5 \degree$ and $\Theta_R=205.5 \degree$. The opening angle is therefore determined to be $\varphi=43 \degree$. 
 
 The electron energy at which the reflex appears at the opening angle is measured and plotted against $(h^2+k^2)$. By linear regression the slope of this line is determined, which is proportional to $ 1/a^2 $. The voltage, were the reflex is at the opening angle is determined by the mean value of the voltage, where it is barely visible and the value, where it appears to be entirely visible. As this interval is closely correlated with the diameter of the reflexion peaks, half of this interval seems to be a reasonable error margin for the voltage or energy  values. For the $(1,0)$ peak, the energy could not be lowered sufficiently to apply this measuring methods, therefore it can only be said, that the energy needed to project this reflex onto the opening angle has to be below $\SI{47.7}{eV}$. 
@@ -304,7 +306,7 @@ $(260.6 \pm 3.4$ & $3,1) $ \\
 \end{tabular}
 }
 \hfill
-\subfloat[][$E$ as function of $h^2+k^2$]
+\subfloat[][$E$ as function of $h^2+k^2$]% todo atm -> Pa?
 	{\includegraphics[width=0.42\linewidth]{pic/reflexes.pdf}}
 
 \caption{\small Electron energies at which reflexes $(h,k)$ are projected to opening angle $\varphi=43 \degree$. The value in parentheses does not enter the evaluation as it seems to be too far off. The linear regression (b) results in a slope of $\SI{26.57(36)}{eV}$ and an axis intercept of $\SI{1.97(36)}{eV}$.}
@@ -359,18 +361,22 @@ The expectation, that Oxygen forms a $(\sqrt{2} \times 2\sqrt{2})R45^\circ$ supe
 \hfill
 \subfloat[][Copper plus Oxygen Superstructure]
 	{\includegraphics[width=0.45\linewidth]{pic/osuper11475v.jpeg}}
-	\caption{\small Reflection of the copper $(1,0)$ reflex at $V=47.5$eV. a) Pure Copper Structure. b) Oxygen Superstructure: A "cross" consisting of 5 dots arranged like a 5 on a die is visible in the top left corner.}
+	\caption{\small Reflection of the copper $(1,0)$ reflex at $V=47.5$eV. $\ve a)$ Pure Copper Structure. $\ve b)$ Oxygen Superstructure: A "cross" consisting of 5 dots arranged like a 5 on a dice is visible in the top left corner.}
 	\label{fig:super}
 \end{figure}
 
 
 \subsection{Summary and Discussion}
-With a regular low energy electron diffraction setup the surface of both clean copper and copper with an oxygen superstructure was observed. The sputtered and tempered surface allowed measurements on a very clean surface so that the lattice constant obtained from either the leed pattern ($a=(3.65\pm0.03)\AA$) or the $I(V)$ curve ($a=(3.63\pm0.02)\AA$) agree very well with the literature values ($a=3.615$ in \cite{straumanis}). %TODO
+With a regular low energy electron diffraction setup the surface of both clean copper and copper with an oxygen superstructure was observed. The sputtered and tempered surface allowed measurements on a very clean surface so that the lattice constant obtained from either the leed pattern ($a=(3.65\pm0.03)\AA$) or the $I(V)$ curve ($a=(3.63\pm0.02)\AA$) agree very well with the literature values ($a=3.615$ in \cite{straumanis}). 
+
+However, it is very surprising, that the lattice constant determined by the LEED pattern is not the nearest neighbor distance of a fcc structure $a_{NN} = a/\sqrt{2} = 2.55 \AA $, which we expected as the surface structure of a fcc crystal equals the structure of a simple cubic lattice with lattice constant $a/\sqrt{2}$. This unexpected behavior can not be explained by an incorrect opening angle. For this it would be necessary to correct the angle by more than $10 \degree$, which is implausible. The most plausible conclusion is, that we missed certain reflexes, that are only formed by combinations of the $a/ \sqrt{2}$ lattice due to the suboptimal condition of the apparatus. 
 
 The observed oxygen superstructure matched the expected leed pattern very well and confirmed a $(\sqrt{2} \times 2\sqrt{2})R45^\circ$ pattern.
 
 These rather good results are almost surprising considering the poor quality of the apparatus used for the measurements (cf. section \ref{sec:experiment}). While the time investment for every measurement can certainly be reduced by better equipment, the results are not expected to increase in quality as quickly.
 
+
+\FloatBarrier
  \bibliographystyle{unsrt}
 \bibliography{FPbib}
 
