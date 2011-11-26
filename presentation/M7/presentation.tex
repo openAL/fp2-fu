@@ -1,13 +1,13 @@
-%TODO handout %2 seiten, schriftgröße? seitenrand?
+%TODO handout %2 seiten, schriftgre? seitenrand?
 %	- alles was in den Folien ist
-%	- historie verlängert
+%	- historie verlngert
 %	- formeln
-%	- eigenschaften verlängert
+%	- eigenschaften verlngert
 % 	- type1 vs 2
 %	- hochtemp. outlook [folie?!]
 %	- BCS zusammenfassen
 %	- technische anwendungen?
-%	- fließtext statt stichpunkte
+%	- flietext statt stichpunkte
 
 
 \documentclass{beamer}
@@ -17,6 +17,7 @@
 \usepackage{textcomp}
 \usepackage[isolatin]{inputenc} 
 \usepackage{url,hyperref}
+
 
 %\usepackage{pgfpages}
 %\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm]
@@ -39,36 +40,216 @@
 \titlepage
 \end{frame}
 
+
+
+
 \section{Introduction} %2 %c
 % what is superconductance
 % historic! evtl. hist. plots?
 
-\section{Theory} %1-2 %c
-% T-Bc-Diagram -> widerspruch zu meißner?
 
-\section{Meißner Ochsenfeld} %2-3 %c
-% Meißner Ochsenfeld -> picture of balls
+\begin{frame}{What is Superconductivity?}
+\begin{columns}
+        \column{.55\textwidth}
+        \begin{enumerate}[<+->]
+\item Low Temperature Phenomenon
+\item Loss of Electrical Resistivity 
+\item Everlasting Currents
+\item Strong Magnetic Fields
+\end{enumerate}
+                
+        \column{.45\textwidth}
+        \includegraphics[width=\textwidth]{img/levitation2.jpg}
+        % Henry MÃ¼hlpfordt, TU Dresden, High Temperature Superconductor levitating permanent magnet (2010)
+%\includegraphics<2>[width=\textwidth]{img/heikemess.jpg}
+%\includegraphics<3>[width=\textwidth]{binding.jpg}
+\end{columns}
+\end{frame}
+
+
+
+\begin{frame}{History of Discovery}
+\begin{columns}
+        \column{.65\textwidth}
+        \begin{enumerate}[<+->]
+\item H. Kammerlingh Onnes, Leiden (1911)
+\item Liquid Helium $T<4.2$ K 
+\item Measurements of Electric Resistivity
+\item "Jump" at critical temperature $T_C$
+\end{enumerate}                
+\column{.4\textwidth}
+        \includegraphics<1>[width=0.8\textwidth]{img/heike.jpg}
+                %\tiny \url{http://nobelprize.org/nobel_prizes/physics/laureates/1913/onnes-bio.htm}
+		\includegraphics<2>[width=0.8\textwidth]{img/heike.jpg}
+		\includegraphics<3>[width=\textwidth]{img/heikemess.png}
+		% \tiny H.K. Onnes: Comm. Leiden 12ÃŸb (1911)
+		\includegraphics<4>[width=\textwidth]{img/heikemess.png}
+		%\includegraphics<3>[width=\textwidth]{binding.jpg}           
+\end{columns}
+\end{frame}
+
+
+
+
+
+\section{Phase Transitions}
+\begin{frame}{The T-B-Diagramme}
+\begin{columns}
+
+\column{.45\textwidth}
+\begin{enumerate}[<+->]
+\item \small Critical Temperature $T_C$
+\item \small Critical Magnetic Field $B_C$
+\item \small $B_C=B_{C0} \left[ 1 - \left(\frac{T}{T_C}\right)^2 \right]$
+\end{enumerate}    
+            
+\column{.6\textwidth}
+\includegraphics[width=\textwidth]{img/tb0.pdf}
+\end{columns}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{Phase Transitions for a Perfect Conductor}
+
+\begin{columns}
+\column{.5\textwidth}
+
+
+\centering \includegraphics<1-2>[height=0.6\textheight]{img/no.pdf}
+\includegraphics<3>[height=0.6\textheight]{img/nichdurch.pdf}
+\centering \includegraphics<4>[height=0.6\textheight]{img/no.pdf}
+\includegraphics<5-6>[height=0.6\textheight]{img/durch.pdf}
+
+ 
+ 
+\column{0.5\textwidth}
+\includegraphics<1>[width=0.8\textwidth]{img/tb1.pdf}
+\includegraphics<2>[width=0.8\textwidth]{img/tb4.pdf}
+\includegraphics<3>[width=0.8\textwidth]{img/tb5.pdf}
+\includegraphics<4>[width=0.8\textwidth]{img/tb1.pdf}
+\includegraphics<5>[width=0.8\textwidth]{img/tb2.pdf}                    
+\includegraphics<6>[width=0.8\textwidth]{img/tb3.pdf}
+
+\end{columns}
+\end{frame}
+
+
+
+\begin{frame}{Phase Transitions for a Perfect Conductor}
+
+\begin{columns}
+\column{.5\textwidth}
+\includegraphics<1>[width=0.25\textheight]{img/durch.pdf}
+\includegraphics<1>[width=0.25\textheight]{img/nichdurch.pdf}
+ 
+ 
+\column{0.5\textwidth}
+
+\includegraphics<1>[width=0.8\textwidth]{img/tb6.pdf}
+
+\end{columns}
+
+\begin{alertblock}<1>{Question}
+ Are there two different Superconductor-States? 
+\end{alertblock}
+
+\end{frame}
+% MeiÃŸner Ochsenfeld -> picture of balls
 %		chi diagram
 % -> london eqs?
+
+
+
+
+\section{Meiner Ochsenfeld} %2-3 %c
+
+\begin{frame}{Meiner Ochsenfeld}
+\begin{columns}
+\column{.5\textwidth}
+\includegraphics<1>[width=0.25\textheight]{img/nichdurch.pdf}
+\includegraphics<1>[width=0.25\textheight]{img/nichdurch.pdf}
+ 
+ 
+\column{0.5\textwidth}
+
+\includegraphics<1>[width=0.8\textwidth]{img/tb6.pdf}
+
+\end{columns}
+
+\begin{alertblock}{Answer}
+ No, because a superconductor is much more then a perfect conductor. 
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Meiner Ochsenfeld}
+\begin{columns}
+\column{.5\textwidth}
+\begin{itemize}[<+->]
+\item Meiner Ochsenfeld Effect (1933)
+\item Magnetic Field Expulsion $H=\mu B=0$
+\item Magnetic Permeability $\mu = \mu_0 ( 1+ \chi) =0$
+\item Magnetic Susceptibility $\chi=-1$
+\end{itemize}
+ 
+\column{0.5\textwidth}
+
+\includegraphics<1->[width=0.5\textwidth]{img/nichdurch.pdf}
+
+\end{columns}
+
+
+\end{frame}
+
+
+
+
+%\begin{frame}{Properties of Superconductors}
+%\begin{itemize}[<+->]
+%\item Critical Temperature
+%\item Critical Magnetic Field
+%\item Critical Current
+%\item Anomalous Heat Capacity
+%\end{itemize}
+%\end{frame}
+
+
+
+
 
 \section{BCS Theory} %3-4 %b
 % classical explanation -> pictures, yay!
 % isotop effects
 % bosonen! -> leitende objekte bla
-% Tc, Bc erklären durch benötigte energie zum lösen der paare
+% Tc, Bc erklren durch bentigte energie zum lsen der paare
 
 \section{Statistics} % 3 %b
 % fermi, boson, statistics
 % free electron gas?
 % energy gap
 
+
+
+
+
 \section{Experiment}
 \subsection{Overview} %2 %c
 % what we want to measure -> Tc, Bc ~ Tc^2
 \subsection{Setup} %2 %c
-% kammern, kühlung
+% kammern, khlung
 % messgleichung?
 % druck -> T
+
+
+
+
+
+
+
+
 \subsection{Result} %3 %b
 % expected T-Chi-curve
 % Bc-T-Diagram -> bc0
@@ -93,10 +274,10 @@
 %------------------------------------------------
 % usage:
 %------------------------------------------------
-%\subsection{Künstliches Leben}
-%\begin{frame}\frametitle{Künstliches Leben}
+%\subsection{Knstliches Leben}\textbf{â€¢}
+%\begin{frame}\frametitle{Knstliches Leben}
 %\begin{itemize}
-%	\item<2-> Erste Anwendungen simulierten Künstliches Leben um das echte Leben 
+%	\item<2-> Erste Anwendungen simulierten Knstliches Leben um das echte Leben 
 %			zu erforschen
 %	\item<3-> Fragestellungen vorgegeben durch Evolutionstheorie der vergangenen %Jahre: 
 %\begin{itemize}
