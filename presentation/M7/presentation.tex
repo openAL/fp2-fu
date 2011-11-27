@@ -227,15 +227,101 @@
 
 
 \section{BCS Theory} %3-4 %b
+\subsection{BCS}
+\begin{frame} \frametitle{Slow Electrons}
+\begin{columns}
+\column{0.55\textwidth}
+	\begin{itemize}
+		\item<1-> very low temperature $\Rightarrow$ movement of electrons and nucleons on same timescale
+		\item<2-> Coulomb interaction causes nucleons to move in direction of the electron
+		\item<3-> retarded nucleons create a virtual positive charge "behind" the electron
+		\item<4-> electron-electron interactions now include an attractive term!
+	\end{itemize} 
+\column{0.45\textwidth}
+	\includegraphics<1|trans:0>[width=\textwidth]{img/e0.pdf}
+	\includegraphics<2|trans:0>[width=\textwidth]{img/e1.pdf}
+	\includegraphics<3|trans:0>[width=\textwidth]{img/e2.pdf}
+	\includegraphics<4->[width=\textwidth]{img/e3.pdf}
+\end{columns}
+\end{frame}
+%-------------------------------------------------------------------------------
+\begin{frame} \frametitle{Cooper Pairs}
+\begin{columns}
+\column{0.45\textwidth}
+	\includegraphics<1->[width=\textwidth]{img/cooper.pdf}
+%	\includegraphics<2->[width=\textwidth]{img/deformation.png}
+\column{0.55\textwidth}
+	\begin{itemize}
+		\item<1-> electrons now form "dipoles" that may attract or repel other similar electrons 
+		\item<2-> forming pseudo-bound states (with finite lifetime), interacting via phonons
+		\item<3-> such a pair is called cooper pair, a new pseudoparticle with
+		\begin{itemize}
+			\item<4-> a single wavefunction for whole cooper pair
+			\item<5-> total spin 0 $\Rightarrow$ bosons!
+		\end{itemize}
+	\end{itemize} 
+\end{columns}
+\end{frame}
+%-------------------------------------------------------------------------------
+\begin{frame} \frametitle{Consequences}
+\begin{columns}
+\column{1.00\textwidth}
+	\begin{itemize}[<+->]
+		\item conducting particles - bosons - may all be in the same conducting state without causing further scattering
+		\item energies $>$ "binding energy" of cooper pairs will destroy them
+		\begin{itemize}
+			\item high currents
+			\item high magnetic fields
+			\item "high" temperatures %TODO picture?
+		\end{itemize}
+		\item different isotopes of the same element require different temperatures for superconductance
+	\end{itemize} 
+\begin{block}{ }<7->
+	All these effects agree with the experiments!
+\end{block}
+\end{columns}
+\end{frame}
 % classical explanation -> pictures, yay!
 % isotop effects
 % bosonen! -> leitende objekte bla
-% Tc, Bc erklren durch bentigte energie zum lsen der paare
+% Tc, Bc erklären durch benötigte energie zum lösen der paare
 
 \section{Statistics} % 3 %b
+\subsection{stats}
+\begin{frame} \frametitle{Fermi and Bose Statistics}
+\begin{columns}
+\column{0.55\textwidth}
+	\begin{itemize}
+		\item<1-> a (regular) conductor can be approximated using a model of a \emph{free electron gas}
+		\item<2-> due to the pauli exclusion principle any two states differ by at least one quantum number $\Rightarrow$ Fermi statistic
+		\item<3-> as some electrons become bosonic cooper pairs, they can occupy the same state several times $\Rightarrow$ Bose statistic?
+	\end{itemize} 
+\column{0.45\textwidth}
+	\includegraphics<1-2|trans:0>[width=\textwidth]{img/stat02.pdf}
+	\includegraphics<3->[width=\textwidth]{img/stat12.pdf}
+\end{columns}
+\end{frame}
+%-------------------------------------------------------------------------------
+\begin{frame} \frametitle{Energy Gap}
+\begin{columns}
+\column{0.55\textwidth}
+	\begin{itemize}
+		\item<1-> only about 10\% of all electrons are bound in cooper pairs
+		\item<2-> pairs can only be created near the Fermi energy and have a finite lifetime
+		\item<3-> thus the density of states increases mainly near the Fermi energy
+		\item<4-> an energy gap is created corresponding to the energy required  to create a cooper pair ($=2\Delta$)
+	\end{itemize} 
+\column{0.45\textwidth}
+	\includegraphics<1-2|trans:0>[width=\textwidth]{img/f0.pdf}
+	\includegraphics<3->[width=\textwidth]{img/f1.pdf}
+\end{columns}
+\end{frame}
+%-------------------------------------------------------------------------------
+
 % fermi, boson, statistics
 % free electron gas?
 % energy gap
+
 
 
 
