@@ -1,13 +1,13 @@
-%TODO handout %2 seiten, schriftgröße? seitenrand?
+%TODO handout %2 seiten, schriftgre? seitenrand?
 %	- alles was in den Folien ist
-%	- historie verlängert
+%	- historie verlngert
 %	- formeln
-%	- eigenschaften verlängert
+%	- eigenschaften verlngert
 % 	- type1 vs 2
 %	- hochtemp. outlook [folie?!]
 %	- BCS zusammenfassen
 %	- technische anwendungen?
-%	- fließtext statt stichpunkte
+%	- flietext statt stichpunkte
 
 
 \documentclass{beamer}
@@ -15,8 +15,9 @@
 \usetheme{Frankfurt}
 %\usepackage{german}
 \usepackage{textcomp}
-\usepackage[isolatin]{inputenc} 
+\usepackage[utf8]{inputenc} 
 \usepackage{url,hyperref}
+
 
 %\usepackage{pgfpages}
 %\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm]
@@ -39,113 +40,281 @@
 \titlepage
 \end{frame}
 
+%Ã¼berblick was wir so besrehcen? -_-
+
+
 \section{Introduction} %2 %c
 % what is superconductance
 % historic! evtl. hist. plots?
 
-\section{Theory} %1-2 %c
-% T-Bc-Diagram -> widerspruch zu meißner?
+\subsection{Overview}
+\begin{frame}{What is Superconductivity?}
+\begin{columns}
+        \column{.55\textwidth}
+        \begin{itemize}[<+->]
+\item Low Temperature Phenomenon
+\item Loss of Electrical Resistivity 
+\item Everlasting Currents
+\item Strong Magnetic Fields
+\end{itemize}
+                
+        \column{.45\textwidth}
+        \includegraphics[width=\textwidth]{img/levitation2.jpg}
+        % Henry MÃ¼hlpfordt, TU Dresden, High TemperatOure Superconductor levitating permanent magnet (2010)
+%\includegraphics<2>[width=\textwidth]{img/heikemess.jpg}
+%\includegraphics<3>[width=\textwidth]{binding.jpg}
+\end{columns}
+\end{frame}
 
-\section{Meißner Ochsenfeld} %2-3 %c
-% Meißner Ochsenfeld -> picture of balls
+
+\subsection{History}
+\begin{frame}{History of Discovery}
+\begin{columns}
+        \column{.65\textwidth}
+        \begin{itemize}[<+->]
+\item H. Kammerlingh Onnes, Leiden (1911)
+\item Liquid Helium $T<4.2$ K 
+\item Measurements of Electric Resistivity
+\item "Jump" at critical temperature $T_C$
+\end{itemize}                
+\column{.4\textwidth}
+        \includegraphics<1>[width=0.8\textwidth]{img/heike.jpg}
+                %\tiny \url{http://nobelprize.org/nobel_prizes/physics/laureates/1913/onnes-bio.htm}
+		\includegraphics<2>[width=0.8\textwidth]{img/heike.jpg}
+		\includegraphics<3>[width=\textwidth]{img/heikemess.png}
+		% \tiny H.K. Onnes: Comm. Leiden 12ÃŸb (1911)
+		\includegraphics<4>[width=\textwidth]{img/heikemess.png}
+		%\includegraphics<3>[width=\textwidth]{binding.jpg}           
+\end{columns}
+\end{frame}
+
+\subsection{Properties}
+\begin{frame}{Some Properties of Superconductors}
+\begin{itemize}[<+->]
+\item Critical Temperature
+\item Critical Magnetic Field
+\item Critical Current
+\item Anomalous Heat Capacity
+\end{itemize}
+\end{frame}
+
+
+
+\section{MeiÃŸner-Ochsenfeld Effect}
+
+
+
+\subsection{Critical Field}
+\begin{frame}{Critical Magnetic Fields}
+\begin{columns}
+
+\column{.45\textwidth}
+\begin{itemize}[<+->]
+\item \small Critical Temperature $T_C$
+\item \small Critical Magnetic Field $B_C$
+\item \small $B_C=B_{C0} \left[ 1 - \left(\frac{T}{T_C}\right)^2 \right]$
+\end{itemize}    
+            
+\column{.6\textwidth}
+\includegraphics[width=\textwidth]{img/tb0.pdf}
+\end{columns}
+
+\end{frame}
+
+
+
+
+\subsection{Two Phases?}
+\begin{frame}{Phase Transitions for a Perfect Conductor}
+
+\begin{columns}
+\column{.5\textwidth}
+
+
+\centering \includegraphics<1-2>[height=0.6\textheight]{img/no.pdf}
+\includegraphics<3>[height=0.6\textheight]{img/nichdurch.pdf}
+\centering \includegraphics<4>[height=0.6\textheight]{img/no.pdf}
+\includegraphics<5-6>[height=0.6\textheight]{img/durch.pdf}
+
+ 
+ 
+\column{0.5\textwidth}
+\includegraphics<1>[width=0.8\textwidth]{img/tb1.pdf}
+\includegraphics<2>[width=0.8\textwidth]{img/tb4.pdf}
+\includegraphics<3>[width=0.8\textwidth]{img/tb5.pdf}
+\includegraphics<4>[width=0.8\textwidth]{img/tb1.pdf}
+\includegraphics<5>[width=0.8\textwidth]{img/tb2.pdf}                    
+\includegraphics<6>[width=0.8\textwidth]{img/tb3.pdf}
+
+\end{columns}
+\end{frame}
+
+
+\subsection{MeiÃŸner-Ochsenfeld Effect}
+\begin{frame}{Phase Transitions for a Perfect Conductor}
+
+\begin{columns}
+\column{.5\textwidth}
+\includegraphics<1>[width=0.25\textheight]{img/durch.pdf}
+\includegraphics<1>[width=0.25\textheight]{img/nichdurch.pdf}
+ 
+ 
+\column{0.5\textwidth}
+
+\includegraphics<1>[width=0.8\textwidth]{img/tb6.pdf}
+
+\end{columns}
+
+\begin{alertblock}<1>{Question}
+ Are there two different Superconductor-States? 
+\end{alertblock}
+
+\end{frame}
+% MeiÃŸner Ochsenfeld -> picture of balls
 %		chi diagram
 % -> london eqs?
 
+
+
+
+\subsection{MeiÃŸner-Ochsenfeld} %2-3 %c
+
+\begin{frame}{MeiÃŸner-Ochsenfeld Effect}
+\begin{columns}
+\column{.5\textwidth}
+\includegraphics<1>[width=0.25\textheight]{img/nichdurch.pdf}
+\includegraphics<1>[width=0.25\textheight]{img/nichdurch.pdf}
+ 
+ 
+\column{0.5\textwidth}
+
+\includegraphics<1>[width=0.8\textwidth]{img/tb6.pdf}
+
+\end{columns}
+
+\begin{alertblock}{Answer}
+ No, because a superconductor is much more then a perfect conductor. 
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{MeiÃŸner-Ochsenfeld Effect}
+\begin{columns}
+\column{.5\textwidth}
+\begin{itemize}[<+->]
+\item MeiÃŸner-Ochsenfeld Effect (1933)
+\item Magnetic Field Expulsion $B=\mu H=0$
+\item Magnetic Permeability $\mu = \mu_0 ( 1+ \chi) =0$
+\item Magnetic Susceptibility $\chi=-1$
+\end{itemize}
+ 
+\column{0.5\textwidth}
+
+\includegraphics<1->[width=0.5\textwidth]{img/nichdurch.pdf}
+
+\end{columns}
+
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
 \section{BCS Theory} %3-4 %b
-\begin{frame} \frametitle{Slow Electrons}
-\begin{columns}
-\column{0.55\textwidth}
-	\begin{itemize}
-		\item<1-> very low temperature $\Rightarrow$ movement of electrons and nucleons on same timescale
-		\item<1-> Coulomb interaction causes nucleons to move in direction of the electron
-		\item<2-> retarded nucleons create a virtual positive charge "behind" the electron
-	\end{itemize} 
-\column{0.45\textwidth}
-	\includegraphics<1|trans:0>[width=\textwidth]{img/deformation.png}
-	\includegraphics<2->[width=\textwidth]{img/deformation.png}
-\end{columns}
-\end{frame}
-%-------------------------------------------------------------------------------
-\begin{frame} \frametitle{Cooper Pairs}
-\begin{columns}
-\column{0.45\textwidth}
-	\includegraphics<1->[width=\textwidth]{img/deformation.png}
-%	\includegraphics<2->[width=\textwidth]{img/deformation.png}
-\column{0.55\textwidth}
-	\begin{itemize}
-		\item electron now form "dipoles" that may attract, or dissipate other similar electrons 
-		\item forming pseudo-bound states (with finite lifetime), interacting via phonons
-		\item such a pair is called cooper pair, a new pseudoparticle with
-		\begin{itemize}
-			\item a single wavefunction for whole cooper pair
-			\item total spin 0 $\Rightarrow$ bosons!
-		\end{itemize}
-	\end{itemize} 
-\end{columns}
-\end{frame}
-%-------------------------------------------------------------------------------
-\begin{frame} \frametitle{Conclusions}
-\begin{columns}
-\column{1.00\textwidth}
-	\begin{itemize}
-		\item conducting particles - bosons - may all be in the same state without causing further scattering
-		\item energies $>$ "binding energy" of cooper pais will destroy them
-		\begin{itemize}
-			\item high currents
-			\item high magnetic fields
-			\item "high" temperatures %TODO picture?
-		\end{itemize}
-		\item different isotopes of the same element require different temperatures for superconductance
-	\end{itemize} 
-\begin{block}{ }
-All these effects agree with the experiments!
-\end{block}
-\end{columns}
-\end{frame}
 % classical explanation -> pictures, yay!
 % isotop effects
 % bosonen! -> leitende objekte bla
-% Tc, Bc erklären durch benötigte energie zum lösen der paare
+% Tc, Bc erklren durch bentigte energie zum lsen der paare
 
 \section{Statistics} % 3 %b
-\begin{frame} \frametitle{Fermi and Bose Statistics}
-\begin{columns}
-\column{0.55\textwidth}
-	\begin{itemize}
-		\item<1-> a (regular) conductor can be approximated using a model of a \emph{free electron gas}
-		\item<1-> due to the pauli exclusion principle any two states differ by at least one quantum number $\Rightarrow$ Fermi statistic
-		\item<2->  
-	\end{itemize} 
-\column{0.45\textwidth}
-	\includegraphics<1|trans:0>[width=\textwidth]{img/deformation.png}
-	\includegraphics<2->[width=\textwidth]{img/deformation.png}
-\end{columns}
-\end{frame}
-%-------------------------------------------------------------------------------
-
 % fermi, boson, statistics
 % free electron gas?
 % energy gap
 
+
+
+
+
 \section{Experiment}
 \subsection{Overview} %2 %c
 % what we want to measure -> Tc, Bc ~ Tc^2
+\begin{frame}{Measurements}
+\begin{columns}
+\column{.5\textwidth}
+\begin{itemize}[<+->]
+\item Indium and Tin
+\item $T_C$, $B_C(T)$, $B_{C0}$
+\item via magnetic property $\chi_c=-1$
+\end{itemize}
+\column{.5\textwidth}
+\includegraphics<1>[width=0.4\textwidth]{img/indium.JPG}
+\hfill
+\includegraphics<1>[width=0.4\textwidth]{img/tin.JPG}
+\vfill
+\includegraphics<2>[width=\textwidth]{img/tb0.pdf}
+\includegraphics<3>[width=0.7\textwidth]{img/nichdurch.pdf}
+\end{columns}
+\end{frame}
+
+
 \subsection{Setup} %2 %c
-% kammern, kühlung
+\begin{frame}{Experimental Set-Up}
+\begin{columns}
+\column{.5\textwidth}
+\begin{figure}
+\centering
+\includegraphics[height=0.6\textheight]{img/Zeichnung.pdf}
+\end{figure}
+\column{.5\textwidth}
+\begin{itemize}[<+->]
+\item two level cooling chamber
+\item tune temperature via He pressure
+\item tune magnetic field via current
+\item inside coil -- induction system
+\end{itemize}
+\end{columns}
+
+\end{frame}
+
+
+\subsection{Setup} %2 %c
+\begin{frame}{Experimental Set-Up}
+\includegraphics[height=0.2\textheight]{img/detail.pdf}
+\begin{itemize}[<+->]
+\item working principle of a transformer
+\item induction voltage $U = \frac{\mathrm{d}\Phi}{\mathrm d t} $
+\item magnetic flux $\Phi \sim \mu H$
+\item $\mu=0$ or $\chi=-1$ for superconducting phase
+\item $U_a \ll U_b$ for $T<T_c$ and $B<B_c$
+
+\end{itemize}
+
+
+
+\end{frame}
+
+% kammern, khlung
 % messgleichung?
 % druck -> T
+
+
+
+
+
+
+
+
 \subsection{Result} %3 %b
 % expected T-Chi-curve
 % Bc-T-Diagram -> bc0
 % Values for Sn, T
 
 \section{Outlook} %1
-\begin{frame} \frametitle{Outlook}
-\begin{itemize}
-\item high temperature superconductors
-\item organic superconductors
-\end{itemize}
-\end{frame}
 % hochtemp. supraleiter
 % organische supraleiter??
 % FB
@@ -153,7 +322,7 @@ All these effects agree with the experiments!
 % aufgabe c,d wissen. formeln?
 
 \section[Sources]{References}
-\begin{frame} \frametitle{Sources \& Literature}
+\begin{frame} \frametitle{Sources\& Literature}
 \begin{thebibliography}{9}
 \bibitem[NAME]{name(year): title}  {name(year): title} 
 \end{thebibliography}
@@ -164,10 +333,10 @@ All these effects agree with the experiments!
 %------------------------------------------------
 % usage:
 %------------------------------------------------
-%\subsection{Künstliches Leben}
-%\begin{frame}\frametitle{Künstliches Leben}
+%\subsection{Knstliches Leben}\textbf{â€¢}
+%\begin{frame}\frametitle{Knstliches Leben}
 %\begin{itemize}
-%	\item<2-> Erste Anwendungen simulierten Künstliches Leben um das echte Leben 
+%	\item<2-> Erste Anwendungen simulierten Knstliches Leben um das echte Leben 
 %			zu erforschen
 %	\item<3-> Fragestellungen vorgegeben durch Evolutionstheorie der vergangenen %Jahre: 
 %\begin{itemize}
