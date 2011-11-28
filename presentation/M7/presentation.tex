@@ -284,7 +284,7 @@
 % classical explanation -> pictures, yay!
 % isotop effects
 % bosonen! -> leitende objekte bla
-% Tc, Bc erklären durch benötigte energie zum lösen der paare
+% Tc, Bc erklï¿½ren durch benï¿½tigte energie zum lï¿½sen der paare
 
 \section{Statistics} % 3 %b
 \subsection{stats}
@@ -351,7 +351,7 @@
 
 
 \subsection{Setup} %2 %c
-\begin{frame}{Experimental Set-Up}
+\begin{frame}{Experimental Setup}
 \begin{columns}
 \column{.5\textwidth}
 \begin{figure}
@@ -371,7 +371,7 @@
 
 
 \subsection{Setup} %2 %c
-\begin{frame}{Experimental Set-Up}
+\begin{frame}{Experimental Setup}
 \includegraphics[height=0.2\textheight]{img/detail.pdf}
 \begin{itemize}[<+->]
 \item working principle of a transformer
@@ -397,11 +397,46 @@
 
 
 \subsection{Result} %3 %b
+\begin{frame} \frametitle{Expected Results}
+\begin{columns}
+\column{0.55\textwidth}
+	\begin{itemize}
+		\item<1-> measurement of $U \rightarrow \chi$ and pressure $\rightarrow T$ reveals critical temperature $T_C$
+		\item<2-> repeating this for several external magnetic fields results in a quadratic relation and extrapolated $B_{C0}$
+		\item<3-> knowledge of $T_C$ and $B_{C0}$ allows estimate of electron distance for a cooper pair and number of electrons between them ($\approx 10^{10}$)
+		\item<4-> repeating this for other materials allows comparison of material properties
+	\end{itemize} 
+\column{0.45\textwidth}
+	\includegraphics<1|trans:0>[width=\textwidth]{img/tchi.pdf}
+	\includegraphics<2-3>[width=\textwidth]{img/tb0.pdf}
+	\visible<4->{\begin{tabular}{r|c|c}
+		element & $T_C / \text{K}$ & $B_{C0} / \text{G}$ \\
+		\hline
+		Indium  & $3.40$				& $280$ \\
+		Tin     & $3.72$				& $308$ 
+	\end{tabular}}
+\end{columns}
+\end{frame}
+%-------------------------------------------------------------------------------
+
 % expected T-Chi-curve
 % Bc-T-Diagram -> bc0
 % Values for Sn, T
 
 \section{Outlook} %1
+\subsection{Outlook}
+\begin{frame} \frametitle{Outlook}
+\begin{columns}
+\column{1.00\textwidth}
+	\begin{itemize}
+		\item<1-> high temperature super conductors (e.g. $Hg_{12}Tl_3Ba_{30}Ca_{30} Cu_{45}O_{127}$ with $T_C\approx 138\, \text{K}$)
+		\item<2-> organic super conductors (e.g. alkali-doped fullerene $RbCs_2C_{60}$ with $T_C\approx 33\, \text{K}$)
+		\item<3-> majorana fermions at superconductor interfaces $\rightarrow$ Prof. P. Brouwer at FU-Berlin
+	\end{itemize} 
+\end{columns}
+\end{frame}
+%-------------------------------------------------------------------------------
+
 % hochtemp. supraleiter
 % organische supraleiter??
 % FB
