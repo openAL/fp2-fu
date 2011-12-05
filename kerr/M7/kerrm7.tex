@@ -26,7 +26,7 @@
 \usepackage{longtable}
 \usepackage{enumitem}
 \usepackage{bbm}
-%\usepackage{sidecap}
+\usepackage{sidecap}
 
 
 \usepackage{amssymb} % math symbols
@@ -272,6 +272,59 @@ Apart from the angle of the analyser, the contrast also depends on the angle of 
 \small Contrast over the angle between incident light and normal on the surface for s- and p-polarized light. The quadratic fit for the measurement of the s-polarized light has a non-linear component of $(2.0\pm2.8)\cdot 10^{-5}$. } 
 	\label{fig:inc}
 \end{figure}
+
+
+\FloatBarrier
+
+
+\subsection{Kerr Microscopy}
+
+
+
+A thin film of iron-garnet placed is exposed to a magnetic field of tunable strength and analyzed with a Kerr microscope. Due to the shape anisotropy caused by the geometry of the sample, we expect the magnetization of be within the plane. The domains, that can be seen are thus Bloch walls, where the magnetization is rotated around the normal vector of the plane. 
+
+As the sample is considerably contaminated, there are only a few regions, in which the formation of magnetic domains is visible. These regions are unfortunately not located in the proximity of a hair, that would otherwise be used to estimate the width of the Bloch walls. Thus, only the qualitative properties of the domains can be described.
+
+
+\begin{figure} 
+ \centering
+\subfloat[][maze-structure]
+{         \includegraphics[width=0.3\textwidth]{img/andere1.pdf}} \hfill
+\subfloat[][thin "walls"]
+         {\includegraphics[width=0.3\textwidth]{img/andere2.pdf}} \hfill
+\subfloat[][almost one-domain] 
+         {\includegraphics[width=0.3\textwidth]{img/andere3.pdf}} \hfill
+\caption{ Changes of the domain structure during the increase of the external magnetic field. Transition from equal magnetization distribution \textbf{a)} to enlarged favorable magnetization \textbf{b)} to almost one-domain state \textbf{c)}.
+\small  } 
+	\label{fig:domains}
+\end{figure}
+
+\begin{figure} 
+ \centering
+\subfloat[][before $H_{max}$]
+{         \includegraphics[width=0.45\textwidth]{img/domains2.pdf}} \hfill
+\subfloat[][after $H_{max}$]
+         {\includegraphics[width=0.45\textwidth]{img/reaufbau.pdf}} 
+\caption{ \small \textbf{a)} Domain state at increasing magnetic field. \textbf{b)} Domain state at a decreasing magnetic field after magnetic saturation was reached. The two states reveal a similar structure, but the domains are not arranged exactly in the same way.
+  } 
+	\label{fig:reaufbau}
+\end{figure}
+
+
+
+
+
+
+The domain structure exhibits the typical maze-like structure. When the external magnetic field is increased, the domains of energetically favorable magnetization are enlarged and the domains of opposite magnetizations become thinner (see fig. \ref{fig:domains}). If the external field is increased even further, the walls collapse and larger regions emerge. At last, no domains with unfavorable magnetization remain and the sample is in a one-domain state. Decreasing the magnetic field again leads to a different pattern of the domain states. It is not possible to reproduce the same domain state again (see fig. \ref{fig:reaufbau}).
+
+Another interesting feature is the switching of magnetization domains, which happens suddenly and not continuously while the increasing the magnetic field. This process is due to defects in the atomic lattice and is displayed in figure \ref{fig:defect}.
+\begin{SCfigure}
+    \includegraphics[width=0.4\textwidth]{img/kontrast.pdf}
+  \caption{ \small Sudden changes in the magnetic domain structure at defects of the atomic lattice. The green lines display the structures, which are almost unchanged during a small increase of the magnetic field, while the red lines mark the sudden changes in the pattern. White spots display dirt on the sample. }
+  	\label{fig:defect}
+\end{SCfigure}
+
+
 
 
 
