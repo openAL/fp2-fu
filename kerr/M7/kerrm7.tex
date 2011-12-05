@@ -1,3 +1,13 @@
+%TODO:
+% - microscopy
+% - spule -> magnetfeld
+% - summary and discussion
+% - weniger geschwafel bei Drift auswertung?
+% - literaturwert für kerr winkel
+% - citations und bilder fixen
+% - umformulieren um "we" bei "Incidence Angle" loszuwerden? bla, is sonst auch egal oO
+
+
 \documentclass[a4paper]{scrartcl}
 
 \usepackage[utf8]{inputenc}
@@ -70,7 +80,7 @@
 
 
 \section{Introduction}
-The magneto-optic Kerr effect (MOKE) describes the changes in the polarization of light, which is reflected from the surface of a magnetic material. Therefore it can be used to analyze magnetic properties, such as the structure of magnetic domains or the phenomenon of hysteresis effects. It has a great application in magneto-optic data storage like in magneto-optic discs, which are written magnetically and read out optically making use of the Kerr effect. The Kerr effect is also used in Kerr microscopes, which directly show the structure of magnetic domains.
+The magneto-optic Kerr effect (MOKE) describes the changes in the polarization of light, which is reflected from the surface of a magnetic material. Therefore it can be used to analyse magnetic properties, such as the structure of magnetic domains or the phenomenon of hysteresis effects. It has a great application in magneto-optic data storage like in magneto-optic discs, which are written magnetically and read out optically making use of the Kerr effect. The Kerr effect is also used in Kerr microscopes, which directly show the structure of magnetic domains.
 
 \subsection{Magneto-optic Kerr effect}
 The magneto-optic Kerr effect is a quantum mechanical scattering effect. However, it can be qualitatively understood in the picture of classical electrodynamics. Therefore, we consider a light-wave, that is reflected from a surface. During the reflection process it
@@ -80,7 +90,7 @@ where $ \epsilon_{ij}$ is the permittivity tensor, that reduces to a scalar for 
 \eq{\epsilon_{ij} = \epsilon_0 \alpha_{ij} + i \beta_{ij} \; . }{eps}
 As the antisymmetric tensor $\beta_{ij}$ has vanishing diagonal entries, it can be expressed in terms of a cross-product with the so called gyration vector, that can be identified in a classical picture with the direction of the magnetic field $\ve j$. Equation \Formel{DE} can then be written as
 \eq{\ve D = \epsilon_0 \ve E - i \epsilon_0 Q \ve j \times \ve E \; , }{DEJ}
-where $\epsilon_0$ is the vacuum permittivity and $Q$ is a complex material constant, that is approximately proportional to the magnetization. The cross-product in equation \Formel{DEJ} describes a rotation around the magnetization axes by $\pi/2$, that can be described as a Lorentz force, which is acting on the electrons, that are oscillating in the material due to the periodic excitation of the incoming wave. However, the magnetic field, which would cause a Lorentz force needed to describe the rotation deviates significantly in orders of magnitutde when compared to the real magnetic field. Therefore this classical picture has to be used with caution.
+where $\epsilon_0$ is the vacuum permittivity and $Q$ is a complex material constant, that is approximately proportional to the magnetization. The cross-product in equation \Formel{DEJ} describes a rotation around the magnetization axes by $\pi/2$, that can be described as a Lorentz force, which is acting on the electrons, that are oscillating in the material due to the periodic excitation of the incoming wave. However, the magnetic field, which would cause a Lorentz force needed to describe the rotation deviates significantly in orders of magnitude when compared to the real magnetic field. Therefore this classical picture has to be used with caution.
 
 A further analysis of the Maxwell equation for this problem \cite{book} leads to the conclusion of different refraction indices and amplitudes for left and right circular polarized light. As linear polarized light is nothing but a superposition of these two, it becomes clear, that its direction is rotated as a result of the phase shift between the two components and is furthermore polarized elliptically due to the different intensities (see Fig. \ref{fug:kerr}).
 
@@ -106,12 +116,12 @@ Source: \url{http://en.wikipedia.org/wiki/Magneto-optic_Kerr_effect}. }
 
 
 \subsection{Magnetism}
-Magnetic dipoles exert a force on eachother, causing the configuration of dipol orientation with minimal energy to be the one with all dipoles pointing in the same direction. This causes two important magnetic effects.
+Magnetic dipoles exert a force on each other, causing the configuration of dipole orientation with minimal energy to be the one with all dipoles pointing in the same direction. This causes two important magnetic effects.
 
 \subsubsection*{Magnetic Domains}
-On a small scale all dipols tend to point in the same direction. Globally though, a large extended magnetic field is energetically sub optimal. Instead, different regions, so called domains emerge with parallel dipols within the domain, but different orientations between regions. The domain walls consist of small regions where the dipols change gradually from one to the other orientation by rotating either around an axis parallel (N\'{e}el wall) or perpendicular (Bloch wall) to the wall.
+On a small scale all dipoles tend to point in the same direction. Globally though, a large extended magnetic field is energetically sub optimal. Instead, different regions, so called domains emerge with parallel dipoles within the domain, but different orientations between regions. The domain walls consist of small regions where the dipoles change gradually from one to the other orientation by rotating either around an axis parallel (N\'{e}el wall) or perpendicular (Bloch wall) to the wall.
 
-This construct can globally be neutral, resulting in no significant macroscopic field, but will generally prefer the direction of an external magnetic field. With increasing external field strength more and more domains change orientation until all magnetic dipols are parallel (cf. figure \ref{fig:doms}).
+This construct can globally be neutral, resulting in no significant macroscopic field, but will generally prefer the direction of an external magnetic field. With increasing external field strength more and more domains change orientation until all magnetic dipoles are parallel (cf. figure \ref{fig:doms}).
 \begin{figure}
         \begin{center}
          \includegraphics[width=0.9\linewidth]{img/Dominios.pdf}
@@ -141,11 +151,12 @@ A ferromagnet usually energetically prefers a certain direction of magnetization
 The shape of the magnetic sample is important as the stray field caused by the long range dipole-dipole interaction is dominated by the geometry of the sample. For thin films, the favorable magnetization direction lies within the plane of the film.
 
 The other contribution is called the crystal anisotropy. It is a result of the spin-orbit interaction in every atom of the lattice and describes the fact that the magnetization direction along the different crystal axes result in different energy contributions. The crystal axes, which lead to minimal energy contribution are called "easy axes" in contrast to unfavorable axes, that are called "hard axes". For a small deviation of the angle $\Theta$ between the magnetization direction and the direction of the easy axis, the crystal anisotropy energy is given by
-\eq{E_c=K \cos^2 \Theta \sin^2 \Theta \; , }{aniso}
+\eq{E_c=K \cos^2 \Theta \sin^2 \Theta \; , }{eq:aniso}
 where $K$ is the anisotropy constant in this lowest order approximation.
 
 
-\section{Experimental Set-Up}
+%\section{Experimental Set-Up}
+%oder machen wir noch mehr zum aufbau? sonst brauchen wir das kapitel nicht so zu nennen...
 \subsection{Determination of Kerr Angle}
 The rotation angle of the Kerr rotation is $\Phi_K$ and can be analyzed using a polarization filter, that is also called analyzer. While it is not possible to measure the rotation directly, the evolution of the intensity depending on the angle $\alpha$ is known to be
 \eq{I(\alpha)=I_0 \cos^2(\alpha-\alpha_0) ,}{eq:malus}
@@ -157,7 +168,7 @@ It can be convenient to look at another value, that is useful to have at any rat
 Where the two saturation intensities can be calculated by the above equation \Formel{eq:malus}
 \eq{I_\pm(\alpha) = I_0 \cos^2(\alpha-\alpha_0\pm\Phi_K) + I_1 \sin^2(\alpha-\alpha_0\pm\Phi_K) }{}
 where $\alpha_0$ now is the angle of the incident light. Combining this with \Formel{eq:contrast} results in
-\eq{c(\alpha) = \frac{2(I_1-I_0) \sin(2(\alpha-\alpha_0)) \sin(2\Phi_K) } { I_0+I_1+ (I_0-I_1)\cos(2(\alpha-\alpha_0)) \cos(2\Phi_K)} .}{}
+\eq{c(\alpha) = \frac{2(I_1-I_0) \sin(2(\alpha-\alpha_0)) \sin(2\Phi_K) } { I_0+I_1+ (I_0-I_1)\cos(2(\alpha-\alpha_0)) \cos(2\Phi_K)} .}{eq:c}
 
 
 
@@ -168,6 +179,100 @@ where $I$ is the current that runs through the coil. As the relative permeabilit
 \eq{B_{slit} =  \mu_0  H_{Air}= \frac{\mu_0 n}{d} I = \SI{31.4}{mT A^{-1}} I \; .}{}
 
  
+ 
+\section{Analysis}
+\subsection{Calibration}
+\label{sec:cali}
+While it is easily possible to calculate the maximum magnetic field from the winding number and core material, it is rather difficult to account for all details like displacement from the center, magnetic remanence in the core and so on. To get an accurate value of the magnetic field in our setup nonetheless, an initial measurement with a Hall probe was performed at the future position of the sample. Figure \ref{fig:cali} shows the correlation between coil current and measured voltage for both, the center of the coil and the sample position. Furthermore the hysteresis of the iron core is clearly visible. To account for this offset, all following curves will be considered not against the coil current, but the corresponding magnetic field resulting from the current branch of this hysteresis curve.
+
+To have an easy functional relation, a linear function was fitted to a linear part of every branch. The endpoints will not be correctly represented, but will not be used for any calculations either way. The error of these fits is negligible compared to other sources of inaccuracy in future measurements.
+\begin{figure} 
+ \centering
+\subfloat[][center]
+{         \includegraphics[width=0.45\linewidth]{img/calicenter.pdf}
+       
+}
+\subfloat[][sample position]
+         {\includegraphics[width=0.45\linewidth]{img/calisample.pdf}}
+
+\caption{
+\small Hall voltage against the coil current for the center of the coil \textbf{(a)} and the position of the sample \textbf{(b)}. For future use, linear functions are fitted with all measured points between $I=-2\,\text{A}$ and $I=+2\,\text{A}$ (fits plotted for emphasis). } 
+	\label{fig:cali}
+\end{figure}
+
+
+\subsection{Magnetic Anisotropy}
+Due to difficulties to perform this in the setup, not small deviations (as described e.g. in formula \ref{eq:aniso}) but the full [100] and [110] directions were measured. According to \cite{kittel} the following term is expected as the anisotropy energy density:
+\eq{U_K=K_1(\alpha_1^2\alpha_2^2 + \alpha_2^2\alpha_3^2 + \alpha_1^2\alpha_3^2) + K_2\alpha_1^2\alpha_2^2\alpha_3^2 .}{}
+Due to this term vanishing for the [100] direction, this direction requires less energy to be magnetized. The [110] direction on the other hand has an additional term of $K_1 / 4$ compared to the easy direction. In the hysteresis curves this difference is notable (see figure \ref{fig:ani}). It is expected, that the area between the two plots (being an energy density) corresponds to this additional term.
+
+After aligning the to curves by finding the best overlay of the end (saturated and linear) parts and recalibrating them to be at $2.1\,$T (cf. \cite{skript}), the two linear fits (see figure \ref{fig:ani}) result in an area and thus anisotropy constant of
+\eq{K_1 = (44.0\pm 5.3)\frac{\text{kJ}}{\text{m}^3},}{} 
+where the error is solely due to the noise in the curve / fit. This value is identical to the literature value of $K_1=42\frac{\text{kJ}}{\text{m}^3}$ from \cite{kittel}. The upper part of the curves could not be evaluated due to an unknown deformation in the hard hysteresis curve. 
+\begin{figure} 
+ \centering
+\subfloat[][full hysteresis curve]
+{         \includegraphics[width=0.45\linewidth]{img/ani.pdf}
+       
+}
+\subfloat[][enlargement]
+         {\includegraphics[width=0.45\linewidth]{img/anilarge.pdf}}
+
+\caption{
+\small Hysteresis curves of an easy (100) and harder (110) axis. Magnetization $\mu_0 M$ in Tesla from calibration via the relation $\mu_0 M = 2.1\,\text{T}$ against magnetic induction in Tesla from the calibration in section \ref{sec:cali}. Area (shaded) between the two curves is estimated by two linear functions fitted to the linear parts near 0. } 
+	\label{fig:ani}
+\end{figure}
+
+
+\subsection{Drift}
+During the measurement of the easy and hard hysteresis curves as well as all following curves, there was a (periodic?) drift notable from time to time that resulted in a set of curves that had to be redone. The zero measurement, that was done to try and get a quantitative hold on this phenomenon, showed a large variation in recorded intensity. As there was no coil current in these measurements, the full course of these curves can be seen as unwanted noise (see. fig \ref{fig:waal}). There is a whole list of possible causes. Apart from defect instruments and heating of sample and photodiode a mechanical reason appears to be the most probable. The short lived spikes seen in the top-most curve in fig \ref{fig:waal} correspond to a door being closed. Thus an influence from mechanic disturbances or resonances are obviously possible.
+
+Irrespective of the unknown cause for these drifts in measured intensity, they can not be ignored for the error considerations. While a quick change in intensity will result in a skew (not closed) hysteresis curve and thus be ignored for the calculations, an relatively slow change or even no change at all in the course of one measurement still does not guarantee that the "true" intensity is measured. Over the full span of $0.4$V rather flat parts can be found (cf. fig \ref{fig:waal}) so that in the final measurements the differences (used in the contrast calculations) will not change, but the sums will now include an additional error term.%TODO less schwafel?!?!?!?!?! bin müde ^^
+
+We chose the optimistic version and assumed this drift to be relative to the total intensity measured, so that we will include an relative error of $0.2/6.1$ in all sums of intensities instead of the rather pessimistic absolute error value of $0.2$.
+\begin{figure} 
+ \centering
+         \includegraphics[width=0.45\linewidth]{img/drift.pdf}
+\caption{
+\small Measurements with active laser but without any coil currents. The top two (larger) measurements were taken over a time corresponding to about four regular measurements, the lower two over a time of two regular measurements. } 
+	\label{fig:waal}
+\end{figure}
+
+
+\subsection{Kerr Angle}
+According to equation \ref{eq:c} it is possible to calculate the Kerr angle from a set of contrast values. Preferably around the extinction angle as there is more change in contrast there. The measurements (when given the negative sign arbitrarily whenever the hysteresis curve goes from the bottom-left the the upper-right) allows for an easy fit of the functional relation derived previously for either the positive or the negative part. A combined fit of all data points results in a high variance, while the individual fits are very precise (cf. fig \ref{fig:kerrangle}).
+
+The reason for this mismatch is not very obvious. A material defect seems unlikely, because it is an sudden effect around the extinction angle. Without further investigation, the best explanation includes interfering light reflexes at an horizontal angle on the photodiode and is rather far fetched. To get an better explanation, it would be necessary to go back to the setup and exclude possible reasons one by one.\footnote{It is most likely an error with the setup though. While J\"org and Anika only fitted the approximated formulas, they had the same problem we did. Their maximal values in the positive and negative part have the same asymmetry.}
+
+The individual fits give an averaged Kerr angle of $\Phi_K = (0.071\pm0.008)^\circ$ and an elliptic component of $I_1=(0.018\pm0.003)I_0$ of the light. This elliptic component is due to the imperfect alignment of the laser as well though, so it can not be seen as purely an effect of the Kerr effect.
+%TODO literaturwert?!
+
+\begin{figure} 
+ \centering
+         \includegraphics[width=0.45\linewidth]{img/kerr.pdf}
+\caption{
+\small Contrast over angle near the extinction of $304^\circ$. Fitted curves for positive and negative points result in: (positive points) $I_1 = -(0.017\pm0.005)I_0$, $\alpha_0=(303.89\pm 0.09)^\circ$, $\Phi_K=(0.080\pm0.015)^\circ$ and (negative points) $I_1 = -(0.019\pm0.003)I_0$, $\alpha_0=(303.84\pm 0.17)^\circ$, $\Phi_K=(0.062\pm0.005)^\circ$ in equation \ref{eq:c}. } 
+	\label{fig:kerrangle}
+\end{figure}
+
+
+\subsection{Incidence Angle}
+Apart from the angle of the analyser, the contrast also depends on the angle of the incident light relative to the normal of the surface. This dependence is plotted as measured in figure \ref{fig:inc}. For the s-polarized light, the non-linear component in the angle dependence is very small, almost non-existent, in agreement with the plots from \cite{paper}. The measurement of the p-polarized light could unfortunately not be evaluated. The values between $22.5^\circ$ and $35^\circ$ might be correct but the rest suffers an effect that has nothing to do with the phenomenon that we wanted to investigate. It is possible, that the light beam did not hit the sample properly or something similar. While we naturally tried to avoid this during the measurements, it still seems to be the best explanation in retrospect.
+%TODO kein "we"?
+\begin{figure} 
+ \centering
+\subfloat[][s-polarized]
+{         \includegraphics[width=0.45\linewidth]{img/incs.pdf}
+       
+}
+\subfloat[][p-polarized]
+         {\includegraphics[width=0.45\linewidth]{img/incp.pdf}}
+
+\caption{
+\small Contrast over the angle between incident light and normal on the surface for s- and p-polarized light. The quadratic fit for the measurement of the s-polarized light has a non-linear component of $(2.0\pm2.8)\cdot 10^{-5}$. } 
+	\label{fig:inc}
+\end{figure}
+
 
 
  \bibliographystyle{unsrt}
