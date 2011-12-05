@@ -1,10 +1,7 @@
 %TODO:
 
 % - summary and discussion
-% - weniger geschwafel bei Drift auswertung?
 % - literaturwert für kerr winkel
-% - citations und bilder fixen
-% - umformulieren um "we" bei "Incidence Angle" loszuwerden? bla, is sonst auch egal oO
 
 
 \documentclass[a4paper]{scrartcl}
@@ -227,25 +224,26 @@ where the error is solely due to the noise in the curve / fit. This value is ide
 \subsection{Drift}
 During the measurements, there was a (periodic?) drift notable from time to time that resulted in a set of curves that had to be redone. The zero measurement, that was done to try and get a quantitative hold on this phenomenon, showed a large variation in recorded intensity. As there was no coil current in these measurements, the full course of these curves can be seen as unwanted noise (see. fig \ref{fig:waal}). There is a whole list of possible causes. Apart from defect instruments and heating of sample and photodiode a mechanical reason appears to be the most probable. The short lived spikes seen in the top-most curve in fig \ref{fig:waal} correspond to a door being closed. Thus an influence from mechanic disturbances or resonances are obviously possible.
 
-Irrespective of the unknown cause for these drifts in measured intensity, they can not be ignored for the error considerations. While a quick change in intensity will result in a skew (not closed) hysteresis curve and thus be ignored for the calculations, an relatively slow change or even no change at all in the course of one measurement still does not guarantee that the "true" intensity is measured. Over the full span of $0.4$V rather flat parts can be found (cf. fig \ref{fig:waal}) so that in the final measurements the differences (used in the contrast calculations) will not change, but the sums will now include an additional error term.%TODO less schwafel?!?!?!?!?! bin müde ^^
+Irrespective of the unknown cause for these drifts in measured intensity, they can not be ignored for the error considerations. While a quick change in intensity will result in a skew (not closed) hysteresis curve and thus be ignored for the calculations (as only measurements with well defined hysteresis loops were evaluated further), a relatively slow change during the course of several measurements are not that easily detected and eliminated. Therefore, evaluating only measurements with closed hysteresis loops does not entirely guarantee that the "true" intensity is measured. Over the full span of $0.4$V rather flat parts can be found (cf. fig \ref{fig:waal}) so that in the final measurements the differences (used in the contrast calculations) will not change, but the sums will now include an additional error term.%TODO less schwafel?!?!?!?!?! bin müde ^^
 
 We chose the optimistic version and assumed this drift to be relative to the total intensity measured, so that we will include an relative error of $0.2/6.1$ in all sums of intensities instead of the rather pessimistic absolute error value of $0.2$.
 \begin{figure} 
  \centering
          \includegraphics[width=0.45\linewidth]{img/drift.pdf}
 \caption{
-\small Measurements with active laser but without any coil currents. The top two (larger) measurements were taken over a time corresponding to about four regular measurements, the lower two over a time of two regular measurements. } 
+\small Measurements with active laser but without any coil currents. The top two (larger) measurements were taken over a time interval, that was about 4 times larger than the interval of a single regular measurement (i.e. the time needed to perform a full hysteresis loop), the lower two over a time of about two regular single measurements. } 
 	\label{fig:waal}
 \end{figure}
 
 
 \subsection{Kerr Angle}
-According to equation \ref{eq:c} it is possible to calculate the Kerr angle from a set of contrast values. Preferably around the extinction angle as there is more change in contrast there. The measurements (when given the negative sign arbitrarily whenever the hysteresis curve goes from the bottom-left the the upper-right) allows for an easy fit of the functional relation derived previously for either the positive or the negative part. A combined fit of all data points results in a high variance, while the individual fits are very precise (cf. fig \ref{fig:kerrangle}).
+According to equation \Formel{eq:c} it is possible to calculate the Kerr angle from a set of contrast values. Preferably around the extinction angle as there is more change in contrast there. The measurements (when given the negative sign arbitrarily whenever the hysteresis curve goes from the bottom-left to the upper-right) allows for an easy fit of the functional relation derived previously for either the positive or the negative part. A combined fit of all data points results in a high variance, while the individual fits are very precise (cf. fig \ref{fig:kerrangle}).
 
-The reason for this mismatch is not very obvious. A material defect seems unlikely, because it is an sudden effect around the extinction angle. Without further investigation, the best explanation includes interfering light reflexes at an horizontal angle on the photodiode and is rather far fetched. To get an better explanation, it would be necessary to go back to the setup and exclude possible reasons one by one.\footnote{It is most likely an error with the setup though. While J\"org and Anika only fitted the approximated formulas, they had the same problem we did. Their maximal values in the positive and negative part have the same asymmetry.}
+The reason for this mismatch is not very obvious. A material defect seems unlikely, because it is a sudden effect around the extinction angle. Without further investigation, the best explanation includes interfering light reflexes at a horizontal angle on the photodiode and is rather far fetched. To get a better explanation, it would be necessary to go back to the setup and exclude possible reasons one by one.\footnote{It is most likely an error with the setup though. While J\"org and Anika only fitted the approximated formulas, they had the same problem we had. Their maximal values in the positive and negative part have the same asymmetry. \cite{jrganika}}
 
-The individual fits give an averaged Kerr angle of $\Phi_K = (0.071\pm0.008)^\circ$ and an elliptic component of $I_1=(0.018\pm0.003)I_0$ of the light. This elliptic component is due to the imperfect alignment of the laser as well though, so it can not be seen as purely an effect of the Kerr effect.
-%TODO literaturwert?!
+The individual fits give an averaged Kerr angle of $\Phi_K = (0.071\pm0.008)^\circ$ and an elliptic component of $I_1=(0.018\pm0.003)I_0$ of the light. This elliptic component is due to the imperfect alignment of the laser as well, so it can not be seen as a pure result of the Kerr effect.
+
+A comparison to a literature value of $\Phi_\text{lit}=0.14 \degree$ (cf. \cite{stanford}) for longitudinal MOKE at $45\degree$ incidence, which matches the conditions of the experiment yields non compatible values, but comparable orders of magnitude.
 
 \begin{figure} 
  \centering
@@ -281,9 +279,9 @@ Apart from the angle of the analyser, the contrast also depends on the angle of 
 
 
 
-A thin film of iron-garnet placed is exposed to a magnetic field of tunable strength and analyzed with a Kerr microscope. Due to the shape anisotropy caused by the geometry of the sample, we expect the magnetization of be within the plane. The domains, that can be seen are thus Bloch walls, where the magnetization is rotated around the normal vector of the plane. 
+A thin film of iron-garnet is exposed to a magnetic field of tunable strength and analyzed with a Kerr microscope. Due to the shape anisotropy caused by the geometry of the sample, we expect the magnetization of be within the plane. The domains, that can be seen are thus Bloch walls, where the magnetization is rotated around the normal vector of the plane. 
 
-As the sample is considerably contaminated, there are only a few regions, in which the formation of magnetic domains is visible. These regions are unfortunately not located in the proximity of a hair, that would otherwise be used to estimate the width of the Bloch walls. Thus, only the qualitative properties of the domains can be described.
+As the sample is considerably contaminated, there are only a few regions, in which the formation of magnetic domains is visible. Thus, only the qualitative properties of the domains are described and an estimate of the domain with by the comparison with a hair is not given.
 
 
 \begin{figure} 
@@ -319,15 +317,25 @@ The domain structure exhibits the typical maze-like structure. When the external
 
 Another interesting feature is the switching of magnetization domains, which happens suddenly and not continuously while the increasing the magnetic field. This process is due to defects in the atomic lattice and is displayed in figure \ref{fig:defect}.
 \begin{SCfigure}
-    \includegraphics[width=0.4\textwidth]{img/kontrast.pdf}
+    \includegraphics[width=0.48\textwidth]{img/kontrast.pdf}
   \caption{ \small Sudden changes in the magnetic domain structure at defects of the atomic lattice. The green lines display the structures, which are almost unchanged during a small increase of the magnetic field, while the red lines mark the sudden changes in the pattern. White spots display dirt on the sample. }
   	\label{fig:defect}
 \end{SCfigure}
 
 
 
+\section{Summary and Discussion}
+The magneto-optical Kerr effect of a thin iron film was investigated in dependency of an external magnetic field, the direction of magnetization (hard and easy axes), and the polarization of the incoming laser beam as well as its incidence angle. 
 
+The external magnetic field was generated by a toroid coil and calibrated against the current using a Hall probe. The magnetic anisotropy of the iron film was measured by making use of the Kerr rotation, that alters the polarization angle of a laser beam reflected on the sample's surface. A polarization filter was used to transform the change of the polarization angle into a change of the intensity of the laser beam, which was measured with a photodiode. Thus, the hysteresis loops along the easy axis [100] and a harder axes [110] could be recored by placing the sample in two different positions with respect to the external field. The hysteresis loops showed the typical shapes for easy and hard axes and the difference of their enclosed areas was determined in order to calculate the anisotropy energy, that is necessary to change the magnetization of the sample.
 
+The Kerr angle of the sample was determined by analyzing the contrast of the intensities measured at the two saturation magnetizations points. Measuring the contrast as a function of the angle of the polarization analyzer revealed the expected relation from which the Kerr angle could be determined to be $\SI{0.071(8)}{\degree}$. However, the curves of the measurements showed severe asymmetries with respect to the extinction angle, that could not be explained.
+
+The dependency of the Kerr rotation on the incidence angle and polarization of the laser beam was successful for s-polarized light. It revealed a quadratic dependence between the contrast and the incidence angle, which was expected and is in good agreement with the measurements performed by  Zak et al. \cite{paper}. However, the same measurement for p-polarized light failed, because only for the first angles a linear behavior was recorded. All further measurements revealed no reasonable data, most probably due to impurities of the sample.
+
+At last the Kerr rotation was used in a Kerr microscope to analyze the domain structure of a thin iron-garnet film in a tunable magnetic field. The expected structures and behaviors of the magnetic domains and Bloch walls could fully be detected.
+
+All in all the measurement can be considered successful, although it seemed like the electronic equipment was very sensitive to any disturbances and drift effects could be seen in the measurement data, which could not be suppressed by means of computation. It would be helpful to check all electronic devices in order to eliminate or reduce those effects. 
  \bibliographystyle{unsrt}
 \bibliography{bib}
 
