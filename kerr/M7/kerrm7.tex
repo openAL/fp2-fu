@@ -1,6 +1,5 @@
 %TODO:
-% - microscopy
-% - spule -> magnetfeld
+
 % - summary and discussion
 % - weniger geschwafel bei Drift auswertung?
 % - literaturwert für kerr winkel
@@ -92,7 +91,7 @@ As the antisymmetric tensor $\beta_{ij}$ has vanishing diagonal entries, it can 
 \eq{\ve D = \epsilon_0 \ve E - i \epsilon_0 Q \ve j \times \ve E \; , }{DEJ}
 where $\epsilon_0$ is the vacuum permittivity and $Q$ is a complex material constant, that is approximately proportional to the magnetization. The cross-product in equation \Formel{DEJ} describes a rotation around the magnetization axes by $\pi/2$, that can be described as a Lorentz force, which is acting on the electrons, that are oscillating in the material due to the periodic excitation of the incoming wave. However, the magnetic field, which would cause a Lorentz force needed to describe the rotation deviates significantly in orders of magnitude when compared to the real magnetic field. Therefore this classical picture has to be used with caution.
 
-A further analysis of the Maxwell equation for this problem \cite{book} leads to the conclusion of different refraction indices and amplitudes for left and right circular polarized light. As linear polarized light is nothing but a superposition of these two, it becomes clear, that its direction is rotated as a result of the phase shift between the two components and is furthermore polarized elliptically due to the different intensities (see Fig. \ref{fug:kerr}).
+A further analysis of the Maxwell equation for this problem \cite{dissert} leads to the conclusion of different refraction indices and amplitudes for left and right circular polarized light. As linear polarized light is nothing but a superposition of these two, it becomes clear, that its direction is rotated as a result of the phase shift between the two components and is furthermore polarized elliptically due to the different intensities (cf. fig. \ref{fig:kerr}).
 
 
 
@@ -133,15 +132,15 @@ This construct can globally be neutral, resulting in no significant macroscopic 
 \end{figure}
 
 \subsubsection*{Magnetic Hysteresis}
-Decreasing the external field after all domains were parallely oriented reverses the above effect and creates / enlarges domains with different orientation little by little. As the orientation flipping requires energy though, it will only happen, if the difference in total energy between the current and the flipped state is larger than this required energy. Thus there will be more domains with the original orientation, even after the external field has vanished. This remaining macroscopic magnetic moment is called the remanence magnetisation. An opposing field with the so called coercivity strength is required to completely demagnetize the material. The different magnetizations while increasing and decreasing the external field create the so called hysteresis curve (see figure \ref{fig:hys}).
+Decreasing the external field after all domains were parallely oriented reverses the above effect and creates or enlarges domains with different orientation little by little. As the orientation flipping requires energy though, it will only happen, if the difference in total energy between the current and the flipped state is larger than this required energy. Thus there will be more domains with the original orientation, even after the external field has vanished. This remaining macroscopic magnetic moment is called the remanence magnetisation. An opposing field with the so called coercivity strength is required to completely demagnetize the material. The different magnetizations while increasing and decreasing the external field create the so called hysteresis curve (cf. figure \ref{fig:hys}).
 \begin{figure}
         \begin{center}
          \includegraphics[width=0.31\linewidth]{img/hys.pdf}
         \end{center}
         \caption{
-\small A plot of magnetization m against magnetic field h calculated using a theoretical model. Starting at the origin, the upward curve is the initial magnetization curve. The downward curve after saturation, along with the lower return curve, form the main loop. The intercepts $h_c$ and $m_{rs}$ are the coercivity and saturation remanence. Picture taken from \url{http://en.wikipedia.org/wiki/Hysteresis}.
+\small A plot of magnetization $m$ against magnetic field $h$ calculated using a theoretical model. Starting at the origin, the upward curve is the initial magnetization curve. The downward curve after saturation, along with the lower return curve, form the main loop. The intercepts $h_c$ and $m_{rs}$ are the coercivity and saturation remanence. Picture taken from \url{http://en.wikipedia.org/wiki/Hysteresis}.
         }
-        \label{fig:doms}
+        \label{fig:hys}
 \end{figure}
 
 
@@ -164,9 +163,9 @@ where $\alpha_0$ is the angle of polarization. This equation as stated only hold
 \eq{I(\alpha) = I_0 \cos^2(\alpha-\alpha_0) + I_1 \sin^2(\alpha-\alpha_0) .}{}
 
 It can be convenient to look at another value, that is useful to have at any rate: the contrast $c$. It is defined as the difference between minimum and maximum value devided by the offset (their average). In our case these minima and maxima are simply the intensities at the opposing saturation magnetisations.
-\eq{c(\alpha)=\frac{\Delta I(\alpha)}{<I(\alpha)>} = 2\frac{I_+(\alpha)-I_-(\alpha)}{I_+(\alpha)+I_-(\alpha)} }{eq:contrast}
+\eq{c(\alpha)=\frac{\Delta I(\alpha)}{<I(\alpha)>} = 2\frac{I_+(\alpha)-I_-(\alpha)}{I_+(\alpha)+I_-(\alpha)} \; .}{eq:contrast}
 Where the two saturation intensities can be calculated by the above equation \Formel{eq:malus}
-\eq{I_\pm(\alpha) = I_0 \cos^2(\alpha-\alpha_0\pm\Phi_K) + I_1 \sin^2(\alpha-\alpha_0\pm\Phi_K) }{}
+\eq{I_\pm(\alpha) = I_0 \cos^2(\alpha-\alpha_0\pm\Phi_K) + I_1 \sin^2(\alpha-\alpha_0\pm\Phi_K) \; ,}{}
 where $\alpha_0$ now is the angle of the incident light. Combining this with \Formel{eq:contrast} results in
 \eq{c(\alpha) = \frac{2(I_1-I_0) \sin(2(\alpha-\alpha_0)) \sin(2\Phi_K) } { I_0+I_1+ (I_0-I_1)\cos(2(\alpha-\alpha_0)) \cos(2\Phi_K)} .}{eq:c}
 
@@ -178,7 +177,7 @@ By the use of Ampere's Law, we obtain for a toroid coil with an iron core, that 
 where $I$ is the current that runs through the coil. As the relative permeability for iron is by approximately a factor $3000$ higher then the permeability of air and the radius of the coil is not by orders of magnitudes larger than the slit width, we can neglect the first summand in \Formel{Htheo} yielding
 \eq{B_{slit} =  \mu_0  H_{Air}= \frac{\mu_0 n}{d} I = \SI{31.4}{mT A^{-1}} I \; .}{}
 
- 
+\FloatBarrier
  
 \section{Analysis}
 \subsection{Calibration}
@@ -204,11 +203,12 @@ To have an easy functional relation, a linear function was fitted to a linear pa
 \subsection{Magnetic Anisotropy}
 Due to difficulties to perform this in the setup, not small deviations (as described e.g. in formula \ref{eq:aniso}) but the full [100] and [110] directions were measured. According to \cite{kittel} the following term is expected as the anisotropy energy density:
 \eq{U_K=K_1(\alpha_1^2\alpha_2^2 + \alpha_2^2\alpha_3^2 + \alpha_1^2\alpha_3^2) + K_2\alpha_1^2\alpha_2^2\alpha_3^2 .}{}
-Due to this term vanishing for the [100] direction, this direction requires less energy to be magnetized. The [110] direction on the other hand has an additional term of $K_1 / 4$ compared to the easy direction. In the hysteresis curves this difference is notable (see figure \ref{fig:ani}). It is expected, that the area between the two plots (being an energy density) corresponds to this additional term.
+Due to this term vanishing for the [100] direction, this direction requires less energy to be magnetized. The [110] direction on the other hand has an additional term of $K_1 / 4$ compared to the easy direction. In the hysteresis curves this difference is notable (cf. figure \ref{fig:ani}). It is expected, that the area between the two plots (being an energy density) corresponds to this additional term.
 
-After aligning the to curves by finding the best overlay of the end (saturated and linear) parts and recalibrating them to be at $2.1\,$T (cf. \cite{skript}), the two linear fits (see figure \ref{fig:ani}) result in an area and thus anisotropy constant of
+After aligning the to curves by finding the best overlay of the end (saturated and linear) parts and recalibrating them to be at $2.1\,$T (cf. \cite{skript}), the two linear fits (cf. figure \ref{fig:ani}) result in an area and thus anisotropy constant of
 \eq{K_1 = (44.0\pm 5.3)\frac{\text{kJ}}{\text{m}^3},}{} 
-where the error is solely due to the noise in the curve / fit. This value is identical to the literature value of $K_1=42\frac{\text{kJ}}{\text{m}^3}$ from \cite{kittel}. The upper part of the curves could not be evaluated due to an unknown deformation in the hard hysteresis curve. 
+where the error is solely due to the noise in the curve / fit. This value is identical to the literature value of $K_1=42\frac{\text{kJ}}{\text{m}^3}$ from \cite{kittel}. The upper part of the curves could not be evaluated due to an unknown deformation in the hard hysteresis curve.
+ 
 \begin{figure} 
  \centering
 \subfloat[][full hysteresis curve]
@@ -219,13 +219,13 @@ where the error is solely due to the noise in the curve / fit. This value is ide
          {\includegraphics[width=0.45\linewidth]{img/anilarge.pdf}}
 
 \caption{
-\small Hysteresis curves of an easy (100) and harder (110) axis. Magnetization $\mu_0 M$ in Tesla from calibration via the relation $\mu_0 M = 2.1\,\text{T}$ against magnetic induction in Tesla from the calibration in section \ref{sec:cali}. Area (shaded) between the two curves is estimated by two linear functions fitted to the linear parts near 0. } 
+\small Hysteresis curves of an easy ([100], blue) and harder ([110], purple) axis. Magnetization $\mu_0 M$ in Tesla (calibration via the relation $\mu_0 M = 2.1\,\text{T}$) against magnetic induction in Tesla from the calibration in section \ref{sec:cali}. Area (shaded) between the two curves is estimated by two linear functions fitted to the linear parts between -0.05 and -0.005. } 
 	\label{fig:ani}
 \end{figure}
 
 
 \subsection{Drift}
-During the measurement of the easy and hard hysteresis curves as well as all following curves, there was a (periodic?) drift notable from time to time that resulted in a set of curves that had to be redone. The zero measurement, that was done to try and get a quantitative hold on this phenomenon, showed a large variation in recorded intensity. As there was no coil current in these measurements, the full course of these curves can be seen as unwanted noise (see. fig \ref{fig:waal}). There is a whole list of possible causes. Apart from defect instruments and heating of sample and photodiode a mechanical reason appears to be the most probable. The short lived spikes seen in the top-most curve in fig \ref{fig:waal} correspond to a door being closed. Thus an influence from mechanic disturbances or resonances are obviously possible.
+During the measurements, there was a (periodic?) drift notable from time to time that resulted in a set of curves that had to be redone. The zero measurement, that was done to try and get a quantitative hold on this phenomenon, showed a large variation in recorded intensity. As there was no coil current in these measurements, the full course of these curves can be seen as unwanted noise (see. fig \ref{fig:waal}). There is a whole list of possible causes. Apart from defect instruments and heating of sample and photodiode a mechanical reason appears to be the most probable. The short lived spikes seen in the top-most curve in fig \ref{fig:waal} correspond to a door being closed. Thus an influence from mechanic disturbances or resonances are obviously possible.
 
 Irrespective of the unknown cause for these drifts in measured intensity, they can not be ignored for the error considerations. While a quick change in intensity will result in a skew (not closed) hysteresis curve and thus be ignored for the calculations, an relatively slow change or even no change at all in the course of one measurement still does not guarantee that the "true" intensity is measured. Over the full span of $0.4$V rather flat parts can be found (cf. fig \ref{fig:waal}) so that in the final measurements the differences (used in the contrast calculations) will not change, but the sums will now include an additional error term.%TODO less schwafel?!?!?!?!?! bin müde ^^
 
@@ -294,7 +294,7 @@ As the sample is considerably contaminated, there are only a few regions, in whi
          {\includegraphics[width=0.3\textwidth]{img/andere2.pdf}} \hfill
 \subfloat[][almost one-domain] 
          {\includegraphics[width=0.3\textwidth]{img/andere3.pdf}} \hfill
-\caption{ Changes of the domain structure during the increase of the external magnetic field. Transition from equal magnetization distribution \textbf{a)} to enlarged favorable magnetization \textbf{b)} to almost one-domain state \textbf{c)}.
+\caption{ Changes of the domain structure during the increase of the external magnetic field. Transition from equal magnetization distribution \textbf{(a)} to enlarged favorable magnetization \textbf{(b)} to almost one-domain state \textbf{(c)}.
 \small  } 
 	\label{fig:domains}
 \end{figure}
@@ -305,7 +305,7 @@ As the sample is considerably contaminated, there are only a few regions, in whi
 {         \includegraphics[width=0.45\textwidth]{img/domains2.pdf}} \hfill
 \subfloat[][after $H_{max}$]
          {\includegraphics[width=0.45\textwidth]{img/reaufbau.pdf}} 
-\caption{ \small \textbf{a)} Domain state at increasing magnetic field. \textbf{b)} Domain state at a decreasing magnetic field after magnetic saturation was reached. The two states reveal a similar structure, but the domains are not arranged exactly in the same way.
+\caption{ \small \textbf{(a)} Domain state at increasing magnetic field. \textbf{(b)} Domain state at a decreasing magnetic field after magnetic saturation was reached. The two states reveal a similar structure, but the domains are not arranged exactly in the same way.
   } 
 	\label{fig:reaufbau}
 \end{figure}
@@ -315,7 +315,7 @@ As the sample is considerably contaminated, there are only a few regions, in whi
 
 
 
-The domain structure exhibits the typical maze-like structure. When the external magnetic field is increased, the domains of energetically favorable magnetization are enlarged and the domains of opposite magnetizations become thinner (see fig. \ref{fig:domains}). If the external field is increased even further, the walls collapse and larger regions emerge. At last, no domains with unfavorable magnetization remain and the sample is in a one-domain state. Decreasing the magnetic field again leads to a different pattern of the domain states. It is not possible to reproduce the same domain state again (see fig. \ref{fig:reaufbau}).
+The domain structure exhibits the typical maze-like structure. When the external magnetic field is increased, the domains of energetically favorable magnetization are enlarged and the domains of opposite magnetizations become thinner (cf. fig. \ref{fig:domains}). If the external field is increased even further, the walls collapse and larger regions emerge. At last, no domains with unfavorable magnetization remain and the sample is in a one-domain state. Decreasing the magnetic field again leads to a different pattern of the domain states. It is not possible to reproduce the same domain state again (cf. fig. \ref{fig:reaufbau}).
 
 Another interesting feature is the switching of magnetization domains, which happens suddenly and not continuously while the increasing the magnetic field. This process is due to defects in the atomic lattice and is displayed in figure \ref{fig:defect}.
 \begin{SCfigure}
@@ -329,6 +329,6 @@ Another interesting feature is the switching of magnetization domains, which hap
 
 
  \bibliographystyle{unsrt}
-\bibliography{FPbib}
+\bibliography{bib}
 
 \end{document}
