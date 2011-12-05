@@ -159,6 +159,14 @@ Where the two saturation intensities can be calculated by the above equation \Fo
 where $\alpha_0$ now is the angle of the incident light. Combining this with \Formel{eq:contrast} results in
 \eq{c(\alpha) = \frac{2(I_1-I_0) \sin(2(\alpha-\alpha_0)) \sin(2\Phi_K) } { I_0+I_1+ (I_0-I_1)\cos(2(\alpha-\alpha_0)) \cos(2\Phi_K)} .}{}
 
+
+
+\subsection{Theoretical Calculation of Magnetic Field}
+By the use of Ampere's Law, we obtain for a toroid coil with an iron core, that has radius $r$, winding number $n=300$ and a slit of width $d=\SI{12}{mm}$
+\eq{nI=\oint_{\mathcal S} \vec{H} \cdot \mathrm{d}\vec{s} = 2 \pi r H_{Fe} + d H_{Air} \;, }{Htheo}
+where $I$ is the current that runs through the coil. As the relative permeability for iron is by approximately a factor $3000$ higher then the permeability of air and the radius of the coil is not by orders of magnitudes larger than the slit width, we can neglect the first summand in \Formel{Htheo} yielding
+\eq{B_{slit} =  \mu_0  H_{Air}= \frac{\mu_0 n}{d} I = \SI{31.4}{mT A^{-1}} I \; .}{}
+
  
 
 
