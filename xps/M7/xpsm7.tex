@@ -132,26 +132,28 @@ Because the shake-off event can happen with even more than two electrons, it may
 \subsubsection{Satellite Peaks}
 If the x-ray source is not monochromatic, there will be so called satellite peaks. The distance to the main peak and their intensity depends on the energy difference and relative intensities of the harmonics in the anode material of the x-ray source.
 
-
+\clearpage
 
 
 \section{Experimental Set-Up and Measurement Procedures}
-\FloatBarrier
+
+In the experiment an X-Ray source (cf. fig. \ref{fig:setup} \textbf{(b)}) emits photons, which hit the sample. The photo-electrons are detected by an analyzer and the whole set-up is placed in vacuum (cf fig. \ref{fig:setup} \textbf{(a)}).
 
 
 \begin{figure} 
  \centering
  \subfloat[][Set-Up]{\includegraphics[width=0.45\textwidth]{img/setup.png}}
  \hfill
-  \subfloat[][Channeltron]{\includegraphics[width=0.45\textwidth]{img/channeltron.png}}
+  \subfloat[][X-Ray Source]{\includegraphics[width=0.25\textwidth]{img/xray.png}}
 
-\caption{ \small \textbf{(a)} Schematic Description of the Experimental Set-Up. \textbf{(b)} Channeltron Sources: \cite{script}, \cite{gop} } 
+\caption{ \small \textbf{(a)} Schematic Description of the Experimental Set-Up. \textbf{(b)} Double-Anode X-Ray-Source: An Aluminum window blocks low energetic photons (Bremsstrahlung). Mg (Mg-$K_\alpha=\SI{1253.6(7)}{eV}$) and Al (Al-$K_\alpha=\SI{1486.6(6)}{eV}$)  can be used as sources. Source: \cite{script} } 
 	\label{fig:setup}
 \end{figure}
 
+\FloatBarrier
 
 \subsection{Ultra High Vacuum (UHV)}
-As the electrons that are detected easily interact with all kind of materials, it is very useful to operate in high vacuum. This is also necessary in order to reduce the rate of adsorption of molecules, which leads to disturbance of the measured spectra. (Ultra) high  vacuum (UHV) can only be achieved by a series of pumps acting within different pressure ranges.
+As the electrons interact with all kind of materials, it is very useful to operate in high vacuum. This is also necessary in order to reduce the rate of adsorption of molecules, which leads to disturbance of the measured spectra. (Ultra) high  vacuum (UHV) can only be achieved by a series of pumps acting within different pressure ranges.
 \begin{wraptable}{r}{0.55\textwidth}
 \begin{tabular}{lr}
 \toprule
@@ -190,11 +192,20 @@ The main features of a turbomolecular pump are the rotating blades (rotors), hit
 \subsubsection{Baking}
 The above mentioned pumps can reach pressures of down to $10^{-9}\,\text{Pa}$ (cf. table \ref{tab:pump}). The remaining pressure, which is mainly due to the water molecules sticking to the walls of the chamber, can be lowered by thermal methods called baking. When the heated chamber with a pressure of still $10^{-9}\,\text{Pa}$ (due to the pumps still being active) is cooled down again, pressures of below $10^{-11}\,\text{Pa}$ can be reached. This process can take several days, so it is paramount to keep the pressure at this low level during and in between experiments.
 
-
+\clearpage
 \subsection{Electron Energy Analyzer}
-The electron energy analyzer is the central measurement device, as it performs the resolution of electron numbers with vs. energy. In this experiment a concentric hemispheric capacitor is used as an energy filter (cf. fig. \ref{fig:setup} b). The trajectory of the electron is altered by the electric field of the capacitor, in such a way, that only electrons with a certain range of kinetic energy can pass the analyzer. This pass energy can be chosen by applying appropriate voltage. Before entering the analyzer, the electrons are focussed by an electrical lens system and after they exit the analyzer are detected by a channeltron, that works as an electron multiplier (factor $10^6$ to $10^8$) and produces analog signals, which can be digitalized and processed by a computer. 
+
+\begin{wrapfigure}{r}{0.6 \textwidth}
+  \centering
+   	\includegraphics[width=\linewidth]{img/channeltron.png}
+ \caption{\small Electron Analyzer consisting of electronic lens system, hemispheric capacitor as energy filter and channeltron. Source: \cite{gop} }
+        \label{fig:analyzer}
+\end{wrapfigure}
+The electron energy analyzer is the central measurement device, as it performs the resolution of electron numbers with vs. energy. In this experiment a concentric hemispheric capacitor is used as an energy filter (cf. fig. \ref{fig:analyzer} b). The trajectory of the electron is altered by the electric field of the capacitor, in such a way, that only electrons with a certain range of kinetic energy can pass the analyzer. This pass energy can be chosen by applying appropriate voltage. Before entering the analyzer, the electrons are focussed by an electrical lens system and after they exit the analyzer are detected by a channeltron, that works as an electron multiplier (factor $10^6$ to $10^8$) and produces analog signals, which can be digitalized and processed by a computer. 
+
 
 \FloatBarrier
+\clearpage
  \bibliographystyle{unsrt}
 \bibliography{bib}
 
