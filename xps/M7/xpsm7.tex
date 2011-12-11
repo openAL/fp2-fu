@@ -96,6 +96,11 @@ As there are only electrons in the atom up the the Fermi energy $E_\text{F}$, th
 This binding energy is not equal to the binding energy of the electron in a free atom. Bonds with the neighbouring atoms (chemical shift $\Delta E_\text{chem}$), electrostatic interaction with the whole lattice (Madelung constant $\Delta E_\text{Mad}$) and many-body effects of the hole in the final state (relaxation effects $\Delta E_\text{rel}$) influence the measured energy
 \eq{E_\text{B}=E_\text{B,free} + \Delta E_\text{chem} + \Delta E_\text{Mad} + \Delta E_\text{rel} \; . }{}
 
+\subsection{Binding Energy and Multiplet-Structures}
+The interaction between the spins of the electrons and their angular momenta, the so called spin-orbit-coupling leads to the splitting of energy niveaus within one shell. In general there are two different types of spin-orbit coupling, distinguished by the dominant coupling effect, which is either the coupling between all electronic angular momenta and all electron spins (LS-Coupling) or between the angular momentum and the spin of each electron separately ($jj$-Coupling). The latter case is relevant in this experiment and its single electron Hamiltonian is given by
+\eq{H=a \ve s \cdot \ve l\;,}{hamilton}
+where $\ve l$ is the angular momentum of the electron, $\ve s$ the spin and $a$ is the coupling constant. The eigenstates are then characterized by the total angular momentum, which can have the values $(l+\tfrac 1 2)$, $(l - \tfrac 1 2)$ except for the $s$-shell ($l=0$), where no coupling effects between angular momentum and spin can occur. However, it was found by Abragam and experimentally verified, that the degeneracy of the fully filled $s$-state can be lifted by the interaction with another partially filled shell yielding again a two-folded splitting (doublet). This effect is called magnetic spin-spin exchange.
+
 
 \subsubsection{Auger Process}
 When there is an electron missing in one of the inner shells of the atom, another electron from an higher shell will take its place. During this process either a photon will be emitted directly or the energy will be transferred to a third electron which now has enough energy to leave the atom. This latter process is called the Auger process. As XPS will remove electrons from the inner shells as well as the outer shells, this process will cause additional peaks in the spectrum. It is customary to label the Auger peaks with the shell-labels of the three electrons involved (eg. KLL for missing electron in the first shell, filling and leaving electron from the second shell). The positions of the Auger peaks are specific for the material being investigated.
@@ -129,8 +134,22 @@ If the x-ray source is not monochromatic, there will be so called satellite peak
 
 
 
+
 \section{Experimental Set-Up and Measurement Procedures}
 \FloatBarrier
+
+
+\begin{figure} 
+ \centering
+ \subfloat[][Set-Up]{\includegraphics[width=0.45\textwidth]{img/setup.png}}
+ \hfill
+  \subfloat[][Channeltron]{\includegraphics[width=0.45\textwidth]{img/channeltron.png}}
+
+\caption{ \small \textbf{(a)} Schematic Description of the Experimental Set-Up. \textbf{(b)} Channeltron Sources: \cite{script}, \cite{gop} } 
+	\label{fig:setup}
+\end{figure}
+
+
 \subsection{Ultra High Vacuum (UHV)}
 As the electrons that are detected easily interact with all kind of materials, it is very useful to operate in high vacuum. This is also necessary in order to reduce the rate of adsorption of molecules, which leads to disturbance of the measured spectra. (Ultra) high  vacuum (UHV) can only be achieved by a series of pumps acting within different pressure ranges.
 \begin{wraptable}{r}{0.55\textwidth}
