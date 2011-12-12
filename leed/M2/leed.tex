@@ -6,7 +6,7 @@
 %colors, hyperrefs
 \usepackage{color}
 \usepackage{url}
-\usepackage[pdftex,pdfauthor={J\"org Behrmann, Anika Haller},pdftitle={Ma12: Magneto-optical Kerr-effect and Magnetic Anisotropy}]{hyperref}
+\usepackage[pdftex,pdfauthor={J\"org Behrmann, Anika Haller},pdftitle={Ma2: Low Energy Electron Diffraction (LEED)}]{hyperref}
 %figures and subfigures
 \usepackage[pdftex]{graphicx}
 \usepackage{subfigure}
@@ -28,7 +28,7 @@
 
 \begin{document}
 
-\title{Low Energu Electron Diffraction (LEED)}
+\title{Low Energy Electron Diffraction (LEED)}
 \author{J\"org Behrmann\footnote{behrmann@physik.fu-berlin.de} \qquad Anika Haller\footnote{halleran@zedat.fu-berlin.de}}
 \date{31.10.2011}
 \maketitle
@@ -88,7 +88,7 @@ $G$ is the so-called reciprocal lattice and $g$ are the reciprocal lattice vecto
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.7]{img/ewald}
+\includegraphics[scale=0.45]{img/ewald}
 \caption{Ewald construction for the Laue condition. \label{fig:ewald}}
 \end{figure}
 
@@ -140,7 +140,7 @@ which we used to calculate the needed energies that can be found in table~\ref{t
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.5]{img/reflexes}
+\includegraphics[scale=0.4]{img/reflexes}
 \caption{Expected diffraction patterns for different energies \label{fig:reflexes}}
 \end{figure}
 
@@ -162,20 +162,20 @@ Reflex  & Energy\mbox{\,}[eV] at $\theta=45$\textdegree & Energy\mbox{\,}[eV] at
 
 \subsection{Superstructures}
 
-In our experiment we will adsorb oxygen O$_2$ on the copper surface we will examine. The oxygen will form a regular lattice structure on top of the copper surface---a so-called ($\sqrt{2} \times \sqrt{2}$)R$45$\textdegree superstructure. This superstructure notation, due to Woods, means that the lattice of the superstruce is obtained by scaling the x-direction by a factor of $\sqrt{2}$ and the y-direction by a factor of $2\sqrt{2}$ and rotating the lattice then by $45$\textdegree.
+In our experiment we will adsorb oxygen O$_2$ on the copper surface we will examine. The oxygen will form a regular lattice structure on top of the copper surface---a so-called ($\sqrt{2} \times 2\sqrt{2}$)R$45$\textdegree superstructure. This superstructure notation, due to Woods, means that the lattice of the superstruce is obtained by scaling the x-direction by a factor of $\sqrt{2}$ and the y-direction by a factor of $2\sqrt{2}$ and rotating the lattice then by $45$\textdegree.
 
-The superstructure will change the reciprocal latticr constants accordingly: $\tfrac{2\pi}{\sqrt{2}a}$  in the x- and $\tfrac{2\pi}{2\sqrt{2}a}$ y-direction.
+The superstructure will change the reciprocal lattice constants accordingly: $\tfrac{2\pi}{\sqrt{2}a}$  in the x- and $\tfrac{2\pi}{2\sqrt{2}a}$ y-direction.
 
 The superstructure will also introduce a structure factor, since the unit cell is not now more complicated, which will make the former copper peaks stronger. 
 
 \begin{figure}
 \centering
 \subfigure[ ]{
-\includegraphics[scale=0.35]{img/superstructure1}
+\includegraphics[scale=0.25]{img/superstructure1}
 \label{fig:sup1}
 }
 \subfigure[ ]{
-\includegraphics[scale=0.35]{img/superstructure2}
+\includegraphics[scale=0.25]{img/superstructure2}
 \label{fig:sup2}
 }
 \caption{The blue lattice in \subref{fig:sup1} is the regular lattice with lattice vectors $a_i$ and the grey lattice shows the ($\sqrt{2} \times \sqrt{2}$)R$45$\textdegree superstructure with lattice vectors $b_i$, \subref{fig:sup2} shows the same lattice in reciprocal space.}
@@ -196,15 +196,35 @@ to account for energy loss in the scattering events. We will approximate $V$ as 
 
 \section{Evaluation of Experimental Data}
 
+To evaluate our experimental data we followed the method described by Tarasinski and Wölms~\cite{brian}. We wanted to improve on this method by automatizing it. This was not possible for reasons described later on.
+
+The animated scans were dumped using \textit{ffmpeg}. We then experimented with image recognition algorithms on these images . This show to be futile for two reasons. 
+
+For one, the electron gun and the outer regions showed to be very interesting, at least for image recognition algorithms, leading to a vast number of points of interest in all images. 
+
+An even bigger obstacle surfaced while looking at long series of images, since we---unfortunately---decided during the experiment to save the scans as .avi-files, not realizing that it is a compressed format. This lead to a problem of ``blockiness'' of later images, i.e. images of higher energies. The data was still usable, since the direct relation of frame number to electron energy was not touched, and human image recognition works far better than algorithmic image recognition, but the additional noise introduced by compression made automated image recognition impossible.
+
+Tarasinski and Wölms were so kind as to provide us with their original program to mark peaks in images to obtain the pixel coordinates.
+
 \subsection{Calibration}
+
+To obtain the conversion factor from peak position in pixels (measured from upper left corner) to angular position we took several images of the (0,0)-spot at different angles and fitted it to the function
+\begin{equation}
+p = A \sin( \theta - \theta_{0} ) + c = A \sin( 2\alpha - \theta_{0} ) + c, \label{eq:calibmodel}
+\end{equation}
+where $p$ is the position in pixels, $A$ is the angle to pixel conversion factor and $c$ is a constant offset. The fitted model is motivated by the geometry of the screen and in the second equality the reflection law $\theta=2\alpha$ was used. The fitted model can be seen in figure~\ref{fig:calib} and the fit parameters can be found in table~\ref{tab:calibdata}, with $A$ being the only relevant data.
+
+We thought it could be problematic, that the fitted model~\eqref{eq:calibmodel} could seem unmotivated, since all our calibration data points are in the linear region of the the sine, but figure~\ref{fig:imgcalib} shows the diffraction pattern for one of the most extreme angles, only one value for a smaller angle could be obtained before the reflection of the electron gun vanished and with it the (0,0)-spot. 
+
+We therefore also fitted a linear model, that lead to similar results, only seen in figure~\ref{fig:calib}, which we used as an a posteriori check for the model, we used to evaluate the data.
 
 \begin{table}
 \begin{center}
 \begin{tabular}{lcc}
 \toprule
-A\,[px] & $\theta_{0}$\,[deg] & c\,[px] \\
+$A$\,[px] & $\theta_{0}$\,[deg] & $c$\,[px] \\
 \midrule
-$-283 \pm 17$ & $115 \pm 18$  & $283 \pm 81$ \\
+$-283 \pm 24$ & $115 \pm 25$  & $283 \pm 114$ \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -214,7 +234,7 @@ $-283 \pm 17$ & $115 \pm 18$  & $283 \pm 81$ \\
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.65]{img/calib}
+\includegraphics[scale=0.55]{img/calib}
 \caption{Calibration curve \label{fig:calib}}
 \end{figure}
 
@@ -233,6 +253,29 @@ $-283 \pm 17$ & $115 \pm 18$  & $283 \pm 81$ \\
 
 
 \subsection{Lateral Lattice Constant}
+
+To calculate the lateral lattice constant we took a series of images of the LEED diffraction patterns in an energy range from $50$ to $300\,$eV with a step size of $1\,$eV. 
+
+We then determined the pixel positions of all peak pairs (e.g. (1,0) and (-1,0)) over all images. These positions vary with electron energy. Not all peaks are visibible for all energies, since some peaks only appear at higher energies, and all peak intensities also vary with energy. Additionally sometimes peaks vanish behind parts and cables of the electron gun and peaks on the right side of the screen are much feinter than only the left-hand side for a reason unknown to the authors.
+
+From the recorded pixel positions of the peaks we then calculated the pixel distances $d$ for each peak pair, when both peaks of a pair were visible at a given energy. According to~\eqref{eq:calibmodel} $d/2$ for the peak pair (m,n) is directly proportional to the the sine of the scattering angle $\theta_{mn}$. Using~\eqref{eq:bragg2} we thus obtain
+\begin{equation}
+\frac{d}{2 A \sqrt{n^2 + m^2}} = \frac{d_{mn}}{2A} = \frac{\lambda}{a'}. \label{eq:latticemodel}
+\end{equation}
+A plot of~\eqref{eq:latticemodel} can be found in figure~\ref{fig:allscat}.
+
+We then fitted the data in~\ref{fig:allscat} once as in~\eqref{eq:latticemodel} with a forced zero intercept, i.e. as a line through the origin, and once without forced zero intercept. The fit parameters for all peak pairs can be found in table~\ref{tab:calibdata}.
+
+The errors for the fit parameters in table~\ref{tab:calibdata} are given purely from their distribution without explicit use of errors in their positions. Of course all positions do have errors, but they are approximately the same (about $10\,$px in each direction) for all points, so that in a linear regression they would all be weighted equally, so that the fit parameters are not changed. The only change would be in the parameter errors, but it can be reasonably assumed that for the amount of points measured errors in the individual positions cancle against each other.
+
+From the fit parameters we obtain the following values for $a'$ in~\eqref{eq:latticemodel}. This is the FCC nearest neighbor distance, which is related to the lattice constant $a$ as $a' = a/\sqrt{2}$.
+\begin{IEEEeqnarray}{rCcCrCl}
+a'_{1} & = & \frac{2A}{d_{mn,1}} = (2.31 \pm 0.20)\,\AA & \Leftrightarrow & a_{1} & = & (3.3 \pm 0.3)\,\AA \label{eq:a1} \\
+a'_{2} & = & \frac{2A}{d_{mn,2}} = (2.43 \pm 0.20)\,\AA & \Leftrightarrow & a_{2} & = & (3.4 \pm 0.3)\,\AA \label{eq:a2}
+\end{IEEEeqnarray}
+where~\eqref{eq:a1} gives the lattice constant for the model without forced zero intercept and~\eqref{eq:a2} gives the value for the model with forced zero intercept. The big errors result from the large error in our conversion factor $A$. The large values for the offset $c$ in the model without forced zero intercept and the rather large errors in the slope $m$ point to a systematic error, that is concealed in the model with forced zero intercept. We can only speculate about the source for this error, but it might be connected to the exact screen geometry or the directional bias stemming from the fact that peaks on the lower left side can be seen only shortly before vanishing behind the electron gun.
+
+Even considering this systematic error the obtained value for either model are in agreement with the lattice constant of copper $a = 3.6\,$\AA~\cite{straumanis}.
 
 \begin{table}
 \begin{center}
@@ -258,7 +301,7 @@ mean   & $245\phantom{.0} \pm \phantom{0}5\phantom{.0}$ & $-13\phantom{.0} \pm \
 \end{tabular}
 \end{center}
 \par
-\caption{Fit parameters for lateral lattice constant. Columns 2 and 3 give the parameters for the fits without forced zero intercepd; Column 4 gives the fit parameter for the fits with forced zero interceot.\label{tab:calibdata}}
+\caption{Fit parameters for lateral lattice constant. Columns 2 and 3 give the parameters for the fits without forced zero intercept; Column 4 gives the fit parameter for the fits with forced zero intercept.\label{tab:latticedata}}
 \end{table}
 
 \begin{figure}
@@ -274,7 +317,15 @@ mean   & $245\phantom{.0} \pm \phantom{0}5\phantom{.0}$ & $-13\phantom{.0} \pm \
 \caption{\subref{fig:allscat} shows all peak distance scatter plots combined. \subref{fig:allfits} shows additionally the appropriate fits on top of the distance scatter plots.}
 \end{figure}
 
-\section{Perpendicular Lattice Constant}
+\subsection{Perpendicular Lattice Constant}
+
+To obtain the perpendicular lattice constant we recorded a itensity spectrum of the (0,0)-peak in the energy range of $40$ to $600\,$eV. The obtained spectrum can be seen in figure~\ref{fig:iv}.
+
+To 
+
+\begin{equation}
+E = \left( \frac{12.26\AA}{2a_{\perp}} \right)^{2} n^{2} + V
+\end{equation}
 
 \begin{figure}
 \centering
@@ -333,12 +384,25 @@ Peaks              & Order   & m\,[eV]                      & $U_{0}$\,[eV]     
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.45]{img/img_o2_159eV}
-\caption{Image of Oxygen superstructure on copper at $159\,$eV. \label{fig:imgo2}}
+\includegraphics[scale=0.4]{img/img_o2_159eV}
+\caption{Image of oxygen superstructure on copper at $159\,$eV. \label{fig:imgo2}}
 \end{figure}
 
+Figure~\ref{fig:imgo2} shows an exemplary LEED image at $159\,$eV of the copper sample with the oxygen superstructure. Unfortunately the picture quality is not optimal because of the errors made during the adsorption process, as described earlier. The following descriptions can be seen only qualitatively in figure~\ref{fig:imgo2} but are clearer from viewing the animated scan over the whole energy range.
+
+We can see that additional weaker peaks appear in between the original Cu-(100) peaks. Although weak, we can also see, that between two copper peaks we can find three new peaks, as described in figure~\ref{fig:sup2}. 
+
+Carefully watching the animated scan showed us that the middle peak of the additional three peaks is stronger than the other two peaks, which lead to the realization, that orthogonally to the direction defined by the three additional peaks there are another two peaks. Their superposition makes the middle peak stronger. Thus the observed diffraction pattern can be seen as the superposition of a ($\sqrt{2} \times 2\sqrt{2}$)R$45$\textdegree and a ($2\sqrt{2} \times \sqrt{2}$)R$45$\textdegree superstructure. Which makes sense in so far as there is no preferred direction on the copper surface so that domains of each superstructure will form, leading to a superposition of both in the diffraction pattern.
 
 \section{Conclusion}
 
+\nocite{skript}
+\nocite{henzler}
+\nocite{ertl}
+\nocite{straumanis}
+\nocite{brian}
+
+\bibliographystyle{plainnat}
+\bibliography{leed}
 
 \end{document}
