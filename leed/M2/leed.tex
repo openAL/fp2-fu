@@ -192,4 +192,139 @@ to account for energy loss in the scattering events. We will approximate $V$ as 
 2a_{\perp} = n\lambda = n \sqrt{\frac{h^{2}}{2m(E_{kin}-V)}}.
 \end{equation}
 
+\section{Experimental Setup}
+
+\section{Evaluation of Experimental Data}
+
+\subsection{Calibration}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+A\,[px] & $\theta_{0}$\,[deg] & c\,[px] \\
+\midrule
+$-283 \pm 17$ & $115 \pm 18$  & $283 \pm 81$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\par
+\caption{Fit parameters for calibration curve \label{tab:calibdata}}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.65]{img/calib}
+\caption{Calibration curve \label{fig:calib}}
+\end{figure}
+
+\subsection{Lateral Lattice Constant}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+       & \multicolumn{2}{c}{w/o Intercept}                                                     & w/ Intercept      \\
+\cmidrule(r){2-4}
+Peak   & m\,[px/\AA]                          & c\,[px]                                        & m\,[px/\AA]       \\
+\midrule
+(1,0)  & $246.4 \pm \phantom{0}2.1$           & $-29.0 \pm \phantom{0}2.5$                     & $222.19 \pm 0.66$ \\ 
+(1,1)  & $296\phantom{.0} \pm 27\phantom{.0}$ & $-76\phantom{.0} \pm 31\phantom{.0}$           & $230.31 \pm 0.51$ \\ 
+(1,-1) & $239.1 \pm \phantom{0}1.0$           & $-\phantom{0}9.0 \pm \phantom{0}0.9$           & $229.69 \pm 0.19$ \\ 
+(0,1)  & $241.1 \pm \phantom{0}1.1$           & $-11.8 \pm \phantom{0}1.3$                     & $231.20 \pm 0.36$ \\ 
+(2,0)  & $254.1 \pm \phantom{0}1.1$           & $-22.1 \pm \phantom{0}0.9$                     & $228.37 \pm 0.35$ \\ 
+(0,2)  & $262.1 \pm \phantom{0}1.6$           & $-13.7 \pm \phantom{0}1.3$                     & $245.18 \pm 0.21$ \\ 
+(2,1)  & $191\phantom{.0} \pm 16\phantom{.0}$ & $\phantom{-}27\phantom{.0} \pm 12\phantom{.0}$ & $227.90 \pm 0.21$ \\ 
+(2,-1) & $240.3 \pm \phantom{0}7.5$           & $-\phantom{0}8.1 \pm \phantom{0}5.6$           & $229.37 \pm 0.20$ \\ 
+(1,2)  & $249\phantom{.0} \pm 38\phantom{.0}$ & $-\phantom{0}6\phantom{.0} \pm 28\phantom{.0}$ & $242.30 \pm 0.25$ \\ 
+(1,-2) & $240.3 \pm \phantom{0}1.3$           & $-\phantom{0}0.5 \pm \phantom{0}1.2$           & $239.79 \pm 0.14$ \\ 
+(2,-2) & $229\phantom{.0} \pm 12\phantom{.0}$ & $\phantom{-0}7.8 \pm \phantom{0}9.0$           & $239.69 \pm 0.14$ \\ 
+mean   & $245\phantom{.0} \pm \phantom{0}5\phantom{.0}$ & $-13\phantom{.0} \pm \phantom{0}4\phantom{.0}$ & $233.3\phantom{0} \pm 0.1\phantom{0}$ \\ 
+\bottomrule
+\end{tabular}
+\end{center}
+\par
+\caption{Fit parameters for lateral lattice constant. Columns 2 and 3 give the parameters for the fits without forced zero intercepd; Column 4 gives the fit parameter for the fits with forced zero interceot.\label{tab:calibdata}}
+\end{table}
+
+\begin{figure}
+\centering
+\subfigure[ ]{
+\includegraphics[scale=0.4]{img/allscatter}
+\label{fig:allscat}
+}
+\subfigure[ ]{
+\includegraphics[scale=0.4]{img/allfits}
+\label{fig:allfits}
+}
+\caption{\subref{fig:allscat} shows all peak distance scatter plots combined. \subref{fig:allfits} shows additionally the appropriate fits on top of the distance scatter plots.}
+\end{figure}
+
+\section{Perpendicular Lattice Constant}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.55]{img/iv}
+\caption{Intensity spectrum of (0,0)-peak. Single peaks are plotted in red, peaks possibly consisting of two peaks are fitted in green.\label{fig:iv}}
+\end{figure}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Peak & A\,[arb]                                        & E$_{0}$\,[eV]                         & $\gamma$\,[eV]                                  \\
+\midrule 
+1    & $\phantom{0}77.0\phantom{0} \pm 3.0\phantom{0}$ & $\phantom{0}92.50 \pm 0.11$           & $\phantom{00}2.13 \pm 0.16$                     \\
+2    & $126.4\phantom{0} \pm 5.4\phantom{0}$           & $125.56 \pm 0.23$                     & $\phantom{00}5.38 \pm 0.34$                     \\
+3    & $198.4\phantom{0} \pm 9.3\phantom{0}$           & $170.27 \pm 0.66$                     & $\phantom{0}14.1\phantom{0} \pm 1.1\phantom{0}$ \\
+3a   & $148.9\phantom{0} \pm 6.7\phantom{0}$           & $156.18 \pm 0.39$                     & $\phantom{00}6.46 \pm 0.62$                     \\
+3b   & $211.0\phantom{0} \pm 7.7\phantom{0}$           & $172.04 \pm 0.39$                     & $\phantom{0}10.67 \pm 0.72$                     \\
+4    & $122.1\phantom{0} \pm 3.1\phantom{0}$           & $209.69 \pm 0.39$                     & $\phantom{0}15.82 \pm 0.66$                     \\
+4a   & $\phantom{0}98.9\phantom{0} \pm 8.5\phantom{0}$ & $199.9\phantom{0} \pm 2.0\phantom{0}$ & $\phantom{00}9.1\phantom{0} \pm 1.7\phantom{0}$ \\
+4b   & $124.7\phantom{0} \pm 1.7\phantom{0}$           & $212.22 \pm 0.23$                     & $\phantom{0}12.46 \pm 0.37$                     \\
+5    & $131.9\phantom{0} \pm 1.4\phantom{0}$           & $273.30 \pm 0.16$                     & $\phantom{0}15.68 \pm 0.26$                     \\
+6    & $\phantom{0}51.02 \pm 0.49$                     & $398.39 \pm 0.57$                     & $\phantom{0}52.4\phantom{0} \pm 1.6\phantom{0}$ \\
+7    & $\phantom{0}31.93 \pm 0.25$                     & $541.6\phantom{0} \pm 1.4\phantom{0}$ & $110.0\phantom{0} \pm 6.6\phantom{0}$           \\  
+\bottomrule
+\end{tabular}
+\end{center}
+\par
+\caption{Fit parameters for Lorentz fits in figure~\ref{fig:iv}. The peaks are numbered were numbered from left to right. Peaks possibly consisting of two peaks are subdivied with the letters a and b. \label{tab:lorentz}}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.55]{img/ivfit}
+\caption{Fit of peak position against squared peak order. \label{fig:ivfit}}
+\end{figure}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{lccccc}
+\toprule
+Peaks              & Order   & m\,[eV]                      & $U_{0}$\,[eV]               & $R^{2}$  & $\lambda$\,[\AA]  \\
+\midrule
+3b-5-6-7           & 4-5-6-7 & $11.272 \pm 0.029$           & $-\phantom{0}8.44 \pm 0.73$ & 0.999998 & $1.826 \pm 0.003$ \\
+\phantom{b}3-5-6-7 & 4-5-6-7 & $11.324 \pm 0.035$           & $-\phantom{0}9.87 \pm 0.89$ & 0.999997 & $1.819 \pm 0.003$ \\
+\phantom{b}3-5-6-7 & 5-6-7-8 & $\phantom{0}9.545 \pm 0.029$ & $-70.2 \pm 1.1\phantom{0}$  & 0.999997 & $1.989 \pm 0.003$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\par
+\caption{Fit parameters for peak position vs. order plots. \label{tab:ivfitparas}}
+\end{table}
+
+
+\subsection{Oxygen Superstructure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.45]{img/img_o2_159eV}
+\caption{Image of Oxygen superstructure on copper at $159\,$eV. \label{fig:imgo2}}
+\end{figure}
+
+
+\section{Conclusion}
+
+
 \end{document}
