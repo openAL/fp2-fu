@@ -30,16 +30,16 @@
 
 \title{Low Energy Electron Diffraction (LEED)}
 \author{J\"org Behrmann\footnote{behrmann@physik.fu-berlin.de} \qquad Anika Haller\footnote{halleran@zedat.fu-berlin.de}}
-\date{31.10.2011}
+\date{21.11.2011}
 \maketitle
 \tableofcontents
 \thispagestyle{empty}
 
 \section{Introduction}
 
-In 1924 Louis de Broglie proposed the Particle Wave duality impliying that particles could have wave-like characteristics. This was proofed in 1926 by Davisson and Germer, who used the wave-properties of electrons to study Ni crystals. 
+In 1924 Louis de Broglie proposed the Particle Wave duality implying that particles could have wave-like characteristics. This was proofed in 1926 by Davisson and Germer, who used the wave-properties of electrons to study Ni crystals. 
 
-Their work is ancestral to the Low Energy Electron Diffractio, which is a spectroscopic technique that is used to study crystal surfaces and substrates on surfaces. LEED came up in the 1960s because of the need ultra high vacuum (UHV) that is needed. Electrons are favorable for surface structure analysis because they are easier to produce than neutrons and are much more sensitive to surfaces than X-rays because of their very short mean free path in solids.
+Their work is ancestral to the Low Energy Electron Diffraction, which is a spectroscopic technique that is used to study crystal surfaces and substrates on surfaces. LEED came up in the 1960s because of the need ultra high vacuum (UHV) that is needed. Electrons are favorable for surface structure analysis because they are easier to produce than neutrons and are much more sensitive to surfaces than X-rays because of their very short mean free path in solids.
 
 \subsection{Particle Wave Duality}
 
@@ -78,7 +78,7 @@ We will now assume a form for $J(x)$
 \begin{equation}
 J_{A}(x)=\sum_{r\in\mathbb{\mathbb{Z^{n}}}}\delta(x-A\cdot r) \label{eq:dirac}
 \end{equation} 
-where $A$ is the $n \times n$ matrix of unit vectors of the lattics and x and r are n-dimensional vectors in the lattice. Equation~\eqref{eq:dirac} is the n-dimensional Dirac lattice, which for example for $n=1$ is called a Dirac comb. 
+where $A$ is the $n \times n$ matrix of unit vectors of the lattice and x and r are n-dimensional vectors in the lattice. Equation~\eqref{eq:dirac} is the n-dimensional Dirac lattice, which for example for $n=1$ is called a Dirac comb. 
 
 A well-known theorem on Fourier transformation tells us that the Fourier transform of a lattice is again a lattice
 \begin{equation}
@@ -162,7 +162,7 @@ Reflex  & Energy\mbox{\,}[eV] at $\theta=45$\textdegree & Energy\mbox{\,}[eV] at
 
 \subsection{Superstructures}
 
-In our experiment we will adsorb oxygen O$_2$ on the copper surface we will examine. The oxygen will form a regular lattice structure on top of the copper surface---a so-called ($\sqrt{2} \times 2\sqrt{2}$)R$45$\textdegree superstructure. This superstructure notation, due to Woods, means that the lattice of the superstruce is obtained by scaling the x-direction by a factor of $\sqrt{2}$ and the y-direction by a factor of $2\sqrt{2}$ and rotating the lattice then by $45$\textdegree.
+In our experiment we will adsorb oxygen O$_2$ on the copper surface we will examine. The oxygen will form a regular lattice structure on top of the copper surface---a so-called ($\sqrt{2} \times 2\sqrt{2}$)R$45$\textdegree superstructure. This superstructure notation, due to Woods, means that the lattice of the superstructure is obtained by scaling the x-direction by a factor of $\sqrt{2}$ and the y-direction by a factor of $2\sqrt{2}$ and rotating the lattice then by $45$\textdegree.
 
 The superstructure will change the reciprocal lattice constants accordingly: $\tfrac{2\pi}{\sqrt{2}a}$  in the x- and $\tfrac{2\pi}{2\sqrt{2}a}$ y-direction.
 
@@ -178,7 +178,11 @@ The superstructure will also introduce a structure factor, since the unit cell i
 \includegraphics[scale=0.25]{img/superstructure2}
 \label{fig:sup2}
 }
-\caption{The blue lattice in \subref{fig:sup1} is the regular lattice with lattice vectors $a_i$ and the grey lattice shows the ($\sqrt{2} \times \sqrt{2}$)R$45$\textdegree superstructure with lattice vectors $b_i$, \subref{fig:sup2} shows the same lattice in reciprocal space.}
+\subfigure[ ]{
+\includegraphics[scale=0.45]{img/setup}
+\label{fig:setup}
+}
+\caption{The blue lattice in \subref{fig:sup1} is the regular lattice with lattice vectors $a_i$ and the gray lattice shows the ($\sqrt{2} \times \sqrt{2}$)R$45$\textdegree superstructure with lattice vectors $b_i$, \subref{fig:sup2} shows the same lattice in reciprocal space. \subref{fig:setup} shows the experimental setup.}
 \end{figure}
 
 \subsection{Kinematic Approximation}
@@ -194,6 +198,36 @@ to account for energy loss in the scattering events. We will approximate $V$ as 
 
 \section{Experimental Setup}
 
+\subsection{LEED apparatus}
+
+The LEED apparatus consists of a vacuum chamber in which an electron gun is situated that produces electrons by thermoemission, shapes a beam and accelerates towards a target, which is located on a moveable arm. The vacuum is maintained by pumps described below. To direct the beam two copper coils are wound around the vacuum chamber to cancel the earth's magnetic field. To clean the sample a sputtering gun is mounted inside the vacuum chamber. The sputtering gun works by accelerating inert ions twoards the sample. Inert ions have to be used, so that they do not react with or adsorb to the sample.
+
+The electrons hitting the sample are diffracted and fall on a spherical screen, where they are made visible by flourescence. Inelastically scattered electrons are suppressed using a suppression grid and the contrast of the screen can be manipulated by another acceleration grid. The peaks appearing in the screen are taken using a CCD camera, which can be controlled externally by a computer, as can be the electron gun.
+
+A schematic of the LEED apparatus is shown in figure~\ref{fig:setup}.
+
+\subsection{Ultra-High Vacuum (UHV)}
+
+The current experiment will be done in UHV, because of the very short mean free path of electrons in matter. The vacuum will be obtained by using a cascade of pumps to obtain ever lower pressures.  The first pump used is a \textit{rotary vane pump}, which is a simple mechanical pump that is basically a rotating cylinder with attached vanes shoveling out the gas, thus producing a prevacuum. The next step is a \textit{turbomolecular pump}, which works in the prevacuum by rotating a fan consisting of several blades at the speed of the remaining gas molecules. The blades hit the gas molecules kicking them out of the chamber. 
+
+Even higher vacuums can be obtained by using absorption pumps, in our case an \textit{ion getter pump} and an \textit{titan sublimation pump}. The ion getter pump works by ionizing remaining gas atoms through an electron beam and pulling them out with an electric field. Applying an additional magnetic field improves this pump, since the ions move on orbits in the magnetic field, ionizing more gas atoms on their way. The titan sublimation pump works by binding remaining gas molecules chemically through the use of a reactive element, in our case titanium. This last pump is only used in between experiments so as to not contaminate the sample.
+
+\section{Experimental Procedure}
+
+\subsection{Preliminary Procedures}
+
+To clean the copper sample from the remainings of the previous group the sample was sputtered by switching off the ion getter pump and opening the the Argon valve thus increasing the pressure in the LEED chamber to about $5 \cdot 10^{-5}\,$mbar. The sample was sputtered for 35 minutes using Filament 1 with a beam voltage of $1.5\,$kV and an emission current of $20\,$mA. The ion getter pump was then restarted and the sample annealed for 20 minutes up to a temperature of 535 degrees centigrade o restore the copper surface. After that the sample was allowed to cool off for an hour until the pressure in the LEED chamber normalized to about $9 \cdot 10^{-10}\,$mbar and the sample temperature fell to about 80 degrees centigrade. We then moved on to calibrate the LEED apparatus setting the fluorescence voltage to $6\,$kV, the upper power supply for the magnets to $2.65\,$A and $0.07\,$V and the lower power supply to $2.80\,$A and $0.13\,$V.
+
+\subsection{Lattice constant measurements}
+
+After calibration of the LEED apparatus we controlled the power supply and CCD camera of the apparatus from the external computer and took several series of LEED diffraction images in the energy range between $50$ and $300\,$eV in steps of $1\,$eV and saved them as avi-files, to later determine the lateral lattice constant.
+
+For the determination of the perpendicular lattice constant we took an intensity-energy spectrum of the (0,0)-peak in the energy range between $40$ and $600\,$eV. To successfully do this part of the experiment the reflection of the electron gun had to be placed behind the electron gun itself so that the (0,0)-pea was visible between the electron gun and its cables on the left-hand-side and the aperture of the CCD camera had to be almost closed; otherwise the reflection of electron gun would outshine the (0,0)-peak.
+
+\subsection{Adsorption of oxygen}
+
+To absorb the oxygen on the surface the sample was preheated to about 300 degrees centigrade by applying a heating current of $3\,$A, that we later increased to $3.4\,$A, at $5.8\,$V to the sample for 10 minutes. This was done as to not burn the filament, while introducing oxygen into the chamber. We then opened the oxygen valve, increasing the pressure in the LEED chamber to $2 \cdot 10^{-6}\,$mbar. Noticing a rapid cooling of the sample we increased the pressure to $5.1 \cdot 10^{-6}\,$mbar two minutes later. About 10 minutes later we noticed, that we had forgotten to switch off the ion getter pump, he pressure fell rapidly to $1.2 \cdot 10^{-6}\,$mbar which we again regulated to $5 \cdot 10^{-6}\,$mbar. Ten minutes later we closed the oxygen valve an reevacuated the chamber. We then took energy scans as in the previous task in the energy range between $40$ and $300\,$eV in steps of $1\,$eV.
+
 \section{Evaluation of Experimental Data}
 
 To evaluate our experimental data we followed the method described by Tarasinski and Wölms~\cite{brian}. We wanted to improve on this method by automatizing it. This was not possible for reasons described later on.
@@ -205,6 +239,8 @@ For one, the electron gun and the outer regions showed to be very interesting, a
 An even bigger obstacle surfaced while looking at long series of images, since we---unfortunately---decided during the experiment to save the scans as .avi-files, not realizing that it is a compressed format. This lead to a problem of ``blockiness'' of later images, i.e. images of higher energies. The data was still usable, since the direct relation of frame number to electron energy was not touched, and human image recognition works far better than algorithmic image recognition, but the additional noise introduced by compression made automated image recognition impossible.
 
 Tarasinski and Wölms were so kind as to provide us with their original program to mark peaks in images to obtain the pixel coordinates.
+
+If not mentioned otherwise Gaussian error calculus is used.
 
 \subsection{Calibration}
 
@@ -256,7 +292,7 @@ $-283 \pm 24$ & $115 \pm 25$  & $283 \pm 114$ \\
 
 To calculate the lateral lattice constant we took a series of images of the LEED diffraction patterns in an energy range from $50$ to $300\,$eV with a step size of $1\,$eV. 
 
-We then determined the pixel positions of all peak pairs (e.g. (1,0) and (-1,0)) over all images. These positions vary with electron energy. Not all peaks are visibible for all energies, since some peaks only appear at higher energies, and all peak intensities also vary with energy. Additionally sometimes peaks vanish behind parts and cables of the electron gun and peaks on the right side of the screen are much feinter than only the left-hand side for a reason unknown to the authors.
+We then determined the pixel positions of all peak pairs (e.g. (1,0) and (-1,0)) over all images. These positions vary with electron energy. Not all peaks are visible for all energies, since some peaks only appear at higher energies, and all peak intensities also vary with energy. Additionally sometimes peaks vanish behind parts and cables of the electron gun and peaks on the right side of the screen are much fainter than only the left-hand side for a reason unknown to the authors.
 
 From the recorded pixel positions of the peaks we then calculated the pixel distances $d$ for each peak pair, when both peaks of a pair were visible at a given energy. According to~\eqref{eq:calibmodel} $d/2$ for the peak pair (m,n) is directly proportional to the the sine of the scattering angle $\theta_{mn}$. Using~\eqref{eq:bragg2} we thus obtain
 \begin{equation}
@@ -266,7 +302,7 @@ A plot of~\eqref{eq:latticemodel} can be found in figure~\ref{fig:allscat}.
 
 We then fitted the data in~\ref{fig:allscat} once as in~\eqref{eq:latticemodel} with a forced zero intercept, i.e. as a line through the origin, and once without forced zero intercept. The fit parameters for all peak pairs can be found in table~\ref{tab:calibdata}.
 
-The errors for the fit parameters in table~\ref{tab:calibdata} are given purely from their distribution without explicit use of errors in their positions. Of course all positions do have errors, but they are approximately the same (about $10\,$px in each direction) for all points, so that in a linear regression they would all be weighted equally, so that the fit parameters are not changed. The only change would be in the parameter errors, but it can be reasonably assumed that for the amount of points measured errors in the individual positions cancle against each other.
+The errors for the fit parameters in table~\ref{tab:calibdata} are given purely from their distribution without explicit use of errors in their positions. Of course all positions do have errors, but they are approximately the same (about $10\,$px in each direction) for all points, so that in a linear regression they would all be weighted equally, so that the fit parameters are not changed. The only change would be in the parameter errors, but it can be reasonably assumed that for the amount of points measured errors in the individual positions cancel against each other.
 
 From the fit parameters we obtain the following values for $a'$ in~\eqref{eq:latticemodel}. This is the FCC nearest neighbor distance, which is related to the lattice constant $a$ as $a' = a/\sqrt{2}$.
 \begin{IEEEeqnarray}{rCcCrCl}
@@ -319,13 +355,19 @@ mean   & $245\phantom{.0} \pm \phantom{0}5\phantom{.0}$ & $-13\phantom{.0} \pm \
 
 \subsection{Perpendicular Lattice Constant}
 
-To obtain the perpendicular lattice constant we recorded a itensity spectrum of the (0,0)-peak in the energy range of $40$ to $600\,$eV. The obtained spectrum can be seen in figure~\ref{fig:iv}.
+To obtain the perpendicular lattice constant we recorded a intensity spectrum of the (0,0)-peak in the energy range of $40$ to $600\,$eV. The obtained spectrum can be seen in figure~\ref{fig:iv}.
 
-To 
+Some of the peaks in that figure are Bragg peaks whereas others are due to other reasons, like inelastic scattering processes.
 
+Since no peaks in figure~\ref{fig:iv} are especially prominent we first obtained the peak positions by fitting them with lorentzians. The third and fourth peak also show small, satellite peaks, so we fitted them once as a whole and once as composite of two single, overlapping peaks. The data for these fits can be found in table~\ref{tab:lorentz}. 
+
+We then went on to make various fits of possible combinations of peaks for various orders to see which peaks would obey the relation
 \begin{equation}
-E = \left( \frac{12.26\AA}{2a_{\perp}} \right)^{2} n^{2} + V
+E = \left( \frac{12.26\AA}{2a_{\perp}} \right)^{2} n^{2} + V.
 \end{equation}
+The best fits for this model can be found in table~\ref{tab:ivfitparas}, where the last line can be discarded because the given potential step $V$ is unreasonably big, since it is is more than an order of magnitude greater than the work function of copper, which is about $4.7\,$eV. We see that the other two fits give more reasonable, which is about twice the work function of copper, indicating, that this potential step has another component than the work function. 
+
+The results for $a_{perp}$ we can obtain from the fit parameters in table~\ref{tab:ivfitparas} are  in good agreement with the expected value for the FCC lattice $a_{\perp} = a/2$, which gives a value of $a=1.8\,$\AA~for copper.
 
 \begin{figure}
 \centering
@@ -354,7 +396,7 @@ Peak & A\,[arb]                                        & E$_{0}$\,[eV]          
 \end{tabular}
 \end{center}
 \par
-\caption{Fit parameters for Lorentz fits in figure~\ref{fig:iv}. The peaks are numbered were numbered from left to right. Peaks possibly consisting of two peaks are subdivied with the letters a and b. \label{tab:lorentz}}
+\caption{Fit parameters for Lorentz fits in figure~\ref{fig:iv}. The peaks are numbered were numbered from left to right. Peaks possibly consisting of two peaks are subdivided with the letters a and b. \label{tab:lorentz}}
 \end{table}
 
 \begin{figure}
@@ -367,7 +409,7 @@ Peak & A\,[arb]                                        & E$_{0}$\,[eV]          
 \begin{center}
 \begin{tabular}{lccccc}
 \toprule
-Peaks              & Order   & m\,[eV]                      & $U_{0}$\,[eV]               & $R^{2}$  & $\lambda$\,[\AA]  \\
+Peaks              & Order   & m\,[eV]                      & $U_{0}$\,[eV]               & $R^{2}$  & $a_{\perp}$\,[\AA]  \\
 \midrule
 3b-5-6-7           & 4-5-6-7 & $11.272 \pm 0.029$           & $-\phantom{0}8.44 \pm 0.73$ & 0.999998 & $1.826 \pm 0.003$ \\
 \phantom{b}3-5-6-7 & 4-5-6-7 & $11.324 \pm 0.035$           & $-\phantom{0}9.87 \pm 0.89$ & 0.999997 & $1.819 \pm 0.003$ \\
@@ -392,9 +434,18 @@ Figure~\ref{fig:imgo2} shows an exemplary LEED image at $159\,$eV of the copper 
 
 We can see that additional weaker peaks appear in between the original Cu-(100) peaks. Although weak, we can also see, that between two copper peaks we can find three new peaks, as described in figure~\ref{fig:sup2}. 
 
-Carefully watching the animated scan showed us that the middle peak of the additional three peaks is stronger than the other two peaks, which lead to the realization, that orthogonally to the direction defined by the three additional peaks there are another two peaks. Their superposition makes the middle peak stronger. Thus the observed diffraction pattern can be seen as the superposition of a ($\sqrt{2} \times 2\sqrt{2}$)R$45$\textdegree and a ($2\sqrt{2} \times \sqrt{2}$)R$45$\textdegree superstructure. Which makes sense in so far as there is no preferred direction on the copper surface so that domains of each superstructure will form, leading to a superposition of both in the diffraction pattern.
+Carefully watching the animated scan showed us that the middle peak of the additional three peaks is stronger than the other two peaks, which lead to the realization, that orthogonally to the direction defined by the three additional peaks there are another two peaks. Their superposition makes the middle peak stronger. Thus the observed diffraction pattern can be seen as the superposition of a ($\sqrt{2} \times 2\sqrt{2}$)R$45$\textdegree~and a ($2\sqrt{2} \times \sqrt{2}$)R$45$\textdegree~superstructure. Which makes sense in so far as there is no preferred direction on the copper surface so that domains of each superstructure will form, leading to a superposition of both in the diffraction pattern.
 
 \section{Conclusion}
+
+We successfully determined the lateral lattice constant and perpendicular lattice constant of a copper (100) surface using the method of many images described by Tarasinski and Wölms~\cite{brian}. We obtained the values
+\begin{IEEEeqnarray}{rClCrl}
+a'        & = & \frac{a}{\sqrt2} & = & (2.43 \pm 0.20)\,\AA \\
+a_{\perp} & = & \frac{a}{2}      & = & (1.826 \pm 0.003)\,\AA,
+\end{IEEEeqnarray}
+which are in agreement with the literary value of $a=3.6\,$\AA for copper~\cite{straumanis}.
+
+We could qualitatively observe the formation of additional peaks due to an oxygen superstructure that was introduced by adsorbing oxygen on the copper surface. We could not validate a preferred direction given as defined by the superstructure ($\sqrt{2} \times 2\sqrt{2}$)R$45$\textdegree~in Woods notation, but observed a superposition of this superstructure with a ($2\sqrt{2} \times \sqrt{2}$)R$45$\textdegree~superstructure. This might be due to errors made during the adsorption process, but is thought to be a general feature, at least in this version of the experiment.
 
 \nocite{skript}
 \nocite{henzler}
@@ -406,3 +457,6 @@ Carefully watching the animated scan showed us that the middle peak of the addit
 \bibliography{leed}
 
 \end{document}
+
+% LocalWords:  LEED UHV prevacuum turbomolecular mbar kV mA CCD eV px
+% LocalWords:  avi
