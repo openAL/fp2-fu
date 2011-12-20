@@ -126,8 +126,218 @@ In this section we will describe shortly the machinery and techniques used in th
 \begin{figure}
 \centering
 \includegraphics[scale=0.25]{img/channeltron}
-\caption{Channeltronh \label{fig:ct}}
+\caption{Channeltron \label{fig:ct}}
 \end{figure}
-\end{comment}
+
+\section{Data Analysis}
+
+In this section we will analyze the measured data. We will first look at the cleaning of the sample, will then look at the excitation of bulk and surface plasmons, obtained by Electron Energy Loss spectroscopy, and end this section with an analysis of the Auger spectrum of aluminum.
+
+If not mentioned otherwise we use Gaussian error propagation and least square algorithms for fitting. Also, all spectra were done with an energy step size of $1\,$eV and by averaging over $3$ measurements.
+
+\subsection{Sample Cleaning}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{img/cleaning}
+\caption{Exemplary differential Auger spectra before (red) and after (blue) cleaning. \label{fig:cleaning}}
+\end{figure}
+
+Figure~\ref{fig:cleaning} shows the part of the Auger spectrum of the aluminum sample, where peaks resulting from impurities can be found. Using~\cite{handbook} we can identify oxygen, nitrogen, carbon and possibly chlorine as impurities. Nitrogen and oxygen as main parts of air are not surprising but carbon and chlorine are, since they are not part of air.
+
+Having filed on the sample for over half an hour and seeing  peaks almost vanish and then reappear shortly thereafter, we think that these peaks result from filing some parts of the sample holder, since it is quite easy to miss the sample with the file.
+
+Furthermore we have to conclude, that the cleaning of the sample is rather useless, since the pressure in the chamber ($p = 4.3 \cdot 10^{-8}$) is too high for the proper conductance of the experiment, since after two minutes, this leads to the adsorption of nearly four monolayers of oxygen:
+\begin{equation}
+4.3 \cdot 10^{-8}\,\mbox{mbar} \times 120\,\mbox{s} = 3.87\,\mbox{L},
+\end{equation} 
+which we could verify in so far, as the state of the oxygen peak at the end of the cleaning process (blue in figure~\ref{fig:cleaning}) had changed back to state before the cleaning (red in figure~\ref{fig:cleaning}).
+
+Neverthless the experiment could be conducted and lead to qualitatively good results, as will be shown in the following section, but we see the described problems as a major error source.
+
+\subsection{Plasmons}
+
+The Electron Energy Loss Spectroscopy experiments were done after taking the Auger spectrum of the sample. 
+
+We think, that the excitation of bulk plasmons is needed to understand the results of the Auger spectrum, which is why we will discuss the plasmon excitations first.
+
+The electron gun energy was adjusted to $1\,$kV for the spectroscopy of the bulk plasmons and to $0.2\,$kV for the surface plasmon spectroscopy. Both energies are too low to excite Auger electrons, so that the Auger effect can be excluded for the measured phenomena and thez have to be explained by plasmon excitation.
+
+\subsubsection{Bulk Plasmons}
+
+Figure~\ref{fig:bulkpeaks} shows the differential and the integrated spectrum of the EELS of bulk plasmon excitation. 
+
+To obtain the bulk plasmon excitation energy we fitted the first four peaks from the right with gaussians, since they were the only peaks, that exhibited a definite shape, i.e. had a discernible midpoint. The peak positions can be found in table~\ref{tab:bulkpeaks}.
+
+Using the gaussian midpoint positions, we then obtained the following value for the excitation energy by linear regression:
+\begin{equation}
+\Delta E_{bulk} = (14.19 \pm 0.05)\,\mbox{eV}.
+\end{equation}
+
+This value does not agree with the literature value of $15.3\,$eV~\cite{plasmonpaper}, but is at least qualitatively in the vicinity of the literature value. It is possible that this is due to the contamination of the surface with oxygen, although this seems unlikely for the excitation of bulk plasmons. Another possible source of error can be in our energy detector. This will be discussed later in the section on the Auger spectrum.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{img/bulkpeaks}
+\caption{Integrated (blue) and differential (green) electron energy loss spectrum for the bulk plasmon measurement. Fits for peak positions are plotted on top of the integrated spectrum in red. \label{fig:bulkpeaks}}
+\end{figure}
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Peak Position E [eV]\\
+\midrule
+\phantom{0}998.66 $\pm$ 0.17 \\
+1014.17 $\pm$ 0.19 \\
+1028.27 $\pm$ 0.02 \\
+1042.15 $\pm$ 0.06 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\par
+\caption{Peak positions of bulk plasmons. \label{tab:bulkpeaks}}
+\end{table}
+
+
+\subsection{Surface Plasmons}
+
+The differential and integrated spectrum for the surface plasmon EELS can be found in figure~\ref{fig:surfacepeaks}.
+
+We can see, that the integrated spectrum does not exhibit many features, which is why we were only able to succefully fit two peaks: The well-pronounced major peak on the right, which is due to, more or less, elastically backscattered electrons, and the misshapen peak to its right.
+Further analysis showed, that this peak is a superposition of two peaks, one describing the excitation of the surface plasmon and one describing the excitation of a bulk plasmon.
+
+All three peaks were fitted with gaussians, the respective peak positions can be found in table~\ref{tab:surfacepeaks}. The resulting excitation energies are:
+\begin{IEEEeqnarray}{rCl}
+\Delta E_{bulk} & = & (14.3 \pm 0.5)\,\mbox{eV}, \\
+\Delta E_{surf} & = & (\phantom{0}9.6 \pm 0.3)\,\mbox{eV}.
+\end{IEEEeqnarray}
+Both numbers are not consistent with the excitation energies of $15.3\,$eV and $10.8\,$eV for bulk an surface plasmons from~\cite{plasmonpaper}, but the bulk plasmon excitation energy is consistent with the one obtained earlier and both are in the vicinity of the literature value. 
+
+The same possible sources as for the bulk plasmon EELS apply, but surface contamination is naturally a more probable error source in this case.
+
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{img/surfacepeaks}
+\caption{Integrated (blue) and differential (green) electron energy loss spectrum for the surface plasmon measurement. Fits for peak positions are plotted on top of the integrated spectrum in red. \label{fig:surfacepeaks}}
+\end{figure}
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Peak Position E [eV]\\
+\midrule
+171.95 $\pm$ 0.40 \\
+176.67 $\pm$ 0.25 \\
+186.23 $\pm$ 0.12 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\par
+\caption{Peak positions of surface plasmons. \label{tab:surfacepeaks}}
+\end{table}
+
+
+\subsection{Auger Spectrum}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{img/augerpeaks}
+\caption{Differential Auger spectrum for aluminum. Fits for the maxima and minima are plotted on top of the spectrum in red. \label{fig:augerpeaks}}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.6]{img/intaugerpeaks}
+\caption{Integrated Auger spectrum for aluminum. \label{fig:intaugerpeaks}}
+\end{figure}
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+peak position  [eV]                  & recalibrated peak position [eV]      & literature value [eV]\\
+\midrule
+1340.45 $\pm$ 0.07                     & 1327.86 $\pm$ 0.07                     & 1329 \\
+1357.08 $\pm$ 0.07                     & 1344.49 $\pm$ 0.07                     & 1345 \\
+1374.66 $\pm$ 0.08                     & 1362.07 $\pm$ 0.08                     & 1364 \\
+1392.93 $\pm$ 0.04                     & 1380.34 $\pm$ 0.04                     & 1380 \\
+1408.6\phantom{0} $\pm$ 0.2\phantom{0} & 1396.0\phantom{0} $\pm$ 0.2\phantom{0} & 1396 \\
+\midrule
+1331.8\phantom{0} $\pm$ 0.1\phantom{0} & 1319.2\phantom{0} $\pm$ 0.1\phantom{0} & \\
+1347.0\phantom{0} $\pm$ 0.2\phantom{0} & 1334.5\phantom{0} $\pm$ 0.2\phantom{0} & \\
+1367.54 $\pm$ 0.05                     & 1354.95 $\pm$ 0.0                      & \\
+1383.05 $\pm$ 0.03                     & 1370.46 $\pm$ 0.0                      & \\
+1398.5\phantom{0} $\pm$ 0.2\phantom{0} & 1385.89 $\pm$ 0.2                      & \\
+\midrule
+1336.1\phantom{0} $\pm$ 0.2\phantom{0} & 1323.5\phantom{0} $\pm$ 0.2\phantom{0} & \\
+1352.1\phantom{0} $\pm$ 0.2\phantom{0} & 1339.5\phantom{0} $\pm$ 0.2\phantom{0} & \\
+1371.1\phantom{0} $\pm$ 0.2\phantom{0} & 1358.5\phantom{0} $\pm$ 0.2\phantom{0} & \\
+1388.0\phantom{0} $\pm$ 0.2\phantom{0} & 1375.4\phantom{0} $\pm$ 0.2\phantom{0} & \\
+1403.5\phantom{0} $\pm$ 0.2\phantom{0} & 1390.9\phantom{0} $\pm$ 0.2\phantom{0} & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\par
+\caption{Upper part: minimum positions of aluminum auger spectrum. Recalibrated peak positions shifted that last peak coincides with literature value. Literature values taken from~\cite{handbook}. Middle part: maximum positions of aluminum auger spectrum. Lower part: means of minimum and preceding maximum as approximation for peak position in integrated spectrum.\label{tab:augerpeaks}}
+\end{table}
+
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Auger Line                & Energy E [eV] & $+B_{1}$ & $+B_{2}$ \\
+\midrule
+$KL_{1}L_{2,3} (^{1}P)$   & 1342.3        & 1328.1   & 1313.9 \\
+$KL_{1}L_{2,3} (^{3}P)$   & 1358.5        & 1344.3   & 1330.1 \\
+$KL_{2,3}L_{2,3} (^{1}S)$ & 1386.6        & 1372.4   & 1358.2 \\
+$KL_{2,3}L_{2,3} (^{1}D)$ & 1393.5        & 1379.2   & 1365.0 \\
+$KL_{2,3}L_{2,3} (^{3}P)$ & 1398.1        & 1383.9   & 1369.7 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\par
+\caption{Auger peak energies from~\cite{augerpaper} with corrections for subsequent excitation of up to two bulk plasmons. \label{tab:augerpeakscomp}}
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Auger Line                                  & Theoretical Energy [eV] & Measured Energy [eV] \\
+\midrule
+$KL_{1}L_{2,3}: ~~\phantom{P}^{1}P + B_{1}$   & 1328.1                  & 1323.5 $\pm$ 0.2 \\
+$KL_{1}L_{2,3}: ~~\phantom{P}^{1}P$           & 1342.3                  & 1339.5 $\pm$ 0.2 \\       
+$KL_{1}L_{2,3}: ~~\phantom{P}^{3}P$           & 1358.5                  & 1358.5 $\pm$ 0.2 \\
+$KL_{2,3}L_{2,3}: \phantom{P}^{1}S + B_{2}$ & 1358.2                  & 1358.5 $\pm$ 0.2 \\
+$KL_{2,3}L_{2,3}: \phantom{P}^{1}S + B_{1}$ & 1372.4                  & 1375.4 $\pm$ 0.2 \\        
+$KL_{2,3}L_{2,3}: \phantom{P}^{1}D + B_{1}$ & 1379.4                  & 1375.4 $\pm$ 0.2 \\
+$KL_{2,3}L_{2,3}: \phantom{P}^{1}S$         & 1386.6                  & 1390.9 $\pm$ 0.2 \\        
+$KL_{2,3}L_{2,3}: \phantom{P}^{1}D$         & 1393.5                  & 1390.9 $\pm$ 0.2 \\        
+\bottomrule
+\end{tabular}
+\end{center}
+\par
+\caption{Auger peak energies from~\cite{augerpaper} with corrections for subsequent excitation of up to two bulk plasmons. \label{tab:identification}}
+\end{table}
+
+
+\section{Conclusion}
+
+\nocite{skript}
+\nocite{augerpaper}
+\nocite{plasmonpaper}
+\nocite{handbook}
+\nocite{ben}
+
+\bibliographystyle{plainnat}
+\bibliography{auger}
 
 \end{document}
