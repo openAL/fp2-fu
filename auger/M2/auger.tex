@@ -135,6 +135,8 @@ In this section we will analyze the measured data. We will first look at the cle
 
 If not mentioned otherwise we use Gaussian error propagation and least square algorithms for fitting. Also, all spectra were done with an energy step size of $1\,$eV and by averaging over $3$ measurements.
 
+The errors given for all obtained values are obtained from the uncertainty in fit parameters, these uncertainties usually understate the actual errors, but are used for consistency, since they are the only easily quantifiable errors, because errors and noise in our measurements are nearly eliminated by the averaging process.
+
 \subsection{Sample Cleaning}
 
 \begin{figure}
@@ -217,13 +219,11 @@ Both numbers are not consistent with the excitation energies of $15.3\,$eV and $
 
 The same possible sources as for the bulk plasmon EELS apply, but surface contamination is naturally a more probable error source in this case.
 
-
 \begin{figure}
 \centering
 \includegraphics[scale=0.6]{img/surfacepeaks}
 \caption{Integrated (blue) and differential (green) electron energy loss spectrum for the surface plasmon measurement. Fits for peak positions are plotted on top of the integrated spectrum in red. \label{fig:surfacepeaks}}
 \end{figure}
-
 
 \begin{table}
 \begin{center}
@@ -241,8 +241,19 @@ Peak Position E [eV]\\
 \caption{Peak positions of surface plasmons. \label{tab:surfacepeaks}}
 \end{table}
 
-
 \subsection{Auger Spectrum}
+
+The Auger spectrum of the sample was taken with an electron gun energy of $4.8\,$eV. The interesting part of the differential spectrum can be found in figure~\ref{fig:augerpeaks}. 
+
+We fitted all minima and maxima of the differential spectrum with gaussians to obtain their position in the spectrum. The appropriate fit paramaters can be found in table~\ref{tab:augerpeaks}.
+
+The distribution of the minima, agrees qualitatively very well, with the literature values form~\cite{handbook}, but they seem to be shifted by a constant additive factor to higher energies. If we artificially put the last minimum on its literature value and use this offset to recalibrate the spectrum, all minima agree remarkably well, with their literature values.
+
+The reason for this shift could have several reasons. Firstly it could be because of the contamination of the surface with oxygen. Another reason could be systematic error in the analyzer, for example due to insufficient positioning of the sample.
+
+Figure~\ref{fig:intaugerpeaks} shows the integrated Auger spectrum of our sample, which should be used to obtain the peaks for the KLL transitions in alumnium. Unfortunately this spectrum is unusable, since only the two rightmost peaks are pronounced enough to be discernible.To solve this problem we took the maxima and minima positions in figure~\ref{fig:augerpeaks} and took the average between a minimum and its preceding maximum, which gives a rough estimate for the position of a peak in figure~\ref{fig:intaugerpeaks}. The estimated peak positions can be found in the lower section of table~\ref{tab:augerpeaks}. 
+
+The estimated peak positions in the integrated Auger spectrum need to be identified with a Auger KLL transition from table~\ref{tab:augerpeakscomp}. Possible identifications, taking possible energy losses due to plasmon excitation into account, can be found in table~\ref{tab:identification}, although for some measure peaks several transitions come into consideration, but cannot be discerned. This may be due to two neighbouring peaks being combined to one peak of average energy.
 
 \begin{figure}
 \centering
@@ -261,7 +272,7 @@ Peak Position E [eV]\\
 \begin{center}
 \begin{tabular}{lcc}
 \toprule
-peak position  [eV]                  & recalibrated peak position [eV]      & literature value [eV]\\
+peak position  [eV]                    & recalibrated peak position [eV]        & literature value [eV]\\
 \midrule
 1340.45 $\pm$ 0.07                     & 1327.86 $\pm$ 0.07                     & 1329 \\
 1357.08 $\pm$ 0.07                     & 1344.49 $\pm$ 0.07                     & 1345 \\
@@ -313,9 +324,9 @@ $KL_{2,3}L_{2,3} (^{3}P)$ & 1398.1        & 1383.9   & 1369.7 \\
 \toprule
 Auger Line                                  & Theoretical Energy [eV] & Measured Energy [eV] \\
 \midrule
-$KL_{1}L_{2,3}: ~~\phantom{P}^{1}P + B_{1}$   & 1328.1                  & 1323.5 $\pm$ 0.2 \\
-$KL_{1}L_{2,3}: ~~\phantom{P}^{1}P$           & 1342.3                  & 1339.5 $\pm$ 0.2 \\       
-$KL_{1}L_{2,3}: ~~\phantom{P}^{3}P$           & 1358.5                  & 1358.5 $\pm$ 0.2 \\
+$KL_{1}L_{2,3}: ~~\phantom{P}^{1}P + B_{1}$ & 1328.1                  & 1323.5 $\pm$ 0.2 \\
+$KL_{1}L_{2,3}: ~~\phantom{P}^{1}P$         & 1342.3                  & 1339.5 $\pm$ 0.2 \\       
+$KL_{1}L_{2,3}: ~~\phantom{P}^{3}P$         & 1358.5                  & 1358.5 $\pm$ 0.2 \\
 $KL_{2,3}L_{2,3}: \phantom{P}^{1}S + B_{2}$ & 1358.2                  & 1358.5 $\pm$ 0.2 \\
 $KL_{2,3}L_{2,3}: \phantom{P}^{1}S + B_{1}$ & 1372.4                  & 1375.4 $\pm$ 0.2 \\        
 $KL_{2,3}L_{2,3}: \phantom{P}^{1}D + B_{1}$ & 1379.4                  & 1375.4 $\pm$ 0.2 \\
@@ -331,11 +342,22 @@ $KL_{2,3}L_{2,3}: \phantom{P}^{1}D$         & 1393.5                  & 1390.9 $
 
 \section{Conclusion}
 
+We performed Auger and Electron Energy Loss Spectroscopy on an alumminum sample. 
+
+Whereas the obtained differential Auger spectrum, with an offset in energy that had to be recalibrated, seemed in good qualitative agreement with the literature, the integrated Auger spectrum was unusable. An approximative usage of the differential Auger spectrumallowed us to identify Auger KLL transitions, that agreed with literature values~\cite{augerpaper}.
+
+The plasmon excitation energies ($\Delta E_{bulk} = (14.19 \pm 0.05)\,\mbox{eV}$ and $\Delta E_{bulk} = (9.6 \pm 0.3)\,\mbox{eV}$) obtained from the EEL spectra were not in agreement with literature values~\cite{plasmonpaper}. One reason for the large deviation in the value of the surface plasmon excitation energy might be due to the fact, that we were able to measure only one surface plasmon.
+
+The experimental setup would allow for much better values, since the accuracy of the measurement devices is quite good, but it is very problematic that the vacuum chamber lacks the turbomolecular pump, which is the reason for the high pressure in the chamber. Another improvement could be made in the angular positioning of the sample, since this might have an effect on the measurements fo the CMA. A further improvment to the experiment could be made by exchanging the file for a sputter gun.
+
+
+
 \nocite{skript}
 \nocite{augerpaper}
 \nocite{plasmonpaper}
 \nocite{handbook}
 \nocite{ben}
+\nocite{christian}
 
 \bibliographystyle{plainnat}
 \bibliography{auger}
