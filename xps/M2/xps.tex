@@ -37,13 +37,13 @@
 
 \section{Introduction}
 
-In 1922 Lise Meitner first described the effect that from 1923 on would carry Pierre Augers name. For many years the features of the Auger effect were a nuisance to X-ray spectroscopists, thought to not carry any useful information. This view has since changed in the last half-centennial and Auger spectroscopy has thus become a very useful source of information about surface effects, due to the very short mean free path of low-energy electrons in most materials. Thus these electrons cannot penetrate the material very deeply, which makes this spectroscopic technique very surface sensitive. Furthermore, the resulting spectra are specific to the materials analyzed, therefore we will use the Auger effect in the present experiment to measure impurities on the surface of a sample and to later ascertain the material of our sample.
-
-Even for energies that cannot lead to Auger excitation electrons do scatter inelastically. The energy and deflection angle of deflected electrons can then be used to gain information about the scatterer, e.g. phonons or plasmons, with which the electron has scattered. This closely related spectroscopic technique is called Electron Energy Loss Spectroscopy (EELS) and will be used in the our experiment to analyze surface plasmons.
+X-Ray Photoelectron Spectroscopy (XPS) is an electron spectroscopy technique in which a sample is probed with highly-energetic photons in the X-ray spectrum. These photons can induce a wide range of different processed in the sample, e.g. excitation of valence electrongs, excitation of Auger electrons, plasmon excitation, etc., and resulting emitted electrons resolved for their kinetic energy give considerable information about the band structure of the material.
 
 \subsection{Universal Curve of Escape Depth}
 
 Figure~\ref{fig:ucurve} shows the universal curve of electron escape depth, which shows that that the depth from which an incoming electron can escape from a surface again is only dependent on the electron's energy and thus more or less independent of the material. This universal curve can be obtained on theoretical grounds by considering that first for increasing energy (up to $70\,$eV) more and more interaction modes, e.g. phonon modes, become available as potential scatterers to the incoming electron, which decreases the particles mean free path. Whereas for even higher energies the excess energy can be used to penetrate the material further.
+
+As the typical kinetic energies of electrons in XPS are between $20$ and $100\,$eV, we see in figure~\ref{fig:ucurve}, that this technique is very surface sensitive.
 
 \begin{figure}
 \centering
@@ -51,13 +51,47 @@ Figure~\ref{fig:ucurve} shows the universal curve of electron escape depth, whic
 \caption{Universal curve of electron escape depth \label{fig:ucurve}}
 \end{figure}
 
-\subsection{Inner-Shell Excitations and the Auger Effect}
+\subsection{The XPS spectrum}
 
-A particle of high enough energy can scatter with an inner shell electron, exciting it enough that it leaves the atom and becomes free, leaving a hole. The atom is now in an unstable state and will relax by either by emitting an X-ray photon or an Auger electron, both possible relaxation processes are shown in~\ref{fig:aauger}.
+Figure~\ref{fig:spectrum} shows a sample XPS spectrum, where (a) are peaks from emissions of core level electrons, (b) are peaks from Auger processes, (c) are peaks from emission of valence band electrons and (d) are peaks secondary electron electron excitation and inelastic scattering processed.
 
-In the X-ray relaxation process is relatively simple. An electron from a higher shell takes the place of the core electron and emits a photon in an energy range between $100\,$eV and some MeV, depending on the element. The spectrum of this process is discrete and the remaining atom is singly ionized.
+\begin{figure}
+\centering
+\includegraphics[scale=0.4]{img/spectrum}
+\caption{Sample XPS spectrum \label{fig:spectrum}}
+\end{figure}
 
-The second possible relaxation process is the emission of an Auger electron. In this relaxation process an electron from a higher shell fills the core hole and the emitted photon is absorbed by another electron in a higher shell that is thus excited in the continuum. The resulting atom is doubly ionized. A schematic for the process is shown in~\ref{fig:aauger} using the example of the $KL_{1}K_L{3}$ process. The electron in the $K$-shell is excited into the continuum, an $L_1$ electron takes its place and another $l_3$ is emitted as a result.
+\subsubsection{The Photoelectric Effect}
+
+The grand strucuture of the XPS spectrum is supplied by the multiplett structure (as described in the following section) that is probed by the simple photoelectric effect.
+
+In the photoelectric effect a single electron absorbs a single photon and is excited in the vacuum with the kineti energy:
+\begin{equation}
+E_{kin} = \hbar \nu - E_{B} - \Phi,
+\end{equation}
+where the first term on the right-hand side gives the energy of the incoming photon, the second term $E_{B}$ gives the binding energy of the electron measured with respect to the Fermi energy and the last term $\Phi$ gives the work function of the material, which is the difference between the Fermi and vacuum level, i.e. the minimum energy to excite an electron from the material.
+
+The binding energy of a material is different to the one of a free atom of this element. It is given by
+\begin{equation}
+E_{B} = E_{B,atom} + \Delta E_{chem} + \Delta E_{lattice} + \Delta E_{ref}, \label{eq:binding}
+\end{equation}
+where $\Delta E_{chem}$ gives the chemical shift, due to neighbouring atoms, $\Delta E_{lattice}$ gives the difference due electrostatic interactions in the lattice (usually called the Madelung constant) and $\Delta E_{rel}$ subsumes many-body effects in the final 1-hole state.
+
+\subsection{Spin-Orbit Coupling}
+
+To fully describe an electron's energy in an atom---and by that the multiplet structure of the XPS spectrum---one has to account for magnetic moments of the electron. Each electron has a magnetic moment due to its orbital movement in the atom and another one due to its spin. All of these magnetic moments of all electrons interact and lead to energy shifts in the spectra. For light atoms the spin-orbit interaction can be approximated by an interaction of the total angular momentum and the total spin (L-S-coupling), which is possible when the coupling of individual spins and orbital angular momenta is negligible. The part of the Hamiltonian describing spin-orbit coupling is then given by
+\begin{equation}
+H_{SL} = - \frac{\mu_B}{\hbar m_e e c^2}\frac{1}{r}\frac{\partial V(r)}{\partial r} \boldsymbol{L}\cdot\boldsymbol{S},
+\end{equation}
+where $\mu_B$ is the Bohr magneton, $m_e$ is the electron mass, $e$ is the elementary charge, $c$ is the speed of light, $V$ is the core potential and $r$ is the distance of the electron to the nucleus.
+For heavier atoms the coupling between individual spin and orbital momenta is non-negligible and a better approximation is the coupling of individual total angular moment $J_i=L_i+S_i$, this is called J-J-coupling. 
+
+As our samples will be made of heavier elements, J-J-Coupling is the better approximation. Thus all emission lines of full electron shells in the ground state will split in doublets for $(l+\tfrac{1}{2})$ and $(l-\tfrac{1}{2})$. In principle for s-shells with $l=0$ no splitting would occur, but an effect called magnetic spin-spin exchange splitting, leads to a doublet splitting of s-shells through the interaction partially filled shells.
+
+
+\subsubsection{Inner-Shell Excitations and the Auger Effect}
+
+If a core electron is excited, one possible relaxation process is the emission of an Auger electron. In this relaxation process an electron from a higher shell fills the core hole and the emitted photon is absorbed by another electron in a higher shell that is thus excited in the continuum. The resulting atom is doubly ionized. 
 
 The energy of the emitted Auger electron is given by
 \begin{equation}
@@ -65,47 +99,60 @@ E_{kin} = E(K)-E(L)-E'(L') = E(K)-E(L)-E(L')-C(LL',T)+R
 \end{equation}
 where the $E(K)$ is the binding energy of the core electron, $E(L)$ is the binding energy of the electron filling the core hole. $E'(L')$ is the effective binding energy of the electron that is emitted as Auger electron. The effective binding energy consists of the binding energy of the shell $E(L')$, a coupling energy between the holes at $L$ and $L'$ and the final state $T$ and a so-called electronic relaxation $R$. It is important to note that the kinetic energy of the Auger electron is only dependent on the participating states of the Auger process and not on the energy of the particle that initially excites the core electron.
 
-The dominant relaxation process is dependent on the atomic mass number $Z$, whereas for lighter atoms the relaxation by emission of an Auger electron dominates over X-ray emission.
+\subsubsection{Plasmons}
 
+A plasmon is a quasi-particle coming up in condensed matter, describing quantized plasma oscillations, i.e. oscillations of the electron gas as a whole. The excitation energy of plasmons is specific to all materials and are given by the materials plasma frequency, both of which are tabulated and can be looked up. 
 
-
-\subsection{Spin-Orbit Coupling}
-
-To fully describe an electron's energy in an atom one has to account for magnetic moments of the electron. Each electron has a magnetic moment due to its orbital movement in the atom and another one due to its spin. All of these magnetic moments of all electrons interact and lead to energy shifts in the spectra. For light atoms the spin-orbit interaction can be approximated by an interaction of the total angular momentum and the total spin (L-S-coupling), which is possible when the coupling of individual spins and orbital angular momenta is negligible. The part of the Hamiltonian describing spin-orbit coupling is then given by
-\begin{equation}
-H_{SL} = - \frac{\mu_B}{\hbar m_e e c^2}\frac{1}{r}\frac{\partial V(r)}{\partial r} \boldsymbol{L}\cdot\boldsymbol{S},
-\end{equation}
-where $\mu_B$ is the Bohr magneton, $m_e$ is the electron mass, $e$ is the elementary charge, $c$ is the speed of light, $V$ is the core potential and $r$ is the distance of the electron to the nucleus.
-
-For heavier atoms the coupling between individual spin and orbital momenta is non-negligible and a better approximation is the coupling of individual total angular moment $J_i=L_i+S_i$, this is called J-J-coupling.
-
-Since Aluminum is a light element it is best described with L-S-coupling. The appropriate selection rules are thus $\Delta S=0$ and $\Delta L = 0, \pm 1$.
-
-\subsection{X-Ray Notation}
-
-For historical reasons X-ray notation is used in describing Auger processes. Thus the principal quantum number $n$ is represented by the letters K, L, M$\ldots$ for the numbers $1, 2, 3 \ldots$ and a subscript to those letters to associate a term symbol to those states. The states $S_{1/2}$ are given the subscript 1, $P_{1/2}$ is given the subscript 2, $P_{3/2}$ is given the subscript 3, and so on. Hence the state $L_2$ is equivalent to $2P_{1/2}$ in spectroscopic notation.
-
-\subsection{Plasmons}
-
-A plasmon is a quasi-particle coming up in condensed matter, describing quantized plasma oscillations, i.e. oscillations of the electron gas as a whole. The excitation energy of plasmons is specific to all materials and are given by the materials plasma frequency. For a free electron gas the bulk plasma frequency is given by
+For a free electron gas the bulk plasma frequency is given by
 \begin{equation}
 \omega_{b} = \sqrt{\frac{e^2 n}{m_e \epsilon_0}},
 \end{equation}
-where $e$ is the elementary charge, $\epsilon_0$ the permittivity of free space, $m_e$ the mass of the electron and $n$ the conduction electron density. 
+where $e$ is the elementary charge, $\epsilon_0$ the permittivity of free space, $m_e$ the mass of the electron and $n$ the conduction electron density. Apart from the 3-dimensional case also surface plasmons, excitations of the electron gas restricted to the surface, can be excited.
 
-Plasmon that appear on the interface between two materials and are confined to a surface are called surface plasmons. Because of their lower dimensionality the plasma frequency is lower than for the three-dimensional case, with $\omega_{s} = \omega_{b}/\sqrt{2}$. This excitation can be measured in the EELS part of present experiment as intensity peaks in the energy loss spectra at the energies $E=n \hbar \omega_{s}$ with $n \in \mathbb{N}$.
+An electron having excited one or more plasmons is said to have suffered plasmon loss. This is one reasion for satelites to ``real'' peaks in spectra.
 
 \section{Experimental Setup}
 
-In this section we will describe shortly the machinery and techniques used in this experiment.
+In this section we will describe shortly the machinery and techniques used in this experiment. A schematic of the setup is shown in figure~\ref{fig:setup}.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.4]{img/setup}
+\caption{Schematic setup of the experimen.t \label{fig:setup}}
+\end{figure}
+
 
 \subsection{Ultra High Vacuum (UHV)}
 
-This experiment needs an ultra high vacuum environment for two reasons. First, electrons have very short mean free path in matter, second, the higher the pressure the faster gas atoms from the rest atmosphere in the chamber adsorb to the sample.
+This experiment needs an ultra high vacuum environment for two reasons. First, electrons have very short mean free path in matter, as can be seen in figure~\ref{fig:ucurve}. Second, the higher the pressure the faster gas atoms from the rest atmosphere in the chamber adsorb to the sample, this is again unwanted, as XPS is a very surface sensitive technique and assertions about bulk properties of samples can, if ever, only be made from properties of atomically clean surfaces.
 
-The adsorption is described by the unit Langmuir L, one Langmuir describes the adsorption of a mono-atomic layer on a sample and is obtained at a pressure of $10^{-8}\,$torr after $100\,$s.
+The ultra high vacuum is usually obtained by the use of membrane, turbo molecular, ion getter pump and sublimation pumps, as well as baking of the chamber. This experiment uses a rotary vane pump to achieve a prevacuum of about $\sim 10^{-6}\,$mbar and based on that, a turbomolcular pump to achieve a vacuum of about $10^{-9}\,$mbar. The final pressure of about $10^{-10}\,$mbar is achieved through baking.
 
-The ultra high vacuum is usually obtained by the use of a membrane, a turbo molecular and an ion getter pump. In our case the turbo molecular pump was broken, which is why we experimented at a pressure of $4.3 \cdot 10^{-8}\,$mbar and not the usually recommended $10^{-10}\,$mbar.
+\paragraph{The Rotary Vane Pump} is a rather simple mechanical pump. In a cylinder a vane, pressed to the cylinder walls by springs, rotates and mechanically ``shovels'' out the gas.
+
+\paragraph{The Turbomolecular Pump} is another type of mechanical pump. It consists of several stages of rotors and stators. The rotors are tilted blades rotating at a velocity approximately equal to that of the gas particles and the stators are stationary blades tilted in the other direction orthogonal to the rotors. The working principle of this pump is to transfer momentum to the gas particles in a way such that the particles are ``kicked'' out of the chamber; the tilt of the rotors is such that the momentum of the kicked particles points outward the chamber.
+
+\paragraph{Baking} is the technique through which the final pressure is achieved. The remaining pressure achieved through the use of pumps is mainly due to water molecules still in the chamber. Due to teir polarity, these water molecules are usually located at the chamber walls. By cycles of heating and cooling of the chamber they can be pumped out. This procedure can take several days, which makes it of utmost importance to maintain the UHV after it is obtained.
+
+\subsection{X-Ray Source}
+
+The X-ray source used in this experiment is made of a filmanent from which electrons are emitted by thermal excitation. These electrons are then accelerated and hit an anode, either aluminum or magnesium, were they produce characteristic X-ray radiation by excitation of core level electrons in the anode and a continous X-ray spectrum through Bremsstrahlung.
+
+The characteristic X-ray radition is filtered out by usage of an Aluminium window and only the continous spectrum is used of spectroscopy.
+
+\subsection{Electron Energy Analyzer}
+
+This experiment uses a hemispherical electron analyzer, as shown in figure~\ref{fig:analyzer}. The analyzer consists of two hemispherical capacitors between which an electric field is applied, thus changing the trajectory of electrons coming in through the first aperture. The strength of this field is varied such that only electrons in a certain energy range pass through the second aperture.
+
+Before entering through the first aperture a pass voltage can be applied to the electrons, which is useful because most detectors are more accurate at lower energies, therefore a constant energy offset can be used to increase the accuracy of the measurement an order of magnitude.
+
+The final electron detecter is a channeltron, which is a  continuous version of a dynode electron multiplier. The channeltron is basically a thin glass cone coated with a semiconducting material. The signal is amplified by emission of secondary electrons, which multiplies the number of electrons in the channeltron that finally arrive at the anode. The electron multiplication is usually of the order $10^6$ to $10^9$.
+
+\begin{figure}
+\centering
+\includegraphics[scale=0.4]{img/analyzer}
+\caption{Schematic of a hemispheric electron analyzer \label{fig:analyzer}}
+\end{figure}
 
 
 \begin{comment}
