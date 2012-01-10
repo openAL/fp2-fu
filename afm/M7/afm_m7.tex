@@ -80,15 +80,13 @@ The AFM measures the forces along the sample's surface with a cantilever, on whi
 \begin{figure} 
  \centering
 \subfloat[][Schematic Picture of an AFM]
-{         \includegraphics[width=0.4\linewidth]{img/afmsetup.pdf}
-       
+{         \includegraphics[width=0.45\linewidth]{img/afmsetup.pdf}       
 }
-% \hfill
-\subfloat[][]
-       %  {\includegraphics[width=0.6\linewidth]{img/moke.pdf}}
-
+ \hfill
+\subfloat[][Scanning Process]
+         {\includegraphics[width=0.45\linewidth]{img/scan.png}}
 \caption{
-\small  \textbf{(a)} Typical AFM Set-Up \textbf{(b)} Source: \url{http://en.wikipedia.org/wiki/Atomic-Force-Microscope}. } 
+\small  \textbf{(a)} Typical AFM Set-Up and \textbf{(b)} scanning directions, Sources: \url{http://en.wikipedia.org/wiki/Atomic-Force-Microscope}, \cite{book}  } 
 	\label{fig:setup}
 \end{figure}
 
@@ -117,11 +115,6 @@ where $C$ is the capacity.
 
 The magnetic force $F_{mag}$ is only relevant for magnetized tips and magnetic samples and is therefore not discussed here. 
 
-\subsection{Operation Modes}  
-With the typical set-up and acting forces described in the previous section, it is possible to select different operation modi of the AFM. The simplest one is the \textbf{contact mode}, where the distance between tip and sample is so small, that the repulsive Pauli force dominates. Contact mode can be used in two ways, either the height of the AFM tip is kept constant and the changes of the cantilever deflection is recorded yielding a force-profile of the surface, or the force is kept constant via regulating the height of the tip using the feed-back electronics. Thus, a height profile can be generated. However, as the distance between tip ans sample is very small in both cases, the risk of damaging both tip and sample is a big disadvantage of this modus. 
-
-This problem can be avoided in \textbf{non-contact} mode, where the tip-sample distance is in the attractive force regime. To avoid spontaneous crashes into the sample in regions with high attractive forces, the cantilever is made of sufficiently hard materials. In non-contact mode the cantilever is not gliding statically over the sample surface, but is driven to oscillate at a frequency close to its own resonance, therefore non-contact mode is also referred to as dynamic mode.
-
 \begin{figure} 
  \centering
 \subfloat[][Force between tip and sample]
@@ -132,9 +125,11 @@ Source: \url{http://en.wikipedia.org/wiki/Magneto-optic_Kerr_effect}. }
 	\label{fig:forces}
 \end{figure}
 
-
-
-The equation of motion of the tip-sample distance can be modeled as a damped, driven harmonic oscillator with an additional attractive force $F_a$
+\subsection{Operation Modes}  
+\subsubsection*{Contact Mode}
+With the typical set-up and acting forces described in the previous section, it is possible to select different operation modi of the AFM. The simplest one is the \textbf{contact mode}, where the distance between tip and sample is so small, that the repulsive Pauli force dominates. Contact mode can be used in two ways, either the height of the AFM tip is kept constant and the changes of the cantilever deflection is recorded yielding a force-profile of the surface, or the force is kept constant via regulating the height of the tip using the feed-back electronics. Thus, a height profile can be generated. However, as the distance between tip ans sample is very small in both cases, the risk of damaging both tip and sample is a big disadvantage of this modus. 
+\subsubsection*{Non-Contact Mode}
+This problem can be avoided in \textbf{non-contact} mode, where the tip-sample distance is in the attractive force regime. To avoid spontaneous crashes into the sample in regions with high attractive forces, the cantilever is made of sufficiently hard materials. In non-contact mode the cantilever is not gliding statically over the sample surface, but is driven to oscillate at a frequency close to its own resonance. The distance between tip and sample is related to the magnitude of the attractive force, which influences the resonance curve of the cantilever oscillation. If the oscillation frequency and amplitude are held constant, the tip-sample distance has to regulated via the height of the tip. In this way, the topography  of the sample can be scanned. In more detail, the equation of motion of the tip-sample distance can be modeled as a damped, driven harmonic oscillator with an additional attractive force $F_a$
 \begin{equation}
 m\ddot{z}+\gamma \dot{z}+kz=F_{0} \exp( {i \Omega t})+F_{a} \label{eq:differential}
 \end{equation}
@@ -142,22 +137,29 @@ where $z$ is the oscillation amplitude around equilibrium position, $m$ is the m
 \begin{equation}
 k_\text{eff}=k-\frac{\partial F_{a}}{\partial z} \label{eq:change}.
 \end{equation}
-This shift corresponds to a shift of the resonance frequency and therefore can be connected to a change of the oscillation amplitude. From equation \Formel{eq:differential} the oscillation amplitude can be derived to be
+This shift corresponds to a shift of the resonance frequency 
+\eq{\Delta \omega_0 = -\frac{\omega_0}{2 k} \frac{\partial F_a}{\partial z} }{shift}
+and therefore can be connected to a change of the oscillation amplitude $A$, which is given by \cite{martin}
 \begin{equation}
-A=\frac{A_{0}}{i\gamma\Omega+\omega_{0}^{2}-\Omega^{2}},
+A=\frac{ A_0 \omega_0 / \Omega  }  { \sqrt{1 + Q^2(\Omega / \omega_0 - \omega_0 / \Omega )^2 }  } ,
 \end{equation}
-where $A_0=F_0/m$ is the amplitude of the oscillator without the driving force. This amplitude is a complex number. The phase can be interpreted as a phase shift, the magnitude is the amplitude we wanted:
+where $A_0=F_0/m$ is the amplitude of the oscillator without driving force and $Q=\omega_0/2\gamma$ is the quality factor of the cantilever. With eq. \Formel{shift} the force gradient can be expressed in terms of the quality factor and the amplitude ratio $a=A_0/A$
 \begin{equation}
-|A|^{2}=\frac{a_{0}}{(\omega_{0}^{2}-\Omega^{2})^{2}+\gamma^{2}\Omega^{2}}=\frac{a_{0}}{(\omega_{0}^{2}-\Omega^{2})^{2}-\gamma(\omega_{0}^{2}-\Omega^{2})+\gamma^{2}\omega_{0}^{2}}.
-\end{equation}
-
-Introducing the quality factor of the cantilever $Q=\omega_0/2\gamma$ and the relative amplitude $a=A_0/A$ we can now calculate the Force gradient
-\begin{equation}
-\frac{\partial F_{a}}{\partial z}=k\left(\frac{1-2a^{2}+\sqrt{4Q^{2}\left(a^{2}-1\right)+1}}{2\left(Q^{2}-a^{2}\right)}\right)
+\frac{\partial F_{a}}{\partial z}=k\left(\frac{1-2a^{2}+\sqrt{4Q^{2}\left(a^{2}-1\right)+1}}{2\left(Q^{2}-a^{2}\right)}\right) \; .
 \end{equation}
 
+\subsubsection*{Electronic Properties and Tip Geometry}
+In order to study the contact potential $V_C$ between tip and sample, one can measure the force with respect to the applied voltage. Relation \Formel{eq:elec} states, that the electrical force hast a minimum at $V_\text{bias} = -V_C$. Thus, $V_C$ can be measured via the force, e.g. the direct bending of the cantilever ore a change in the oscillation amplitude. Alternatively the height-regulation of the afm can be used to measure the distance vs the voltage. Also in this case, the minimum of the curve gives the contact potential, however the derivative of the capacitance with respect to the distance $\frac{\partial C}{\partial z}$ varies with the distance. This variation depends on the tip-geometry and has been classified by L. Olsson et al. \cite{olsson}. Therefore, the distance-voltage curves in constant force (or better force-gradient) mode can be used to do some estimates about the tip geometry.
 
+\begin{figure} 
+ \centering
+       \includegraphics[width=\linewidth]{img/tip.png}
+\caption{
+\small \textbf{Left:} Different Distance-Voltage Curves (const. force gradient) for different sample geometries. \textbf{Right:} Analytical expressions for force $F$ , force gradient $F'$ and distance $d$ at constant force for different tip geometries. Source: Olsson et al. \cite{olsson} } 
+	\label{fig:geometry}
+\end{figure}
 
+% \subsection{Systematic Errors and Artifacts}
 
 
 
