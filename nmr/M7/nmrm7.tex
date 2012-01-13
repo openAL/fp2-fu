@@ -1,0 +1,157 @@
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lmodern} 
+\usepackage[T1]{fontenc}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{wrapfig}
+
+
+% PAKETE
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{bbm}
+
+\usepackage{amssymb} % math symbols
+\usepackage{amsmath} % ams
+\usepackage{amsfonts} % mathmatical fonts
+
+% caption indenting
+ \usepackage[format=plain,indention=0em,labelfont=bf,margin=1em]{caption} 
+ \usepackage{subfig} %subfigures ^^
+\usepackage[protrusion=true,expansion=true]{microtype} % denser font, "-" behind line
+\usepackage{esint} % nicer double and triple integrals
+\usepackage{fancyhdr} % fancy headers
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,filecolor=black,urlcolor=black]{hyperref}
+
+
+
+% EINSTELLUNGEN
+\sisetup{seperr,repeatunits=false}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+% EIGENE FUNKTIONEN
+\newcommand{\re}{\operatorname{Re}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\gquote}[1]{\glqq #1 \grqq}
+
+\newcommand{\eq}[2]{\begin{equation}#1\label{#2}\end{equation}}
+\newcommand{\eqand}[0]{\hspace{.25cm} \bigwedge \hspace{.25cm}}
+\newcommand{\grafik}[2]{\begin{figure}[h]\centering \includegraphics[width=10cm]{#1.eps}  \caption{#2} \label{#1} \end{figure} }
+\newcommand{\grafikq}[3]{\begin{figure}[h]\centering \includegraphics[width=10cm]{#1.eps}  \caption[#2]{#3} \label{#1} \end{figure} }
+\newcommand{\tbl}[3]{\begin{table}[h]\caption{#1}\label{#2}\begin{center}#3\end{center}\end{table}}
+\newcommand{\Abbildung}[1]{\textsl{Abbildung \ref{#1}}}
+\newcommand{\AbbildungI}[1]{\textsl{(Abbildung \ref{#1})}}
+\newcommand{\Tabelle}[1]{\textsl{Tabelle \ref{#1}}}
+\newcommand{\TabelleI}[1]{\textsl{(Tabelle \ref{#1})}}
+\newcommand{\Formel}[1]{(\ref{#1})}
+\renewcommand{\d}{\mathrm{d}}
+\newcommand{\ve}[1]{\mathbf{ #1} }
+
+\title{Ma 3: Pulsed Nuclear Magnetic Resonance (NMR)}
+\subtitle{Tutor: C. Meier}
+\author{Benjamin Huber, Carolin Wille}
+\date{January 16, 2012}
+
+\begin{document}
+\thispagestyle{empty}
+\maketitle
+\tableofcontents
+\clearpage
+
+
+\section{Introduction}
+The Pulsed Nuclear Magnetic Resonance method was developed in 1946. Since then it has greatly influenced medical imaging (NMR tomography) and the analysis of molecules in liquids and solids by allowing certain conclusions about the field near the nucleus with total spin $\ve I \neq 0$.
+
+
+\subsection{Nuclear Spins in a Static Setting}
+In nuclei with an even number of neutrons and protons, the total spin vanishes due to every energy level being occupied by one spin up and one spin down particle. For atoms with either uneven proton or neutron number, this can not be the case. Instead there will be a non-vanishing total nuclear spin leading to a magnetic moment
+\eq{\ve \mu_I = \gamma_I \hbar \ve I =g_K \mu_K \ve I,}{}
+where $\gamma_I$ is the gyromagnetic relationship, $g_K$ the gyromagnetic g-factor and $\mu_K$ the nuclear magneton. This magneton is defined parallel to the Bohr magneton
+\eq{\ve \mu_K = \frac{m_p}{m_e}\ve \mu_B .}{}
+
+When applying an external magnetic field, these magnetic moments will orient parallel to this field. Due to the interaction between dipole and field the energy will shift by
+\eq{\Delta E = g_K\mu_K B_0 m_I ,}{}
+with $m_I$ being the magnetic quantum number with values $0,\pm 1,\dots,\pm I$.
+
+As for the corresponding electronic systems, the occupation numbers for these different energy levels are given by the Boltzmann distribution
+\eq{N_i = N_0 \exp\left( -\frac{E_i}{k_B T} \right) .}{}
+This distribution leads to a macroscopic magnetization of
+\eq{\ve M_0 = \frac{\eta \g_K^2 \mu_K^2 I(I+1)}{3 k_B T} \ve B_0}{}
+where $\eta = N_0/V$ is the density of nuclear spins.
+
+
+\subsection{Nuclear Spins in a Dynamic Setting}
+A magnetic dipole (or respectively spin) that is not oriented parallel to the external magnetic field performs a movement according to the equation of motion
+\eq{\frac{d}{dt}\ve M = \gamma_I \ve M \times \ve B_0 ,}{eq:M1}
+leading to a rotation with the Larmor frequency $\ve \omega_0 = -\gamma_I \ve B_0$. If we chose a coordinate system that is rotating with this same frequency, obviously the dipole is at rest, leading to the simple homogeneous ODE
+\eq{\frac{d}{dt}\ve M_{rot} = 0.}{eq:Mrot}
+Any additional magnetic field $\ve B_1$ will now be represented by an inhomogeneous term on the right side of the equation
+\eq{\frac{d}{dt}\ve M_{rot} = \gamma_I \ve M \times \ve B_1.}{}
+Assuming that $\ve B_1$ is rotating with $\omega_0$ as well, it is a stationary vector in the new (rotating) system and we thus end up with the same situation as in (\ref{eq:M1}), leading to a similar precession of $\ve M_{rot}$ around $\ve B_1$ (this time in the rotating frame) with frequency $\ve \omega_1 = -\gamma_I \ve B_1$.
+
+
+\subsection{Pulsed Nuclear Resonance}
+As $\ve M_{rot}$ only changes when there is an field $\ve B_1$ and remains constant otherwise (without any other pertubations), it can be timed to stop at any point of its precession. Assuming an equilibrium state (parallel to $\ve B_0$) at the beginning, this precession covers every angle $\alpha$ between $\ve B_0$ and $\ve M_{rot}$ (respectively $\ve M$, as this angle does not change with (\ref{eq:Mrot}) ). Prominent are the $\alpha = \pi/2$ and $\alpha = \pi$ configurations.
+
+Once the rotating field $\ve B_1$ is turned off, relaxation of the spins back to the equilibrium position can be observed. The timescale of these events as well as the strength of the resulting radiation contains information about the investigated sample.
+
+
+\subsection{Relaxation}
+In general there needs to be a pertubation of the clean system of (\ref{eq:M1}) for it to allow any relaxation to the equilibrium state at all. In the experiment these are spin-spin and spin-lattice interactions.
+
+\subsubsection*{Spin-Lattice Relaxation}
+The spin-lattice interaction is caused by the magnetic moments of the other atoms.\footnote{The nomenclature Spin-\emph{Lattice} Relaxation seems to promote the use for solids even though the Bloch equations turn out to be of limited use for solids and are more precise for liquids.} It causes the relaxation along the direction of $\ve B_0$. The corresponding Bloch equation is
+\eq{\frac{dM_z}{dt} = -\frac{M_z - M_0}{T_1}}{eq:B1}
+\eq{\Rightarrow  M_z = M_0 \left(1 - 2e^{-t/T_1}\right) .}{}
+
+\subsubsection*{Spin-Spin Relaxation}
+Our observed spin is influenced by the magnetic fields created by the other spins surrounding it. This additional field causes a dephasing of the magnetization components perpendicular to $\ve B_0$. In the form of Bloch equations this reads\footnote{Note that the integrations are not strictly true because $M_x$ and $M_y$ refer to the not rotating frame, but it might turn out to be just as good an approximation as the original Bloch equation (\ref{eq:B2}).}
+\eq{\frac{dM_{x,y}}{dt} = -\frac{M_{x,y}}{T_2}}{eq:B2}
+\eq{\Rightarrow  M_{x,y}=M_0 e^{-t/T_2} .}{}
+
+Not assuming the approximation of independent coordinates leading to the integrals of above, the total differential equation reads
+\eq{\frac{d}{dt}\ve M = \gamma_I B_0 \ve M \times \ve e_z - \ve e_x \frac{M_x}{T_2} - \ve e_y \frac{M_y}{T_2} - \ve e_z \frac{M_z - M_0}{T_1} }{eq:Mtotal}
+where the coordinate direction $\ve e_z$ was chosen such that $\ve B_0 = B_0 \ve e_z$.
+
+\subsubsection*{Free Induction Decay}
+The spin-spin relaxation is caused by the change in amplitude of $\ve B_0$. It is just as well possible though that the external magnetic field itself is not perfectly homogeneous, leading to a similar decay
+\eq{M_{x,y} = M_0 e^{-t/T_2^*} .}{}
+As the inhomogeneity of the external field must be on a much larger lengthscale than the spin-spin interaction, we can assume $T_2^* \ll T_2$.
+
+
+\subsection{Methods of Measurement}
+Because the different timescales $T_{1,2}$ and $T_2^*$ are all the result of different processes, it can be interesting to get quantitative values for all the independently.
+
+\subsubsection*{Measurement of $T_2^*$}
+$T_2^*$ is the shortest of the three timescales. It is measured by flipping the spins into the x-y-plane with a $\pi/2$ pulse and observing the relaxation. The final value gives information about the inhomogeneity of the external field ${\Delta B}$. In the case of gaussian distributed inhomogeneities this is
+\eq{{\Delta B} = \frac{\ln(2)}{\gamma_I T_2^*} .}{}
+
+\subsubsection*{Measurement of $T_1$ (Inversion Recovery)}
+For this measurement a full $\pi$ pulse is applied. This will flip the spin to the opposite direction. After a while $\tau$ a $\pi/2$ pulse brings the spin back to the x-y-plane where it can be measured similar to the measurement of $T_2^*$. The dependence of the initial amplitude after the $\pi/2$ pulse on the time $\tau$ gives the constant $T_1$.
+
+\subsubsection*{Measurement of $T_2$ (Spin Echo)}
+
+
+\subsubsection*{Carr-Purcell-Method}
+To decrease the time needed for the measurements of $T_2$ Carr and Purcell introduced a method to take several measurements in one run consisting of the pulses $\frac{\pi}{2},\tau,\pi,\tau,\pi,...\,$. While this reduces the error due to diffusion in the sample the error of the $\pi$ pulse accumulates over time.
+
+\subsubsection*{Meiboom-Gill-Method}
+Meiboom and Gill fixed this accumulation by alternating the direction of the pulses such that an inaccuracy $\delta$ for the $\pi$ pulse vanishes $(\pi+\delta)-(\pi+\delta)=0$. Thus every second measurement is not influences by this error with a sequence of $\frac{\pi}{2},\tau,\pi,\tau,-\pi,\tau,\pi,...\,$.
+
+
+\FloatBarrier
+\clearpage
+ \bibliographystyle{unsrt}
+\bibliography{bib}
+
+\end{document}
+
+
