@@ -1,6 +1,3 @@
-%TODO kohrenz->resolution? wird nicht verwendet in auswertung
-
-
 \documentclass[a4paper]{scrartcl}
 
 \usepackage[utf8]{inputenc}
@@ -208,7 +205,7 @@ The electron energy analyzer is the central measurement device, as it performs t
 \clearpage
 \section{Analysis}
 \subsection{Spectrum of a silver sample}
-A silver sample is investigated with a magnesium and an aluminum x-ray filament at the photon energies Mg-$K_\alpha=\SI{1253.6(7)}{eV}$) and Al-$K_\alpha=\SI{1486.6(6)}{eV}$. Figure \ref{fig:compare} shows both spectra in comparison. Most characteristic features of the spectra are shifted by the difference of the photon energy of about $230$ eV, which is expected for peaks originating from core-level transitions. Additionally at about $350$ eV there is a peak in both spectra, which can be identified as an Auger peak, as the Auger electron energy does not depend on the primary excitation source.
+A silver sample is investigated with a magnesium and an aluminum x-ray filament at the photon energies Mg-$K_\alpha=\SI{1253.6(7)}{eV}$ and Al-$K_\alpha=\SI{1486.6(6)}{eV}$. Figure \ref{fig:compare} shows both spectra in comparison. Most characteristic features of the spectra are shifted by the difference of the photon energy of about $230$ eV, which is expected for peaks originating from core-level transitions. Additionally at about $350$ eV there are peaks in both spectra, which can be identified as Auger peaks, as the Auger electron energy does not depend on the primary excitation source.
 
 \begin{figure}
   \centering
@@ -217,14 +214,7 @@ A silver sample is investigated with a magnesium and an aluminum x-ray filament 
         \label{fig:compare}
 \end{figure}
 
-\begin{figure}
-  \centering
-   	\includegraphics[width=\linewidth]{img/AgAlFermi.pdf}
- \caption{\small Region of the Ag spectrum near the Fermi energy (Al filament).}
-        \label{fig:agfermi}
-\end{figure}
-
-In order to generate a spectrum with respect to the binding energy, the Fermi energies for both spectra is determined (Al: \SI{1479.5(5)}{eV}, Mg: \SI{1249.0(5)}{eV}). Figure \ref{fig:agfermi} shows a close-up of the Fermi region, from which it can be seen, that the determination of the Fermi energy can not be done with high precision. In figure \ref{fig:agal} and \ref{fig:agmg} the binding energy spectra are displayed and all peaks, that could be matched are labeled. The peaks were found by fitting Lorentzians (Cauchy-distributions) around the maxima after a linear noise level was subtracted. For most peaks, the positions in the spectra generated with the two different x-ray sources are very similar. However, there are some peaks, which do not match well, e.g. the 3s peak. Additionally to the core transitions, some additional plasmon excitations (denoted '+P') and the Auger peak, impurities of carbon and oxygen could be detected in the spectrum. There are some remaining peaks, which could not be matched to either of the latter processes. These peaks most probable result from shake-up/shake-off processes.
+In order to generate a spectrum with respect to the binding energy, the Fermi energies for both spectra are determined (Al: \SI{1479.5(5)}{eV}, Mg: \SI{1249.0(5)}{eV}). Figure \ref{fig:agfermi} shows a close-up of the Fermi region, from which it can be seen, that the determination of the Fermi energy can not be done with high precision. In figure \ref{fig:agal} and \ref{fig:agmg} the binding energy spectra are displayed and all peaks, that could be matched are labeled. The peaks were found by fitting Lorentzians (Cauchy-distributions) around the maxima after a linear noise level was subtracted. For most peaks, the positions in the spectra generated with the two different x-ray sources are very similar. However, there are peaks, which do not match well, i.e. the 3s peak. Additionally to the core transitions, some additional plasmon excitations (denoted '+P') and the Auger peak, impurities of carbon and oxygen could be detected in the spectrum. There are some remaining peaks, which could not be matched to either of the latter processes. These peaks most probably result from shake-up/shake-off processes.
 The core transition correspond to binding energies, which are compared to literature values. For the Auger electron it is more sensible to compare the absolute electron energies.
 \begin{table}
 \centering
@@ -237,75 +227,12 @@ $E_\text{Al}$ (Auger) in eV & $E_\text{Mg}$ (Auger) in eV  & $E_\text{literature
  \end{tabular}
  \caption{ \small Auger Electron Energy of the Ag $3d_{5/2}$ electron compared to literature.\cite{augerpaper}}
  \label{tab:auger}
- \end{table}
- 
- 
-\FloatBarrier
+\end{table}
 
 
-\begin{figure} 
- \centering
-\subfloat[][Al-Filament]
-{        	
-$
-\begin{array}{rr}
-\toprule
-E_B \text{in eV (Al)}  & \text{assigned peak} \\
-\midrule
- 1209.55 \pm 1.45 & \text{} \\
- 1120.31 \pm 1.34 & \text{Ag(Auger)} \\
- 1099.24 \pm 0.96 & \text{} \\
- 1069.95 \pm 1.69 & \text{} \\
- 963.60 \pm 1.14 & \text{} \\
- 710.16 \pm 2.08 & \text{Ag(3s)} \\
- 595.33 \pm 0.69 & \text{Ag}(3p_{1/2}) \\
- 564.93 \pm 0.55 & \text{Ag}(3p_{3/2}) \\
- 523.90 \pm 0.57 & \text{O(1s)} \\
- 386.15 \pm 1.25 & \text{Ag(3s)+P} \\
- 367.61 \pm 0.78 & \text{Ag}(3d_{3/2}) \\
- 361.96 \pm 1.05 & \text{Ag}(3d_{5/2}) \\
- 279.31 \pm 0.67 & \text{C(1s)} \\
- 94.37 \pm 2.61 & \text{Ag(4s)} \\
- 55.91 \pm 1.19 & \text{Ag(4p)} \\
- 2.61 \pm 0.52 & \text{Ag(4d)} \\
- \bottomrule
-\end{array}
-$
-}
- \hfill
-\subfloat[][Mg-Filament]
-         { 
-$
-\begin{array}{rr}
-\toprule
-E_B \text{in eV (Mg)}  & \text{assigned peak} \\
-\midrule
- 980.47 \pm 1.50 & \text{} \\
- 889.60 \pm 0.60 & \text{Ag(Auger)} \\
- 735.09 \pm 1.31 & \text{Ag(3s)} \\
- 622.00 \pm 0.87 & \text{} \\
- 610.94 \pm 0.60 & \text{} \\
- 596.20 \pm 0.57 & \text{Ag}(3p_{1/2}) \\
- 565.39 \pm 0.53 & \text{Ag}(3p_{3/2}) \\
- 524.46 \pm 0.62 & \text{O(1s)} \\
- 386.61 \pm 0.98 & \text{Ag(3d)+P} \\
- 368.37 \pm 0.51 & \text{Ag}(3d_{3/2}) \\
- 362.48 \pm 0.54 & \text{Ag}(3d_{5/2}) \\
- 280.06 \pm 0.53 & \text{C(1s)} \\
- 93.54 \pm 0.79 & \text{Ag(4s)} \\
- 56.19 \pm 0.67 & \text{Ag(4p)} \\
- 3.04 \pm 0.52 & \text{Ag(4d)} \\
- -5.64 \pm 0.56 & \text{sat} \\
- \bottomrule
-\end{array}
-$         
-         }
-\caption{
-\small Spectrum of Ag generated by \textbf{(a)} Al-$K_\alpha$ x-rays and \textbf{(b)} Mg-$K_\alpha$ x-rays.   } 
-	\label{fig:tabelle}
-\end{figure}
 
 \begin{table}
+\centering
 $
 \begin{array}{lrrr}
 \toprule
@@ -332,30 +259,120 @@ $
 \end{table}
 
 
-\begin{figure}
-  \centering
-   	\includegraphics[width=\linewidth]{img/agal2.pdf}
- \caption{\small Ag-Spectrum excited by Al-$K_\alpha$ x-rays.  }
-        \label{fig:agal}
-\end{figure}
-
-
-
-
-\begin{figure}
-  \centering
-   	\includegraphics[width=\linewidth]{img/agmg.pdf}
- \caption{\small Ag-Spectrum excited by Mg-$K_\alpha$ x-rays.  }
-        \label{fig:agmg}
-\end{figure}
-
-\clearpage
-
 
 \subsection{Samarium (Sm) spectrum}
 \subsubsection{Overview Spectrum}
 A Samarium (Sm) sample was investigated with the Al-$K_\alpha$ x-ray source. To this end a fresh Samarium film was evaporated on the sample for about 30 minutes. The Fermi energy was determined to be \SI{1479.5(5)}{eV} and the matching of the peaks was done as described in the previous section. The results of the overview spectrum analysis are listed in figure \ref{fig:sm}.
-\begin{figure}[h] 
+
+
+\FloatBarrier
+\subsubsection{3-d Spectrum}
+The 3-d spectrum of Samarium is investigated with subject to two different phenomena. Firstly, the multiplet splitting caused by spin-orbit interaction is analyzed and secondly, the occurrence of satellite peaks due to the different valence-states in the bulk and on the surface is examined. The spin-orbit multiplet splitting is clearly visible in figure \ref{3d} and the binding energy difference of $\Delta E_{d_{3/2}d_{5/2}} = \SI{27.1(5)}{eV}$ between the $3d_{3/2}$ and $3d_{5/2}$ peak is in close agreement to the values given in literature $\Delta E_{d_{3/2}d_{5/2}}^{\text{ref}}$ as e.g. measured by  G. K. Wertheim et al. \cite{wertheim}. With the values ${j=5/2, s=1/2, l=2}$ and ${j=3/2, s=1/2, l=2}$ the energy spacing can be calculated using equation \Formel{spinorbitE}, which gives $\Delta E_\text{calc}=\lvert-3/2 a - a \rvert=5/2 a$. The coupling constant can thus be determined to be 
+\eq{a=10.5\pm 0.2\text{eV} \; .}{a}
+The electron configuration of Samarium is [Xe]$6s^24f^6$, which implies, that the 3d shell is fully populated. According to the Pauli principle, there are 5 electron with spin up and 5 with spin done, hence the intensities of the two 3d peaks should be equal. This can be confirmed by integrating of the two peaks. To this end, the peaks were fitted with Voigt profiles (product of Gaussian and Lorentzian functions) and a linear noise level was subtracted (visualized in fig \ref{3d}). The subsequent (improper) integration of the Voigt functions (over the whole energy range) without noise resulted in a relation of 97600:97400.
+
+The satellite peak in the 3d spectrum is a surface phenomenon. On the surface, a divalent state is favored over the usual trivalent state, because of surface tension forces  \cite{johansson}. The lowering of energy is visible in the 3d multiplet, where both peaks show satellite peaks at about 7.6 eV \cite{wertheim} lower bindings energies. However, in our spectrum this satellite peak is only visible at the $3d_{5/2}$ peak, but the distance of \SI{10.3(5)}{eV} is in qualitative agreement with the literature. The invisibility of the $3d_{3/2}$ peak is due to the noise level, which is rapidly increasing with decreasing kinetic energy of the electron (corresponding to higher binding energies). For the same reason, we decided to use the Al-filament, which has a higher x-ray energy and thus produces electrons at a higher kinetic energy compared to the Mg-filament. If it was not for this noise increase at lower kinetic energies, we would have chosen the Mg filament, because the lower kinetic energy would have lead to a more dominant impact of surface effects resulting from the decreased escape depth (see universal curve \ref{fig:uni}).
+
+The spectrum was taken for different pass energies varying from \SI{20}{eV} to \SI{100}{eV} in order to obtain the best results in a compromise between noise level and the linewidth of the peaks. Best results were achieved at a pass energy of \SI{50}{eV}.  
+
+
+\subsection{Spectrum and Components of a 10 DM (Deutsche Mark) Coin}
+A 10 DM coin was investigated with the Al filament in order to study its elemental composition. However, the coin was highly contaminated with Samarium, which had been evaporated in the chamber before. The coin should be made of $92.5 \%$ silver and $7.5\%$ copper or $62.5 \%$ silver and $37.5 \%$ copper depending on the specific memorial coin \footnote{\url{http://de.wikipedia.org/wiki/Liste_der_Gedenkmünzen_der_Bundesrepublik_Deutschland _(DM)}}. A comparison with an xps spectrum of copper from the National Physics Laboratory (\url{http://www.npl.co.uk/}) shown in figure \ref{fig:cop} shows, that it is not at all surprising, that only the 2p core transition peaks of copper could be found within the spectrum of the coin as their intensities are much higher than those of all other core transitions. The detection of these peaks is therefore all that can be expected to validate the copper within the coin. Several silver core level transitions could also be detected within the spectrum as well as the oxygen and carbon impurities, that were present in the other spectra as well.
+
+
+\section{Summary and Discussion}
+Silver, Samarium and an unknown sample were investigated with X-Ray Photoelectron Spectroscopy. All significant peaks (including Auger peaks) were located in the Silver and Samarium sample with radiation from both a Mg source and an Al source.
+
+A detailed measurement of the 3-d region of the Samarium sample confirmed the 1:1 ratio of the two peaks and one of the two satellite peaks was observed as expected.
+
+While the relative spacing underlines the correctness of the mapping of peaks to transitions, the absolute values for the binding energies to not correspond to the literature values. The discrepancy increases with higher binding energies and points towards a systematic error in the experimental setup such as tilted samples, charged samples or an inaccurate spectrometer.
+
+Nonetheless the discrepancies were consistent over several measurements such that it was possible to identify the peaks in the spectrum of the memorial coin. Most of them were Samarium peaks, but it was still possible to identify Copper and Silver in the coin. Due to the high degree of contamination with Samarium it is likely, that it accumulated over the course of several experimental groups. An intermediate sputtering or filing of the sample would have greatly increased the quality of the spectrum.
+
+
+
+
+
+\clearpage
+%----------------------------------- Fermi ------------------------------
+\begin{figure}
+\section{Spectra}
+  \centering
+   	\includegraphics[width=\linewidth]{img/AgAlFermi.pdf}
+ \caption{\small Region of the Ag spectrum near the Fermi energy (Al filament).}
+        \label{fig:agfermi}
+\end{figure}
+% ----------------------------------- Al -----------------------------------
+\begin{figure}[p] 
+ \centering
+\subfloat[][Spectrum]
+{  \includegraphics[width=0.8\linewidth]{img/agal2.pdf} }       \hfill %
+\subfloat[][Peak positions]  %     
+{ \small  $
+\begin{array}{rr}
+\toprule
+E_B \text{in eV (Al)}  & \text{assigned peak} \\
+\midrule
+ 1209.55 \pm 1.45 & \text{} \\
+ 1120.31 \pm 1.34 & \text{Ag(Auger)} \\
+ 1099.24 \pm 0.96 & \text{} \\
+ 1069.95 \pm 1.69 & \text{} \\
+ 963.60 \pm 1.14 & \text{} \\
+ 710.16 \pm 2.08 & \text{Ag(3s)} \\
+ 595.33 \pm 0.69 & \text{Ag}(3p_{1/2}) \\
+ 564.93 \pm 0.55 & \text{Ag}(3p_{3/2}) \\
+ 523.90 \pm 0.57 & \text{O(1s)} \\
+ 386.15 \pm 1.25 & \text{Ag(3d)+P} \\
+ 367.61 \pm 0.78 & \text{Ag}(3d_{3/2}) \\
+ 361.96 \pm 1.05 & \text{Ag}(3d_{5/2}) \\
+ 279.31 \pm 0.67 & \text{C(1s)} \\
+ 94.37 \pm 2.61 & \text{Ag(4s)} \\
+ 55.91 \pm 1.19 & \text{Ag(4p)} \\
+ 2.61 \pm 0.52 & \text{Ag(4d)} \\
+ \bottomrule
+\end{array}
+$
+}
+\caption{\small Ag-Spectrum excited by Al-$K_\alpha$ x-rays. Core transitions, satellite and peaks resulting from impurities (C,O) could be detected and are compared to literature values \cite{handbook}. }
+  \label{fig:agal}
+\end{figure}
+
+\begin{figure}[p] 
+ \centering
+\subfloat[][Spectrum]
+{  \includegraphics[width=0.8\linewidth]{img/agmg.pdf} }       \hfill %
+\subfloat[][Peak positions]  %     
+{ \small  $
+\begin{array}{rr}
+\toprule
+E_B \text{in eV (Mg)}  & \text{assigned peak} \\
+\midrule
+ 980.47 \pm 1.50 & \text{} \\
+ 889.60 \pm 0.60 & \text{Ag(Auger)} \\
+ 735.09 \pm 1.31 & \text{Ag(3s)} \\
+ 622.00 \pm 0.87 & \text{} \\
+ 610.94 \pm 0.60 & \text{} \\
+ 596.20 \pm 0.57 & \text{Ag}(3p_{1/2}) \\
+ 565.39 \pm 0.53 & \text{Ag}(3p_{3/2}) \\
+ 524.46 \pm 0.62 & \text{O(1s)} \\
+ 386.61 \pm 0.98 & \text{Ag(3d)+P} \\
+ 368.37 \pm 0.51 & \text{Ag}(3d_{3/2}) \\
+ 362.48 \pm 0.54 & \text{Ag}(3d_{5/2}) \\
+ 280.06 \pm 0.53 & \text{C(1s)} \\
+ 93.54 \pm 0.79 & \text{Ag(4s)} \\
+ 56.19 \pm 0.67 & \text{Ag(4p)} \\
+ 3.04 \pm 0.52 & \text{Ag(4d)} \\
+% -5.64 \pm 0.56 & \text{sat} \\
+ \bottomrule
+\end{array}
+$ 
+}
+\caption{\small Ag-Spectrum excited by Mg-$K_\alpha$ x-rays. Core transitions, satellite and peaks resulting from impurities (C,O) could be detected and are compared to literature values \cite{handbook}. }
+  \label{fig:agmg}
+\end{figure}
+
+%------------------------------ Sm ----------------------------------
+\begin{figure}[p] 
  \centering
 \subfloat[][Spectrum]
 {  \includegraphics[width=0.8\linewidth]{img/sm.pdf} }       \hfill %
@@ -382,33 +399,15 @@ Sm(4$p_{3/2}$) &$246.56 \pm 0.71$ &  247.4\\
 }
 \caption{\small Sm-Spectrum excited by Al-$K_\alpha$ x-rays. Core transitions, satellite and peaks resulting from impurities (C,O) could be detected and are compared to literature values \cite{handbook}. }
   \label{fig:sm}
-  \end{figure}
-
-\FloatBarrier
-\subsubsection{3-d Spectrum}
-The 3-d spectrum of Samarium is investigated with subject to two different phenomena. Firstly, the multiplet splitting caused by spin-orbit interaction is analyzed and secondly, the occurrence of satellite peaks due to the different valence-states in the bulk and on the surface is examined. The spin-orbit multiplet splitting is clearly visible in figure \ref{3d} and the binding energy difference of $\Delta E_{d_{3/2}d_{5/2}} = \SI{27.1(5)}{eV}$ between the $3d_{3/2}$ and $3d_{5/2}$ peak is in close agreement to the values given in literature $\Delta E_{d_{3/2}d_{5/2}}^{\text{ref}}$ as e.g. measured by  G. K. Wertheim et al. \cite{wertheim}. With the values ${j=5/2, s=1/2, l=2}$ and ${j=3/2, s=1/2, l=2}$ the energy spacing can be calculated using equation \Formel{spinorbitE}, which gives $\Delta E_\text{calc}=\lvert-3/2 a - a \rvert=5/2 a$. The coupling constant can thus be determined to be 
-\eq{a=10.5\pm 0.2\text{eV} \; .}{a}
-The electron configuration of Samarium is [Xe]$6s^24f^6$, which implies, that the 3d shell is fully populated. According to the Pauli principle, there are 5 electron with spin up and 5 with spin done, hence the intensities of the two 3d peaks should be equal. This can be confirmed in a first and simple approach by comparing the heights of the two peaks and can also be confirmed by integrating over the full peak width. To this end, the peaks were fitted with Voigt functions (product of Gaussian and Lorentzian) and a linear noise level was subtracted (visualized in fig \ref{3d}).
-
-The satellite peak in the 3d spectrum is a surface phenomenon. On the surface, a divalent state is favored over the usual trivalent state, because of surface tension forces  \cite{johansson}. The lowering of energy is visible in the 3d multiplet, where both peaks show satellite peaks at about 7.6 eV \cite{wertheim} lower bindings energies. However, in our spectrum this satellite peak is only visible at the $3d_{5/2}$ peak, but the distance of \SI{10.3(5)}{eV} is in qualitative agreement with the literature. The invisibility of the $3d_{3/2}$ peak is due to the noise level, which is rapidly increasing with decreasing kinetic energy of the electron (corresponding to higher binding energies). For the same reason, we decided to use the Al-filament, which has a higher x-ray energy and thus produces electrons at a higher kinetic energy compared to the Mg-filament. If it was not for this noise increase at lower kinetic energies, we would have chosen the Mg filament, because the lower kinetic energy would have lead to a more dominant impact of surface effects resulting from the decreased escape depth (see universal curve \ref{fig:uni}).
-
-The spectrum was taken for different pass energies varying from \SI{20}{eV} to \SI{100}{eV} in order to obtain the best results in a compromise between noise level and the linewidth of the peaks. Best results were achieved at a pass energy of \SI{50}{eV}.  
+\end{figure}
+%--------------------------------- Sm3d -----------------------------------
 \begin{figure}
   \centering
    	\includegraphics[width=\linewidth]{img/3d.pdf}
  \caption{\small Samarium 3d spectrum showing the multiplet splitting and one satellite peak due to divalent surface state. }
         \label{3d}
 \end{figure}
-
-
-
-
-
-
-\clearpage
-\subsection{Spectrum and Components of a 10 DM (Deutsche Mark) Coin}
-A 10 DM coin was investigated with the Al filament in order to study its elemental composition. However, the coin was highly contaminated with Samarium, which had been evaporated in the chamber before. The coin should be made of $92.5 \%$ silver and $7.5\%$ copper or $62.5 \%$ silver and $37.5 \%$ copper depending on the specific memorial coin \footnote{\url{http://de.wikipedia.org/wiki/Liste_der_Gedenkmünzen_der_Bundesrepublik_Deutschland _(DM)}}. A comparison with an xps spectrum of copper from the National Physics Laboratory (\url{http://www.npl.co.uk/}) shown in figure \ref{fig:cop} shows, that it is not at all surprising, that only the 2p core transition peaks of copper could be found within the spectrum of the coin as their intensities are much higher than those of all other core transitions. The detection of these peaks is therefore all that can be expected to validate the copper within the coin. Several silver core level transitions could also be detected within the spectrum as well as the oxygen and carbon impurities, that were present in the other spectra as well.
-
+% ------------------------------------ DM -----------------------------------
 \begin{figure} 
  \centering
 \subfloat[][spectrum of a 10 DM memorial coin]
@@ -442,13 +441,9 @@ $ 1098.05 \pm 0.55$ & \text{Sm(3d3)} \\
 \hfill \subfloat[][copper reference spectrum \cite{npl}]
 {  \includegraphics[width=0.6\linewidth]{img/copper.jpeg} }     
 
- \caption{\small \textbf{(a),(b) }Spectrum of a 10 DM coin with samarium contamination. \textbf{(c)} Copper spectrum. }
+ \caption{\small \textbf{(a),(b) }Spectrum of a 10 DM coin with samarium contamination. Sm(?) refer to the shake-up and shake-off peaks also found in the pure Sm sample. \textbf{(c)} Copper spectrum. }
         \label{fig:DM}
 \end{figure}
-
-
-
-
 
 \FloatBarrier
 \clearpage
