@@ -84,7 +84,7 @@ The AFM measures the forces along the sample's surface with a cantilever, on whi
 }
  \hfill
 \subfloat[][Scanning Process]
-         {\includegraphics[width=0.45\linewidth]{img/scan.png}}
+         {}%\includegraphics[width=0.45\linewidth]{img/scan.png}}
 \caption{
 \small  \textbf{(a)} Typical AFM Set-Up and \textbf{(b)} scanning directions, Sources: \url{http://en.wikipedia.org/wiki/Atomic-Force-Microscope}, \cite{book}  } 
 	\label{fig:setup}
@@ -153,7 +153,7 @@ In order to study the contact potential $V_C$ between tip and sample, one can me
 
 \begin{figure} 
  \centering
-       \includegraphics[width=\linewidth]{img/tip.png}
+      % \includegraphics[width=\linewidth]{img/tip.png}
 \caption{
 \small \textbf{Left:} Different Distance-Voltage Curves (const. force gradient) for different sample geometries. \textbf{Right:} Analytical expressions for force $F$ , force gradient $F'$ and distance $d$ at constant force for different tip geometries. Source: Olsson et al. \cite{olsson} } 
 	\label{fig:geometry}
@@ -162,6 +162,61 @@ In order to study the contact potential $V_C$ between tip and sample, one can me
 % \subsection{Systematic Errors and Artifacts}
 
 
+
+\section{Analysis}
+
+\subsection{Topographies}
+\begin{figure} [p]
+ \centering
+ \begin{tabular}{l r}
+ \subfloat[][Sample A $5\times5\mu m^2$]
+{         \includegraphics[width=0.37\linewidth]{img/AuG.jpg}       }
+&
+\subfloat[][Sample A $1\times1\mu m^2$]
+         {\includegraphics[width=0.37\linewidth]{img/AuGMacro2.jpg}}
+\\
+\subfloat[][Sample B $4\times4\mu m^2$]
+{         \includegraphics[width=0.37\linewidth]{img/balls.jpg}       }
+&
+\subfloat[][Sample B $1\times1\mu m^2$]
+         {\includegraphics[width=0.37\linewidth]{img/ballsMacro.jpg}}
+\\
+\multicolumn{2}{c}{
+\subfloat[][Fourier transform of Sample B with close-up]
+         {\includegraphics[width=0.8\linewidth]{img/fft.jpg}}
+}
+ \end{tabular}
+\caption{
+\small  \textbf{(a)-(c)} Topographies of samples A and B with different resolutions. \textbf{(d)} Topography of Sample B, measurement of the length of the rows of holes resulted in diameters (in nm, from top to bottom) $238\pm6, 255\pm9, 248\pm5, 246\pm5, 247\pm5$. \textbf{(e)} Fourier transform of (c). Contrast edited to highlight the peaks in the spectrum.
+ } 
+	\label{fig:topo}
+\end{figure}
+Point by point two samples were scanned with different resolutions, revealing their surface structure. The first sample consists of a thin layer of gold evaporated on a graphite substrate. The unordered surface that this process generates can be seen in pictures \ref{fig:topo}a and \ref{fig:topo}b. Because the measurement was done in the dynamic mode and the sample was not put in a vacuum, water droplets pollute the picture.  
+
+The second sample suffers from these droplets as well. Especially well visible in \ref{fig:topo}c. For the higher resolution picture \ref{fig:topo}d on the other hand it was possible to choose a very clean region. The periodic pattern was created by polysterene balls. After evaporating the gold an the sample, these balls were removed with a tape, leaving behind a periodic pattern of holes that naturally resembles a sphere packing.
+
+A closer investigation of these pictures quickly gives an estimate of the diameter of the used spheres. Looking only at the fast scanning direction (left to right in the pictures) and measuring over as many balls as possible in picture \ref{fig:topo}d gives a mean diameter of $(246.3\pm6.0)\,\text{nm}$ where the error is mainly due to the variance of the data.
+
+To manage the large amount of data of picture \ref{fig:topo}c another method was used. To use all of the topography at once, a Fourier transformation was performed. Strong periodic elements corresponding e.g. to the distance between two balls from left to right can be found all over the picture and thus create a strong peak in the Fourier transformed amplitude plot. With changed contrast settings to better highlight the peaks, such an amplitude plot can be found in \ref{fig:topo}e. The 34 peaks that can be found on it correspond to 17 standing waves, each giving an independent measurement of the ball diameter.
+
+Again the drift has to be considered. It causes the fast scanning direction to be more precise and may compress or stretch the slow scanning direction. To account for this, the direction of the standing waves was noted as well and instead of a constant radius in all direction, an elliptical model was fitted (see figure \ref{fig:diameterfit}). The final value for the diameter in the fast direction using this method is $(242.3\pm 2.6)\,\text{nm}$. From the diameter in the slow direction the amount of compression due to thermal drift can be approximated to be $(7.1\pm1.7)\%$ compared to the fast direction.
+
+\begin{figure}
+\centering
+	\includegraphics[width=0.8\linewidth]{img/diameterfit.pdf}
+	\caption{\small An elliptical model fitted to the measured diameter in dependence on the angle. The angle $\pi/2$ corresponds to the fast scanning direction. The two diameters in fast and slow direction resulting from this fit are $(242.3\pm2.6)\,\text{nm}$ and $(226.1\pm2.7)\,\text{nm}$. To indicate the quality of the fit, the 95\% confidence intervals are plotted in gray. }
+	\label{fig:diameterfit}
+\end{figure}
+
+
+
+\section{Summary and Discussion}
+Using an atomic force microscope, two samples were investigated. Their topography was determined and voltage spectroscopy was used to investigate the contact potentials of graphite and gold and make statements about the form of the tip.
+
+The recording of topography was very successful and revealed the surface structure of both samples on the one hand and allowed for very precise determination of the ball diameter on the other hand. Using all the data in a $4\mu m \times 4\mu m$ scan via a Fourier transformation lead to the value of $(242\pm 3)\,\text{nm}$ for the diameter and a compression of the slow scanning direction of $(7\pm2)\%$ compared to the fast direction.
+
+The voltage spectroscopy turned out to be much more problematic. Due to the high number of water droplets a lot of measurements had to be discarded. 
+%hmm kann das noch nicht wirklich schreiben ohne deine ergebnsse zu kennen ^^
 
 
 \clearpage
