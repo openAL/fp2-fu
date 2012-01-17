@@ -160,8 +160,18 @@ In order to study the contact potential $V_C$ between tip and sample, one can me
 \end{figure}
 
 % \subsection{Systematic Errors and Artifacts}
+\clearpage
+\section{Analysis}
+\subsection{Contact Potentials}
+According to the measurement procedure described in section \textrm{(1.2)} the contact potential between the tip and the two different domains on the HOPG sample (gold and graphite) are determined. To this end the change of the force with the applied voltage is measured by the means of the varying oscillation amplitude in dynamic mode at constant height without feedback. Measurements of the force vs. voltage curves are performed at three different spots on each material. Each measurement consists of 10 curves per direction (forward and backward). An average curve is generated for both directions. According to eq. \Formel{eq:elec} a parabolic behavior is expected. 
 
+However, the data points are not in all cases compatible with a parabolic function (cf. fig \ref{fig:parabolasgraph} and \ref{fig:parabolasgold}). While the parabolic fits match the data acquired at the second and third site quite well for gold and also for graphite, the curves obtained at the first site show drastic features of an unwanted effect in the region, where the minimal electric force is expected. For the graphite it is possible to obtain a good parabolic fit, if this region is excluded, while for gold an exclusion of the distorted region leads to data, that can not be reasonably fitted by a parabola. Therefore those two curves are not considered in further evaluation, while for graphite the truncated data for site one is used. 
 
+The fits are performed for the function $f(x) = a(x-b)^2 + c$, where $b$ represents the contact potential, $a$ the capacity gradient and $c$ a constant offset. All values for the parameter $b$ are listed in table \ref{tab:b}. The standard errors for all single values are small, because of the large amount of data points. Anyways, that does not mean, that a measurement at one single sample point is very accurate for the determination of the tip sample contact potential, because the shape of the sample is very inhomogeneous and the values are spread widely around the 'true' value. Therefore the error of the contact potentials, which are calculated by the mean value, are given by the standard error, that is severely larger. The calculated values are
+\eq{U_\text{Au,tip}= 358.8 \pm 3.8 \text{mV}, \qquad  U_\text{Graph,tip} = 302.2 \pm 1.7 \text{mV}}{}
+ and 
+ \eq{ \Delta \Phi_\text{Au,Graph} = 56 \pm 4 \text{meV} \; , }{}
+which is by one order of magnitude smaller compared to the expected value, calculated by the difference of literature work functions $\Delta \Phi_\text{lit}=\Phi_\text{Au} - \Phi_\text{HOPG} = $ \cite{}.
 
 
 \clearpage
