@@ -1,6 +1,3 @@
-%TODO kohrenz->resolution? wird nicht verwendet in auswertung
-
-
 \documentclass[a4paper]{scrartcl}
 
 \usepackage[utf8]{inputenc}
@@ -159,10 +156,19 @@ In order to study the contact potential $V_C$ between tip and sample, one can me
 	\label{fig:geometry}
 \end{figure}
 
-% \subsection{Systematic Errors and Artifacts}
+
+\subsection{Systematic Errors}
+There are a number of sources of inaccuracies in AFM. Some could be decreased by very long measurements, others are always present. Among those, that could be reduced with very long measuring times are creep and thermal drifts of the piezo elements. As the duration of experiments is very limited, it is good to know what to expect from these effect.
+
+When piezo elements are influenced by an electric field, they expand or contract corresponding to the field. This contraction is not instantaneous though. In a first step a large amount of this contraction is performed, but the remaining bit is saturated only very slowly towards the final expansion. This so called creep will shift all tip positions a little in the direction where it came from.
+
+Similarly a certain thermal drift will disposition the tip. As the components heat up so do the piezo elements. On the one hand the thermal expansion will move the tip, on the other hand the electronic properties of the crystals change leading to an overall distorted picture.
+
+Should the final pictures clearly be askew, it is most likely due to cross coupling between the different directions in the piezo elements. An electric potential in x direction might very well change the y or z contraction of the crystals. As a result the x and y direction of the scans would in reality not be orthogonal to each other.
 
 
 
+\clearpage
 \section{Analysis}
 
 \subsection{Topographies}
@@ -197,7 +203,7 @@ The second sample suffers from these droplets as well. Especially well visible i
 
 A closer investigation of these pictures quickly gives an estimate of the diameter of the used spheres. Looking only at the fast scanning direction (left to right in the pictures) and measuring over as many balls as possible in picture \ref{fig:topo}d gives a mean diameter of $(246.3\pm6.0)\,\text{nm}$ where the error is mainly due to the variance of the data.
 
-To manage the large amount of data of picture \ref{fig:topo}c another method was used. To use all of the topography at once, a Fourier transformation was performed. Strong periodic elements corresponding e.g. to the distance between two balls from left to right can be found all over the picture and thus create a strong peak in the Fourier transformed amplitude plot. With changed contrast settings to better highlight the peaks, such an amplitude plot can be found in \ref{fig:topo}e. The 34 peaks that can be found on it correspond to 17 standing waves, each giving an independent measurement of the ball diameter.
+To manage the large amount of data of picture \ref{fig:topo}c another method was used. To use all of the topography at once, a Fourier transformation was performed. Strong periodic elements corresponding e.g. to the distance between two balls from left to right can be found all over the picture and thus create a strong peak in the Fourier transformed amplitude plot. With changed contrast settings to better highlight the peaks, such an amplitude plot can be found in picture \ref{fig:topo}e. The 34 peaks that can be found on it correspond to 17 standing waves, each giving an independent measurement of the ball diameter.
 
 Again the drift has to be considered. It causes the fast scanning direction to be more precise and may compress or stretch the slow scanning direction. To account for this, the direction of the standing waves was noted as well and instead of a constant radius in all direction, an elliptical model was fitted (see figure \ref{fig:diameterfit}). The final value for the diameter in the fast direction using this method is $(242.3\pm 2.6)\,\text{nm}$. From the diameter in the slow direction the amount of compression due to thermal drift can be approximated to be $(7.1\pm1.7)\%$ compared to the fast direction.
 
