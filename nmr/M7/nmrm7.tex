@@ -174,7 +174,18 @@ Both, the Spin Echo and the Meiboom-Gill method to measure $T_2$ resulted in ver
 For the Carr-Purcell method the error of the $\pi$ pulse (and less significantly the $\pi/2$ pulse) have to be considered. A noticeable error will result in an oscillating behaviour as it can be seen in the collected data (cf. figure \ref{fig:plots}c). To account for this oscillation, a more complex model was fitted to the data than anticipated in section \ref{sec:relax}. The (assumed to be constant) error of the $\pi$ pulse causes a constant rotation from the component in the x-y-plane (for the sake of simplicity called the x-component from now on) to the z component and back. The x and z components dephase with the corresponding time constants $T_1$ and $T_2$ leading to the differential equation:
 \eq{\frac{d}{dt}x(t) = -\frac{x(t)}{T_2} + \omega z(t)}{}
 \eq{\frac{d}{dt}z(t) = -\frac{z(t)}{T_1} - \omega x(t) .}{}
-The solution to these ODEs was fitted to the data resulting in not just information for $T_1$ and $T_2$ but also for the error of the pulses ($\omega$ for the $\pi$ pulse and from the initial conditions for the $\pi/2$ pulse).
+The solution to these ODEs\footnote{
+\begin{align}
+\frac{1}{2} \text{Abs} &\left[ \frac{1}{\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}}\left(-e^{\frac{t \left(-T_1-T_2-\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)}{2 T_1 T_2}} x_0 T_1\right.\right.\nonumber\\
+&+ e^{\frac{t \left(-T_1-T_2+\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)}{2 T_1 T_2}} x_0 T_1
++e^{\frac{t \left(-T_1-T_2-\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)}{2 T_1 T_2}} x_0 T_2\nonumber\\
+&- e^{\frac{t \left(-T_1-T_2+\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)}{2 T_1 T_2}} x_0 T_2
+-2 e^{\frac{t \left(-T_1-T_2-\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)}{2 T_1 T_2}} y_0 \omega  T_1 T_2\nonumber\\
+&+ 2 e^{\frac{t \left(-T_1-T_2+\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)}{2 T_1 T_2}} y_0 \omega  T_1 T_2\nonumber\\
+&+ e^{\frac{t \left(-T_1-T_2-\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)}{2 T_1 T_2}} x_0 \sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\nonumber\\
+&+ \left.\left. e^{\frac{t \left(-T_1-T_2+\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)}{2 T_1 T_2}} x_0 \sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)\right]\nonumber
+\end{align}
+} was fitted to the data resulting in not just information for $T_1$ and $T_2$ but also for the error of the pulses ($\omega$ for the $\pi$ pulse and from the initial conditions for the $\pi/2$ pulse).
 
 Unfortunately the solution to these ODEs is ambiguous for $T_1$ and $T_2$ and only the product $T_1 \cdot T_2$ can be fitted from the data. To get realistic values anyway the previous observation that $T_1 \approx T_2$ was included in the fit. The resulting time constants are too small by a factor of about 2. WHY?!?!?!
 
