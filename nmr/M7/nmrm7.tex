@@ -110,6 +110,7 @@ Once the rotating field $\ve B_1$ is turned off, relaxation of the spins back to
 
 
 \subsection{Relaxation}
+\label{sec:relax}
 In general there needs to be a pertubation of the clean system of (\ref{eq:M1}) for it to allow any relaxation to the equilibrium state at all. In the experiment these are spin-spin and spin-lattice interactions.
 
 \subsubsection*{Spin-Lattice Relaxation}
@@ -153,13 +154,31 @@ To decrease the time needed for the measurements of $T_2$ Carr and Purcell intro
 Meiboom and Gill fixed this accumulation by alternating the direction of the pulses such that an inaccuracy $\delta$ for the $\pi$ pulse vanishes $(\pi+\delta)-(\pi+\delta)=0$. Thus every second measurement is not influences by this error with a sequence of $\frac{\pi}{2},\tau,\pi,\tau,-\pi,\tau,\pi,...\,$.
 
 
-
+\clearpage
 \section{Analysis}
-The aim was to determine the time constants for the Bloch equations describing the behaviour of net magnetizations in magnetic fields. To achieve this, the methods described in section \ref{sec:methods} were used first to calibrate the $\pi$ and $\frac{\pi}{2}$ pulses by comparing the measurement with the expected functional evolution and then to measure the time constants themselves.
+The aim was to determine the time constants for the Bloch equations describing the behaviour of net magnetizations in magnetic fields. To achieve this, the methods described in section \ref{sec:methods} were used first to calibrate the $\pi$ and $\frac{\pi}{2}$ pulses by comparing the measurement with the expected functional evolution\footnote{Final time for the pulses $T\left(\pi/2\right) = 3.06\,\text{ms}$ and $T\left(\pi\right) = 6.00\,\text{ms}$.} and then to measure the time constants themselves.
 
 \subsection{Free Induction Decay}
-As the free induction decay only depends on the external field, it is not expected to change with a change of samples. To confirm this expectation, two samples were investigated with different (deliberate) inhomogeneities in the external field. Two plots of the free induction decay with different amount of inhomogeneities can be found in appendix A. The optimal settings for the external fields\footnote{Inhomogeneity balancing function of $y=2.1$ and $z^2 = -1.9$.} were applied to a sample of mineral oil and of $CuSO_4$ (see figure \ref{plots}a). Both resulted in identical values for $T_2^* = (441\pm 15)\,\text{ms}$ (weighted mean).
+As the free induction decay only depends on the external field, it is not expected to change with a change of samples. To confirm this expectation, two samples were investigated with different (deliberate) inhomogeneities in the external field. Two plots of the free induction decay with different amount of inhomogeneities can be found in appendix A. The optimal settings for the external fields\footnote{Inhomogeneity balancing function of $y=2.1$ and $z^2 = -1.9$.} were applied to a sample of mineral oil and of $CuSO_4$ (see figure \ref{fig:fid}). Both resulted in identical values for $T_2^* = (441\pm 15)\,\text{ms}$ (weighted mean).
 
+\subsection{Inversion Recovery}
+The measurement of $T_1$ was a straight-forward realization of the inversion recovery method. The three available concentrations of $CuSO_4$ resulted in clearly distinct values for $T_1$. This can be seen with the bare eye in the three different evolutions (see figure \ref{fig:plots}a). For this please note, that the intensity is proportional to the absolute value of the magnetization. With a negative starting magnetization this leads to a sharp bend in the plots.
+
+\subsection{Spin Echo and Meiboom-Gill}
+Both, the Spin Echo and the Meiboom-Gill method to measure $T_2$ resulted in very similar curves, that could have been plotted together were it not for a small difference in intensity (see figures \ref{fig:plots}b and \ref{fig:plots}d). The agreement is significant nonetheless and confirms both the validity of the Meiboom-Gill method as well as that there is only a negligible amount of diffusion in our system.
+
+\subsection{Concentration Dependence}
+
+
+\subsection{Carr-Purcell}
+For the Carr-Purcell method the error of the $\pi$ pulse (and less significantly the $\pi/2$ pulse) have to be considered. A noticeable error will result in an oscillating behaviour as it can be seen in the collected data (cf. figure \ref{fig:plots}c). To account for this oscillation, a more complex model was fitted to the data than anticipated in section \ref{sec:relax}. The (assumed to be constant) error of the $\pi$ pulse causes a constant rotation from the component in the x-y-plane (for the sake of simplicity called the x-component from now on) to the z component and back. The x and z components dephase with the corresponding time constants $T_1$ and $T_2$ leading to the differential equation:
+\eq{\frac{d}{dt}x(t) = -\frac{x(t)}{T_2} + \omega z(t)}{}
+\eq{\frac{d}{dt}z(t) = -\frac{z(t)}{T_1} - \omega x(t) .}{}
+The solution to these ODEs was fitted to the data resulting in not just information for $T_1$ and $T_2$ but also for the error of the pulses ($\omega$ for the $\pi$ pulse and from the initial conditions for the $\pi/2$ pulse).
+
+Unfortunately the solution to these ODEs is ambiguous for $T_1$ and $T_2$ and only the product $T_1 \cdot T_2$ can be fitted from the data. To get realistic values anyway the previous observation that $T_1 \approx T_2$ was included in the fit. The resulting time constants are too small by a factor of about 2. WHY?!?!?!
+
+The remaining variables that were fitted are useful nonetheless. The error of the $\pi/2$ pulse $\delta(\pi/2) = (23 \pm 18)^\circ$ is rather insignificant for these functions at these values and has thus a large confidence interval that almost includes $\delta = 0$. The pulse length was thus chosen very well even retrospectively. The error of the $\pi$ pulse is more significant $\delta(\pi)=(24.90\pm 0.22)^\circ$. While the value of maximum likelihood has the same order of magnitude as $\delta(\pi/2)$, the much smaller confidence interval suggests, that it would have been possible to find a better pulse length (for example by fitting these Carr-Purcell curves until $\delta(\pi)$ is identical to 0). 
 
 
 \FloatBarrier
