@@ -165,31 +165,64 @@ As the free induction decay only depends on the external field, it is not expect
 The measurement of $T_1$ was a straight-forward realization of the inversion recovery method. The three available concentrations of $CuSO_4$ resulted in clearly distinct values for $T_1$. This can be seen with the bare eye in the three different evolutions (see figure \ref{fig:plots}a). For this please note, that the intensity is proportional to the absolute value of the magnetization. With a negative starting magnetization this leads to a sharp bend in the plots.
 
 \subsection{Spin Echo and Meiboom-Gill}
-Both, the Spin Echo and the Meiboom-Gill method to measure $T_2$ resulted in very similar curves, that could have been plotted together were it not for a small difference in intensity (see figures \ref{fig:plots}b and \ref{fig:plots}d). The agreement is significant nonetheless and confirms both the validity of the Meiboom-Gill method as well as that there is only a negligible amount of diffusion in our system.
+Both, the spin echo and the Meiboom-Gill method to measure $T_2$ resulted in very similar curves, that could have been fitted together were it not for a small difference in intensity (see figures \ref{fig:plots}b and \ref{fig:plots}d). The agreement is significant nonetheless and confirms both the validity of the Meiboom-Gill method as well as that there is only a negligible amount of diffusion in our system.
 
 \subsection{Concentration Dependence}
+The $T_1$ value from the inversion recovery and the $T_2$ values from the spin echo and Meiboom-Gill methods show the same dependence on the concentration of $CuSO_4$ molecules. Considering that $T\rightarrow\infty$ as $c(CuSO_4)\rightarrow 0$ and that the dependence should be a strictly positive and monotonically decreasing function, a functional relation of the form $T=\frac{a}{c(CuSO_4)}$ seems most probable.
 
+The corresponding fits can be found in figure \ref{fig:plots}e-g. The constant $a$ for the data from the inversion recovery was fit to $a(T_1)=(0.100\pm 0.013)\,\text{msM}$ and for the $T_2$ data to $a(T_2)=(0.1023\pm 0.0053)\,\text{msM}$ suggesting that for dilute aqueous solution of $CuSO_4$ $T_1\backsimeq T_2$.
+
+\begin{figure} [p]
+ \centering
+ \begin{tabular}{c c c c}
+\multicolumn{2}{c}{
+\subfloat[][inversion recovery]
+         {\includegraphics[width=0.49\linewidth]{img/t1.pdf}}
+} &
+\multicolumn{2}{c}{
+\subfloat[][spin echo]
+         {\includegraphics[width=0.49\linewidth]{img/t2se.pdf}}
+} \\
+\multicolumn{2}{c}{
+\subfloat[][Carr-Purcell]
+         {\includegraphics[width=0.49\linewidth]{img/t2cp.pdf}}
+} &
+\multicolumn{2}{c}{
+\subfloat[][Meiboom-Gill]
+         {\includegraphics[width=0.49\linewidth]{img/t2mg.pdf}}
+} \\
+\subfloat[][$T_1$ (inversion)]
+         {\includegraphics[width=0.23\linewidth]{img/densityt1.pdf}}
+&
+\subfloat[][$T_2$ (spin echo)]
+         {\includegraphics[width=0.23\linewidth]{img/densityt2se.pdf}}
+&
+\subfloat[][$T_2$ (C-P)]
+         {\includegraphics[width=0.23\linewidth]{img/densityt2cp.pdf}}
+&
+\subfloat[][$T_2$ (M-G)]
+         {\includegraphics[width=0.23\linewidth]{img/densityt2mg.pdf}}
+
+ \end{tabular}
+\caption{
+\small \textbf{(a)-(d)} Plots of all four measurement methods for all three concentrations of $CuSO_4$ ($c=0.005$ blue, $c=0.01$ magenta, $c=0.02$ beige). All curves were fitted with a constant noise background (not shown). 
+\textbf{(a)} Peak hight in dependence of the time $t$ between $\pi$ and $\pi/2$ pulses of the inversion recovery method. Fitted time constants are $T_1(0.005)=(20.47\pm 0.61)\,\text{ms}$, $T_1(0.01)=(9.64\pm 0.25)\,\text{ms}$, $T_1(0.02)=(4.25\pm 0.11)\,\text{ms}$ (cf. \textbf{(e)}). 
+\textbf{(b)} Peak hight in dependence of the time $t$ between $\pi/2$ pulse and echo ($2\tau$) of the spin echo method. Fitted time constants are $T_2(0.005)=(22.0\pm 1.2)\,\text{ms}$, $T_2(0.01)=(9.85\pm 0.47)\,\text{ms}$, $T_2(0.02)=(4.42\pm 0.14)\,\text{ms}$ (cf. \textbf{(f)}). 
+\textbf{(c)} Peak hight in dependence of the time $t$ between first and measured peak (spaced at $2\tau$) for the Carr-Purcell method. See running text for details on the fitted model. Fitted time constants are $T_{1,2}(0.005)=(8.68\pm0.87)\,\text{ms}$, $T_{1,2}(0.01)=(5.51\pm 0.46)\,\text{ms}$, $T_{1,2}(0.02)=(2.54\pm 0.51)\,\text{ms}$ (cf. \textbf{(g)}). 
+\textbf{(d)} Peak hight in dependence of the time $t$ between first and measured peak (spaced at $2\tau$) for the Meiboom-Gill method. Fitted time constants are $T_2(0.005)=(20.17\pm 0.27)\,\text{ms}$, $T_2(0.01)=(10.17\pm 0.43)\,\text{ms}$, $T_2(0.02)=(4.50\pm 0.20)\,\text{ms}$ (cf. \textbf{(h)}). 
+ }
+	\label{fig:plots}
+\end{figure}
 
 \subsection{Carr-Purcell}
 For the Carr-Purcell method the error of the $\pi$ pulse (and less significantly the $\pi/2$ pulse) have to be considered. A noticeable error will result in an oscillating behaviour as it can be seen in the collected data (cf. figure \ref{fig:plots}c). To account for this oscillation, a more complex model was fitted to the data than anticipated in section \ref{sec:relax}. The (assumed to be constant) error of the $\pi$ pulse causes a constant rotation from the component in the x-y-plane (for the sake of simplicity called the x-component from now on) to the z component and back. The x and z components dephase with the corresponding time constants $T_1$ and $T_2$ leading to the differential equation:
 \eq{\frac{d}{dt}x(t) = -\frac{x(t)}{T_2} + \omega z(t)}{}
 \eq{\frac{d}{dt}z(t) = -\frac{z(t)}{T_1} - \omega x(t) .}{}
-The solution to these ODEs\footnote{
-\begin{align}
-\frac{1}{2} \text{Abs} &\left[ \frac{1}{\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}}\left(-e^{\frac{t \left(-T_1-T_2-\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)}{2 T_1 T_2}} x_0 T_1\right.\right.\nonumber\\
-&+ e^{\frac{t \left(-T_1-T_2+\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)}{2 T_1 T_2}} x_0 T_1
-+e^{\frac{t \left(-T_1-T_2-\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)}{2 T_1 T_2}} x_0 T_2\nonumber\\
-&- e^{\frac{t \left(-T_1-T_2+\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)}{2 T_1 T_2}} x_0 T_2
--2 e^{\frac{t \left(-T_1-T_2-\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)}{2 T_1 T_2}} y_0 \omega  T_1 T_2\nonumber\\
-&+ 2 e^{\frac{t \left(-T_1-T_2+\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)}{2 T_1 T_2}} y_0 \omega  T_1 T_2\nonumber\\
-&+ e^{\frac{t \left(-T_1-T_2-\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)}{2 T_1 T_2}} x_0 \sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\nonumber\\
-&+ \left.\left. e^{\frac{t \left(-T_1-T_2+\sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)}{2 T_1 T_2}} x_0 \sqrt{T_1^2-2 T_1 T_2+T_2^2-4 \omega ^2 T_1^2 T_2^2}\right)\right]\nonumber
-\end{align}
-} was fitted to the data resulting in not just information for $T_1$ and $T_2$ but also for the error of the pulses ($\omega$ for the $\pi$ pulse and from the initial conditions for the $\pi/2$ pulse).
+The solution to these ODEs was fitted to the data resulting in not just information for $T_1$ and $T_2$ but also for the error of the pulses ($\omega$ for the $\pi$ pulse and from the initial conditions for the $\pi/2$ pulse).
 
-Unfortunately the solution to these ODEs is ambiguous for $T_1$ and $T_2$ and only the product $T_1 \cdot T_2$ can be fitted from the data. To get realistic values anyway the previous observation that $T_1 \approx T_2$ was included in the fit. The resulting time constants are too small by a factor of about 2. WHY?!?!?!
+Unfortunately the solution to these ODEs is ambiguous for $T_1$ and $T_2$ and only the product $T_1 \cdot T_2$ can be fitted from the data. To get realistic values anyway the previous observation that $T_1 \approx T_2$ was included in the fit\footnote{For $T_1=T_2=T$ the solution simplifies to $e^{-t/T} \text{Abs}[x_0 \cos(t \omega )+y_0 \sin(t \omega )]$}. The resulting time constants are too small by a factor of about 2 which is also reflected in the concentration dependence which is for this data $a(Carr-Purcell)=(0.046\pm 0.015)\,\text{msM}$ (see figure \ref{fig:plots}h). WHY?!?!?!
 
-The remaining variables that were fitted are useful nonetheless. The error of the $\pi/2$ pulse $\delta(\pi/2) = (23 \pm 18)^\circ$ is rather insignificant for these functions at these values and has thus a large confidence interval that almost includes $\delta = 0$. The pulse length was thus chosen very well even retrospectively. The error of the $\pi$ pulse is more significant $\delta(\pi)=(24.90\pm 0.22)^\circ$. While the value of maximum likelihood has the same order of magnitude as $\delta(\pi/2)$, the much smaller confidence interval suggests, that it would have been possible to find a better pulse length (for example by fitting these Carr-Purcell curves until $\delta(\pi)$ is identical to 0). 
+The remaining variables that were fitted are useful nonetheless. The error of the $\pi/2$ pulse $\delta(\pi/2) = (23 \pm 18)^\circ$ is rather insignificant for these functions at these values and has thus a large confidence interval that almost includes $\delta = 0$. The pulse length was thus chosen very well even retrospectively. The error of the $\pi$ pulse is more significant $\delta(\pi)=(24.90\pm 0.22)^\circ$. While the value of maximum likelihood is similar as $\delta(\pi/2)$, the much smaller confidence interval suggests, that it would have been possible to find a better pulse length (for example by fitting these Carr-Purcell curves until $\delta(\pi)$ is identical to 0). 
 
 
 \FloatBarrier
