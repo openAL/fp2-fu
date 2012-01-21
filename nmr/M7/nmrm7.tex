@@ -1,8 +1,8 @@
 %TODO:
-% - vergleich mit anderen gruppen
 % - warum CuSO4?
 % - warum ist cp falsch?
-% - discussion
+% - mehr beispielbilder (ausdrucke) incl. verweisen darauf im text
+% - conclusion too short?
 
 \documentclass[a4paper]{scrartcl}
 
@@ -18,6 +18,7 @@
 % PAKETE
 \usepackage{siunitx}
 \usepackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{placeins}
 \usepackage{longtable}
 \usepackage{enumitem}
@@ -140,7 +141,7 @@ Because the different timescales $T_{1,2}$ and $T_2^*$ are all the result of dif
 
 \subsubsection*{Measurement of $T_2^*$}
 $T_2^*$ is the shortest of the three timescales. It is measured by flipping the spins into the x-y-plane with a $\pi/2$ pulse and observing the relaxation. The final value gives information about the inhomogeneity of the external field ${\Delta B}$. In the case of gaussian distributed inhomogeneities this is
-\eq{{\Delta B} = \frac{\ln(2)}{\gamma_I T_2^*} .}{}
+\eq{{\Delta B} = \frac{\ln(2)}{\gamma_I T_2^*} .}{eq:deltaB}
 
 \subsubsection*{Measurement of $T_1$ (Inversion Recovery)}
 For this measurement a full $\pi$ pulse is applied. This will flip the spin to the opposite direction. After a while $\tau$ a $\pi/2$ pulse brings the spin back to the x-y-plane where it can be measured similar to the measurement of $T_2^*$. The dependence of the initial amplitude after the $\pi/2$ pulse on the time $\tau$ gives the constant $T_1$.
@@ -160,29 +161,31 @@ Meiboom and Gill fixed this accumulation by alternating the direction of the pul
 The aim was to determine the time constants for the Bloch equations describing the behaviour of net magnetizations in magnetic fields. To achieve this, the methods described in section \ref{sec:methods} were used first to calibrate the $\pi$ and $\frac{\pi}{2}$ pulses by comparing the measurement with the expected functional evolution\footnote{Final time for the pulses $T\left(\pi/2\right) = 3.06\,\text{ms}$ and $T\left(\pi\right) = 6.00\,\text{ms}$.} and then to measure the time constants themselves.
 
 \subsection{Free Induction Decay}
-As the free induction decay only depends on the external field, it is not expected to change with a change of samples. To confirm this expectation, two samples were investigated with different (deliberate) inhomogeneities in the external field. Two plots of the free induction decay with different amount of inhomogeneities can be found in appendix A. The optimal settings for the external fields\footnote{Inhomogeneity balancing function of $y=2.1$ and $z^2 = -1.9$.} were applied to a sample of mineral oil and of CuSO$_4$ (see figure \ref{fig:fid}). Both resulted in identical values for $T_2^* = (441\pm 15)\,\text{ms}$ (weighted mean).
+As the free induction decay only depends on the external field, it is not expected to change with a change of samples. To confirm this expectation, two samples were investigated with different (deliberate) inhomogeneities in the external field. Two plots of the free induction decay with different amount of inhomogeneities can be found in appendix A. The optimal settings for the external fields\footnote{Inhomogeneity balancing function of $y=2.1$ and $z^2 = -1.9$.} were applied to a sample of mineral oil and of CuSO$_4$ (see figure \ref{fig:fid}). Both resulted in identical values for $T_2^* = (0.441\pm 0.015)\,\text{ms}$ (weighted mean).
+
+With the relation between $T_2^*$ and the inhomogeneity of the magnetic field $\Delta B$ from equation \ref{eq:deltaB} and the gyromagnetic moment of the proton $\gamma=2.68\cdot 10^8 \, \text{s}^{-1}\text{T}^{-1}$ one gets $\Delta B = (5.86\pm 0.19)\,\mu\text{T}$. As the external field had a strength of about $0.5\,\text{T}$ this corresponds to only $\Delta B / B \approx 10^{-5}$. While one might be able to get another factor of 10 in this relation with very good equipment one clearly can not hope to have a magnetic field homogeneously enough to ignore the influence of $T_2^*$.
 
 \begin{figure}
 \centering
 	\includegraphics[width=0.5\linewidth]{img/t2st.pdf}
-	\caption{\small Intensity over time (with arbitrary 0) of the free induction decay. The mineral oil measurement in blue, the one with a 0.02M CuSO$_4$ solution in magenta. Time constants of the fitted exponential functions with constant noise background are $T_2^*(\text{oil})=(448\pm 28)\,\text{ms}$, $T_2^*(\text{CuSO}_4)=(434\pm 30)\,\text{ms}$. }
+	\caption{\small Intensity over time (with arbitrary 0) of the free induction decay. The mineral oil measurement in blue, the one with a 0.02M CuSO$_4$ solution in magenta. Time constants of the fitted exponential functions with constant noise background are $T_2^*(\text{oil})=(0.448\pm 0.028)\,\text{ms}$, $T_2^*(\text{CuSO}_4)=(0.434\pm 0.030)\,\text{ms}$. }
 	\label{fig:fid}
 \end{figure}
 
 \subsection{Inversion Recovery}
 The measurement of $T_1$ was a straight-forward realization of the inversion recovery method. The three available concentrations of CuSO$_4$ resulted in clearly distinct values for $T_1$. This can be seen with the bare eye in the three different evolutions (see figure \ref{fig:plots}a). For this please note, that the intensity is proportional to the absolute value of the magnetization. With a negative starting magnetization this leads to a sharp bend in the plots.
 
-The fitted time constants are $T_1(0.005)=(20.47\pm 0.61)\,\text{ms}$, $T_1(0.01)=(9.64\pm 0.25)\,\text{ms}$, $T_1(0.02)=(4.25\pm 0.11)\,\text{ms}$.
+The fitted time constants are $T_1(0.05)=(20.47\pm 0.61)\,\text{ms}$, $T_1(0.1)=(9.64\pm 0.25)\,\text{ms}$, $T_1(0.2)=(4.25\pm 0.11)\,\text{ms}$.
 
 \subsection{Spin Echo and Meiboom-Gill}
 Both, the spin echo and the Meiboom-Gill method to measure $T_2$ resulted in very similar curves, that could have been fitted together were it not for a small difference in intensity (see figures \ref{fig:plots}b and \ref{fig:plots}d). The agreement is significant nonetheless and confirms both the validity of the Meiboom-Gill method as well as that there is only a negligible amount of diffusion in our system.
 
-The fitted time constants for the spin echo methods are $T_2(0.005)=(22.0\pm 1.2)\,\text{ms}$, $T_2(0.01)=(9.85\pm 0.47)\,\text{ms}$, $T_2(0.02)=(4.42\pm 0.14)\,\text{ms}$ and for the Meiboom-Gill method $T_2(0.005)=(20.17\pm 0.27)\,\text{ms}$, $T_2(0.01)=(10.17\pm 0.43)\,\text{ms}$, $T_2(0.02)=(4.50\pm 0.20)\,\text{ms}$.
+The fitted time constants for the spin echo methods are $T_2(0.05)=(22.0\pm 1.2)\,\text{ms}$, $T_2(0.1)=(9.85\pm 0.47)\,\text{ms}$, $T_2(0.2)=(4.42\pm 0.14)\,\text{ms}$ and for the Meiboom-Gill method $T_2(0.05)=(20.17\pm 0.27)\,\text{ms}$, $T_2(0.1)=(10.17\pm 0.43)\,\text{ms}$, $T_2(0.2)=(4.50\pm 0.20)\,\text{ms}$.
 
 \subsection{Concentration Dependence}
 The $T_1$ value from the inversion recovery and the $T_2$ values from the spin echo and Meiboom-Gill methods show the same dependence on the concentration of CuSO$_4$ molecules. Considering that $T\rightarrow\infty$ as $c(\text{CuSO}_4)\rightarrow 0$ and that the dependence should be a strictly positive and monotonically decreasing function, a functional relation of the form $T=\frac{a}{c(\text{CuSO}_4)}$ seems most probable.
 
-The corresponding fits can be found in figure \ref{fig:plots}e,f,h. The constant $a$ for the data from the inversion recovery was fit to $a(T_1)=(0.100\pm 0.013)\,\text{msM}$ and for the $T_2$ data to $a(T_2)=(0.1023\pm 0.0053)\,\text{msM}$ suggesting that for dilute aqueous solution of $CuSO_4$ $T_1\backsimeq T_2$.
+The corresponding fits can be found in figure \ref{fig:plots}e,f,h. The constant $a$ for the data from the inversion recovery was fit to $a(T_1)=(1.00\pm 0.13)\,\text{msM}$ and for the $T_2$ data to $a(T_2)=(1.023\pm 0.053)\,\text{msM}$ suggesting that for dilute aqueous solution of $CuSO_4$ $T_1\backsimeq T_2$.
 
 \begin{figure} [p]
  \centering
@@ -217,7 +220,7 @@ The corresponding fits can be found in figure \ref{fig:plots}e,f,h. The constant
 
  \end{tabular}
 \caption{
-\small \textbf{(a)-(d)} Plots of all four measurement methods for all three concentrations of CuSO$_4$ ($c=0.005$ blue, $c=0.01$ magenta, $c=0.02$ beige). All curves were fitted with a constant noise background (not shown). 
+\small \textbf{(a)-(d)} Plots of all four measurement methods for all three concentrations of CuSO$_4$ ($c=0.05$ blue, $c=0.1$ magenta, $c=0.2$ beige). All curves were fitted with a constant noise background (not shown). 
 \textbf{(a),(e)} Peak hight in dependence of the time $t$ between $\pi$ and $\pi/2$ pulses of the inversion recovery method.  Corresponding time constants plotted in (e). 
 \textbf{(b),(f)} Peak hight in dependence of the time $t$ between $\pi/2$ pulse and echo ($2\tau$) of the spin echo method. Time constants in (f). 
 \textbf{(c),(g)} Peak hight in dependence of the time $t$ between first and measured peak (spaced at $2\tau$) for the Carr-Purcell method. See running text for details on the fitted model. Time constants in (g). 
@@ -232,9 +235,54 @@ For the Carr-Purcell method the error of the $\pi$ pulse (and less significantly
 \eq{\frac{d}{dt}z(t) = -\frac{z(t)}{T_1} - \omega x(t) .}{}
 The solution to these ODEs was fitted to the data resulting in not just information for $T_1$ and $T_2$ but also for the error of the pulses ($\omega$ for the $\pi$ pulse and from the initial conditions for the $\pi/2$ pulse).
 
-Unfortunately the solution to these ODEs is ambiguous for $T_1$ and $T_2$ and only the product $T_1 \cdot T_2$ can be fitted from the data. To get realistic values anyway the previous observation that $T_1 \approx T_2$ was included in the fit\footnote{For $T_1=T_2=T$ the solution simplifies to $e^{-t/T} \text{Abs}[x_0 \cos(t \omega )+y_0 \sin(t \omega )]$}. The resulting time constants of $T_{1,2}(0.005)=(8.68\pm0.87)\,\text{ms}$, $T_{1,2}(0.01)=(5.51\pm 0.46)\,\text{ms}$, $T_{1,2}(0.02)=(2.54\pm 0.51)\,\text{ms}$ are too small by a factor of about 2 which is also reflected in the concentration dependence which is for this data $a(\text{Carr-Purcell})=(0.046\pm 0.015)\,\text{msM}$ (see figure \ref{fig:plots}g). WHY?!?!?!
+Unfortunately the solution to these ODEs is ambiguous for $T_1$ and $T_2$ and only the product $T_1 \cdot T_2$ can be fitted from the data. To get realistic values anyway the previous observation that $T_1 \approx T_2$ was included in the fit\footnote{For $T_1=T_2=T$ the solution simplifies to $e^{-t/T} \text{Abs}[x_0 \cos(\omega t)+y_0 \sin(\omega t)]$}. The resulting time constants of $T_{1,2}(0.05)=(8.68\pm0.87)\,\text{ms}$, $T_{1,2}(0.1)=(5.51\pm 0.46)\,\text{ms}$, $T_{1,2}(0.2)=(2.54\pm 0.51)\,\text{ms}$ are too small by a factor of about 2 which is also reflected in the concentration dependence which is for this data $a(\text{Carr-Purcell})=(0.46\pm 0.15)\,\text{msM}$ (see figure \ref{fig:plots}g).% WHY?!?!
 
 The remaining variables that were fitted are useful nonetheless. The error of the $\pi/2$ pulse $\delta(\pi/2) = (23 \pm 18)^\circ$ is rather insignificant for these functions at these values and has thus a large confidence interval that almost includes $\delta = 0$. The pulse length was thus chosen very well even retrospectively. The error of the $\pi$ pulse is more significant $\delta(\pi)=(24.90\pm 0.22)^\circ$. While the value of maximum likelihood is similar as $\delta(\pi/2)$, the much smaller confidence interval suggests, that it would have been possible to find a better pulse length (for example by fitting these Carr-Purcell curves until $\delta(\pi)$ is identical to 0). 
+
+
+\subsection{Comparisons}
+A comparison with other groups that performed the same experiments shows that the Carr-Purcell method resulted consistently in too small values for $T_1$ and $T_2$ (see table \ref{tab:compare}). The other methods resulted in identical or at least compatible values across groups. Where the results deviate too far from the results of the other two groups in this comparison, a confusion about $\tau$ versus $2\tau$ might have been the reason.
+
+\begin{table}[!tbh]
+\centering
+\small
+\begin{tabular}{cccccc}
+\toprule
+method & constant & our result & group M9 & group M3 (SS11) \\
+\midrule 
+\midrule
+FID & $T_2^* / \text{ms}$ & $0.441\pm 0.015$ & \textcolor{Gray}{$2.5\pm 0.2$} & $0.491\pm 0.018$ \\
+& $\Delta B / \mu\text{T}$ & $5.86\pm 0.19$ & $5.4\pm 0.3$ & $5.28\pm 0.18$ \\
+\midrule
+inversion recovery & $T_1(0.05\,M) / \text{ms}$ & $20.47\pm 0.61$ & $20.7\pm 0.2$ & $23.89\pm0.18$ \\
+& $T_1(0.1\,M) / \text{ms}$ & $9.64\pm 0.25$ & $10.3\pm 0.1$ & $12.61\pm0.17$ \\
+& $T_1(0.2\,M) / \text{ms}$ & $4.25\pm 0.11$ & $4.5\pm 0.1$ & \textcolor{Gray}{$2.913\pm0.098$} \\
+\midrule
+spin echo & $T_2(0.05\,M) / \text{ms}$ & $22.0\pm 1.2$ & $19.0\pm 0.7$ & \textcolor{Gray}{$7.76\pm 0.40$} \\
+& $T_2(0.1\,M) / \text{ms}$ & $9.85\pm 0.47$ & $10.0\pm 0.1$ & \textcolor{Gray}{$5.267\pm 0.039$} \\
+& $T_2(0.2\,M) / \text{ms}$ & $4.42\pm 0.14$ & $4.1\pm 0.1$ & \textcolor{Gray}{$2.367\pm0.037$} \\
+\midrule
+Meiboom-Gill & $T_2(0.05\,M) / \text{ms}$ & $20.17\pm 0.27$ & \textcolor{Gray}{$13.8\pm 0.6$} & $21.304\,\pm\,$\textcolor{Gray}{$0.047$} \\
+& $T_2(0.1\,M) / \text{ms}$ & $10.17\pm 0.43$ & \textcolor{Gray}{$6.4\pm 0.3$} & $11.013\,\pm\,$\textcolor{Gray}{$0.041$} \\
+& $T_2(0.2\,M) / \text{ms}$ & $4.50\pm 0.20$ & \textcolor{Gray}{$3.5\pm 0.1$} & $4.287\,\pm\,$\textcolor{Gray}{$0.023$} \\
+\midrule
+Carr-Purcell$^*$ & $T_{1,2}(0.05\,M) / \text{ms}$ & $8.68\pm0.87$ & $10.1\pm 0.7$ & $5.33\,\pm\,$\textcolor{Gray}{$0.18$} \\
+& $T_{1,2}(0.1\,M) / \text{ms}$ & $5.51\pm 0.46$ & $5.1\pm 0.3$ & $4.07\,\pm\,$\textcolor{Gray}{$0.19$} \\
+& $T_{1,2}(0.2\,M) / \text{ms}$ & $2.54\pm 0.51$ & $4.3\pm 0.3$ & $2.72\,\pm\,$\textcolor{Gray}{$0.16$} \\
+& $\delta(\pi/2) / ^\circ$ & $23 \pm 18$ & & \\
+& $\delta(\pi) / ^\circ$ & $24.90\pm 0.22$ & $12\pm 1$ & \\
+\midrule
+\bottomrule
+\end{tabular}
+\caption{\small Comparison of experimental results with those of two other groups that worked with the same equipment. Questionable values in gray. \textbf{(*)} While the other groups claimed to get $T_2$ from the Carr-Purcell method they fitted the same function to the data, indicating that they just did not realize that this fit implies $T_1=T_2$. }
+\label{tab:compare}
+\end{table}
+
+
+\section{Conclusion}
+In this experiment the nuclear magnetic resonance was investigated. Different samples of diluted CuSO$_4$ solutions resulted in different time constants for the Bloch equations consistently implying $T_2^* << T_2 = T_1$ with $T_2^*=(0.441\pm 0.015)\,\text{ms}$ and $T_1=T_2= \frac{(1.02\pm 0.04)\,\text{msM}}{c(\text{CuSO}_4)}$ (for a more detailed listing of all results see table \ref{tab:compare}).
+
+The measurements with the Carr-Purcell method were the only ones, that did not fit this result. The approximations gotten from this for the error in the pulses seem credible, but all time constants are too small by a factor of about 2. While we were not able to find a reason for this, it is consistent with the results of other groups indicating a systematic error or problem with the apparatus being used.
 
 
 \FloatBarrier
