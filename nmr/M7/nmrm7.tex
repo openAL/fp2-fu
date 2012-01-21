@@ -102,7 +102,7 @@ leading to a rotation with the Larmor frequency $\ve \omega_0 = -\gamma_I \ve B_
 \eq{\frac{d}{dt}\ve M_{rot} = 0.}{eq:Mrot}
 Any additional magnetic field $\ve B_1$ will now be represented by an inhomogeneous term on the right side of the equation
 \eq{\frac{d}{dt}\ve M_{rot} = \gamma_I \ve M \times \ve B_1.}{}
-Assuming that $\ve B_1$ is rotating with $\omega_0$ as well, it is a stationary vector in the new (rotating) system and we thus end up with the same situation as in (\ref{eq:M1}), leading to a similar precession of $\ve M_{rot}$ around $\ve B_1$ (this time in the rotating frame) with frequency $\ve \omega_1 = -\gamma_I \ve B_1$.
+Assuming that $\ve B_1$ is rotating with $\omega_0$ as well, it is a stationary vector in the new (rotating) system and we thus end up with the same situation as in (\ref{eq:M1}), leading to a similar precession of $\ve M_{rot}$ around $\ve B_1$ (this time in the rotating frame) with frequency $\ve \omega_1 = -\gamma_I \ve B_1$ \cite{carrington} .
 
 
 \subsection{Pulsed Nuclear Resonance}
@@ -140,7 +140,7 @@ As the inhomogeneity of the external field must be on a much larger lengthscale 
 Because the different timescales $T_{1,2}$ and $T_2^*$ are all the result of different processes, it can be interesting to get quantitative values for all the independently.
 
 \subsubsection*{Measurement of $T_2^*$}
-$T_2^*$ is the shortest of the three timescales. It is measured by flipping the spins into the x-y-plane with a $\pi/2$ pulse and observing the relaxation. The final value gives information about the inhomogeneity of the external field ${\Delta B}$. In the case of gaussian distributed inhomogeneities this is
+$T_2^*$ is the shortest of the three timescales \cite{skript}. It is measured by flipping the spins into the x-y-plane with a $\pi/2$ pulse and observing the relaxation. The final value gives information about the inhomogeneity of the external field ${\Delta B}$. In the case of gaussian distributed inhomogeneities this is
 \eq{{\Delta B} = \frac{\ln(2)}{\gamma_I T_2^*} .}{eq:deltaB}
 
 \subsubsection*{Measurement of $T_1$ (Inversion Recovery)}
@@ -150,20 +150,26 @@ For this measurement a full $\pi$ pulse is applied. This will flip the spin to t
 The decrease in intensity is caused by dephasing due to different precession rates caused by different magnet fields. The idea of the Spin Echo method is to get rid of the (assumed to be constant) inhomogeneity of the external field. This is achieved by applying a $\pi$ pulse after some time $\tau$. The initially dephasing magnetizations will now rephase because their relative velocities only depend on the magnetic field and thus did not change when the $\pi$ pulse was applied. The only remaining term is the spin-spin interaction that was changed with the pulse and thus causes further dephasing over the whole measurement. Several $\frac{\pi}{2},\tau,\pi,\tau,$echo sequences with varying $\tau$ will thus reveal the constant $T_2$.
 
 \subsubsection*{Carr-Purcell-Method}
-To decrease the time needed for the measurements of $T_2$ Carr and Purcell introduced a method to take several measurements in one run consisting of the pulses $\frac{\pi}{2},\tau,\pi,\tau,\pi,...\,$. While this reduces the error due to diffusion in the sample the error of the $\pi$ pulse accumulates over time.
+To decrease the time needed for the measurements of $T_2$ Carr and Purcell \cite{purcell} introduced a method to take several measurements in one run consisting of the pulses $\frac{\pi}{2},\tau,\pi,\tau,\pi,...\,$. While this reduces the error due to diffusion in the sample the error of the $\pi$ pulse accumulates over time.
 
 \subsubsection*{Meiboom-Gill-Method}
 Meiboom and Gill fixed this accumulation by alternating the direction of the pulses such that an inaccuracy $\delta$ for the $\pi$ pulse vanishes $(\pi+\delta)-(\pi+\delta)=0$. Thus every second measurement is not influences by this error with a sequence of $\frac{\pi}{2},\tau,\pi,\tau,-\pi,\tau,\pi,...\,$.
 
-
 \clearpage
+\section{Conduction of the Experiment}
+\subsection{Tuning of resonance frequency}
+First, the LC-circuit and the frequency synthesizer were tuned to resonance frequency. The expected value of the Larmor frequency $f_0=\frac{\omega_0}{2\pi}=\frac{\gamma_\text{proton}}{2\pi} B_0 =  \SI{21.287}{MHz}$, where $\gamma_\text{proton}=2.675*10^8/(\text{s}*\text{T})$ and $B_0\simeq\SI{0.50(2)}{T}$ \cite{hersteller} is close to the frequency $f=\SI{21.029}{MHz}$, which resulted in the highest FID signal. The LC-circuit was adjusted via the capacity of a capacitor to match also the resonance frequency again via optimizing the FID signal.
+\subsection{Determination of pulse duration}
+The length of a pulse determines the rotation angle. For the $\pi/2$ pulse, a maximal FID signal indicates the correct length . For the $\pi$ pulse, different methods were used to adjust its length. A first estimate can be gained also by the FID signal, which should be minimal after a single $\pi$ pulse. Another method was to compare Meiboom-Gill- and Carr-Purcell-Series, which should be most similar for minimal error of the $\pi$ pulse. However, both methods lead to different optimal $\pi$ pulse lengths. As the results for the CP series were not optimal for any $\pi$ pulse length, the length was finally determined via the minimal FID signal. Final values: $T\left(\pi/2\right) = 3.06\,\text{ms}$ and $T\left(\pi\right) = 6.00\,\text{ms}$. 
+
+
 \section{Analysis}
-The aim was to determine the time constants for the Bloch equations describing the behaviour of net magnetizations in magnetic fields. To achieve this, the methods described in section \ref{sec:methods} were used first to calibrate the $\pi$ and $\frac{\pi}{2}$ pulses by comparing the measurement with the expected functional evolution\footnote{Final time for the pulses $T\left(\pi/2\right) = 3.06\,\text{ms}$ and $T\left(\pi\right) = 6.00\,\text{ms}$.} and then to measure the time constants themselves.
+The aim was to determine the time constants for the Bloch equations describing the behavior of net magnetizations in magnetic fields. To achieve this, the methods described in section \ref{sec:methods} were used on four different samples including mineral oil and CuSO$_4$ in three different concentrations.
 
 \subsection{Free Induction Decay}
-As the free induction decay only depends on the external field, it is not expected to change with a change of samples. To confirm this expectation, two samples were investigated with different (deliberate) inhomogeneities in the external field. Two plots of the free induction decay with different amount of inhomogeneities can be found in appendix A. The optimal settings for the external fields\footnote{Inhomogeneity balancing function of $y=2.1$ and $z^2 = -1.9$.} were applied to a sample of mineral oil and of CuSO$_4$ (see figure \ref{fig:fid}). Both resulted in identical values for $T_2^* = (0.441\pm 0.015)\,\text{ms}$ (weighted mean).
+As the free induction decay only depends on the external field, it is not expected to change with a change of samples. To confirm this expectation, two samples were investigated with different (deliberate) inhomogeneities in the external field induced by additional field gradients $B_x, B_y, B_z, B_{zz}$. Two plots of the free induction decay with different amount of inhomogeneities can be found in appendix A. The optimal settings for the external fields\footnote{Inhomogeneity balancing function of $B_y=2.1*7.1 \mu \text{T} /\text{mm} = 14.91 \frac{\mu \text{T}}{\text{mm}} $ and $B_{zz} = -1.9 * 20 \mu \text{T} / \text{mm}^2 =-38 \frac{\mu \text{T}}{\text{mm}^2} $. Scaling factors obtained from \cite{hersteller}.} were applied to a sample of mineral oil and of CuSO$_4$ (see figure \ref{fig:fid}). Both resulted in identical values for $T_2^* = (0.441\pm 0.015)\,\text{ms}$ (weighted mean).
 
-With the relation between $T_2^*$ and the inhomogeneity of the magnetic field $\Delta B$ from equation \ref{eq:deltaB} and the gyromagnetic moment of the proton $\gamma=2.68\cdot 10^8 \, \text{s}^{-1}\text{T}^{-1}$ one gets $\Delta B = (5.86\pm 0.19)\,\mu\text{T}$. As the external field had a strength of about $0.5\,\text{T}$ this corresponds to only $\Delta B / B \approx 10^{-5}$. While one might be able to get another factor of 10 in this relation with very good equipment one clearly can not hope to have a magnetic field homogeneously enough to ignore the influence of $T_2^*$.
+With the relation between $T_2^*$ and the inhomogeneity of the magnetic field $\Delta B$ from equation (\ref{eq:deltaB}) and the gyromagnetic moment of the proton $\gamma=2.68\cdot 10^8 \, \text{s}^{-1}\text{T}^{-1}$ one gets $\Delta B = (5.86\pm 0.19)\,\mu\text{T}$. As the external field had a strength of about $0.5\,\text{T}$ this corresponds to only $\Delta B / B \approx 10^{-5}$. While one might be able to get another factor of 10 in this relation with very good equipment one clearly can not hope to have a magnetic field homogeneously enough to ignore the influence of $T_2^*$.
 
 \begin{figure}
 \centering
@@ -183,9 +189,9 @@ Both, the spin echo and the Meiboom-Gill method to measure $T_2$ resulted in ver
 The fitted time constants for the spin echo methods are $T_2(0.05)=(22.0\pm 1.2)\,\text{ms}$, $T_2(0.1)=(9.85\pm 0.47)\,\text{ms}$, $T_2(0.2)=(4.42\pm 0.14)\,\text{ms}$ and for the Meiboom-Gill method $T_2(0.05)=(20.17\pm 0.27)\,\text{ms}$, $T_2(0.1)=(10.17\pm 0.43)\,\text{ms}$, $T_2(0.2)=(4.50\pm 0.20)\,\text{ms}$.
 
 \subsection{Concentration Dependence}
-The $T_1$ value from the inversion recovery and the $T_2$ values from the spin echo and Meiboom-Gill methods show the same dependence on the concentration of CuSO$_4$ molecules. Considering that $T\rightarrow\infty$ as $c(\text{CuSO}_4)\rightarrow 0$ and that the dependence should be a strictly positive and monotonically decreasing function, a functional relation of the form $T=\frac{a}{c(\text{CuSO}_4)}$ seems most probable.
+The $T_1$ value from the inversion recovery and the $T_2$ values from the spin echo and Meiboom-Gill methods show the same dependence on the concentration of CuSO$_4$ molecules. Considering that $T\rightarrow\infty$ as $c(\text{CuSO}_4)\rightarrow 0$ and that the dependence should be a strictly positive and monotonically decreasing function, a functional relation of the form $T=\frac{a}{c(\text{CuSO}_4)}$ seems most probable. This functional dependence is additionally encouraged by the suggested mechanism of relaxation enhancement: The unpaired electrons of the Cu2+, SO$_4$2- ions exert strong dipole moments and fluctuating magnetic fields, which induce magnetic relaxation of the protons, which encounter those fields. It is thus reasonable, that the decay rate $\Gamma \propto 1/T$ is directly proportional to the probability of a proton to cross the proximity of an ion, which itself is proportional to the ion concentration yielding $1/T \propto c$. 
 
-The corresponding fits can be found in figure \ref{fig:plots}e,f,h. The constant $a$ for the data from the inversion recovery was fit to $a(T_1)=(1.00\pm 0.13)\,\text{msM}$ and for the $T_2$ data to $a(T_2)=(1.023\pm 0.053)\,\text{msM}$ suggesting that for dilute aqueous solution of $CuSO_4$ $T_1\backsimeq T_2$.
+The corresponding fits can be found in figure \ref{fig:plots}e,f,h. The constant $a$ for the data from the inversion recovery was fit to $a(T_1)=(1.00\pm 0.13)\,\text{msM}$ and for the $T_2$ data to $a(T_2)=(1.023\pm 0.053)\,\text{msM}$ suggesting that for dilute aqueous solution of CuSO$_4$ $T_1\backsimeq T_2$.
 
 \begin{figure} [p]
  \centering
@@ -289,6 +295,12 @@ The measurements with the Carr-Purcell method were the only ones, that did not f
 \clearpage
  \bibliographystyle{unsrt}
 \bibliography{bib}
+
+
+\clearpage
+\appendix
+\section{FID for different Inhomogeneities}
+\section{Examples for Carr Purcell and Meiboom Gill Series}
 
 \end{document}
 
