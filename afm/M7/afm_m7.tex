@@ -1,6 +1,3 @@
-%TODO kohrenz->resolution? wird nicht verwendet in auswertung
-
-
 \documentclass[a4paper]{scrartcl}
 
 \usepackage[utf8]{inputenc}
@@ -120,8 +117,7 @@ The magnetic force $F_{mag}$ is only relevant for magnetized tips and magnetic s
 \subfloat[][Force between tip and sample]
          {\includegraphics[width=0.6\linewidth]{img/forces.png}}
 \caption{
-\small \textbf{(a)} Force acting on the AFM tip vs tip-sample distance. Different distances and the corresponding signs of the force (repulsive/attractive) are used in the two different operation modi (contact/non-contact).
-Source: \url{http://en.wikipedia.org/wiki/Magneto-optic_Kerr_effect}. } 
+\small \textbf{(a)} Force acting on the AFM tip vs tip-sample distance. Different distances and the corresponding signs of the force (repulsive/attractive) are used in the two different operation modi (contact/non-contact). } 
 	\label{fig:forces}
 \end{figure}
 
@@ -159,14 +155,290 @@ In order to study the contact potential $V_C$ between tip and sample, one can me
 	\label{fig:geometry}
 \end{figure}
 
-% \subsection{Systematic Errors and Artifacts}
+\subsection{Systematic Errors}
+There are a number of sources of inaccuracies in AFM. Some could be decreased by very long measurements, others are always present. Among those, that could be reduced with very long measuring times are creep and thermal drifts of the piezo elements. As the duration of experiments is very limited, it is good to know what to expect from these effect.
 
+When piezo elements are influenced by an electric field, they expand or contract corresponding to the field. This contraction is not instantaneous though. In a first step a large amount of this contraction is performed, but the remaining bit is saturated only very slowly towards the final expansion. This so called creep will shift all tip positions a little in the direction where it came from.
+
+Similarly a certain thermal drift will disposition the tip. As the components heat up so do the piezo elements. On the one hand the thermal expansion will move the tip, on the other hand the electronic properties of the crystals change leading to an overall distorted picture.
+
+Should the final pictures clearly be askew, it is most likely due to cross coupling between the different directions in the piezo elements. An electric potential in x direction might very well change the y or z contraction of the crystals. As a result the x and y direction of the scans would in reality not be orthogonal to each other.
 
 
 
 \clearpage
+\section{Analysis}
+
+\subsection{Topographies}
+\begin{figure} [p]
+ \centering
+ \begin{tabular}{l r}
+ \subfloat[][Sample A $5\times5\mu m^2$]
+{         \includegraphics[width=0.37\linewidth]{img/AuG.jpg}       }
+&
+\subfloat[][Sample A $1\times1\mu m^2$]
+         {\includegraphics[width=0.37\linewidth]{img/AuGMacro2.jpg}}
+\\
+\subfloat[][Sample B $4\times4\mu m^2$]
+{         \includegraphics[width=0.37\linewidth]{img/balls.jpg}       }
+&
+\subfloat[][Sample B $1\times1\mu m^2$]
+         {\includegraphics[width=0.37\linewidth]{img/ballsMacro.jpg}}
+\\
+\multicolumn{2}{c}{
+\subfloat[][Fourier transform of Sample B with close-up]
+         {\includegraphics[width=0.8\linewidth]{img/fft.jpg}}
+}
+ \end{tabular}
+\caption{
+\small  \textbf{(a)-(c)} Topographies of samples A and B with different resolutions. \textbf{(d)} Topography of Sample B, measurement of the length of the rows of holes resulted in diameters (in nm, from top to bottom) $238\pm6, 255\pm9, 248\pm5, 246\pm5, 247\pm5$. \textbf{(e)} Fourier transform of (c). Contrast edited to highlight the peaks in the spectrum.
+ } 
+	\label{fig:topo}
+\end{figure}
+Point by point two samples were scanned with different resolutions, revealing their surface structure. The first sample consists of a thin layer of gold evaporated on a graphite substrate. The unordered surface that this process generates can be seen in pictures \ref{fig:topo}a and \ref{fig:topo}b. Because the measurement was done in the dynamic mode and the sample was not put in a vacuum, water droplets pollute the picture.  
+
+The second sample suffers from these droplets as well. Especially well visible in \ref{fig:topo}c. For the higher resolution picture \ref{fig:topo}d on the other hand it was possible to choose a very clean region. The periodic pattern was created by polysterene balls. After evaporating the gold an the sample, these balls were removed with a tape, leaving behind a periodic pattern of holes that naturally resembles a sphere packing.
+
+A closer investigation of these pictures quickly gives an estimate of the diameter of the used spheres. Looking only at the fast scanning direction (left to right in the pictures) and measuring over as many balls as possible in picture \ref{fig:topo}d gives a mean diameter of $(246.3\pm6.0)\,\text{nm}$ where the error is mainly due to the variance of the data.
+
+To manage the large amount of data of picture \ref{fig:topo}c another method was used. To use all of the topography at once, a Fourier transformation was performed. Strong periodic elements corresponding e.g. to the distance between two balls from left to right can be found all over the picture and thus create a strong peak in the Fourier transformed amplitude plot. With changed contrast settings to better highlight the peaks, such an amplitude plot can be found in picture \ref{fig:topo}e. The 34 peaks that can be found on it correspond to 17 standing waves, each giving an independent measurement of the ball diameter.
+
+Again the drift has to be considered. It causes the fast scanning direction to be more precise and may compress or stretch the slow scanning direction. To account for this, the direction of the standing waves was noted as well and instead of a constant radius in all direction, an elliptical model was fitted (see figure \ref{fig:diameterfit}). The final value for the diameter in the fast direction using this method is $(242.3\pm 2.6)\,\text{nm}$. From the diameter in the slow direction the amount of compression due to thermal drift can be approximated to be $(7.1\pm1.7)\%$ compared to the fast direction.
+
+\begin{figure}
+\centering
+	\includegraphics[width=0.8\linewidth]{img/diameterfit.pdf}
+	\caption{\small An elliptical model fitted to the measured diameter in dependence on the angle. The angle $\pi/2$ corresponds to the fast scanning direction. The two diameters in fast and slow direction resulting from this fit are $(242.3\pm2.6)\,\text{nm}$ and $(226.1\pm2.7)\,\text{nm}$. To indicate the quality of the fit, the 95\% confidence intervals are plotted in gray. }
+	\label{fig:diameterfit}
+\end{figure}
+
+\FloatBarrier
+\subsection{Contact Potentials}
+According to the measurement procedure described in section \textrm{(1.2)} the contact potential between the tip and the two different domains on the HOPG sample (gold and graphite) are determined. To this end the change of the force with the applied voltage is measured by the means of the varying oscillation amplitude in dynamic mode at constant height without feedback. Measurements of the force vs. voltage curves are performed at three different spots on each material. Each measurement consists of 10 curves per direction (forward and backward). An average curve is generated for both directions. According to eq. \Formel{eq:elec} a parabolic behavior is expected. 
+
+However, the data points are not in all cases compatible with a parabolic function (cf. fig \ref{fig:parabolasgraph} and \ref{fig:parabolasgold}). While the parabolic fits match the data acquired at the second and third site quite well for gold and also for graphite, the curves obtained at the first site show drastic features of an unwanted effect in the region, where the minimal electric force is expected. For the graphite it is possible to obtain a good parabolic fit, if this region is excluded, while for gold an exclusion of the distorted region leads to data, that can not be reasonably fitted by a parabola. Therefore those two curves are not considered in further evaluation, while for graphite the truncated data for site one is used. 
+
+The fits are performed for the function $f(x) = a(x-b)^2 + c$, where $b$ represents the contact potential, $a$ the capacity gradient and $c$ a constant offset. All values for the parameter $b$ are listed in table \ref{fig:bwerte}. The standard errors for all single values are small, because of the large amount of data points. Anyways, that does not mean, that a measurement at one single sample point is very accurate for the determination of the tip sample contact potential, because the shape of the sample is very inhomogeneous and the values are spread widely around the 'true' value. Therefore the error of the contact potentials, which are calculated by the mean value, are given by the standard error, that is severely larger. The calculated values are
+\eq{U_\text{Au,tip}= (358.8 \pm 3.8) \text{mV}, \qquad  U_\text{Graph,tip} = (302.2 \pm 1.7) \text{mV}}{}
+ and 
+ \eq{ \Delta \Phi_\text{Au,Graph} = (56 \pm 4) \text{meV} \; , }{}
+which is by one order of magnitude smaller compared to the expected value, calculated by the difference of literature work functions $\Delta \Phi_\text{lit}=\Phi_\text{Au} - \Phi_\text{HOPG} =  (4.83 \pm 0.02) \text{eV} - (4.475 \pm 0.005) \text{eV} = (360 \pm 30) \text{eV}$  \cite{gold}, \cite{HOPG}.
+
+%TODO: Explain error and strange behaviour.
+
+
+\begin{figure} 
+\small
+ \centering
+\subfloat[][Gold]
+{        \begin{tabular}{llr}
+\toprule
+position & direction & $b$ (V) \\
+\midrule
+(1 &f &$ 0.3429 \pm 0.0106$ )\\
+ & & \\
+2 & f& $0.3494 \pm 0.0055$ \\
+3 & f& $0.4482 \pm 0.0052 $\\
+(1 &b&  $0.2039 \pm 0.0078 $)\\
+ & & \\
+2 & b& $0.3230 \pm 0.0056 $\\
+3 & b& $0.3142 \pm 0.0077 $\\
+\bottomrule
+\end{tabular} }
+%gold
+ \hfill
+\subfloat[][Graphite]
+         {\begin{tabular}[c]{llr}
+\toprule
+position & direction & $b$ (V) \\
+\midrule
+(1 &f & $0.1895 \pm 0.0144$)\\
+1* & f & $0.3112 \pm 0.00591$\\
+2 &f & $0.3741 \pm 0.0066$\\
+3 &f & $0.2931 \pm 0.00542$\\
+(1&b & $0.3147 \pm 0.0123$)\\
+1* &b & $0.2808 \pm 0.00589$\\
+2 &b & $0.3035 \pm 0.00615$\\
+3 &b & $0.2505 \pm 0.00530$\\
+\bottomrule
+\end{tabular}}
+\caption{
+\small  Values of the parabolic fits for the parameter $b$, $f(x)=a(x-b)^2+c$ for \textbf{(a)} Graphite and \textbf{(b)} Gold at three different sample sites. f denotes the forward and b the backward direction for the voltage change. The values in parentheses are not evaluated further. The values marked with a * denote the fits for the data where the misbehaving part was excluded.  } 
+	\label{fig:bwerte}
+\end{figure}
+
+
+\subsection{Tip Geometry}
+According to the method suggested by Olsson  et al. \cite{olsson} the tip geometry was analyzed using voltage spectroscopy with applied feedback, such that the force gradient is kept constant and the height changes with the applied voltage. The spectroscopy was performed at three different sites on gold islands as well as on graphite islands. It is suggested, that the values obtained at the gold spots are more accurate, because in the model for the calculated dependencies between the voltage and the tip-sample distance, it is assumed, that the sample can be approximated at as a flat plane. This situation is not exactly given in our case, but the disturbing roughness of the surface is less important on the gold islands, as the electrical forces that are exerted from the atoms out of the plane lie further away from the tip. For the graphite holes, the flat plane model is less valid as the disturbing gold atoms are closer to the tip. In order to see how relevant this influence is, the tip geometry is calculated for both, gold islands and graphite holes.
+The curves obtained by voltage spectroscopy are best fitted by a linear model excluding the region of minimal height, where van der Waals forces dominate the system too drastically. However, the convex form of the curves suggests to also fit parabolas and check, weather the cone model leads to reasonable opening angles.
+All plots are displayed in figures \ref{fig:tipgold} and \ref{fig:tipgraph}. The fitted functions are
+\eq{f_\text{linear} (U) = c_\text{sphere} \lvert U - U_\text{CPD} \rvert + a_l \; , }{lin}
+\eq{f_\text{parabola} (U) = c_\text{cone}  (U-U_\text{CPD})^2 +a_p \; ,}{par}
+where $c_\text{sphere}$ and $c_\text{cone}$ are the relevant coefficients yielding the tip-geometry information, $U_\text{CPD}$ is the contact potential, which in principle should match the values obtained in the previous section and $a_{l,p}$ is a constant offset.
+The single values for $c_\text{sphere}$ and $c_\text{cone}$ are listed in table \ref{fig:cwerte}. The mean values with standard error are determined to be
+\eq{c_\text{sphere}^\text{Gr}=\SI{0.9876(47)} \quad c_\text{sphere}^\text{Au}=\SI{0.932(21)} \; ,}{}
+\eq{c_\text{cone}^\text{Gr}=\SI{0.12046(49)} \quad c_\text{cone}^\text{Au}=\SI{0.1126(11)} \; ,}{}
+In order to make these quantities meaningful, they have to be multiplied with the scaling $g$ of the z-axis or with the scaling squared, which was $g=10^{-9} \, \text{m}/ 3.3 \, \text{V}$. in addition the force gradient is needed for further evaluation. By equation \Formel{eq:grad} the force gradient is calculated with the values  $A_0=1.04 \, \text{V}$, $A=0.3 \, \text{V}$, $Q=201.164$, $k=\SI{2.31602}{N/m}$ to be $F'=\SI{0.05160}{N/m}$. The radius $R$ of the tip and the opening angle $\theta$ of the cone can then be calculated from the expressions in table \ref{fig:geometry} and give
+\eq{R^\text{Gr}=\frac{c_\text{sphere}^2}{\pi \epsilon_0} F' = \SI{1.66(1)}{\AA} \; , \qquad R^\text{Au}=\SI{1.48(4)}{\AA} \; , } {Rval}
+\eq{\theta^\text{Gr}=2 \,\text{arc}\cot \left( \sinh \sqrt{\frac{\pi \epsilon}{c_\text{cone} F'}}\right) =\SI{68.2(2)}{\degree} \; , \qquad \theta^\text{Au}=\SI{68.2(3)}{\degree} \; . }{}
+
+\begin{figure}
+\subfloat[][Graphite]{\begin{tabular}{llrr}
+\toprule
+site & direction  & $c_\text{sphere}$ &  $c_\text{cone}$ \\
+\midrule
+1 &f & 0.9821 & 0.1203 \\
+2 &f & 0.9929 & 0.1198 \\
+3 &f & 0.9837 & 0.1204 \\
+1 &b & 0.9844 & 0.1213 \\
+2 &b & 0.9916 & 0.1206 \\
+3 &b & 0.9906 & 0.1204 \\
+\bottomrule
+\end{tabular}}
+\hfill
+\subfloat[][Gold]{\begin{tabular}{llrr}
+\toprule
+site & direction  & $c_\text{sphere}$ &  $c_\text{cone}$ \\
+\midrule
+1 &f & 0.9018 & 0.1113 \\
+2 &f & 0.9146 & 0.1123 \\
+3 &f & 0.9544 & 0.1136 \\
+1 &b & 0.9319 & 0.1115 \\
+2 &b & 0.9413 & 0.1127 \\
+3 &b & 0.9524 & 0.1141 \\
+\bottomrule
+\end{tabular}}
+\caption{\small Values for the coefficients according to equation \Formel{lin} and \Formel{par} for the determination of the tip geometry as measured on three different sites at \textbf{(a)} graphite and \textbf{(b)} gold islands. f and b denote the direction of the voltage change.}
+\label{fig:cwerte}
+\end{figure}
+
+
+
+\FloatBarrier
+\section{Summary and Discussion}
+Using an atomic force microscope, two samples were investigated. Their topography was determined and voltage spectroscopy was used to investigate the contact potentials of graphite and gold and make statements about the form of the tip.
+
+The recording of topography was very successful and revealed the surface structure of both samples on the one hand and allowed for very precise determination of the ball diameter on the other hand. Using all the data in a $4\mu m \times 4\mu m$ scan via a Fourier transformation lead to the value of $(242\pm 3)\,\text{nm}$ for the diameter and a compression of the slow scanning direction of $(7\pm2)\%$ compared to the fast direction.
+
+The voltage spectroscopy turned out to be much more problematic. Due to water droplets some measurements had to be discarded. Especially the constant height spectroscopy was problematic. It is suggested, that in the region, where the bias voltage is close to the contact potential, the force gradient is small, leading only to a small shift of the resonance frequency. Thus comparatively large oscillation amplitudes are reached, which might be sufficient for the tip to enter a water droplet. The result of such a process might lead to a spectroscopic curve as displayed in figure \ref{fig:parabolasgraph} \textbf{(a)} and \textbf{(b)}, where an unexpected and abrupt change of the oscillation amplitude can be seen. However, this effect did not occur on all spots allowing for the determination of the contact potentials and the work function difference between gold and HOPG. Nevertheless, the work function difference was by one order of magnitude smaller then the literature value. This might be due to the fact, that both materials influence each other and especially for the lower lying graphite, the potential of the gold enters the measurement automatically.
+
+The constant force gradient spectroscopy was successful in a sense that the tip geometry could be identified to be best matched by a sphere of a radius in the order magnitude of atomic diameters, which is a reasonable result. A conical tip shape model did not match the data very well and  the determined opening angel of $60\degree$ also validates, that the tip is more like a sphere, than like a narrow tip.
+
+All in all it can be stated, that the afm technique is very successful for quick and easy examination of sample surfaces, as it does not require vacuum conditions or special preparations. However for more precise measurements of material constants or electric properties, it is favorable to work at least in dry air. The constant force gradient spectroscopy could also be made more accurate, if the force gradient variation due to van der Waals forces would be subtracted, which could be done by the measurement of a force gradient spectrum with respect to height at constant voltage. This could then also be used to determine to contact potential more accurately, because the contact potential is also measurable using this method even though this was not done in this experiment.
+\clearpage
  \bibliographystyle{unsrt}
 \bibliography{bib}
+
+
+
+\appendix
+\section{Voltage Spectroscopy at constant height}
+\enlargethispage{10cm}
+\begin{figure}[!h]
+\centering
+\subfloat[][Gold, 1f]
+{\includegraphics[width=0.48 \linewidth]{img/pgold1H.pdf}}
+\hfill
+\subfloat[][Gold, 1b]
+{\includegraphics[width=0.48 \linewidth]{img/pgold1R.pdf}}
+
+\subfloat[][Gold, 2f]
+{\includegraphics[width=0.48 \linewidth]{img/pgold2H.pdf}}
+\hfill
+\subfloat[][Gold, 2b]
+{\includegraphics[width=0.48 \linewidth]{img/pgold2R.pdf}}
+
+\subfloat[][Gold, 3f]
+{\includegraphics[width=0.48 \linewidth]{img/pgold3H.pdf}}
+\hfill
+\subfloat[][Gold, 3b]
+{\includegraphics[width=0.48 \linewidth]{img/pgold3R.pdf}}
+\caption{\small Voltage spectroscopy at constant height (without feedback) for gold at three different sites with fitted parabolas. f (forward) and b (backward) denote the direction of the voltage change. The data at the first site do not match the parabolic fits and will not be included in further analysis.}
+\label{fig:parabolasgold}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\subfloat[][Graphite, 1f]
+{\includegraphics[width=0.44 \linewidth]{img/pgraph1H.pdf}}
+\hfill
+\subfloat[][Graphite, 1b]
+{\includegraphics[width=0.44 \linewidth]{img/pgraph1R.pdf}}
+
+\subfloat[][Graphite, 1f*]
+{\includegraphics[width=0.44 \linewidth]{img/pgraph1Htrunc.pdf}}
+\hfill
+\subfloat[][Graphite, 1b*]
+{\includegraphics[width=0.44 \linewidth]{img/pgraph1Rtrunc.pdf}}
+
+\subfloat[][Graphite, 2f]
+{\includegraphics[width=0.44 \linewidth]{img/pgraph2H.pdf}}
+\hfill
+\subfloat[][Graphite, 2b]
+{\includegraphics[width=0.44 \linewidth]{img/pgraph2R.pdf}}
+
+\subfloat[][Graphite, 3f]
+{\includegraphics[width=0.44 \linewidth]{img/pgraph3H.pdf}}
+\hfill
+\subfloat[][Graphite, 3b]
+{\includegraphics[width=0.44 \linewidth]{img/pgraph3R.pdf}}
+\caption{\small Voltage spectroscopy at constant height (without feedback) for graphite at three different sites with fitted parabolas. f (forward) and b (backward) denote the direction of the voltage change. The data at the first site do not match the parabolic fits, but leaving out the interval of misbehavior, the remaining data can be fitted nicely (1h*,1b*).}
+\label{fig:parabolasgraph}
+\end{figure}
+
+
+\FloatBarrier
+\section{Voltage Spectroscopy at constant force gradient}
+\enlargethispage{10cm}
+\begin{figure}[!h]
+\centering
+\subfloat[][Gold, 1f]
+{\includegraphics[width=0.48 \linewidth]{img/gold1h.pdf}}
+\hfill
+\subfloat[][Gold, 1b]
+{\includegraphics[width=0.48 \linewidth]{img/gold1r.pdf}}
+
+\subfloat[][Gold, 2f]
+{\includegraphics[width=0.48 \linewidth]{img/gold2h.pdf}}
+\hfill
+\subfloat[][Gold, 2b]
+{\includegraphics[width=0.48 \linewidth]{img/gold2r.pdf}}
+
+\subfloat[][Gold, 3f]
+{\includegraphics[width=0.48 \linewidth]{img/gold3h.pdf}}
+\hfill
+\subfloat[][Gold, 3b]
+{\includegraphics[width=0.48 \linewidth]{img/gold3r.pdf}}
+\caption{\small Voltage spectroscopy at constant force gradient (with feedback) for gold at three different sites with fits for a spherical (linear fit, red) and conical (parabolic fit, dashed). f (forward) and b (backward) denote the direction of the voltage change. The regions of minimal height is excluded due to dominating van der Waals forces.}
+\label{fig:tipgold}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\subfloat[][Graphite, 1f]
+{\includegraphics[width=0.48 \linewidth]{img/graph1h.pdf}}
+\hfill
+\subfloat[][Graphite, 1b]
+{\includegraphics[width=0.48 \linewidth]{img/graph1r.pdf}}
+
+\subfloat[][Graphite, 2f]
+{\includegraphics[width=0.48 \linewidth]{img/graph2h.pdf}}
+\hfill
+\subfloat[][Graphite, 2b]
+{\includegraphics[width=0.48 \linewidth]{img/graph2r.pdf}}
+
+\subfloat[][Graphite, 3f]
+{\includegraphics[width=0.48 \linewidth]{img/graph3h.pdf}}
+\hfill
+\subfloat[][Graphite, 3b]
+{\includegraphics[width=0.48 \linewidth]{img/graph3r.pdf}}
+\caption{\small Voltage spectroscopy at constant force gradient (with feedback) for graphite at three different sites with fits for a spherical (linear fit, red) and conical (parabolic fit, dashed). f (forward) and b (backward) denote the direction of the voltage change. The regions of minimal height is excluded due to dominating van der Waals forces.}
+\label{fig:tipgraph}
+\end{figure}
+
+
+
 
 \end{document}
 
