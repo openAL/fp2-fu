@@ -90,6 +90,9 @@ Another process is the so called fluorescence quenching, where the fluorescence 
 
 The fluorescence lifetime $\tau_f$ is defined as the inverse of the decay rate $k_f$, which characterises the exponential decay of the excited state via fluorexcence
 \eq{N(t) =N_0 \exp (-k_f \cdot  t) , \qquad \tau_f=1/k_f \; .}{rate}
+The quantum yield $\Phi$ relates the total lifetime of the excited level $\tau$ to the fluorescence life time $\tau = \tau_f \Phi$. It is defined as the number of emitted photons divided by the number of absorbed photons. In terms of the different decay rates, it reads
+\eq{\Phi = \frac{N_\text{em}}{N_\text{abs}} = \frac{k_f}{k_f +k_{ic} + k_{isc} + k_Q} \; ,}{yield}
+where $k_{ic}$ and $k_{isc}$ denote internal converstion and intersystem crossing and $k_Q$ the quenching rate.
 
 
 
@@ -112,9 +115,16 @@ In this experiment the fluorophore Diphenylhexatriene (DPH) is used as a reporte
 \end{figure}
 
 
+\subsection{Rotational Diffusion}
+After excitation with a polarized photon, the dipole moment is most probably aligned into the direction of the polarization. A photon emitted directly after excitation would than have the same polarization. However, as a certain time passes between excitation and radiative relaxation, the molecule can rotate in the mean time, which leads to a shift of the polarization. This rotational diffusion leads to the relaxation into an equilibrium state, which is completely isotropic unless certain symmetries are broken. The decay rate of this relaxation and the final state both give information about the degrees of freedom of the molecule and thus also about the environment of the molecule. A simple quantity to measure the rotational anisotropy is defined by
+\eq{R=\frac{I_V -I_H}{I_V + 2I_H} \; ,}{R}
+where $I_{V,H}$ denote the intensities of the fluorescence after excitation with a vertical or horizontal polarized beam. In a set-up, where also the polarization of the outgoing beam is measured, a more complex version of the rotational anisotropy is used \cite{lako}.
+%wobbing cone
 
-
-
+\subsection{Phase Transition}
+% vant hoff enthalpy
+%phase transition
+%theta
 
 
 
