@@ -1,7 +1,7 @@
 %TODO:
 
 
-\documentclass[draft]{scrartcl}
+\documentclass{scrartcl}
 
 
 \usepackage[utf8]{inputenc}
@@ -72,7 +72,7 @@
 \clearpage
 
 \section{Introduction}
-In this experiment blabla
+A common method for observation of a biophysical system is the measurement of phosphorescence. The added phosphorescent molecules react specifically depending on the temperature, surrounding molecules (lipophil or hydrophil?), PH value and so on, allowing a spatially resolved picture of the sample conditions. While the spatial resolution is often of special interest (especially if the phosphorescent molecules are specifically attached to other molecules of the system), we will concentrate on the temporal evolution of phosphorescence, their polarity and dependence on the temperature.
 
 
 \subsection{Fluorescence and Absorption spectra}
@@ -121,11 +121,17 @@ After excitation with a polarized photon, the dipole moment is most probably ali
 where $I_{V,H}$ denote the intensities of the fluorescence after excitation with a vertical or horizontal polarized beam. In a set-up, where also the polarization of the outgoing beam is measured, a more complex version of the rotational anisotropy is used \cite{lako}.
 %wobbing cone
 
-\subsection{Phase Transition}
-% vant hoff enthalpy
-%phase transition
-%theta
 
+\subsection{Phase Transition}
+Obviously the mobility of the membrane and thus the anisotropy is dependant on the temperature $T$. The plot of $R(T)$ is not a linear (or other simple) function though, but presents a steep change between two linear functions at a critical temperature $T_C$. This corresponds to a phase transition in the membrane between a phase of two dimensional liquid crystals and gel like phase.
+
+To describe the steep change between the two phases further consider the equilibrium with particle numbers $M_1=M_2$. The equilibrium constant can be written as
+\eq{K = \frac{M_2}{M_1} = K_0 e^{\frac{\delta H}{R T}}}{K}
+\eq{\Rightarrow \frac{d}{dT}(\ln K) = \frac{\delta H}{R T}}{dK}
+where $R$ is the universal gas constant and $\delta H$ the change in enthalpy. This last equation is called the van't Hoff equation. The degree of transformation 
+\eq{\Theta = \frac{M_2}{M_1+M_2}}{Theta}
+together with equation \ref{dK} allows for the determination of $\delta H$ in terms of the change of $\Theta$ at the critical temperature $T_C$ where $M_1=M_2$
+\eq{{\left.\frac{d\Theta}{dT}\right |}_{T_C} = \frac{\delta H}{4 R T^2} .}{dTheta}
 
 
 \clearpage
