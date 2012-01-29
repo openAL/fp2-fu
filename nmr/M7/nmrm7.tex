@@ -186,12 +186,14 @@ The fitted time constants are $T_1(0.05)=(20.47\pm 0.61)\,\text{ms}$, $T_1(0.1)=
 \subsection{Spin Echo and Meiboom-Gill}
 Both, the spin echo and the Meiboom-Gill method to measure $T_2$ resulted in very similar curves, that could have been fitted together were it not for a small difference in intensity (see figures \ref{fig:plots}b and \ref{fig:plots}d). The agreement is significant nonetheless and confirms both the validity of the Meiboom-Gill method as well as that there is only a negligible amount of diffusion in our system.
 
+Because the phase error of every second data point in the Meiboom-Gill measurement appeared to be negligible (not visible with the bare eye and individual fits do not deviate far from the total fit), the fitting was performed over all available points.
+
 The fitted time constants for the spin echo methods are $T_2(0.05)=(22.0\pm 1.2)\,\text{ms}$, $T_2(0.1)=(9.85\pm 0.47)\,\text{ms}$, $T_2(0.2)=(4.42\pm 0.14)\,\text{ms}$ and for the Meiboom-Gill method $T_2(0.05)=(20.17\pm 0.27)\,\text{ms}$, $T_2(0.1)=(10.17\pm 0.43)\,\text{ms}$, $T_2(0.2)=(4.50\pm 0.20)\,\text{ms}$.
 
 \subsection{Concentration Dependence}
-The $T_1$ value from the inversion recovery and the $T_2$ values from the spin echo and Meiboom-Gill methods show the same dependence on the concentration of CuSO$_4$ molecules. Considering that $T\rightarrow\infty$ as $c(\text{CuSO}_4)\rightarrow 0$ and that the dependence should be a strictly positive and monotonically decreasing function, a functional relation of the form $T=\frac{a}{c(\text{CuSO}_4)}$ seems most probable. This functional dependence is additionally encouraged by the suggested mechanism of relaxation enhancement: The unpaired electrons of the Cu2+, SO$_4$2- ions exert strong dipole moments and fluctuating magnetic fields, which induce magnetic relaxation of the protons, which encounter those fields. It is thus reasonable, that the decay rate $\Gamma \propto 1/T$ is directly proportional to the probability of a proton to cross the proximity of an ion, which itself is proportional to the ion concentration yielding $1/T \propto c$. 
+The $T_1$ value from the inversion recovery and the $T_2$ values from the spin echo and Meiboom-Gill methods show the same dependence on the concentration of CuSO$_4$ molecules. Considering that $T\rightarrow\infty$ as $c(\text{CuSO}_4)\rightarrow 0$ (as seen in the sample of pure water) and that the dependence should be a strictly positive and monotonically decreasing function, a functional relation of the form $T=\frac{a}{c(\text{CuSO}_4)}$ seems most probable. This functional dependence is additionally encouraged by the suggested mechanism of relaxation enhancement: The unpaired electrons of the Cu$^{2+}$, SO$_4^{2-}$ ions exert strong dipole moments and fluctuating magnetic fields, which induce magnetic relaxation of the protons, which encounter those fields. It is thus reasonable, that the decay rate $\Gamma \propto 1/T$ is directly proportional to the probability of a proton to cross the proximity of an ion, which itself is proportional to the ion concentration yielding $1/T \propto c$. 
 
-The corresponding fits can be found in figure \ref{fig:plots}e,f,h. The constant $a$ for the data from the inversion recovery was fit to $a(T_1)=(1.00\pm 0.13)\,\text{msM}$ and for the $T_2$ data to $a(T_2)=(1.023\pm 0.053)\,\text{msM}$ suggesting that for dilute aqueous solution of CuSO$_4$ $T_1\backsimeq T_2$.
+The corresponding fits can be found in figure \ref{fig:plots}e,f,h. The constant $a$ for the data from the inversion recovery was fit to $a(T_1)=(1.00\pm 0.13)\,\text{ms\,M}$ and for the $T_2$ data to $a(T_2)=(1.023\pm 0.053)\,\text{ms\,M}$ suggesting that for dilute aqueous solution of CuSO$_4$ $T_1\backsimeq T_2$.
 
 \begin{figure} [p]
  \centering
@@ -218,7 +220,7 @@ The corresponding fits can be found in figure \ref{fig:plots}e,f,h. The constant
 \subfloat[][$T_2$ (spin echo)]
          {\includegraphics[width=0.23\linewidth]{img/densityt2se.pdf}}
 &
-\subfloat[][$T_2$ (C-P)]
+\subfloat[][$T$ (C-P)]
          {\includegraphics[width=0.23\linewidth]{img/densityt2cp.pdf}}
 &
 \subfloat[][$T_2$ (M-G)]
@@ -241,7 +243,7 @@ For the Carr-Purcell method the error of the $\pi$ pulse (and less significantly
 \eq{\frac{d}{dt}z(t) = -\frac{z(t)}{T_1} - \omega x(t) .}{}
 The solution to these ODEs was fitted to the data resulting in not just information for $T_1$ and $T_2$ but also for the error of the pulses ($\omega$ for the $\pi$ pulse and from the initial conditions for the $\pi/2$ pulse).
 
-Unfortunately the solution to these ODEs is ambiguous for $T_1$ and $T_2$ and only the product $T_1 \cdot T_2$ can be fitted from the data. To get realistic values anyway the previous observation that $T_1 \approx T_2$ was included in the fit\footnote{For $T_1=T_2=T$ the solution simplifies to $e^{-t/T} \text{Abs}[x_0 \cos(\omega t)+y_0 \sin(\omega t)]$}. The resulting time constants of $T_{1,2}(0.05)=(8.68\pm0.87)\,\text{ms}$, $T_{1,2}(0.1)=(5.51\pm 0.46)\,\text{ms}$, $T_{1,2}(0.2)=(2.54\pm 0.51)\,\text{ms}$ are too small by a factor of about 2 which is also reflected in the concentration dependence which is for this data $a(\text{Carr-Purcell})=(0.46\pm 0.15)\,\text{msM}$ (see figure \ref{fig:plots}g).% WHY?!?!
+Unfortunately the solution to these ODEs is ambiguous for $T_1$ and $T_2$ and only the product $T_1 \cdot T_2$ can be fitted from the data. To get realistic values anyway the previous observation that $T_1 \approx T_2$ was included in the fit\footnote{For $T_1=T_2=T$ the solution simplifies to $e^{-t/T} \text{Abs}[x_0 \cos(\omega t)+y_0 \sin(\omega t)]$}. The resulting time constants of $T_{1,2}(0.05)=(8.68\pm0.87)\,\text{ms}$, $T_{1,2}(0.1)=(5.51\pm 0.46)\,\text{ms}$, $T_{1,2}(0.2)=(2.54\pm 0.51)\,\text{ms}$ are too small by a factor of about 2 which is also reflected in the concentration dependence which is for this data $a(\text{Carr-Purcell})=(0.46\pm 0.15)\,\text{ms\,M}$ (see figure \ref{fig:plots}g).% WHY?!?!
 
 The remaining variables that were fitted are useful nonetheless. The error of the $\pi/2$ pulse $\delta(\pi/2) = (23 \pm 18)^\circ$ is rather insignificant for these functions at these values and has thus a large confidence interval that almost includes $\delta = 0$. The pulse length was thus chosen very well even retrospectively. The error of the $\pi$ pulse is more significant $\delta(\pi)=(18.64\pm 0.17)^\circ$. While the value of maximum likelihood is similar as $\delta(\pi/2)$, the much smaller confidence interval suggests, that it would have been possible to find a better pulse length (for example by fitting these Carr-Purcell curves until $\delta(\pi)$ is identical to 0). 
 
@@ -280,13 +282,13 @@ Carr-Purcell$^*$ & $T_{1,2}(0.05\,M) / \text{ms}$ & $8.68\pm0.87$ & $10.1\pm 0.7
 \midrule
 \bottomrule
 \end{tabular}
-\caption{\small Comparison of experimental results with those of two other groups that worked with the same equipment. Questionable values in gray. \textbf{(*)} While the other groups claimed to get $T_2$ from the Carr-Purcell method they fitted the same function to the data, indicating that they just did not realize that this fit implies $T_1=T_2$. }
+\caption{\small Comparison of experimental results with those of two other groups that worked with the same equipment. Values that deviate too far from the other measurements are colored gray. \textbf{(*)} While the other groups claimed to get $T_2$ from the Carr-Purcell method they fitted the same function to the data, indicating that they might not have realized that this fit implies $T_1=T_2$. }
 \label{tab:compare}
 \end{table}
 
 
 \section{Conclusion}
-In this experiment the nuclear magnetic resonance was investigated. Different samples of diluted CuSO$_4$ solutions resulted in different time constants for the Bloch equations consistently implying $T_2^* << T_2 = T_1$ with $T_2^*=(0.441\pm 0.015)\,\text{ms}$ and $T_1=T_2= \frac{(1.02\pm 0.04)\,\text{msM}}{c(\text{CuSO}_4)}$ (for a more detailed listing of all results see table \ref{tab:compare}).
+In this experiment the nuclear magnetic resonance was investigated. Different samples of diluted CuSO$_4$ solutions resulted in different time constants for the Bloch equations consistently implying $T_2^* \ll T_2 = T_1$ with $T_2^*=(0.441\pm 0.015)\,\text{ms}$ and $T_1=T_2= \frac{(1.02\pm 0.04)\,\text{ms\,M}}{c(\text{CuSO}_4)}$ (for a more detailed listing of all results see table \ref{tab:compare}).
 
 The measurements with the Carr-Purcell method were the only ones, that did not fit this result. The approximations gotten from this for the error in the pulses seem credible, but all time constants are too small by a factor of about 2. While we were not able to find a reason for this, it is consistent with the results of other groups indicating a systematic error or problem with the apparatus being used.
 
