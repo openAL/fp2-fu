@@ -148,6 +148,63 @@ A prominent effect of nonlinear optics is the so called frequency doubling, whic
 \label{fig:nonlinearofoptics}
 \end{figure}
 
+\section{Analysis}
+\subsection{Pump Power of the Diode Laser}
+The intensity spectrum of the light emitted from the diode laser depends on the temperature and on the current at which the diode is operated. In order to measure the power of the \SI{808.4}{nm} wavelength emission for varying currents, it has to be kept in mind, that that at a constant temperature, the wavelength will change with the current. Therefore the measurement was done for three different currents, for witch the exact temperature needed to provide \SI{808.4}{nm} emission is known from the calibration curves in \cite{script}. The linear dependency  is visible in figure \ref{fig:cal} and yields the following relation between current and power
+\eq{P_\text{diode}=\SI{1.05(1)}{\frac{mW}{mA}}\left(I_\text{diode}-\SI{160(1)}{mA} \right) \;, }{cal}
+which suggests a lasing threshold of about \SI{160(1)}{mA}. 
+
+
+
+
+\subsection{Laser Parameters}
+At \SI{34.4}{\degree C} the output power of the Nd:YAG  TEM$_00$ mode was measured as a function of the laser diode current. Using the calibration of the previous measurement \Formel{cal} we obtain the output power as a function of the diode laser power. However, this measurement procedure does not take into account, that the wavelength of the diode laser changes with the current. For the excitation of the active medium the wavelength of the pumping laser is crucial, but fortunately the pumping can be done not only at \SI{808.4}{nm}, but also at \SI{804.4}{nm} and thus it is expected, that the variations of the wavelength with the diode current is less dominant for the pumping efficiency then the changes in total intensity. To prove this and to further give an estimate about the error due to this assumption, a second measurement is performed, in which the dependence of the YAG power on temperature is investigated at a fixed current of \SI{500}{mA}. 
+
+Within the measurement range of \SI{19}{ \degree C} to \SI{40}{\degree  C}, the emitted wavelength is expected to vary between \SI{804.3}{nm} and \SI{810.8}{nm}. In figure \ref{fig:power} it is clearly visible, that there is a broad plateau of the Nd:YAG intensity between \SI{21}{\degree C} and \SI{35}{\degree C} corresponding to the wavelengths \SI{804.9}{nm} and \SI{809.2}{nm} of the diode laser emission. This supports the hypothesis, that the Nd:YAG medium is not too sensitive to wavelength changes as long as they do not exceed a certain range, that is roughly between \SI{804}{nm} and \SI{809}{nm}. From the calibration curves in \cite{script}, it can be said with some certainty, that this range is not exceeded in the measurement of the Nd:YAG power with respect to the diode laser current. Thus we conclude, that the calibration performed with \Formel{cal} is reliable enough to use it for qualitative calculations.
+
+Considering the output-power vs. pump-power curve shown in figure \ref{fig:power}, the lasing threshold can be determined to be about $P_\text{thresh}=\SI{22(2)}{mW}$. Calculating the slope efficiency is more difficult, because the curve looks more like a saturation curve then like a linear line. It is likely, that either the power meter or the diode laser itself causes this effect. However, the slope efficiency can still be roughly estimated from a brutal fit to be $\Delta S = \SI{0.0147(4)}{}$. The power inside the cavity can be calculated as $P_\text{in}=(R+1)/(R-1) P_\text{out}$, where $R=0.98$ is the reflexivity of the output mirror. It will be later compared to the intracavity power in second harmonic generation mode and is therefore listed in table \ref{tab:intracavity}.
+
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.485\textwidth]{img/PvsI808.pdf}
+\caption{ \small  Pump power of the diode laser for \SI{808.4}{nm} emission. The currents were measured at $36.3 \degree$ C, $34.4 \degree$ C and $32.4 \degree$ C (lower to higher currents). }
+\label{fig:cal}
+\end{figure}
+
+\begin{figure}
+\centering
+\subfloat[][Diode Pump Power]{\includegraphics[width=0.485\textwidth]{img/totalegrade.pdf}}
+\hfill
+\subfloat[][Temperature Dependence]{\includegraphics[width=0.485\textwidth]{img/temp.pdf}}
+\caption{\small \textbf{(a)} Pump power of the diode laser for \SI{808.4}{nm} emission. The currents were measured at $36.3 \degree$ C, $34.4 \degree$ C and $32.4 \degree$ C (lower to higher currents). \textbf{(b)} Output Power of the Nd:YAG laser for different temperatures of the diode laser at $I_\text{diode}=\SI{500}{mA}$.}
+\label{fig:power}
+\end{figure}
+
+
+
+\subsection{Frequency Doubling}
+A KTP crystal is inserted into the optical cavity and the green $\lambda =\SI{532}{nm}$ emission of the second harmonic generation is visible. The intensity of the output laser beam is expected to have much lower intensity. Therefore its power is measured with a photodiode, that has first do be calibrated. In order to avoid saturation two filters were inserted into the optical set-up (OD 2,5 and OD 0,5) reducing the total intensity by a factor of $10^{-3}$. As these filters were kept for further measurements, this has not to be taken into account separately , but is implicitly included in the calibration of the photodiode. The calibration curve can be seen in figure \ref{fig:diode}. As in the subsequent measurements no voltages above \SI{3.7}{mV} occurred, the calibration curve is not fitted in the linear regime, but for low intensities only in order to achieve the most accurate calibration in the range of the measurement values.
+
+\begin{figure}
+\centering
+\subfloat[][Diode Pump Power]{\includegraphics[width=0.485\textwidth]{img/photoeich.pdf}}
+\hfill
+\subfloat[][Temperature Dependence]{\includegraphics[width=0.485\textwidth]{img/photoeich.pdf}}
+\caption{\small \textbf{(a)} }
+\label{fig:diode}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
 
 \section{Analysis}
 \subsection{Transversal Electromagnetic Modes}
@@ -161,6 +218,12 @@ Obviously this is only a small subset of all observed forms, but all others (eve
 
 
 
+
+
+
+
+
+
+
+
 \end{document}
-
-
