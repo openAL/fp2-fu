@@ -148,13 +148,15 @@ A prominent effect of nonlinear optics is the so called frequency doubling, whic
 \label{fig:nonlinearofoptics}
 \end{figure}
 
+
+
+
+
 \section{Analysis}
 \subsection{Pump Power of the Diode Laser}
 The intensity spectrum of the light emitted from the diode laser depends on the temperature and on the current at which the diode is operated. In order to measure the power of the \SI{808.4}{nm} wavelength emission for varying currents, it has to be kept in mind, that that at a constant temperature, the wavelength will change with the current. Therefore the measurement was done for three different currents, for witch the exact temperature needed to provide \SI{808.4}{nm} emission is known from the calibration curves in \cite{script}. The linear dependency  is visible in figure \ref{fig:cal} and yields the following relation between current and power
-\eq{P_\text{diode}=\SI{1.05(1)}{\frac{mW}{mA}}\left(I_\text{diode}-\SI{160(1)}{mA} \right) \;, }{cal}
-which suggests a lasing threshold of about \SI{160(1)}{mA}. 
-
-
+\eq{P_\text{diode}=(1.05\pm 0.01)\,\frac{\text{mW}}{\text{mA}}\left(I_\text{diode}-(160\pm 1)\,\text{mA} \right) \;, }{cal}
+which suggests a lasing threshold of about $(160\pm 1)\,\text{mA}$. 
 
 
 \subsection{Laser Parameters}
@@ -162,14 +164,14 @@ At \SI{34.4}{\degree C} the output power of the Nd:YAG  TEM$_{00}$ mode was meas
 
 Within the measurement range of \SI{19}{ \degree C} to \SI{40}{\degree  C}, the emitted wavelength is expected to vary between \SI{804.3}{nm} and \SI{810.8}{nm}. In figure \ref{fig:power} it is clearly visible, that there is a broad plateau of the Nd:YAG intensity between \SI{21}{\degree C} and \SI{35}{\degree C} corresponding to the wavelengths \SI{804.9}{nm} and \SI{809.2}{nm} of the diode laser emission. This supports the hypothesis, that the Nd:YAG medium is not too sensitive to wavelength changes as long as they do not exceed a certain range, that is roughly between \SI{804}{nm} and \SI{809}{nm}. From the calibration curves in \cite{script}, it can be said with some certainty, that this range is not exceeded in the measurement of the Nd:YAG power with respect to the diode laser current. Thus we conclude, that the calibration performed with \Formel{cal} is reliable enough to use it for qualitative calculations.
 
-Considering the output-power vs. pump-power curve shown in figure \ref{fig:power}, the lasing threshold can be determined to be about $P_\text{thresh}=\SI{22(2)}{mW}$. Calculating the slope efficiency is more difficult, because the curve looks more like a saturation curve then like a linear line. It is likely, that either the power meter or the diode laser itself causes this effect. However, the slope efficiency can still be roughly estimated from a brutal fit to be $\Delta S = \SI{0.0147(4)}{}$. The power inside the cavity can be calculated as $P_\text{in}=(R+1)/(R-1) P_\text{out}$, where $R=0.98$ is the reflexivity of the output mirror (cf. table \ref{tab:shg}).
+Considering the output-power vs. pump-power curve shown in figure \ref{fig:power}, the lasing threshold can be determined to be about $P_\text{thresh}=(22\pm 2)\,\text{mW}$. Calculating the slope efficiency is more difficult, because the curve looks more like a saturation curve then like a linear line. It is likely, that either the power meter or the diode laser itself causes this effect. However, the slope efficiency can still be roughly estimated from a brutal fit to be $\Delta S = (0.0147\pm 0.0004)$. The power inside the cavity can be calculated as $P_\text{in}=(R+1)/(R-1) P_\text{out}$, where $R=0.98$ is the reflexivity of the output mirror (cf. table \ref{tab:shg}).
 
 
 
 \begin{figure}
 \centering
 \includegraphics[width=0.485\textwidth]{img/PvsI808.pdf}
-\caption{ \small  Pump power of the diode laser for \SI{808.4}{nm} emission. The currents were measured at $36.3 \degree$ C, $34.4 \degree$ C and $32.4 \degree$ C (lower to higher currents). }
+\caption{ \small  Pump power of the diode laser for \SI{808.4}{nm} emission. The currents were measured at $36.3\,\degree$C, $34.4\,\degree$C and $32.4\,\degree$C (lower to higher currents). }
 \label{fig:cal}
 \end{figure}
 
@@ -178,7 +180,7 @@ Considering the output-power vs. pump-power curve shown in figure \ref{fig:power
 \subfloat[][Diode Pump Power]{\includegraphics[width=0.485\textwidth]{img/totalegrade.pdf}}
 \hfill
 \subfloat[][Temperature Dependence]{\includegraphics[width=0.485\textwidth]{img/temp.pdf}}
-\caption{\small \textbf{(a)} Pump power of the diode laser for \SI{808.4}{nm} emission. The currents were measured at $36.3 \degree$ C, $34.4 \degree$ C and $32.4 \degree$ C (lower to higher currents). \textbf{(b)} Output Power of the Nd:YAG laser for different temperatures of the diode laser at $I_\text{diode}=\SI{500}{mA}$.}
+\caption{\small \textbf{(a)} Pump power of the diode laser for \SI{808.4}{nm} emission. The currents were measured at $36.3\,\degree$C, $34.4\,\degree$C and $32.4\,\degree$C (lower to higher currents). \textbf{(b)} Output Power of the Nd:YAG laser for different temperatures of the diode laser at $I_\text{diode}=500\,\text{mA}$.}
 \label{fig:power}
 \end{figure}
 
@@ -249,7 +251,7 @@ Obviously this is only a small subset of all observed forms, but all others (eve
 
 The cuts through the intensity distributions give very good matches with the expected intensity curves for small orders (figure \ref{fig:temGraphs}a,b) but just like the pictures they cannot determine with certainty which modes the higher order pictures depict (figure \ref{fig:temGraphs}c). While a certain broadening due to temperature effects etc. can be seen, the reason for the uncertainty is most likely due to a superposition of different modes. With arbitrary complex coefficients for every possible mode the complexity of this problem rises enough to make it unreasonable to fit it to the data (remember that the set of all Hermite-Gaussians spans the space of all symmetric functions, so that such a fit need not be very meaningful).
 
-A try to remove some of the thermal influence by a Richardson–Lucy deconvolution with a gaussian i.e. finding the self-consistent solution $f$ to 
+A try to remove some of the thermal influence by a Richardson?Lucy deconvolution with a gaussian i.e. finding the self-consistent solution $f$ to 
 \eq{F(x)=\int\limits_{-\infty}^{\infty}\!\!\phi(x-\xi) f(\xi) \, \text{d}\xi}{}
 where $F(x)$ is the original data and $\phi(x)$ the point spread function (assumed to be a gaussian with half-width of 32 pixels) is shown in figure \ref{fig:temGraphs}d. Even though the fits to this new data are much better (visible especially at the minima) they can still not be fit with a single mode very well. Clearly this method cannot recreate details that were lost in the experiment due to the broadening, but it nonetheless underlines the assumption that the broadening cannot explain the bad fit and that there need to be several modes present in this data.
 
