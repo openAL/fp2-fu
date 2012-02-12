@@ -96,7 +96,7 @@ where $L$ denotes the mirror distance and $R$ the curvature radius. The modes, w
 \eq{\nu_p = \frac{c}{2L} \left[ p+1+\frac{1}{\pi}\arccos \left( 1-\frac{2L}{R}\right) \right] , } {modes}
 where $p$ here denotes the order of the longitudinal mode (along the mirror-mirror-axis or $z$-axis) and $c$ is the velocity of light. The minimal distance between modes is then given by
 \eq{\Delta \nu = \frac{c}{2L} .}{}
-Additionally to the longitudinal modes, there are also transversal modes, which have also a component normal to the $z$-axis and are denoted with TEM (transversal electromagnetic mode). Their intensity profile in the $x-y$-plane is determined by the resonator geometry. For the special case of cylindrical and cartesian symmetries\footnote{More general solutions can be obtained by Ince-Gaussians \cite{ince}, that represent solutions for any elliptical geometry and include the special cases of Laguerre- and Hermite-Gaussians.}, the solution for the standing resonator waves are Laguerre-Gausians and Hermite-Gaussians respectively (cf.  fig. \ref{fig:modes}). For Laguerre-Gaussians, the modes are labeled TEM$_{rl}$, where $r$ and $l$ denote the radial and angular component (similar to spherical harmonics) and for Hermite-Gaussians TEM$_{nm}$ refer to the number of nodes in the two orthonormal directions within the plane normal to the $z$-axis.
+Additionally to the longitudinal modes, there are also transversal modes, which have also a component normal to the $z$-axis and are denoted with TEM (transversal electromagnetic mode). Their intensity profile in the $x-y$-plane is determined by the resonator geometry. For the special case of cylindrical and cartesian symmetries\footnote{More general solutions can be obtained by Ince-Gaussians \cite{ince}, that represent solutions for any elliptical geometry and include the special cases of Laguerre- and Hermite-Gaussians.}, the solution for the standing resonator waves are Laguerre-Gausians and Hermite-Gaussians respectively (cf.  fig. \ref{fig:modes}). For Laguerre-Gaussians, the modes are labeled TEM$^\bigcirc_{rl}$, where $r$ and $l$ denote the radial and angular component (similar to spherical harmonics) and for Hermite-Gaussians TEM$^\Box_{nm}$ refer to the number of nodes in the two orthonormal directions within the plane normal to the $z$-axis.
 
 \begin{figure}
 \centering
@@ -148,13 +148,15 @@ A prominent effect of nonlinear optics is the so called frequency doubling, whic
 \label{fig:nonlinearofoptics}
 \end{figure}
 
+
+
+
+
 \section{Analysis}
 \subsection{Pump Power of the Diode Laser}
 The intensity spectrum of the light emitted from the diode laser depends on the temperature and on the current at which the diode is operated. In order to measure the power of the \SI{808.4}{nm} wavelength emission for varying currents, it has to be kept in mind, that that at a constant temperature, the wavelength will change with the current. Therefore the measurement was done for three different currents, for witch the exact temperature needed to provide \SI{808.4}{nm} emission is known from the calibration curves in \cite{script}. The linear dependency  is visible in figure \ref{fig:cal} and yields the following relation between current and power
-\eq{P_\text{diode}=\SI{1.05(1)}{\frac{mW}{mA}}\left(I_\text{diode}-\SI{160(1)}{mA} \right) \;, }{cal}
-which suggests a lasing threshold of about \SI{160(1)}{mA}. 
-
-
+\eq{P_\text{diode}=(1.05\pm 0.01)\,\frac{\text{mW}}{\text{mA}}\left(I_\text{diode}-(160\pm 1)\,\text{mA} \right) \;, }{cal}
+which suggests a lasing threshold of about $(160\pm 1)\,\text{mA}$. 
 
 
 \subsection{Laser Parameters}
@@ -162,14 +164,14 @@ At \SI{34.4}{\degree C} the output power of the Nd:YAG  TEM$_{00}$ mode was meas
 
 Within the measurement range of \SI{19}{ \degree C} to \SI{40}{\degree  C}, the emitted wavelength is expected to vary between \SI{804.3}{nm} and \SI{810.8}{nm}. In figure \ref{fig:power} it is clearly visible, that there is a broad plateau of the Nd:YAG intensity between \SI{21}{\degree C} and \SI{35}{\degree C} corresponding to the wavelengths \SI{804.9}{nm} and \SI{809.2}{nm} of the diode laser emission. This supports the hypothesis, that the Nd:YAG medium is not too sensitive to wavelength changes as long as they do not exceed a certain range, that is roughly between \SI{804}{nm} and \SI{809}{nm}. From the calibration curves in \cite{script}, it can be said with some certainty, that this range is not exceeded in the measurement of the Nd:YAG power with respect to the diode laser current. Thus we conclude, that the calibration performed with \Formel{cal} is reliable enough to use it for qualitative calculations.
 
-Considering the output-power vs. pump-power curve shown in figure \ref{fig:power}, the lasing threshold can be determined to be about $P_\text{thresh}=\SI{22(2)}{mW}$. Calculating the slope efficiency is more difficult, because the curve looks more like a saturation curve then like a linear line. It is likely, that either the power meter or the diode laser itself causes this effect. However, the slope efficiency can still be roughly estimated from a brutal fit to be $\Delta S = \SI{0.0147(4)}{}$. The power inside the cavity can be calculated as $P_\text{in}=(R+1)/(R-1) P_\text{out}$, where $R=0.98$ is the reflexivity of the output mirror (cf. table \ref{tab:shg}).
+Considering the output-power vs. pump-power curve shown in figure \ref{fig:power}, the lasing threshold can be determined to be about $P_\text{thresh}=(22\pm 2)\,\text{mW}$. Calculating the slope efficiency is more difficult, because the curve looks more like a saturation curve then like a linear line. It is likely, that either the power meter or the diode laser itself causes this effect. However, the slope efficiency can still be roughly estimated from a brutal fit to be $\Delta S = (0.0147\pm 0.0004)$. The power inside the cavity can be calculated as $P_\text{in}=(R+1)/(R-1) P_\text{out}$, where $R=0.98$ is the reflexivity of the output mirror (cf. table \ref{tab:shg}).
 
 
 
 \begin{figure}
 \centering
 \includegraphics[width=0.485\textwidth]{img/PvsI808.pdf}
-\caption{ \small  Pump power of the diode laser for \SI{808.4}{nm} emission. The currents were measured at $36.3 \degree$ C, $34.4 \degree$ C and $32.4 \degree$ C (lower to higher currents). }
+\caption{ \small  Pump power of the diode laser for \SI{808.4}{nm} emission. The currents were measured at $36.3\,\degree$C, $34.4\,\degree$C and $32.4\,\degree$C (lower to higher currents). }
 \label{fig:cal}
 \end{figure}
 
@@ -178,7 +180,7 @@ Considering the output-power vs. pump-power curve shown in figure \ref{fig:power
 \subfloat[][Diode Pump Power]{\includegraphics[width=0.485\textwidth]{img/totalegrade.pdf}}
 \hfill
 \subfloat[][Temperature Dependence]{\includegraphics[width=0.485\textwidth]{img/temp.pdf}}
-\caption{\small \textbf{(a)} Pump power of the diode laser for \SI{808.4}{nm} emission. The currents were measured at $36.3 \degree$ C, $34.4 \degree$ C and $32.4 \degree$ C (lower to higher currents). \textbf{(b)} Output Power of the Nd:YAG laser for different temperatures of the diode laser at $I_\text{diode}=\SI{500}{mA}$.}
+\caption{\small \textbf{(a)} Pump power of the diode laser for \SI{808.4}{nm} emission. The currents were measured at $36.3\,\degree$C, $34.4\,\degree$C and $32.4\,\degree$C (lower to higher currents). \textbf{(b)} Output Power of the Nd:YAG laser for different temperatures of the diode laser at $I_\text{diode}=500\,\text{mA}$.}
 \label{fig:power}
 \end{figure}
 
@@ -242,21 +244,74 @@ A KTP crystal is inserted into the optical cavity and the green $\lambda =\SI{53
 
 
 
-
-
-
-\section{Analysis}
 \subsection{Transversal Electromagnetic Modes}
-The resonator symmetry was easily determined by the observation of the transversal electromagnetic modes. While TEM of low order are consistent with both Laguerre-Gaussians as well as Hermite-Gaussians respectively radial and cartesian symmetry (cf. figure \ref{fig:tem01}), the higher orders show a clear cartesian symmetry. In the comparison with the theoretical plots this can be seen on the one hand in the odd orders (TEM$_{03}$, TEM$_{05}$ or TEM$_{07}$ cf. figure \ref{fig:tem03}) by noting the smaller secondary peaks instead of broadening ones as predicted by Laguerre-Gaussians and on the other hand in the even orders where the central peak already dictates a full radial symmetry for Laguerre-Gaussians that can clearly not be found in the experimental data (cf. figure \ref{fig:tem02}).
+The resonator symmetry was easily determined by the observation of the transversal electromagnetic modes. While TEM of low order are consistent with both Laguerre-Gaussians as well as Hermite-Gaussians respectively radial and cartesian symmetry (cf. figure \ref{fig:tem0103}a-c), the higher orders show a clear cartesian symmetry. In the comparison with the theoretical plots this can be seen on the one hand in the odd orders (cf. figure \ref{fig:tem0103}d-i) by noting the smaller secondary peaks instead of broadening ones as predicted by Laguerre-Gaussians and on the other hand in the even orders where the central peak already dictates a full radial symmetry for Laguerre-Gaussians that can clearly not be found in the experimental data (cf. figure \ref{fig:tem20}a-d).
 
-Obviously this is only a small subset of all observed forms, but all others (even though they might not have been as clear) were easily explained by a cartesian symmetry as well. Sometimes only by adding eg. a TEM$_{02}$ and a TEM$_{20}$ mode creating an intensity distribution resembling almost that of a TEM$^\circ_{12}$ but with a single center peak (figure \ref{fig:tem0220}), but an obvious radial symmetric picture (i.e. with a split center peak) was never found.
+Obviously this is only a small subset of all observed forms, but all others (even though they might not have been as clear) were easily explained by a cartesian symmetry as well. Sometimes only by adding eg. a TEM$^\Box_{02}$ and a TEM$^\Box_{20}$ mode creating an intensity distribution resembling almost that of a TEM$^\bigcirc_{12}$ but with a single center peak (figure \ref{fig:tem20}e-f). An obviously radial symmetric picture (i.e. with a split center peak) was never found though.
+
+The cuts through the intensity distributions give very good matches with the expected intensity curves for small orders (figure \ref{fig:temGraphs}a,b) but just like the pictures they cannot determine with certainty which modes the higher order pictures depict (figure \ref{fig:temGraphs}c). While a certain broadening due to temperature effects etc. can be seen, the reason for the uncertainty is most likely due to a superposition of different modes. With arbitrary complex coefficients for every possible mode the complexity of this problem rises enough to make it unreasonable to fit it to the data (remember that the set of all Hermite-Gaussians spans the space of all symmetric functions, so that such a fit need not be very meaningful).
+
+A try to remove some of the thermal influence by a Richardson?Lucy deconvolution with a gaussian i.e. finding the self-consistent solution $f$ to 
+\eq{F(x)=\int\limits_{-\infty}^{\infty}\!\!\phi(x-\xi) f(\xi) \, \text{d}\xi}{}
+where $F(x)$ is the original data and $\phi(x)$ the point spread function (assumed to be a gaussian with half-width of 32 pixels) is shown in figure \ref{fig:temGraphs}d. Even though the fits to this new data are much better (visible especially at the minima) they can still not be fit with a single mode very well. Clearly this method cannot recreate details that were lost in the experiment due to the broadening, but it nonetheless underlines the assumption that the broadening cannot explain the bad fit and that there need to be several modes present in this data.
+
+\begin{figure}
+\centering
+\begin{tabular}{cc}
+\subfloat[][TEM$_{00}$]{\includegraphics[width=0.47\textwidth]{img/g00.pdf}} &
+\subfloat[][TEM$_{01}$]{\includegraphics[width=0.47\textwidth]{img/g10.pdf}} \\
+\subfloat[][TEM$_{03}$?]{\includegraphics[width=0.47\textwidth]{img/g30.pdf}} &
+\subfloat[][TEM$_{03}$? modified]{\includegraphics[width=0.47\textwidth]{img/g30T.pdf}} \\
+\end{tabular}
+\caption{\small Linear cuts through the intensity distributions of some observed transversal modes with their best fits. Low order modes fit the expectation very well (\textbf{(a)} and \textbf{(b)}), while more complex pictures (e.g. \textbf{(c)}) most likely consist of several different modes. In \textbf{(c)} the best fits with the odd modes TEM$_{0,3}$ through TEM$_{0,13}$ are shown. The small peaks of the higher modes might be absorbed into the larger ones in the experiment due to thermal broadening. In \textbf{(d)} the data was modified to decrease the influence of thermal broadening by a self-consistent method. Again fits of all odd modes TEM$_{0,3}$ through TEM$_{0,13}$ are shown. }
+\label{fig:temGraphs}
+\end{figure}
+
+
+
+\subsection{Q-Switching}
+
+
 
 \clearpage
  \bibliographystyle{unsrt}
 \bibliography{bib}
 
+\clearpage
+\appendix
+\begin{figure}[p]
+\section{Pictures of the Transversal Modes}
+\centering
+\begin{tabular}{ccc}
+\subfloat[][measurement]{\includegraphics[width=0.30\textwidth]{img/m01.pdf}}
+& \subfloat[][TEM$^\bigcirc_{01}$]{\includegraphics[width=0.30\textwidth]{img/t01l.pdf}}
+& \subfloat[][TEM$^\Box_{01}$]{\includegraphics[width=0.30\textwidth]{img/t01h.pdf}} \\
+\subfloat[][measurement]{\includegraphics[width=0.30\textwidth]{img/m03.pdf}}
+& \subfloat[][TEM$^\Box_{03}$]{\includegraphics[width=0.30\textwidth]{img/t03.pdf}}
+& \subfloat[][TEM$^\Box_{05}$]{\includegraphics[width=0.30\textwidth]{img/t05.pdf}} \\
+\subfloat[][TEM$^\Box_{07}$]{\includegraphics[width=0.30\textwidth]{img/t07.pdf}}
+& \subfloat[][TEM$^\Box_{09}$]{\includegraphics[width=0.30\textwidth]{img/t09.pdf}}
+& \subfloat[][TEM$^\bigcirc_{11}$]{\includegraphics[width=0.30\textwidth]{img/t11l.pdf}} \\
+\end{tabular}
+\caption{\small False color pictures of the intensity distribution of a TEM$_{01}$ measurement \textbf{(a)} in comparison to the theoretical intensities of TEM$_{01}$ modes with radial or cartesian symmetry \textbf{(b)} and \textbf{(c)}. False color pictures of the intensity distribution of an odd TEM measurement \textbf{(d)} in comparison to the theoretical intensities of TEM$^\Box$ modes of orders $(0,3)$  to $(0,9)$ \textbf{(e)} through \textbf{(h)}. The rather small differences do not allow a certain classification of the measurement, but the comparison with radial modes (e.g. TEM$^\bigcirc_{11}$ \textbf{(i)}) confirms the cartesian symmetry. The colors violet, blue, teal, green, yellow and red equally spaced from $0\%$ to $100\%$ of the maximum intensity.  }
+\label{fig:tem0103}
+\end{figure}
 
-
+\begin{figure}[t]
+\centering
+\begin{tabular}{ccc}
+\subfloat[][measurement]{\includegraphics[width=0.30\textwidth]{img/m20.pdf}}
+& \subfloat[][TEM$^\Box_{20}$]{\includegraphics[width=0.30\textwidth]{img/t20.pdf}}
+& \subfloat[][TEM$^\Box_{60}$]{\includegraphics[width=0.30\textwidth]{img/t60.pdf}} \\
+\subfloat[][TEM$^\bigcirc_{10}$]{\includegraphics[width=0.30\textwidth]{img/t10l.pdf}}
+& \subfloat[][TEM$^\Box_{02}$+TEM$^\Box_{20}$]{\includegraphics[width=0.30\textwidth]{img/t0220.pdf}}
+& \subfloat[][TEM$^\bigcirc_{12}$]{\includegraphics[width=0.30\textwidth]{img/t12l.pdf}} \\
+\end{tabular}
+\caption{\small False color pictures of the intensity distribution of an even TEM measurement \textbf{(a)} in comparison to the theoretical intensities of TEM$^\Box$ modes of orders $(2,0)$ \textbf{(b)}  and $(6,0)$ \textbf{(c)}. The rather small differences do not allow a certain classification of the measurement, but the comparison with radial modes (e.g. TEM$^\bigcirc_{10}$ \textbf{(d)}) again confirms the cartesian symmetry.
+\textbf{(e)} and \textbf{(f)} demonstrate the difference between pseudo rotational symmetric superposition of modes TEM$^\Box_{02}$ and TEM$^\Box_{20}$ and the TEM$^\bigcirc_{12}$ mode.
+The colors violet, blue, teal, green, yellow and red equally spaced from $0\%$ to $100\%$ of the maximum intensity.  }
+\label{fig:tem20}
+\end{figure}
 
 
 
