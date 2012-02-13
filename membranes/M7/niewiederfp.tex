@@ -99,7 +99,7 @@ where $k_{ic}$ and $k_{isc}$ denote internal converstion and intersystem crossin
 \subsubsection{Specifications to Fluorophores}
 In heterocyclic and aramoatic molecules, which are called fluorophores, the ground state is given, when the electrons are both in bonding $\pi$ orbitals. They have antiparallel spins leading to total spin zero, which is referred to as a singulet state S$_{0,\pi\pi}$. The first excited electronic state is then a state, where one electron is in the antibonding $\pi^*$ orbital. In this excited state, the electrons can have parallel or antiparallel spin leading to singulet S$_{1, \pi \pi^*}$ and triplet states T$_{1, \pi \pi^*}$. The triplet states have usually lower energy.
 
-In this experiment the fluorophore Diphenylhexatriene (DPH) is used as a reporter probe, which is embedded in to the lipid membrane.
+In this experiment the fluorophore Diphenylhexatriene (DPH) is used as a reporter probe, which is embedded in to the lipid membrane (cf. fig. \ref{dph}).
 
 \begin{figure}
 \centering
@@ -113,6 +113,15 @@ In this experiment the fluorophore Diphenylhexatriene (DPH) is used as a reporte
 \textbf{(c)} Jablonski Diagram of different relaxation processes. ISC denotes intersystem crossing. $K_T$ the relaxation via phosphorescence. $K_r$ denotes fluorescence and $K_{nr}$ radiationless transitions, which also reduce the fluorescence lifetime. \footnotesize Source: \textbf{(a)}, \textbf{(b)} \url{http://en.wikipedia.org/wiki/Franck-Condon_principle}, \textbf{(c)} \cite{omg}}
 \label{condon}
 \end{figure}
+
+\begin{figure}
+\centering
+\subfloat[][DPH Molecule]{\includegraphics[width=0.5\linewidth]{img/dph.png}}
+\subfloat[][Lipid Membrane]{\includegraphics[width=0.35\linewidth]{img/membrane.png}}
+\caption{ \small \textbf{(a)}Diphenylhexatriene (DPH) molecule, which is used as a reporter molecule in the lipid membrane. \textbf{(b)} Lipid membrane vesicle with a close-up of the bilayer, where a DPH molecule is embedded.}
+\label{dph}
+\end{figure}
+
 
 
 \subsection{Rotational Diffusion}
@@ -132,6 +141,28 @@ where $R$ is the universal gas constant and $\delta H$ the change in enthalpy. T
 \eq{\Theta = \frac{M_2}{M_1+M_2}}{Theta}
 together with equation \ref{dK} allows for the determination of $\delta H$ in terms of the change of $\Theta$ at the critical temperature $T_C$ where $M_1=M_2$
 \eq{{\left.\frac{d\Theta}{dT}\right |}_{T_C} = \frac{\delta H}{4 R T^2} .}{dTheta}
+
+\clearpage
+
+\section{Experiment}
+\subsection{Absorption and Emission Spectra}
+The emission and absorption spectrum of a sample with \SI{8}{\micro l} \SI{1}{mM} DPH in THF in \SI{1}{ml} vesicle solution (A) is analyzed and compared with a sample of the same DPH-THF solution, but dissolved in a buffer solution and not in a vesicle solution (B). The measurement is performed with a set-up displayed in figure \ref{fig:setup}. The absorption spectrum of sample A is measured for excitation wavelength between $\lambda_\text{ex}=\SI{270}{nm} - \SI{420}{nm}$ at a fixed emission wavelength of $\lambda_\text{em}=\SI{450}{nm}$. The polarization filters are switched to vertical polarization to achieve highest intensity. The resolution of the spectrum is set to $\Delta \lambda =\SI{6}{nm}$ and the photomultipliers  are operated at: PM1 (sample) Range \SI{300}{nA}, Voltage \SI{13}{V}; PM2 (reference) Range \SI{3}{\micro A}, Voltage \SI{13}{V}.
+
+The emission spectrum for sample A and B are recorded at an excitation wavelength of $\lambda_\text{ex}=\SI{360}{nm}$ for emission wavelength $\lambda_\text{ex}=\SI{380}{nm} - \SI{530}{nm}$ at the same operation parameters for the photomultipliers and polarization, except for the range of photomultiplier 1 (sample) that is changed to \SI{300}{nA} for the measurement of sample B, because the low intensity.
+
+\subsection{Steady State Fluorescence Depolarization}
+In order to investigate the phase transition of DMPC, the anisotropy is measured at different temperatures. For each temperature and all four combinations of polarizations of the two polarizers 5 intensity values are recorded and the average value is used for the calculation of the anisotropy. As the temperature can only be measured before and after each measurement, the  values are plotted against the averaged temperature (before and after measurement).
+
+
+\begin{figure}
+\centering
+\subfloat[][Static Set-Up]{\includegraphics[width=0.55\linewidth]{img/setupStatic.png}}
+\hfill
+\subfloat[][Time Resolved Set-Up]{\includegraphics[width=0.45\linewidth]{img/setupDynamic.png}}
+\caption{ \small \textbf{(a)} Set-Up for . \textbf{(b)} Set-Up for.}
+\label{fig:setup}
+\end{figure}
+
 
 
 \clearpage
