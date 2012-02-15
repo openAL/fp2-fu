@@ -153,29 +153,12 @@ A prominent effect of nonlinear optics is the so called frequency doubling, whic
 
 
 \section{Analysis}
-\subsection{Pump Power of the Diode Laser}
-The intensity spectrum of the light emitted from the diode laser depends on the temperature and on the current at which the diode is operated. In order to measure the power of the \SI{808.4}{nm} wavelength emission for varying currents, it has to be kept in mind, that that at a constant temperature, the wavelength will change with the current. Therefore the measurement was done for three different currents, for witch the exact temperature needed to provide \SI{808.4}{nm} emission is known from the calibration curves in \cite{script}. The linear dependency  is visible in figure \ref{fig:cal} and yields the following relation between current and power
-\eq{P_\text{diode}=(1.05\pm 0.01)\,\frac{\text{mW}}{\text{mA}}\left(I_\text{diode}-(160\pm 1)\,\text{mA} \right) \;, }{cal}
-which suggests a lasing threshold of about $(160\pm 1)\,\text{mA}$. 
-
-
-\subsection{Laser Parameters}
-At \SI{34.4}{\degree C} the output power of the Nd:YAG  TEM$_{00}$ mode was measured as a function of the laser diode current. Using the calibration of the previous measurement \Formel{cal} we obtain the output power as a function of the diode laser power. However, this measurement procedure does not take into account, that the wavelength of the diode laser changes with the current. For the excitation of the active medium the wavelength of the pumping laser is crucial, but fortunately the pumping can be done not only at \SI{808.4}{nm}, but also at \SI{804.4}{nm} and thus it is expected, that the variations of the wavelength with the diode current is less dominant for the pumping efficiency then the changes in total intensity. To prove this and to further give an estimate about the error due to this assumption, a second measurement is performed, in which the dependence of the YAG power on temperature is investigated at a fixed current of \SI{500}{mA}. 
-
-Within the measurement range of \SI{19}{ \degree C} to \SI{40}{\degree  C}, the emitted wavelength is expected to vary between \SI{804.3}{nm} and \SI{810.8}{nm}. In figure \ref{fig:power} it is clearly visible, that there is a broad plateau of the Nd:YAG intensity between \SI{21}{\degree C} and \SI{35}{\degree C} corresponding to the wavelengths \SI{804.9}{nm} and \SI{809.2}{nm} of the diode laser emission. This supports the hypothesis, that the Nd:YAG medium is not too sensitive to wavelength changes as long as they do not exceed a certain range, that is roughly between \SI{804}{nm} and \SI{809}{nm}. From the calibration curves in \cite{script}, it can be said with some certainty, that this range is not exceeded in the measurement of the Nd:YAG power with respect to the diode laser current. Thus we conclude, that the calibration performed with \Formel{cal} is reliable enough to use it for qualitative calculations.
-
-Considering the output-power vs. pump-power curve shown in figure \ref{fig:power}, the lasing threshold can be determined to be about $P_\text{thresh}=(22\pm 2)\,\text{mW}$. Calculating the slope efficiency is more difficult, because the curve looks more like a saturation curve then like a linear line. It is likely, that either the power meter or the diode laser itself causes this effect. However, the slope efficiency can still be roughly estimated from a brutal fit to be $\Delta S = (0.0147\pm 0.0004)$. The power inside the cavity can be calculated as $P_\text{in}=(R+1)/(R-1) P_\text{out}$, where $R=0.98$ is the reflexivity of the output mirror (cf. table \ref{tab:shg}).
-
-
-
-\begin{figure}
+\begin{figure}[!h]
 \centering
-\includegraphics[width=0.485\textwidth]{img/PvsI808.pdf}
+\includegraphics[width=0.4\textwidth]{img/PvsI808.pdf}
 \caption{ \small  Pump power of the diode laser for \SI{808.4}{nm} emission. The currents were measured at $36.3\,\degree$C, $34.4\,\degree$C and $32.4\,\degree$C (lower to higher currents). }
 \label{fig:cal}
-\end{figure}
 
-\begin{figure}
 \centering
 \subfloat[][Diode Pump Power]{\includegraphics[width=0.485\textwidth]{img/totalegrade.pdf}}
 \hfill
@@ -184,28 +167,36 @@ Considering the output-power vs. pump-power curve shown in figure \ref{fig:power
 \label{fig:power}
 \end{figure}
 
+\subsection{Pump Power of the Diode Laser}
+The intensity spectrum of the light emitted from the diode laser depends on the temperature and on the current at which the diode is operated. In order to measure the power of the \SI{808.4}{nm} wavelength emission for varying currents, it has to be kept in mind, that that at a constant temperature, the wavelength will change with the current. Therefore the measurement was done for three different currents, for witch the exact temperature needed to provide \SI{808.4}{nm} emission is known from the calibration curves in \cite{script}. The linear dependency  is visible in figure \ref{fig:cal} and yields the following relation between current and power
+\eq{P_\text{diode}=(1.05\pm 0.01)\,\frac{\text{mW}}{\text{mA}}\left(I_\text{diode}-(160\pm 1)\,\text{mA} \right) \;, }{cal}
+which suggests a lasing threshold of about $(160\pm 1)\,\text{mA}$. 
 
 
-\subsection{Frequency Doubling}
-A KTP crystal is inserted into the optical cavity and the green $\lambda =\SI{532}{nm}$ emission of the second harmonic generation is visible. The intensity of the output laser beam is expected to have much lower intensity. Therefore its power is measured with a photodiode, that has first do be calibrated. In order to avoid saturation two filters were inserted into the optical set-up (OD 2,5 and OD 0,5) reducing the total intensity by a factor of $10^{-3}$. As these filters were kept for further measurements, this has not to be taken into account separately , but is implicitly included in the calibration of the photodiode. As in the subsequent measurements no voltages above \SI{3.7}{mV} occurred, the calibration curve is not fitted in the linear regime, but only for the relevant data points. As it can not be determined from physical arguments, which behavior is expected in the low intensity regime, an interpolation using first and second order splines is performed (cf. fig \ref{fig:diode}) and the relative deviation of both is taken as an relative error estimate, which exceeds the error of the measurement data by one order of magnitude. Fitting the low intensity values did not succeed to well, therefore a simple linear interpolation is used as calibration. The intensity of the laser beam in second harmonic generation measured as a function of the diode laser current with the photodiode is compared to the intensity in normal operation mode. Using the calibration \Formel{cal} and the calibration of the photodiode described above results in a relationship between intensity (power) in second harmonics mode and diode laser power, which is displayed in figure \ref{fig:diode}. A quadratic dependence can be fitted well for the low diode power regime, while for higher diode powers again some saturation effect seems to be dominant. This effect might also be an artifact of the wave-length change induced by the current change, which is not taken care of properly by the calibration \Formel{cal}. In a comparison with the intracavity power at $\lambda=\SI{1064}{nm}$ operation, the second harmonics generation efficiency $\eta=P_\text{out}/P_\text{in}$ can be calculated and is listed in table \ref{tab:shg}.
 
-\begin{figure}
+\subsection{Laser Parameters}
+At \SI{34.4}{\degree C} the output power of the Nd:YAG  TEM$_{00}$ mode was measured as a function of the laser diode current. Using the calibration of the previous measurement \Formel{cal} we obtain the output power as a function of the diode laser power. However, this measurement procedure does not take into account, that the wavelength of the diode laser changes with the current. For the excitation of the active medium the wavelength of the pumping laser is crucial, but fortunately the pumping can be done not only at \SI{808.4}{nm}, but also at \SI{804.4}{nm} and thus it is expected, that the variations of the wavelength with the diode current is less dominant for the pumping efficiency then the changes in total intensity. To prove this and to further give an estimate about the error due to this assumption, a second measurement is performed, in which the dependence of the YAG power on temperature is investigated at a fixed current of \SI{500}{mA}. 
+
+Within the measurement range of \SI{19}{ \degree C} to \SI{40}{\degree  C}, the emitted wavelength is expected to vary between \SI{804.3}{nm} and \SI{810.8}{nm}. In figure \ref{fig:power} it is clearly visible, that there is a broad plateau of the Nd:YAG intensity between \SI{21}{\degree C} and \SI{35}{\degree C} corresponding to the wavelengths \SI{804.9}{nm} and \SI{809.2}{nm} of the diode laser emission. This supports the hypothesis, that the Nd:YAG medium is not too sensitive to wavelength changes as long as they do not exceed a certain range, that is roughly between \SI{804}{nm} and \SI{809}{nm}. From the calibration curves in \cite{script}, it can be said with some certainty, that this range is not exceeded in the measurement of the Nd:YAG power with respect to the diode laser current. Thus we conclude, that the calibration performed with \Formel{cal} is reliable enough to use it for rough calculations.
+
+Considering the output-power vs. pump-power curve shown in figure \ref{fig:power}, the lasing threshold can be determined to be about $P_\text{thresh}=(22\pm 2)\,\text{mW}$. Calculating the slope efficiency is more difficult, because the curve looks more like a saturation curve then like a linear line. It is likely, that either the power meter or the diode laser itself causes this effect or that the slightly varying wavelength of the diode changes the absorption rate and thus the output power of the YAG. However, the slope efficiency can still be estimated roughly by a linear fit to be $\Delta S = (0.0147\pm 0.0004)$. The power inside the cavity can be calculated as $P_\text{in}=(R+1)/(R-1) P_\text{out}$, where $R=0.98$ is the reflexivity of the output mirror (see table \ref{tab:shg}).
+
+\FloatBarrier
+\begin{figure}[!ht]
 \centering
-\subfloat[][Calibration of Photodiode]{\includegraphics[width=0.485\textwidth]{img/photoeich.pdf}}
+\subfloat[][Calibration of the photodiode]{\includegraphics[width=0.485\textwidth]{img/photoeich.pdf}}
 \hfill
 \subfloat[][Second Harmonic Generation]{\includegraphics[width=0.485\textwidth]{img/doppel.pdf}}
-\caption{\small \textbf{(a)} Calibration curve of the photodiode. red: linear spline interpolation, blue: cubic splines. \textbf{(b)} Output power in second harmonic generation mode as a function of pumping power.}
+\caption{\footnotesize \textbf{(a)} Calibration curve of the photodiode. red: linear spline interpolation, blue: quadratic splines. \textbf{(b)} Output power in second harmonic generation mode as a function of pumping power.}
 \label{fig:diode}
 \end{figure}
 
-
-
-\begin{table}
+\begin{table}[!hb]
 \centering
-\small
+\footnotesize
 \begin{tabular}{SSSSS}
 \toprule
-{$P_\text{diode}$ / mV } & {$P_{\text{out},1064}$  / mV} &{$P_\text{in}$  / mV} & {$P_{\text{out},532}$  / mV} & {$\eta = P_{\text{out},532}/P_\text{in}$} \\
+{$P_\text{diode}$ / mW } & {$P_{\text{out},1064}$  / mW} &{$P_\text{in}$  / mW} & {$P_{\text{out},532}$  / mW} & {$\eta = P_{\text{out},532}/P_\text{in}$} \\
 \midrule
  0.1 & 0.07 & 6.9 & 0.073 & 0.0106 \\
  21.0 & 0.07 & 6.9 & 0.073 & 0.0106 \\
@@ -233,29 +224,18 @@ A KTP crystal is inserted into the optical cavity and the green $\lambda =\SI{53
  418.3 & 5.60 & 554.4 & 0.495 & 0.0009 \\
  \bottomrule
 \end{tabular}
-\caption{\small Efficiency of second harmonic generations compared to normal mode. For a given pumping power of the diode laser $P_\text{diode}$, the output power of the Nd:YAG in normal (\SI{1064}{nm}) mode $P_{\text{out},1064}$, the calculated intracavity power $P_\text{in}$ and the output power of the Nd:YAG in second harmonic generation mode $P_{\text{out},532}$ are listed. The efficiency of second harmonic generation $\eta=P_{\text{out},532} / P_\text{in}$ is calculated for each value-set.}
+\caption{\footnotesize Efficiency of second harmonic generations compared to normal mode. For a given pumping power of the diode laser $P_\text{diode}$, the output power of the Nd:YAG in normal (\SI{1064}{nm}) mode $P_{\text{out},1064}$, the calculated intracavity power $P_\text{in}$ and the output power of the Nd:YAG in second harmonic generation mode $P_{\text{out},532}$ are listed. The efficiency of second harmonic generation $\eta=P_{\text{out},532} / P_\text{in}$ is calculated for each value-set.}
 \label{tab:shg}
 \end{table}
 
+\FloatBarrier
 
+\subsection{Frequency Doubling}
+A KTP crystal is inserted into the optical cavity and the green $\lambda =\SI{532}{nm}$ emission of the second harmonic generation is visible. The intensity of the output laser beam is expected to have much lower intensity. Therefore its power is measured with a photodiode, that has first do be calibrated. In order to avoid saturation two filters were inserted into the optical set-up (OD 2,5 and OD 0,5) reducing the total intensity by a factor of $10^{-3}$. As these filters were kept for further measurements, this has not to be taken into account separately , but is implicitly included in the calibration of the photodiode. As in the subsequent measurements no voltages above \SI{3.7}{mV} occurred, the calibration curve is not fitted in the linear regime, but only for the relevant data points. As it can not be determined from physical arguments, which behavior is expected in the low intensity regime, an interpolation using first and second order splines is performed (cf. fig \ref{fig:diode}) and the relative deviation of both is taken as an relative error estimate, which exceeds the error of the measurement data by one order of magnitude. 
 
+Fitting the low intensity values did not succeed too well, therefore a simple linear interpolation is used as calibration. The intensity of the laser beam in second harmonic generation measured as a function of the diode laser current with the photodiode is compared to the intensity in normal operation mode. Using the calibration \Formel{cal} and the calibration of the photodiode described above results in a relationship between intensity (power) in second harmonics mode and diode laser power, which is displayed in figure \ref{fig:diode}. A quadratic dependence can be fitted well for the low diode power regime, while for higher diode powers again some saturation effect seems to be dominant. This effect might also be an artefact of the wave-length change induced by the current change, which is not taken care of properly by the calibration \Formel{cal}. In a comparison with the intracavity power at $\lambda=\SI{1064}{nm}$ operation, the second harmonics generation efficiency $\eta=P_\text{out}/P_\text{in}$ can be calculated and is listed in table \ref{tab:shg}.
 
-
-
-
-
-\subsection{Transversal Electromagnetic Modes}
-The resonator symmetry was easily determined by the observation of the transversal electromagnetic modes. While TEM of low order are consistent with both Laguerre-Gaussians as well as Hermite-Gaussians respectively radial and cartesian symmetry (cf. figure \ref{fig:tem0103}a-c), the higher orders show a clear cartesian symmetry. In the comparison with the theoretical plots this can be seen on the one hand in the odd orders (cf. figure \ref{fig:tem0103}d-i) by noting the smaller secondary peaks instead of broadening ones as predicted by Laguerre-Gaussians and on the other hand in the even orders where the central peak already dictates a full radial symmetry for Laguerre-Gaussians that can clearly not be found in the experimental data (cf. figure \ref{fig:tem20}a-d).
-
-Obviously this is only a small subset of all observed forms, but all others (even though they might not have been as clear) were easily explained by a cartesian symmetry as well. Sometimes only by adding eg. a TEM$^\Box_{02}$ and a TEM$^\Box_{20}$ mode creating an intensity distribution resembling almost that of a TEM$^\bigcirc_{12}$ but with a single center peak (figure \ref{fig:tem20}e-f). An obviously radial symmetric picture (i.e. with a split center peak) was never found though.
-
-The cuts through the intensity distributions give very good matches with the expected intensity curves for small orders (figure \ref{fig:temGraphs}a,b) but just like the pictures they cannot determine with certainty which modes the higher order pictures depict (figure \ref{fig:temGraphs}c). While a certain broadening due to temperature effects etc. can be seen, the reason for the uncertainty is most likely due to a superposition of different modes. With arbitrary complex coefficients for every possible mode the complexity of this problem rises enough to make it unreasonable to fit it to the data (remember that the set of all Hermite-Gaussians spans the space of all symmetric functions, so that such a fit need not be very meaningful).
-
-A try to remove some of the thermal influence by a Richardson?Lucy deconvolution with a gaussian i.e. finding the self-consistent solution $f$ to 
-\eq{F(x)=\int\limits_{-\infty}^{\infty}\!\!\phi(x-\xi) f(\xi) \, \text{d}\xi}{}
-where $F(x)$ is the original data and $\phi(x)$ the point spread function (assumed to be a gaussian with half-width of 32 pixels) is shown in figure \ref{fig:temGraphs}d. Even though the fits to this new data are much better (visible especially at the minima) they can still not be fit with a single mode very well. Clearly this method cannot recreate details that were lost in the experiment due to the broadening, but it nonetheless underlines the assumption that the broadening cannot explain the bad fit and that there need to be several modes present in this data.
-
-\begin{figure}
+\begin{figure}[ph]
 \centering
 \begin{tabular}{cc}
 \subfloat[][TEM$_{00}$]{\includegraphics[width=0.47\textwidth]{img/g00.pdf}} &
@@ -263,17 +243,53 @@ where $F(x)$ is the original data and $\phi(x)$ the point spread function (assum
 \subfloat[][TEM$_{03}$?]{\includegraphics[width=0.47\textwidth]{img/g30.pdf}} &
 \subfloat[][TEM$_{03}$? modified]{\includegraphics[width=0.47\textwidth]{img/g30T.pdf}} \\
 \end{tabular}
-\caption{\small Linear cuts through the intensity distributions of some observed transversal modes with their best fits. Low order modes fit the expectation very well (\textbf{(a)} and \textbf{(b)}), while more complex pictures (e.g. \textbf{(c)}) most likely consist of several different modes. In \textbf{(c)} the best fits with the odd modes TEM$_{0,3}$ through TEM$_{0,13}$ are shown. The small peaks of the higher modes might be absorbed into the larger ones in the experiment due to thermal broadening. In \textbf{(d)} the data was modified to decrease the influence of thermal broadening by a self-consistent method. Again fits of all odd modes TEM$_{0,3}$ through TEM$_{0,13}$ are shown. }
+\caption{\small Linear cuts through the intensity distributions of some observed transversal modes with their best fits. Low order modes fit the expectation very well (\textbf{(a)} and \textbf{(b)}), while more complex pictures (e.g. \textbf{(c)}) most likely consist of several different modes. In \textbf{(c)} the best fits with the odd modes TEM$_{0,3}$ through TEM$_{0,13}$ are shown. The small peaks of the higher modes might be absorbed into the larger ones in the experiment due to thermal broadening. In \textbf{(d)} the data was modified to decrease the influence of thermal broadening by an iterative method. Again fits of all odd modes TEM$_{0,3}$ through TEM$_{0,13}$ are shown. }
 \label{fig:temGraphs}
+
+\begin{tabular}{ccc}
+\subfloat[][single pulse]{\includegraphics[width=0.31\textwidth]{img/qsingle.pdf}} &
+\subfloat[][resting table]{\includegraphics[width=0.31\textwidth]{img/q1.pdf}} &
+\subfloat[][after percussion]{\includegraphics[width=0.31\textwidth]{img/q2.pdf}} \\
+\end{tabular}
+\caption{\small Intensity over time of the pulsed laser. Exponential decay as seen in \textbf{(a)} as expected. The intensity of the individual peaks has a high variation over time though \textbf{(b)} and percussion of the setup influenced these intensities strongly \textbf{(c)}. }
+\label{fig:q}
 \end{figure}
 
 
+\subsection{Transversal Electromagnetic Modes}
+The resonator symmetry was easily determined by the observation of the transversal electromagnetic modes. While TEM of low order are consistent with both Laguerre-Gaussians as well as Hermite-Gaussians respectively radial and cartesian symmetry (cf. figure \ref{fig:tem0103}a-c), the higher orders show a clear cartesian symmetry. In the comparison with the theoretical plots this can be seen on the one hand in the odd orders (cf. figure \ref{fig:tem0103}d-i) by noting the smaller secondary peaks instead of broadening ones as predicted by Laguerre-Gaussians and on the other hand in the even orders where the central peak already dictates a full radial symmetry for Laguerre-Gaussians that can clearly not be found in the experimental data (cf. figure \ref{fig:tem20}a-d).
+
+Obviously this is only a small subset of all observed forms, but all others (even though they might not have been as clear) were easily explained by a cartesian symmetry as well. Sometimes only by adding eg. a TEM$^\Box_{02}$ and a TEM$^\Box_{20}$ mode creating an intensity distribution resembling almost that of a TEM$^\bigcirc_{12}$ but with a single center peak (figure \ref{fig:tem20}e-f). An obviously radial symmetric picture (i.e. with a split center peak) was never found though.
+
+
+
+
+The cuts through the intensity distributions give very good matches with the expected intensity curves for small orders (figure \ref{fig:temGraphs}a,b) but just like the pictures they cannot determine with certainty which modes the higher order pictures depict (figure \ref{fig:temGraphs}c). While a certain broadening due to temperature effects etc. can be seen, the reason for the uncertainty is most likely due to a superposition of different modes. With arbitrary complex coefficients for every possible mode the complexity of this problem rises enough to make it unreasonable to fit it to the data (remember that the set of all Hermite-Gaussians spans the space of all symmetric functions, so that such a fit need not be very meaningful).
+
+A try to remove some of the thermal influence by a Richardson-Lucy deconvolution with a gaussian i.e. finding a consistent solution $f$ to 
+\eq{F(x)=\int\limits_{-\infty}^{\infty}\!\!\phi(x-\xi) f(\xi) \, \text{d}\xi}{}
+where $F(x)$ is the original data and $\phi(x)$ the point spread function (assumed to be a gaussian with half-width of 32 pixels) is shown in figure \ref{fig:temGraphs}d. Even though the fits to this new data are much better (visible especially at the minima) they can still not be fit with a single mode very well. Clearly this method cannot recreate details that were lost in the experiment due to the broadening, but it nonetheless underlines the assumption that the broadening cannot explain the bad fit and that there need to be several modes present in this data.
+
+\FloatBarrier
+
 
 \subsection{Q-Switching}
+Because the insertion of the crystal for Q-switching changes the paths of the light inside the lasing cavity a recalibration of the setup is necessary after introducing the crystal. Unfortunately the first two tries failed and even the third complete rebuild could not be calibrated very well due to the limited time of this experiment. 
 
-
-
+It was possible to observe the pulsed laser and the form of a single peak is as predicted (figure \ref{fig:q}a), but the intensity of the peaks varies too much to draw any quantitative conclusions (figure \ref{fig:q}b). When hitting the table on which the setup was placed a number of much higher peaks could be observed (100\,mV instead of 20\,mV, see figure \ref{fig:q}c). This suggests, that the photodiode was not properly hit. Any vibrations of the setup (due to our presence or the computer standing on the table etc.) might have shifted the beam slightly causing the beam to hit the diode with different fractions of its total size over time.
 \clearpage
+
+
+\section{Conclusion}
+Using a Nd:YAG crystal, a pumping diode and some periphery a laser was constructed. The transversal modes were observed, output powers measured and pulsing through Q-switching was observed. As a learning experience it was thus a very successful experiment teaching us some basics of laser usage.
+
+Quantitatively it was not a very successful experiment though. The calibration of the photodiode and subsequent measurements of the intracavity power and photon efficiencies were very rough. This is partly due to our failure to remove (some) gray filters inbetween the calibration and measurement (which would have helped to use the same range of diode voltages). Despite this shortcoming the instruction do not seem to focus on quantitative results anyway (which would require more than the given time) so that it is questionable how good the results would have gotten without this omission.
+
+While the transversal modes of the laser confirmed the cartesian symmetry inside the cavity the fits of the higher order intensity distributions again were ambiguous at best. Even deconvolution to decrease the effect of the finite temperature did not improve the result significantly.
+
+The pulsed laser finally defied any attempt of quantitative measurement. It was possible to observe the pulsing and the form of these pulses was as expected, but it was not possible the adjust the setup well enough to measure consistent heights for these peaks.
+
+
  \bibliographystyle{unsrt}
 \bibliography{bib}
 
