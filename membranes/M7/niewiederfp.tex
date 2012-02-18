@@ -181,6 +181,39 @@ Slope left and right of the phase transition $s = (-1.4 \pm 0.4 ) \cdot 10^{-3} 
 \end{figure}
 
 
+
+\subsection{Spectra}
+Both, the absorption and the emission spectrum of the solution including the lipids, show the expected behaviour. They are similar in form, with four peaks each but mirrored at a point near 390\,nm (cf. figure \ref{fig:spectra}a-b).
+
+\begin{figure}
+\centering
+\begin{tabular}{cc}
+\subfloat[][absorption]{\includegraphics[width=0.47\linewidth]{img/abs.pdf}} &
+\subfloat[][emission (vesicle)]{\includegraphics[width=0.47\linewidth]{img/emsves.pdf}} \\
+\subfloat[][wavenumbers]{\includegraphics[width=0.47\linewidth]{img/peakwave.pdf}} &
+\subfloat[][emission (water)]{\includegraphics[width=0.47\linewidth]{img/emsnon.pdf}} \\
+\end{tabular}
+\caption{ \small Spectral measurements (gray) and their least-squares fits (black lines) as well as the four components of each fit that represent a single peak (colored). Peaks assumed to be of Gauß-Lorenzian shape with a linear noise function. \textbf{(a)} Absorptions spectrum with peaks at $(324.94\pm 0.57)\,\text{nm}$, $(340.14\pm 0.19)\,\text{nm}$, $(358.65\pm 0.09)\,\text{nm}$ and $(377.96\pm 0.07)\,\text{nm}$. \textbf{(b)} Emission spectrum with peaks at $(403.74\pm 0.07)\,\text{nm}$, $(426.86\pm 0.07)\,\text{nm}$, $(454.01\pm 0.14)\,\text{nm}$ and $(482.99\pm 0.62)\,\text{nm}$. \textbf{(c)} Peak positions from (a) and (b) converted to wavenumbers. The confidence intervals of all points are smaller than their markers in the plot. \textbf{(d)} Emission spectrum with DPH in a watery solution without lipids. For the fit the peaks are assumed to be at the same position and with the same FWHM as in (b). }
+\label{fig:spectra}
+\end{figure}
+
+Assuming emissions at the same frequencies the emission rates of the sample without vesicles were fit as well to allow for a comparison of quantum yields (cf. figure \ref{fig:spectra}d). The ratio of the sums over all four peaks and thus the ratio of the quantum yields gives
+\eq{\frac{\Phi(\text{DPH}_{H_2 O})}{\Phi(\text{DPH}_{\text{Lipid}})} = \frac{52.3\pm 1.7}{6367\pm 48} = (0.821\pm 0.027)\,\% . }{}
+It can thus be approximated that all subsequent measurements of emissions are due to the DPH only without making an error of more than $0.8\,\%$.
+
+Further information can be gained from the peak positions of the absorptions and emissions. Plotting the wavenumber against the number of the peak results in a linear dependency each. The two gradients are of further interest for us.
+\eq{ \Delta E_{abs} = (1433\pm 22)\,\text{cm}^{-1} }{}
+\eq{ \Delta E_{ems} = (1354.2\pm 9.3)\,\text{cm}^{-1} . }{}
+As these are equal to the energy between two vibrational modes, the vibrational frequencies follow
+\eq{ \omega_0 = \Delta E_{ems} / \hbar = (40.60\pm 0.28)\,\text{THz} }{}
+\eq{ \omega_1 = \Delta E_{abs} / \hbar = (42.97\pm 0.64)\,\text{THz} . }{}
+Or using the mass of carbon and the typical relations for harmonic oscillators for the amplitude $d=\sqrt{\hbar / (m\omega)}$ and for the force constant $k=m\omega^2$ we get
+\eq{ d_0 = (32.87\pm  0.45)\,\text{pm} \qquad k_0 = (11.413\pm 0.039)\,\text{N\,m}^{-1}\;}{}
+\eq{ d_1 = (36.82\pm  1.10)\,\text{pm} \qquad k_1 = (11.094\pm 0.083)\,\text{N\,m}^{-1} .}{}
+
+
+
+
 \clearpage
  \bibliographystyle{unsrt}
 \bibliography{bib}
