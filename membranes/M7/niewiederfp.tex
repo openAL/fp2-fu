@@ -16,7 +16,7 @@
 % PAKETE
 \usepackage{siunitx}
 \usepackage{graphicx}
-\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[usenames,dvipsnames,table]{xcolor}
 \usepackage{placeins}
 \usepackage{longtable}
 \usepackage{enumitem}
@@ -125,11 +125,18 @@ In this experiment the fluorophore Diphenylhexatriene (DPH) is used as a reporte
 
 
 \subsection{Rotational Diffusion}
-After excitation with a polarized photon, the dipole moment is most probably aligned into the direction of the polarization. A photon emitted directly after excitation would than have the same polarization. However, as a certain time passes between excitation and radiative relaxation, the molecule can rotate in the mean time, which leads to a shift of the polarization. This rotational diffusion leads to the relaxation into an equilibrium state, which is completely isotropic unless certain symmetries are broken. The decay rate of this relaxation and the final state both give information about the degrees of freedom of the molecule and thus also about the environment of the molecule. A simple quantity to measure the rotational anisotropy is defined by
+After excitation with a polarized photon, the dipole moment is most probably aligned into the direction of the polarization. A photon emitted directly after excitation would then have the same polarization. However, as a certain time passes between excitation and radiative relaxation, the molecule can rotate in the mean time, which leads to a shift of the polarization. This rotational diffusion leads to the relaxation into an equilibrium state, which is completely isotropic unless certain symmetries are broken. The decay rate of this relaxation and the final state both give information about the degrees of freedom of the molecule and thus also about the environment of the molecule. A simple quantity to measure the rotational anisotropy is defined by
 \eq{R=\frac{I_V -I_H}{I_V + 2I_H} \; ,}{R}
 where $I_{V,H}$ denote the intensities of the fluorescence after excitation with a vertical or horizontal polarized beam. In a set-up, where also the polarization of the outgoing beam is measured, a more complex version of the rotational anisotropy is used \cite{lako}.
-%wobbing cone
 
+The rotational diffusion can be expressed by a diffusion constant \cite{heyn}
+\eq{ D = \frac{1-R(\infty)/R(0)}{6\Phi_\text{rot}} = \frac{k_B T}{8\pi \eta V_\text{eff} f} }{eq:diff}
+where $\Phi_\text{rot}$ is the mean rotational correlation time, $k_B$ the Boltzmann constant, $V_\text{eff}$ the effective volume, $\eta$ the viscosity and $f$ the shape factor of the radiating molecule.
+
+\subsection{Wobbing in Cone Model}
+The movement of an DPH molecule in a membrane can be described by the Wobbing in Cone model. This model assumes, that the orientation of the molecule is confined to a cone of opening angle $\theta$ and may fluctuate within this cone (``wobbing''). According to this model the ratio of the anisotropy limits is related to the opening angle by
+\eq{ \frac{R(\infty)}{R(0)} = \left[ 0.5 \cos \theta (1+\cos \theta) \right]^2 }{}
+\eq{ \Rightarrow \theta = \arccos \left[ 0.5\left( \sqrt{1+8\sqrt{R(\infty)/R(0)}}-1 \right) \right] }{eq:theta}
 
 \subsection{Phase Transition}
 Obviously the mobility of the membrane and thus the anisotropy is dependant on the temperature $T$. The plot of $R(T)$ is not a linear (or other simple) function though, but presents a steep change between two linear functions at a critical temperature $T_C$. This corresponds to a phase transition in the membrane between a phase of two dimensional liquid crystals and gel like phase.
@@ -210,6 +217,51 @@ As these are equal to the energy between two vibrational modes, the vibrational 
 Or using the mass of carbon and the typical relations for harmonic oscillators for the amplitude $d=\sqrt{\hbar / (m\omega)}$ and for the force constant $k=m\omega^2$ we get
 \eq{ d_0 = (32.87\pm  0.45)\,\text{pm} \qquad k_0 = (11.413\pm 0.039)\,\text{N\,m}^{-1}\;}{}
 \eq{ d_1 = (36.82\pm  1.10)\,\text{pm} \qquad k_1 = (11.094\pm 0.083)\,\text{N\,m}^{-1} .}{}
+The amplitude of the oscillation is small compared to the molecules length of approximately $13\,\AA$ and thus seems reasonable.
+
+
+
+\subsection{Timeresolved Anisotropy}
+The time dependence of the emitted light highly depends on the time dependence of the absorbed light flash. To account for this, the lamp signal was measured as well as the time dependence of the emissions (figure \ref{fig:aniTime}a). By deconvolution with the lamp signal, the actual time dependence (as it would be with a perfect flash) of emission can be approximated (figure \ref{fig:aniTime}b).
+
+\begin{figure}
+\begin{tabular}{cc}
+\subfloat[][measured intensities at $15\,^\circ$C]{\includegraphics[width=0.47\linewidth]{img/4channel.pdf}} &
+\subfloat[][anisotropy over time]{\includegraphics[width=0.47\linewidth]{img/twoT.pdf}} \\
+\end{tabular}
+\caption{\small \textbf{(a)} Measured time dependence of the light flash (blue) and the two polarizations at $15\,^\circ$C. \textbf{(b)} Deconvoluted intensity over time of the $25\,^\circ$C (blue, top) and $38\,^\circ$C (bottom) measurement as given by the program. The Deconvolution of the $15\,^\circ$C measurement was not saved by the program. }
+\label{fig:aniTime}
+\end{figure}
+
+From these time dependencies a series of useful values can be calculated. Table \ref{tab:bla} lists these results as given by the program and the values for the diffusion constant, viscosity and cone opening angle as they result from these values.
+
+Unfortunately the fits are rather bad. Several confidence intervals are much larger than their corresponding maximum likelihood value. $\Phi_\text{rot}$, $D$ and $\eta$ can thus not be evaluated further because only the last measurement of $38\,^\circ$C gave proper values for these. $R(0)$ is given without an error by the program, but especially the value for $25\,^\circ$C makes no sense at all. The other two values for $R(0)$ are rather large as well (should be around $0.3$). The expected behaviour, that $R(0)$ is independent of the Temperature can not even be confirmed.
+
+\begin{table}
+\centering
+\rowcolors{1}{white}{gray!20}
+\begin{tabular}{r|ccc}
+T & $15\,^\circ$C & $25\,^\circ$C & $38\,^\circ$C \\
+\hline
+\hline
+$\Phi_\text{rot} / \text{ns}$ & $0.14\pm 0.31$ & $0.06\pm 0.13$ & $0.25\pm 0.12$ \\
+$R(0)$ & $0.7818$ & $1.854$ & $0.8147$ \\
+$R(\infty)$ & $0.3022\pm 0.0082$ & $0.2029 \pm 0.0076$ & $0.1525 \pm 0.0088$ \\
+$\langle R(T) \rangle_t$ & $0.3088\pm 0.0209$ & $0.2131\pm 0.0285$ & $0.1701\pm 0.0129$ \\
+$\tau / \text{ns}$ & $9.76\pm 0.29$ & $9.19\pm 0.24$ & $9.03\pm 0.25$ \\
+\hline
+\hline
+$D / \mu\text{s}^{-1}$ & $0.7\pm 1.7$ & $2.6\pm 5.7$ & $0.55\pm 0.25$ \\
+$\eta / \text{Pa\,s}$ & $0.068\pm 0.155$ & $0.033\pm 0.072$ & $0.233\pm 0.116$ \\
+$\theta / ^\circ$ & $43.77\pm 0.15$ & $62.95\pm 0.42$ & $56.22\pm 0.82$ \\
+\end{tabular}
+\caption{\small Rotational correlation times, anisotropy limits, time averaged anisotropy and decay rate as calculated by the software from the time resolved measurement. Diffusion constant $D$ and viscosity $\eta$ from equation (\ref{eq:diff}) using $V_\text{eff} f = (1.63\pm 0.34)\cdot 10^{-22}\,\text{cm}^3$ from \cite{heyn}, opening angle $\theta$ from equation (\ref{eq:theta}).  }
+\label{tab:bla}
+\end{table}
+
+The derived value of the opening angle $\theta$ appears to have a very small error as we had to assume $R(0)$ to be without error (due to a lack of other data), but are just as questionable as the values of $R(0)$ themselves. Only by disregarding the value of the $25\,^\circ$C measurement we can see the expected trend of increasing opening angle with higher temperatures - but the unreliability of this data makes new measurements mandatory before drawing any conclusions.
+
+At least the remaining values are realistic: $R(\infty)$ decreases with higher temperatures as expected, the mean values $\langle R(T) \rangle_t$ are in the range of previous measurements (though a bit smaller) and the decay times $\tau$ decrease with increasing temperature reflecting the higher mobility of molecules.
 
 
 
