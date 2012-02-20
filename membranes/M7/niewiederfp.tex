@@ -83,24 +83,6 @@ The spatial overlap of the two vibronic state nuclear wavefunction squared  $\lv
 The direction of the dipole operator gives the polarization direction of the photons, which are absorbed or emitted.
 Considering two electronic states with similar vibronic structure, the absorption spectrum is symmetric to the fluorescence spectrum as a consequence of the Franck-Condon principle (cf. \ref{condon}). This symmetry can be detected in the experiment although the equal spacing of the energy levels is an idealization, meaning that the real structures do not look exactly symmetric.
 
-\subsubsection{Relaxation Processes}
-An excited state can relax into its groundstate via different intermediate processes. Radiation less transitions, which can occur via exchange of phonons or collisions with other atoms and molecules are usually very fast, because the energy difference between those states is typically small. Thus, an excited vibronic state decays fast into its ground state. The relaxation of the electronic excited state and vibronic ground state into the electronic ground state and excited vibronic state (cf. fig \ref{condon} \textbf{(c)}) is called fluorescence. As its emitted photons are typically in the visible light regime, fluorescence is a luminescent process. The other luminescence, which can occur is phosphorescence, where the system decays first into a state, which is forbidden according to spin selection rules. Such a transition, where the electron spin changes is called intersystem crossing. The decay into ground state is again forbidden according to the dipole selection rules. Therefore, the lifetime if this state is very high, which leads to the phenomenon of light emission long after absorption.
-
-Another process is the so called fluorescence quenching, where the fluorescence is suppressed by the transition of energy to certain molecules. For the molecule used in the experiment, water acts as a quenching molecule and reduces the fluorescence intensity to $1/200$ of the value in hydrophobic media like the interior of lipid membrane bilayers.
-
-The fluorescence lifetime $\tau_f$ is defined as the inverse of the decay rate $k_f$, which characterises the exponential decay of the excited state via fluorexcence
-\eq{N(t) =N_0 \exp (-k_f \cdot  t) , \qquad \tau_f=1/k_f \; .}{rate}
-The quantum yield $\Phi$ relates the total lifetime of the excited level $\tau$ to the fluorescence life time $\tau = \tau_f \Phi$. It is defined as the number of emitted photons divided by the number of absorbed photons. In terms of the different decay rates, it reads
-\eq{\Phi = \frac{N_\text{em}}{N_\text{abs}} = \frac{k_f}{k_f +k_{ic} + k_{isc} + k_Q} \; ,}{yield}
-where $k_{ic}$ and $k_{isc}$ denote internal converstion and intersystem crossing and $k_Q$ the quenching rate.
-
-
-
-\subsubsection{Specifications to Fluorophores}
-In heterocyclic and aramoatic molecules, which are called fluorophores, the ground state is given, when the electrons are both in bonding $\pi$ orbitals. They have antiparallel spins leading to total spin zero, which is referred to as a singulet state S$_{0,\pi\pi}$. The first excited electronic state is then a state, where one electron is in the antibonding $\pi^*$ orbital. In this excited state, the electrons can have parallel or antiparallel spin leading to singulet S$_{1, \pi \pi^*}$ and triplet states T$_{1, \pi \pi^*}$. The triplet states have usually lower energy.
-
-In this experiment the fluorophore Diphenylhexatriene (DPH) is used as a reporter probe, which is embedded in to the lipid membrane (cf. fig. \ref{dph}).
-
 \begin{figure}
 \centering
 \subfloat[][Franck-Condon Principle]{\includegraphics[width=0.5\linewidth]{img/condon.png}}
@@ -122,12 +104,35 @@ In this experiment the fluorophore Diphenylhexatriene (DPH) is used as a reporte
 \label{dph}
 \end{figure}
 
+\subsubsection{Relaxation Processes}
+An excited state can relax into its groundstate via different intermediate processes. Radiation less transitions, which can occur via exchange of phonons or collisions with other atoms and molecules are usually very fast, because the energy difference between those states is typically small. Thus, an excited vibronic state decays fast into its ground state. The relaxation of the electronic excited state and vibronic ground state into the electronic ground state and excited vibronic state (cf. fig \ref{condon} \textbf{(c)}) is called fluorescence. As its emitted photons are typically in the visible light regime, fluorescence is a luminescent process. The other luminescence, which can occur is phosphorescence, where the system decays first into a state, which is forbidden according to spin selection rules. Such a transition, where the electron spin changes is called intersystem crossing. The decay into ground state is again forbidden according to the dipole selection rules. Therefore, the lifetime if this state is very high, which leads to the phenomenon of light emission long after absorption.
+
+Another process is the so called fluorescence quenching, where the fluorescence is suppressed by the transition of energy to certain molecules. For the molecule used in the experiment, water acts as a quenching molecule and reduces the fluorescence intensity to $1/200$ of the value in hydrophobic media like the interior of lipid membrane bilayers.
+
+The fluorescence lifetime $\tau_f$ is defined as the inverse of the decay rate $k_f$, which characterises the exponential decay of the excited state via fluorexcence
+\eq{N(t) =N_0 \exp (-k_f \cdot  t) , \qquad \tau_f=1/k_f \; .}{rate}
+The quantum yield $\Phi$ relates the total lifetime of the excited level $\tau$ to the fluorescence life time $\tau = \tau_f \Phi$. It is defined as the number of emitted photons divided by the number of absorbed photons. In terms of the different decay rates, it reads
+\eq{\Phi = \frac{N_\text{em}}{N_\text{abs}} = \frac{k_f}{k_f +k_{ic} + k_{isc} + k_Q} \; ,}{yield}
+where $k_{ic}$ and $k_{isc}$ denote internal converstion and intersystem crossing and $k_Q$ the quenching rate.
+
+
+
+\subsubsection{Specifications to Fluorophores}
+In heterocyclic and aramoatic molecules, which are called fluorophores, the ground state is given, when the electrons are both in bonding $\pi$ orbitals. They have antiparallel spins leading to total spin zero, which is referred to as a singulet state S$_{0,\pi\pi}$. The first excited electronic state is then a state, where one electron is in the antibonding $\pi^*$ orbital. In this excited state, the electrons can have parallel or antiparallel spin leading to singulet S$_{1, \pi \pi^*}$ and triplet states T$_{1, \pi \pi^*}$. The triplet states have usually lower energy.
+
+In this experiment the fluorophore Diphenylhexatriene (DPH) is used as a reporter probe, which is embedded in to the lipid membrane (cf. fig. \ref{dph}).
+
+
 
 
 \subsection{Rotational Diffusion}
 After excitation with a polarized photon, the dipole moment is most probably aligned into the direction of the polarization. A photon emitted directly after excitation would then have the same polarization. However, as a certain time passes between excitation and radiative relaxation, the molecule can rotate in the mean time, which leads to a shift of the polarization. This rotational diffusion leads to the relaxation into an equilibrium state, which is completely isotropic unless certain symmetries are broken. The decay rate of this relaxation and the final state both give information about the degrees of freedom of the molecule and thus also about the environment of the molecule. A simple quantity to measure the rotational anisotropy is defined by
-\eq{R=\frac{I_V -I_H}{I_V + 2I_H} \; ,}{R}
-where $I_{V,H}$ denote the intensities of the fluorescence after excitation with a vertical or horizontal polarized beam. In a set-up, where also the polarization of the outgoing beam is measured, a more complex version of the rotational anisotropy is used \cite{lako}.
+\eq{R=\frac{I_\parallel -I_\perp}{I_\parallel+ 2I_\perp} \; ,}{R}
+where $I_{\parallel,\perp }$ are given by
+\eq{I_\parallel = \frac{I_\text{VV}}{I_\text{HV}} , \qquad I_\perp = \frac{I_\text{VH}}{I_\text{HH}} \; , }{idef}
+and e.g. $I_{HV}$ denotes the intensity of the fluorescent light, that was excited with light polarized horizontally and emitted with  polarization (measured with the use of a vertical polarization filter). This formula is identical to the one used by Lackowicz \cite{lako}
+\eq{R=\frac{I_{VV} - G I_{VH}}{I_{VV}+ 2 G I_{VH}} \; ,}{Ralt}
+where $G$ is given by $G=I_{HV}/I_{HH}$.
 
 The rotational diffusion can be expressed by a diffusion constant \cite{heyn}
 \eq{ D = \frac{1-R(\infty)/R(0)}{6\Phi_\text{rot}} = \frac{k_B T}{8\pi \eta V_\text{eff} f} }{eq:diff}
@@ -144,7 +149,7 @@ Obviously the mobility of the membrane and thus the anisotropy is dependant on t
 To describe the steep change between the two phases further consider the equilibrium with particle numbers $M_1=M_2$. The equilibrium constant can be written as
 \eq{K = \frac{M_2}{M_1} = K_0 e^{\frac{\delta H}{R T}}}{K}
 \eq{\Rightarrow \frac{d}{dT}(\ln K) = \frac{\delta H}{R T}}{dK}
-where $R$ is the universal gas constant and $\delta H$ the change in enthalpy. This last equation is called the van't Hoff equation. The degree of transformation 
+where $R$ is the universal gas constant and $\delta H$ the change in enthalpy. This last equation is called the van't Hoff equation. The degree of transformation or conversion yield 
 \eq{\Theta = \frac{M_2}{M_1+M_2}}{Theta}
 together with equation \ref{dK} allows for the determination of $\delta H$ in terms of the change of $\Theta$ at the critical temperature $T_C$ where $M_1=M_2$
 \eq{{\left.\frac{d\Theta}{dT}\right |}_{T_C} = \frac{\delta H}{4 R T^2} .}{dTheta}
@@ -152,16 +157,11 @@ together with equation \ref{dK} allows for the determination of $\delta H$ in te
 \clearpage
 
 \section{Experiment}
-\subsection{Absorption and Emission Spectra}
-The emission and absorption spectrum of a sample with \SI{8}{\micro l} \SI{1}{mM} DPH in THF in \SI{1}{ml} vesicle solution (A) is analyzed and compared with a sample of the same DPH-THF solution, but dissolved in a buffer solution and not in a vesicle solution (B). The measurement is performed with a set-up displayed in figure \ref{fig:setup}. The absorption spectrum of sample A is measured for excitation wavelength between $\lambda_\text{ex}=\SI{270}{nm} - \SI{420}{nm}$ at a fixed emission wavelength of $\lambda_\text{em}=\SI{450}{nm}$. The polarization filters are switched to vertical polarization to achieve highest intensity. The resolution of the spectrum is set to $\Delta \lambda =\SI{6}{nm}$ and the photomultipliers  are operated at: PM1 (sample) Range \SI{300}{nA}, Voltage \SI{13}{V}; PM2 (reference) Range \SI{3}{\micro A}, Voltage \SI{13}{V}.
+All measurements are performed with the set-ups shown in figure \ref{fig:setup}, that include one set-up for steady-state fluorescence measurements and one for time-resolved measurements. The steady-state set-up consists of a high pressure xenon lamp as light source, followed by a monochromator, that can be driven automatically, a polarization filter and a semi reflecting semi transmitting mirror, which splits the light ray. One ray passes an aperture and than hits a reference sample, the reflected intensity is measured with a photomultiplier (PM1) and is used divide out changes in the optical setup, which have nothing to do with the real measurement. The other part of the ray passes a lens and then hits the sample. The light emitted in a $90 \degree$ angle passes another lens, an aperture, a second polarization filter and a monochromator, which can also be driven automatically before being detected by another photomultiplier (PM2).
 
-The emission spectrum for sample A and B are recorded at an excitation wavelength of $\lambda_\text{ex}=\SI{360}{nm}$ for emission wavelength $\lambda_\text{ex}=\SI{380}{nm} - \SI{530}{nm}$ at the same operation parameters for the photomultipliers and polarization, except for the range of photomultiplier 1 (sample) that is changed to \SI{300}{nA} for the measurement of sample B, because the low intensity.
+The time-resolved set-up is similar, despite the fact, that a flash lamp is used instead of the xenon lamp and no reference sample is included in the setup. Furthermore, the monochromators are removed and a high pass filter is inserted in front of the photomultiplier.
 
-\subsection{Steady State Fluorescence Depolarization}
-In order to investigate the phase transition of DMPC, the anisotropy is measured at different temperatures. For each temperature and all four combinations of polarizations of the two polarizers 5 intensity values are recorded and the average value is used for the calculation of the anisotropy. As the temperature can only be measured before and after each measurement, the  values are plotted against the averaged temperature (before and after measurement).
-
-
-\begin{figure}
+\begin{figure}[h]
 \centering
 \subfloat[][Static Set-Up]{\includegraphics[width=0.55\linewidth]{img/setupStatic.png}}
 \hfill
@@ -170,23 +170,23 @@ In order to investigate the phase transition of DMPC, the anisotropy is measured
 \label{fig:setup}
 \end{figure}
 
+\subsection{Absorption and Emission Spectra}
+The emission and absorption spectrum of a sample with \SI{8}{\micro l} \SI{1}{mM} DPH in THF in \SI{1}{ml} vesicle solution (A) is analyzed and compared with a sample of the same DPH-THF solution, but dissolved in a buffer solution and not in a vesicle solution (B). The measurement is performed with the steady-state set-up displayed in figure \ref{fig:setup} and explained above. The absorption spectrum of sample A is measured for excitation wavelength between $\lambda_\text{ex}=\SI{270}{nm} - \SI{420}{nm}$ at a fixed emission wavelength of $\lambda_\text{em}=\SI{450}{nm}$. The polarization filters are switched to vertical polarization to achieve highest intensity. The resolution of the spectrum is set to $\Delta \lambda =\SI{6}{nm}$ and the photomultipliers  are operated at: PM1 (sample) Range \SI{300}{nA}, Voltage \SI{13}{V}; PM2 (reference) Range \SI{3}{\micro A}, Voltage \SI{13}{V}.
+
+The emission spectrum for sample A and B are recorded at an excitation wavelength of $\lambda_\text{ex}=\SI{360}{nm}$ for emission wavelength $\lambda_\text{ex}=\SI{380}{nm} - \SI{530}{nm}$ at the same operation parameters for the photomultipliers and polarization, except for the range of photomultiplier 1 (sample) that is changed to \SI{300}{nA} for the measurement of sample B, because the low intensity.
+
+\subsection{Steady State Fluorescence Depolarization}
+In order to investigate the phase transition of DMPC, the anisotropy $R$  is measured at different temperatures, that are induced by a heating machine, that heats up water, which floats around the sample. For each temperature and all four combinations of polarization filter configurations of the two polarizers five intensity values are recorded and the average value is used for the calculation of the anisotropy according to \Formel{R}. As the temperature can only be measured before and after each measurement, the values are recorded for the averaged temperature (before and after measurement).
+
+\subsection{Time Resolved Fluorescence Depolarization}
+The time-resolved fluorescence depolarization is performed with the second set-up. At first the flashlamp has to be filled with hydrogen, then a sample, that completely reflects light diffusive is inserted in order to measure the pure lamp function, which is later used to deconvolute the lamp signal from the measurement signal. For the time-resolution of the measurement a more-channel analyzator is used, which is triggered by the emission of a light pulse and then linearly increases a voltage. When a photon is detected it is stored into a channel coressponding to the voltage at this certain event-time. Therefore a calibration of the channel-number and the time is performed by setting four different time delays and comparing them to the channel number of highest intensity. The calibration yields $0.06849 \, \text{s}/\text{channel}$. Another calibration is made to determine the quantum yield of the photodetectors. To this end for a period of one minute the number of photons polarized horizontally and also the number of photons polarized vertically are counted (one after the other). The radio is determined to be $\Phi = 0.789$. 
+
+For three different temperatures, 15 $\degree$ C,25 $\degree$ C and 38 $\degree$ C the intensity of light polarized horizontally and  are measured as a function of time in two different measurements. A computer program uses the intensity function of the lamp, as well as the two calibration parameters to process the measurement data and evaluate the anisotropy parameters by fitting exponential decay functions onto the anisotropy vs time.
+
+
 \clearpage
 
 \section{Analysis}
-
-\subsection{Phase Transition of DMPC}
-
-\eq{I_\parallel = \frac{I_\text{VV}}{I_\text{HV}} , \qquad I_\perp = \frac{I_\text{VH}}{I_\text{HH}} \; . }{idef}
-Slope left and right of the phase transition $s = (-1.4 \pm 0.4 ) \cdot 10^{-3} / \degree \text{C}$.
-\eq{ T_C = ( 28.0 \pm 0.2 ) \, \degree \text{C} \; .}{Tc}
-
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{img/phasetransition.pdf}
-\caption{ \small Fluorescence anisotropy of a vesicle membrane (DMPC lipids) for different temperatures. At $T_C=28.0 \, \degree$ C an abrupt change of the anisotropy indicates a phase transition. The points marked in red are considered to be outliers and are ignored in the fit.}
-\label{fig:phase}
-\end{figure}
-
 
 
 \subsection{Spectra}
@@ -219,7 +219,30 @@ Or using the mass of carbon and the typical relations for harmonic oscillators f
 \eq{ d_1 = (36.82\pm  1.10)\,\text{pm} \qquad k_1 = (11.094\pm 0.083)\,\text{N\,m}^{-1} .}{}
 The amplitude of the oscillation is small compared to the molecules length of approximately $13\,\AA$ and thus seems reasonable.
 
+\clearpage
 
+\subsection{Phase Transition of DMPC}
+The fluorescence anisotropy measurements performed on the vesicle solution yields the data, which is plotted in figure \ref{fig:phase}. In order to determine the phase transition temperature the data is fitted with the model $R(T) = a_0 + a_1 T + a_2 \text{Erf}(T - T_c)$, where Erf is the Gaussian error function, expected to be a good approximation for the phase-transition region, $a_0$ is a constant height offset, $a_1$ is the slope of the two lines in the part excluding the phase-transition point, $a_2$ is the step-width of the error function and $T_c$ is the critical temperature. In principle the two lines can have different slopes, because the dependency of the anisotropy on temperature can be different in the two phases, however, the data is by far not precise enough to real such a feature. Plus, the slope of the low temperature region seems to reveal a descending tendency, which is unphysical. Therefore this possibility is not considered any further. The fit is performed according to the maximum likelihood methods, while the errors of each data point are given by the standard deviation of the five recorded values per point. The transition temperature is found to be
+\eq{ T_C = ( 28.0 \pm 0.2 ) \, \degree \text{C} \; }{Tc}
+and the slope left and right of the phase transition is $s = (-1.4 \pm 0.4 ) \cdot 10^{-3} / \degree \text{C}$. 
+
+The van't Hoff enthalpy of the phase transition is given by the slope of $\Theta(T)=M1/(M1+M2)$, where $M1$ and $M2$ are determined by subtracting the respective asymptotic straight lines from the measurement data (cf. fig. \ref{fig:phase}). The slope is determined by fitting the model $\Theta(T)=a_0+a_1 \text{Erf}\left(a_2(T-T_c)\right)$, where $a_2$ allows for additional stretching and taking its derivative in the phase-transition region
+\eq{\left. \frac{\mathrm d \Theta (T) }{\mathrm d T}\right|_{T=T_c} = (0.6 \pm 0.2) / \degree \text{C} \; .}{}
+According to equation \Formel{dTheta} the van't Hoff enthalpy is
+\eq{\delta H = 4 R T^2 \left. \frac{ \mathrm d \Theta (T) } {\mathrm d T}\right|_{T=T_c} = (1.8 \pm 0.7) \, \frac{ \text{MJ} }{ \text{Mole} } \; .}{}
+
+
+
+\begin{figure}
+\centering
+\subfloat[][Anisotropy $R$]{\includegraphics[width=\linewidth]{img/phasetransition.pdf}}
+
+\subfloat[][Conversion Yield $\Theta$]{\includegraphics[width=\linewidth]{img/theta.pdf}}
+\caption{ \small \textbf{(a)}Fluorescence anisotropy of a vesicle membrane (DMPC lipids) for different temperatures. At $T_C=28.0 \, \degree$ C an abrupt change of the anisotropy indicates a phase transition. The points marked in red are considered to be outliers and are ignored in the fit. \textbf{(b)} Conversion yield $\Theta$ as a function of temperature. From the slope at the phase transition temperature the van'T Hoff enthalpy can be calculated.}
+\label{fig:phase}
+\end{figure}
+
+\clearpage
 
 \subsection{Timeresolved Anisotropy}
 The time dependence of the emitted light highly depends on the time dependence of the absorbed light flash. To account for this, the lamp signal was measured as well as the time dependence of the emissions (figure \ref{fig:aniTime}a). By deconvolution with the lamp signal, the actual time dependence (as it would be with a perfect flash) of emission can be approximated (figure \ref{fig:aniTime}b).
@@ -235,7 +258,7 @@ The time dependence of the emitted light highly depends on the time dependence o
 
 From these time dependencies a series of useful values can be calculated. Table \ref{tab:bla} lists these results as given by the program and the values for the diffusion constant, viscosity and cone opening angle as they result from these values.
 
-Unfortunately the fits are rather bad. Several confidence intervals are much larger than their corresponding maximum likelihood value. $\Phi_\text{rot}$, $D$ and $\eta$ can thus not be evaluated further because only the last measurement of $38\,^\circ$C gave proper values for these. $R(0)$ is given without an error by the program, but especially the value for $25\,^\circ$C makes no sense at all. The other two values for $R(0)$ are rather large as well (should be around $0.3$). The expected behaviour, that $R(0)$ is independent of the Temperature can not even be confirmed.
+Unfortunately the fits are rather bad. Several confidence intervals are much larger than their corresponding maximum likelihood value. $\Phi_\text{rot}$, $D$ and $\eta$ can thus not be evaluated further because only the last measurement of $38\,^\circ$C gave proper values for these. $R(0)$ is given without an error by the program, but especially the value for $25\,^\circ$C makes no sense at all. The other two values for $R(0)$ are rather large as well (should be around $0.3$). The expected behavior, that $R(0)$ is independent of the temperature can not even be confirmed.
 
 \begin{table}
 \centering
@@ -263,6 +286,7 @@ The derived value of the opening angle $\theta$ appears to have a very small err
 
 At least the remaining values are realistic: $R(\infty)$ decreases with higher temperatures as expected, the mean values $\langle R(T) \rangle_t$ are in the range of previous measurements (though a bit smaller) and the decay times $\tau$ decrease with increasing temperature reflecting the higher mobility of molecules.
 
+\section{Conclusion}
 
 
 
